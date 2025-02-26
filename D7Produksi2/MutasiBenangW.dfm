@@ -1,7 +1,7 @@
 object MutasiBenangWFrm: TMutasiBenangWFrm
   Left = 196
   Top = 124
-  Width = 1146
+  Width = 1164
   Height = 613
   Caption = 'Mutasi Benang di Unit Warping'
   Color = clBtnFace
@@ -23,7 +23,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 1130
+    Width = 1148
     Height = 575
     ActivePage = TabSheet2
     Align = alClient
@@ -318,7 +318,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              989.541666666666800000
+              989.541666666666700000
               2.645833333333333000
               140.229166666666700000)
             Alignment = taLeftJustify
@@ -523,7 +523,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
               44.979166666666670000
               2444.750000000000000000
               79.375000000000000000
-              76.729166666666680000)
+              76.729166666666670000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -1009,7 +1009,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              751.416666666666800000
+              751.416666666666700000
               105.833333333333300000
               58.208333333333340000)
             Alignment = taLeftJustify
@@ -1040,7 +1040,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              878.416666666666800000
+              878.416666666666700000
               55.562500000000000000
               97.895833333333340000)
             Alignment = taLeftJustify
@@ -2369,7 +2369,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333330000
+              18.520833333333340000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -3530,12 +3530,12 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
       object Panel2: TPanel
         Left = 0
         Top = 506
-        Width = 1122
+        Width = 1140
         Height = 41
         Align = alBottom
         TabOrder = 0
         DesignSize = (
-          1122
+          1140
           41)
         object LRencord: TLabel
           Left = 16
@@ -3550,7 +3550,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
           ParentFont = False
         end
         object BitBtn1: TBitBtn
-          Left = 866
+          Left = 884
           Top = 8
           Width = 75
           Height = 25
@@ -3582,7 +3582,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
       object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 1122
+        Width = 1140
         Height = 52
         Align = alTop
         BevelInner = bvLowered
@@ -3858,7 +3858,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
       object wwDBGrid2: TwwDBGrid
         Left = 0
         Top = 52
-        Width = 1122
+        Width = 1140
         Height = 454
         DisableThemes = True
         DisableThemesInTitle = True
@@ -3868,7 +3868,6 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
           'KP'#9'10'#9'KP'#9'F'
           'KONSTRUKSI'#9'35'#9'Konstruksi'#9'F'
           'BEM'#9'30'#9'Beam'#9'F'
-          'QTY_IN8'#9'10'#9'Sisa Cikalan'#9'F'
           'QTY_IN1'#9'10'#9'Sisa Awal'#9'F'
           'QTY_IN3'#9'10'#9'Gudang~Warna'#9'F'#9'Pemasukan'
           'QTY_IN7'#9'10'#9'Lainnya'#9'F'#9'Pemasukan'
@@ -3938,7 +3937,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
       object wwDBGrid1: TwwDBGrid
         Left = 0
         Top = 52
-        Width = 1122
+        Width = 1140
         Height = 495
         DisableThemes = True
         DisableThemesInTitle = True
@@ -3986,7 +3985,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
       object Panel3: TPanel
         Left = 0
         Top = 0
-        Width = 1122
+        Width = 1140
         Height = 52
         Align = alTop
         BevelInner = bvLowered

@@ -350,7 +350,7 @@ var
   vrgTanggal : String;
 begin
 Qtransaksi.Close;
-Qtransaksi.SetVariable('trans', '874');
+Qtransaksi.SetVariable('trans', 'LPP');//Qtransaksi.SetVariable('trans', '874');
 Qtransaksi.Open;
 //  vfilter:=' where (tanggal>=to_date('''+FormatDateTime('dd/mm/yyyy',VTglAwal.Date)+''',''dd/mm/yyyy'') and tanggal<=(to_date('''+FormatDateTime('dd/mm/yyyy',VTglAkhir.Date)+''',''dd/mm/yyyy'')+1-1/86400))';
 //  vorder:=' ORDER by no_seri_beam';
