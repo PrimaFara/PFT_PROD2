@@ -1,0 +1,3607 @@
+object RABFrm: TRABFrm
+  Left = 302
+  Top = 80
+  Width = 1035
+  Height = 683
+  Caption = 'RABFrm'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  FormStyle = fsMDIChild
+  OldCreateOrder = False
+  Position = poDefault
+  Scaled = False
+  Visible = True
+  WindowState = wsMaximized
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object QuickRep1: TQuickRep
+    Tag = 1
+    Left = 48
+    Top = 56
+    Width = 794
+    Height = 529
+    Frame.Color = clBlack
+    Frame.DrawTop = False
+    Frame.DrawBottom = False
+    Frame.DrawLeft = False
+    Frame.DrawRight = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    Functions.Strings = (
+      'PAGENUMBER'
+      'COLUMNNUMBER'
+      'REPORTTITLE')
+    Functions.DATA = (
+      '0'
+      '0'
+      #39#39)
+    Options = [FirstPageHeader, LastPageFooter]
+    Page.Columns = 1
+    Page.Orientation = poPortrait
+    Page.PaperSize = Default
+    Page.Values = (
+      100.000000000000000000
+      1400.000000000000000000
+      100.000000000000000000
+      2100.000000000000000000
+      100.000000000000000000
+      100.000000000000000000
+      0.000000000000000000)
+    PrinterSettings.Copies = 1
+    PrinterSettings.Duplex = False
+    PrinterSettings.FirstPage = 0
+    PrinterSettings.LastPage = 0
+    PrinterSettings.OutputBin = Auto
+    PrintIfEmpty = True
+    SnapToGrid = True
+    Units = MM
+    Zoom = 100
+    object PageHeaderBand1: TQRBand
+      Left = 38
+      Top = 38
+      Width = 718
+      Height = 55
+      Frame.Color = clBlack
+      Frame.DrawTop = False
+      Frame.DrawBottom = True
+      Frame.DrawLeft = False
+      Frame.DrawRight = False
+      AlignToBottom = False
+      Color = clWhite
+      ForceNewColumn = False
+      ForceNewPage = False
+      Size.Values = (
+        145.520833333333300000
+        1899.708333333333000000)
+      BandType = rbPageHeader
+      object QRDBText1: TQRDBText
+        Left = 8
+        Top = 0
+        Width = 131
+        Height = 19
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          50.270833333333330000
+          21.166666666666670000
+          0.000000000000000000
+          346.604166666666700000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataField = 'nama_perusahaan'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 12
+      end
+      object QRDBText12: TQRDBText
+        Left = 8
+        Top = 21
+        Width = 38
+        Height = 15
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.687500000000000000
+          21.166666666666670000
+          55.562500000000000000
+          100.541666666666700000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataField = 'alamat1'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBText13: TQRDBText
+        Left = 8
+        Top = 37
+        Width = 38
+        Height = 15
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.687500000000000000
+          21.166666666666670000
+          97.895833333333320000
+          100.541666666666700000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataField = 'alamat2'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+    end
+    object TitleBand1: TQRBand
+      Left = 38
+      Top = 93
+      Width = 718
+      Height = 108
+      Frame.Color = clBlack
+      Frame.DrawTop = False
+      Frame.DrawBottom = True
+      Frame.DrawLeft = False
+      Frame.DrawRight = False
+      AlignToBottom = False
+      BeforePrint = TitleBand1BeforePrint
+      Color = clWhite
+      ForceNewColumn = False
+      ForceNewPage = False
+      Size.Values = (
+        285.750000000000000000
+        1899.708333333333000000)
+      BandType = rbTitle
+      object QRTitle: TQRLabel
+        Left = 221
+        Top = 2
+        Width = 276
+        Height = 26
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          68.791666666666680000
+          584.729166666666800000
+          5.291666666666667000
+          730.250000000000000000)
+        Alignment = taCenter
+        AlignToBand = True
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'RENCANA ANGGARAN DAN BIAYA'
+        Color = clWhite
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -21
+        Font.Name = 'Arial Narrow'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 16
+      end
+      object QRLabel1: TQRLabel
+        Left = 525
+        Top = 7
+        Width = 49
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          1389.062500000000000000
+          18.520833333333330000
+          129.645833333333300000)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'No. RAB :'
+        Color = clWhite
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRLabel2: TQRLabel
+        Left = 529
+        Top = 28
+        Width = 44
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          1399.645833333333000000
+          74.083333333333340000
+          116.416666666666700000)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Tanggal :'
+        Color = clWhite
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRLabel5: TQRLabel
+        Left = 8
+        Top = 11
+        Width = 71
+        Height = 15
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.687500000000000000
+          21.166666666666670000
+          29.104166666666670000
+          187.854166666666700000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Nama Proyek :'
+        Color = clWhite
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBText2: TQRDBText
+        Left = 24
+        Top = 45
+        Width = 281
+        Height = 43
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          113.770833333333000000
+          63.500000000000000000
+          119.062500000000000000
+          743.479166666667000000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = False
+        Color = clWhite
+        DataSet = QMaster
+        DataField = 'nama_rab'
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBText3: TQRDBText
+        Left = 24
+        Top = 27
+        Width = 73
+        Height = 17
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          44.979166666666670000
+          63.500000000000000000
+          71.437500000000000000
+          193.145833333333300000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataSet = QMaster
+        DataField = 'NAMA_RAB'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 10
+      end
+      object QRDBText10: TQRDBText
+        Left = 584
+        Top = 28
+        Width = 23
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          1545.166666666667000000
+          74.083333333333340000
+          60.854166666666680000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataSet = QMaster
+        DataField = 'TGL'
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBText11: TQRDBText
+        Left = 584
+        Top = 2
+        Width = 45
+        Height = 24
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          63.500000000000000000
+          1545.166666666667000000
+          5.291666666666667000
+          119.062500000000000000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataSet = QMaster
+        DataField = 'id_rab'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'Arial Narrow'
+        Font.Style = []
+        Mask = '00000'
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 14
+      end
+      object QRLabel4: TQRLabel
+        Left = 544
+        Top = 60
+        Width = 30
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          1439.333333333333000000
+          158.750000000000000000
+          79.375000000000000000)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Versi :'
+        Color = clWhite
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBText5: TQRDBText
+        Left = 584
+        Top = 60
+        Width = 23
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          1545.166666666667000000
+          158.750000000000000000
+          60.854166666666680000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataSet = QMaster
+        DataField = 'versi'
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBText4: TQRDBText
+        Left = 584
+        Top = 76
+        Width = 45
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          1545.166666666667000000
+          201.083333333333300000
+          119.062500000000000000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataSet = QMaster
+        DataField = 'tgl_insert'
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRLabel3: TQRLabel
+        Left = 529
+        Top = 76
+        Width = 44
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          1399.645833333333000000
+          201.083333333333300000
+          116.416666666666700000)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Tanggal :'
+        Color = clWhite
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+    end
+    object ColumnHeaderBand1: TQRBand
+      Left = 38
+      Top = 201
+      Width = 718
+      Height = 28
+      Frame.Color = clBlack
+      Frame.DrawTop = False
+      Frame.DrawBottom = True
+      Frame.DrawLeft = False
+      Frame.DrawRight = False
+      AlignToBottom = False
+      Color = clWhite
+      ForceNewColumn = False
+      ForceNewPage = False
+      Size.Values = (
+        74.083333333333340000
+        1899.708333333333000000)
+      BandType = rbColumnHeader
+      object QRLabel11: TQRLabel
+        Left = 7
+        Top = 8
+        Width = 20
+        Height = 17
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          44.979166666666670000
+          18.520833333333330000
+          21.166666666666670000
+          52.916666666666670000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'NO'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 10
+      end
+      object QRLabel12: TQRLabel
+        Left = 40
+        Top = 8
+        Width = 117
+        Height = 17
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          44.979166666666670000
+          105.833333333333300000
+          21.166666666666670000
+          309.562500000000000000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'PEKERJAAN/ ITEM'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 10
+      end
+      object QRLabel13: TQRLabel
+        Left = 312
+        Top = 8
+        Width = 53
+        Height = 17
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          44.979166666666670000
+          825.500000000000000000
+          21.166666666666670000
+          140.229166666666700000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'SATUAN'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 10
+      end
+      object QRLabel14: TQRLabel
+        Left = 392
+        Top = 8
+        Width = 47
+        Height = 17
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          44.979166666666670000
+          1037.166666666667000000
+          21.166666666666670000
+          124.354166666666700000)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'HARGA'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 10
+      end
+      object QRLabel15: TQRLabel
+        Left = 480
+        Top = 8
+        Width = 31
+        Height = 17
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          44.979166666666670000
+          1270.000000000000000000
+          21.166666666666670000
+          82.020833333333340000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'HARI'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 10
+      end
+      object QRLabel16: TQRLabel
+        Left = 448
+        Top = 8
+        Width = 27
+        Height = 17
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          44.979166666666670000
+          1185.333333333333000000
+          21.166666666666670000
+          71.437500000000000000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'QTY'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 10
+      end
+      object QRLabel17: TQRLabel
+        Left = 615
+        Top = 8
+        Width = 72
+        Height = 17
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          44.979166666666670000
+          1627.187500000000000000
+          21.166666666666670000
+          190.500000000000000000)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'SUB TOTAL'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 10
+      end
+      object QRLabel6: TQRLabel
+        Left = 514
+        Top = 8
+        Width = 27
+        Height = 17
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          44.979166666666670000
+          1359.958333333333000000
+          21.166666666666670000
+          71.437500000000000000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'JAM'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 10
+      end
+      object QRLabel7: TQRLabel
+        Left = 253
+        Top = 8
+        Width = 50
+        Height = 17
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          44.979166666666670000
+          669.395833333333400000
+          21.166666666666670000
+          132.291666666666700000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'NOMOR'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 10
+      end
+    end
+    object DetailBand1: TQRBand
+      Left = 38
+      Top = 229
+      Width = 718
+      Height = 18
+      Frame.Color = clBlack
+      Frame.DrawTop = False
+      Frame.DrawBottom = False
+      Frame.DrawLeft = False
+      Frame.DrawRight = False
+      AlignToBottom = False
+      BeforePrint = DetailBand1BeforePrint
+      Color = clWhite
+      ForceNewColumn = False
+      ForceNewPage = False
+      Size.Values = (
+        47.625000000000000000
+        1899.708333333333000000)
+      BandType = rbDetail
+      object QRDBSub_Total: TQRDBText
+        Left = 644
+        Top = 1
+        Width = 43
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          1703.916666666667000000
+          2.645833333333333000
+          113.770833333333300000)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataField = 'sub_total'
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBText15: TQRDBText
+        Left = 413
+        Top = 1
+        Width = 26
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          1092.729166666667000000
+          2.645833333333333000
+          68.791666666666680000)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataSet = CDSQDetail
+        DataField = 'harga'
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBText16: TQRDBText
+        Left = 453
+        Top = 1
+        Width = 16
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          1198.562500000000000000
+          2.645833333333333000
+          42.333333333333340000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataSet = CDSQDetail
+        DataField = 'qty'
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBText17: TQRDBText
+        Left = 487
+        Top = 1
+        Width = 19
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          1288.520833333333000000
+          2.645833333333333000
+          50.270833333333330000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataSet = CDSQDetail
+        DataField = 'hari'
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBText18: TQRDBText
+        Left = 325
+        Top = 1
+        Width = 30
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          859.895833333333400000
+          2.645833333333333000
+          79.375000000000000000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataSet = CDSQDetail
+        DataField = 'satuan'
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBMyList: TQRDBText
+        Left = 40
+        Top = 1
+        Width = 210
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333300000
+          105.833333333333000000
+          2.645833333333330000
+          555.625000000000000000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = True
+        Color = clWhite
+        DataSet = CDSQDetail
+        DataField = 'mylist'
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRSysData1: TQRSysData
+        Left = 0
+        Top = 1
+        Width = 33
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333300000
+          0.000000000000000000
+          2.645833333333330000
+          87.312500000000000000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = False
+        Color = clWhite
+        Data = qrsDetailNo
+        Transparent = False
+        FontSize = 8
+      end
+      object QRDBText6: TQRDBText
+        Left = 519
+        Top = 1
+        Width = 18
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          1373.187500000000000000
+          2.645833333333333000
+          47.625000000000000000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataSet = CDSQDetail
+        DataField = 'jam'
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBText8: TQRDBText
+        Left = 253
+        Top = 1
+        Width = 32
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          669.395833333333400000
+          2.645833333333333000
+          84.666666666666680000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataSet = CDSQDetail
+        DataField = 'kd_rab'
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRSub_Total: TQRLabel
+        Left = 623
+        Top = 2
+        Width = 64
+        Height = 15
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.687500000000000000
+          1648.354166666667000000
+          5.291666666666667000
+          169.333333333333300000)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'QRSub_Total'
+        Color = clWhite
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsItalic]
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRShapeSubTotal: TQRShape
+        Left = 576
+        Top = 0
+        Width = 113
+        Height = 3
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          7.937500000000000000
+          1524.000000000000000000
+          0.000000000000000000
+          298.979166666667000000)
+        Shape = qrsHorLine
+      end
+    end
+    object SummaryBand1: TQRBand
+      Left = 38
+      Top = 247
+      Width = 718
+      Height = 139
+      Frame.Color = clBlack
+      Frame.DrawTop = True
+      Frame.DrawBottom = False
+      Frame.DrawLeft = False
+      Frame.DrawRight = False
+      AlignToBottom = True
+      Color = clWhite
+      ForceNewColumn = False
+      ForceNewPage = False
+      Size.Values = (
+        367.770833333333400000
+        1899.708333333333000000)
+      BandType = rbSummary
+      object QRLabel18: TQRLabel
+        Left = 330
+        Top = 8
+        Width = 58
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          873.125000000000000000
+          21.166666666666670000
+          153.458333333333300000)
+        Alignment = taCenter
+        AlignToBand = True
+        AutoSize = True
+        AutoStretch = False
+        Caption = '** Akhir **'
+        Color = clWhite
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRLabel20: TQRLabel
+        Left = 532
+        Top = 8
+        Width = 41
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          1407.583333333333000000
+          21.166666666666670000
+          108.479166666666700000)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'TOTAL :'
+        Color = clWhite
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsItalic]
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRShape4: TQRShape
+        Left = 576
+        Top = -1
+        Width = 113
+        Height = 9
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          23.812500000000000000
+          1524.000000000000000000
+          -2.645833333333330000
+          298.979166666667000000)
+        Shape = qrsHorLine
+      end
+      object QRLabel24: TQRLabel
+        Left = 8
+        Top = 8
+        Width = 57
+        Height = 15
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.687500000000000000
+          21.166666666666670000
+          21.166666666666670000
+          150.812500000000000000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Keterangan'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsUnderline]
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRLabel25: TQRLabel
+        Left = 8
+        Top = 94
+        Width = 126
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          21.166666666666670000
+          248.708333333333300000
+          333.375000000000000000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = '(                                       )'
+        Color = clWhite
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRLabel26: TQRLabel
+        Left = 41
+        Top = 52
+        Width = 58
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          108.479166666666700000
+          137.583333333333300000
+          153.458333333333300000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Mengetahui,'
+        Color = clWhite
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRShape1: TQRShape
+        Left = 576
+        Top = 23
+        Width = 113
+        Height = 9
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          23.812500000000000000
+          1524.000000000000000000
+          60.854166666666700000
+          298.979166666667000000)
+        Shape = qrsHorLine
+      end
+      object QRShape2: TQRShape
+        Left = 576
+        Top = 28
+        Width = 113
+        Height = 9
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          23.812500000000000000
+          1524.000000000000000000
+          74.083333333333300000
+          298.979166666667000000)
+        Shape = qrsHorLine
+      end
+      object QRDBText9: TQRDBText
+        Left = 667
+        Top = 8
+        Width = 22
+        Height = 15
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.687500000000000000
+          1764.770833333333000000
+          21.166666666666670000
+          58.208333333333340000)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataField = 'total'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsItalic]
+        Mask = '#.#,#'
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRLabel8: TQRLabel
+        Left = 209
+        Top = 52
+        Width = 41
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          552.979166666666700000
+          137.583333333333300000
+          108.479166666666700000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Disetujui'
+        Color = clWhite
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRLabel9: TQRLabel
+        Left = 168
+        Top = 94
+        Width = 126
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          444.500000000000000000
+          248.708333333333300000
+          333.375000000000000000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = '(                                       )'
+        Color = clWhite
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRLabel10: TQRLabel
+        Left = 362
+        Top = 52
+        Width = 56
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          957.791666666666800000
+          137.583333333333300000
+          148.166666666666700000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Dibuat Oleh'
+        Color = clWhite
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRLabel21: TQRLabel
+        Left = 328
+        Top = 94
+        Width = 126
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.333333333333340000
+          867.833333333333500000
+          248.708333333333300000
+          333.375000000000000000)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = '(                                       )'
+        Color = clWhite
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+    end
+    object PageFooterBand1: TQRBand
+      Left = 38
+      Top = 386
+      Width = 718
+      Height = 16
+      Frame.Color = clBlack
+      Frame.DrawTop = False
+      Frame.DrawBottom = False
+      Frame.DrawLeft = False
+      Frame.DrawRight = False
+      AlignToBottom = True
+      Color = clWhite
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Times New Roman'
+      Font.Style = []
+      ForceNewColumn = False
+      ForceNewPage = False
+      ParentFont = False
+      Size.Values = (
+        42.333333333333340000
+        1899.708333333333000000)
+      BandType = rbPageFooter
+      object QRLabel19: TQRLabel
+        Left = 8
+        Top = 0
+        Width = 44
+        Height = 15
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.687500000000000000
+          21.166666666666670000
+          0.000000000000000000
+          116.416666666666700000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Reg. No :'
+        Color = clWhite
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBText20: TQRDBText
+        Left = 56
+        Top = 0
+        Width = 43
+        Height = 15
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.687500000000000000
+          148.166666666666700000
+          0.000000000000000000
+          113.770833333333300000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataField = 'imyorder'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRDBText21: TQRDBText
+        Left = 129
+        Top = 0
+        Width = 49
+        Height = 15
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.687500000000000000
+          341.312500000000000000
+          0.000000000000000000
+          129.645833333333300000)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Color = clWhite
+        DataField = 'opr_insert'
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRSysData2: TQRSysData
+        Left = 184
+        Top = 0
+        Width = 59
+        Height = 15
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.687500000000000000
+          486.833333333333400000
+          0.000000000000000000
+          156.104166666666700000)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        Color = clWhite
+        Data = qrsDateTime
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        FontSize = 8
+      end
+      object QRSysData3: TQRSysData
+        Left = 656
+        Top = 0
+        Width = 62
+        Height = 15
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.687500000000000000
+          1735.666666666667000000
+          0.000000000000000000
+          164.041666666666700000)
+        Alignment = taRightJustify
+        AlignToBand = True
+        AutoSize = True
+        Color = clWhite
+        Data = qrsPageNumber
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        ParentFont = False
+        Text = 'Hal : '
+        Transparent = False
+        FontSize = 8
+      end
+    end
+  end
+  object TitlePanel: TPanel
+    Left = 0
+    Top = 0
+    Width = 1019
+    Height = 41
+    Align = alTop
+    BevelInner = bvRaised
+    Caption = 'RENCANA ANGGARAN DAN BIAYA'
+    Color = clNavy
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 609
+    Width = 1019
+    Height = 36
+    Align = alBottom
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    object BitBtn1: TBitBtn
+      Left = 600
+      Top = 8
+      Width = 75
+      Height = 25
+      TabOrder = 0
+      Kind = bkClose
+    end
+    object BitBtnPrint: TBitBtn
+      Left = 520
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = '&Print'
+      TabOrder = 1
+      OnClick = BitBtnPrintClick
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 41
+    Width = 1019
+    Height = 568
+    ActivePage = TabSheet2
+    Align = alClient
+    TabOrder = 2
+    object TabSheet1: TTabSheet
+      Caption = 'Input'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnShow = TabSheet1Show
+      object LookBarang: TwwDBComboDlg
+        Left = 56
+        Top = 240
+        Width = 121
+        Height = 21
+        OnCustomDlg = LookBarangCustomDlg
+        ShowButton = True
+        Style = csDropDown
+        DataField = 'KD_ITEM'
+        DataSource = dsCDSDetail
+        TabOrder = 0
+        WordWrap = False
+        UnboundDataType = wwDefault
+        OnEnter = LookBarangEnter
+      end
+      object Panel3: TPanel
+        Left = 0
+        Top = 0
+        Width = 1009
+        Height = 540
+        Align = alLeft
+        TabOrder = 1
+        object wwDBGrid2: TwwDBGrid
+          Left = 1
+          Top = 177
+          Width = 1007
+          Height = 303
+          Selected.Strings = (
+            'kd_rab'#9'10'#9'Kode'#9'F'#9'#RAB'
+            'kd_parent'#9'8'#9'Parent'#9'F'#9'#RAB'
+            'lvl'#9'5'#9'Level'#9'F'#9'#RAB'
+            'penjelasan'#9'21'#9'PEKERJAAN/ KETERANGAN'#9'F'
+            'keterangan'#9'43'#9'Keterangan'#9'F'#9'ITEM/ MAN POWER/ JASA'
+            'satuan'#9'6'#9'Satuan'#9'F'#9'ITEM/ MAN POWER/ JASA'
+            'harga'#9'11'#9'@Harga'#9'F'#9'VOLUME'
+            'qty'#9'6'#9'Qty'#9'F'#9'VOLUME'
+            'hari'#9'4'#9'Hari'#9'F'#9'VOLUME'
+            'jam'#9'4'#9'Jam'#9'F'#9'VOLUME'
+            'sub_total'#9'13'#9'SUB TOTAL'#9'T')
+          IniAttributes.Enabled = True
+          IniAttributes.SaveToRegistry = True
+          IniAttributes.FileName = 'Pismatex'
+          IniAttributes.SectionName = 'InputRAB'
+          IniAttributes.Delimiter = ';;'
+          IniAttributes.CheckNewFields = True
+          TitleColor = clNavy
+          FixedCols = 0
+          ShowHorzScrollBar = True
+          Align = alClient
+          BorderStyle = bsNone
+          DataSource = dsCDSDetail
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgWordWrap, dgShowFooter, dgTrailingEllipsis]
+          ParentFont = False
+          RowHeightPercent = 200
+          TabOrder = 5
+          TitleAlignment = taCenter
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWhite
+          TitleFont.Height = -11
+          TitleFont.Name = 'MS Sans Serif'
+          TitleFont.Style = []
+          TitleLines = 3
+          TitleButtons = False
+          UseTFields = False
+          OnEnter = wwDBGrid1Enter
+          OnUpdateFooter = wwDBGrid1UpdateFooter
+          FooterColor = clGray
+          PaintOptions.ActiveRecordColor = 16744576
+        end
+        object wwDBGrid1: TwwDBGrid
+          Left = 1
+          Top = 177
+          Width = 1007
+          Height = 303
+          ControlType.Strings = (
+            'ARAH;CustomEdit;LookArah;F'
+            'KD_ITEM;CustomEdit;LookBarang;F'
+            'KD_WARNA;CustomEdit;LookWarna;F')
+          Selected.Strings = (
+            'kd_rab'#9'5'#9'Kode'#9'F'#9'#RAB'
+            'kd_parent'#9'6'#9'Parent'#9'F'#9'#RAB'
+            'lvl'#9'5'#9'Level'#9'F'#9'#RAB'
+            'penjelasan'#9'14'#9'KETERANGAN'#9'F'
+            'KD_ITEM'#9'9'#9'Kode'#9'F'#9'BAHAN'
+            'keterangan'#9'19'#9'Keterangan'#9'F'#9'BAHAN'
+            'satuan'#9'6'#9'Satuan'#9'F'#9'BAHAN'
+            'KD_WARNA'#9'5'#9'Kode'#9'F'#9'WARNA'
+            'WARNA'#9'15'#9'Nama'#9'F'#9'WARNA'
+            'ARAH'#9'8'#9'ARAH'#9'F'
+            'HARI'#9'6'#9'Helai'#9'F'#9'SPESIFIKASI'
+            'HELAI'#9'8'#9'Dim (Cm)'#9'T'#9'SPESIFIKASI'
+            'PANJANG'#9'11'#9'Panjang (M)~Per Kotak'#9'T'#9'SPESIFIKASI'
+            'TPANJANG'#9'11'#9'Panjang (M)~Total'#9'F'#9'SPESIFIKASI'
+            'RASIO3'#9'9'#9'Meter/Kg'#9'T'#9'SPESIFIKASI'
+            'KG_KODI'#9'11'#9'Panjang (M)'#9'F'#9'KODI'
+            'BM'#9'9'#9'Berat (Kg)'#9'F'#9'KODI'
+            'WASTE'#9'7'#9'WASTE'#9'F'
+            'qty'#9'11'#9'NETTO (Kg)'#9'T')
+          IniAttributes.Enabled = True
+          IniAttributes.SaveToRegistry = True
+          IniAttributes.FileName = 'Pismatex'
+          IniAttributes.SectionName = 'InputBOM'
+          IniAttributes.Delimiter = ';;'
+          IniAttributes.CheckNewFields = True
+          TitleColor = clNavy
+          FixedCols = 0
+          ShowHorzScrollBar = True
+          Align = alClient
+          BorderStyle = bsNone
+          DataSource = dsCDSDetail
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Arial Narrow'
+          Font.Style = []
+          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgWordWrap, dgShowFooter, dgTrailingEllipsis]
+          ParentFont = False
+          RowHeightPercent = 200
+          TabOrder = 2
+          TitleAlignment = taCenter
+          TitleFont.Charset = ANSI_CHARSET
+          TitleFont.Color = clWhite
+          TitleFont.Height = -11
+          TitleFont.Name = 'Arial Narrow'
+          TitleFont.Style = []
+          TitleLines = 4
+          TitleButtons = False
+          UseTFields = False
+          OnEnter = wwDBGrid1Enter
+          OnUpdateFooter = wwDBGrid1UpdateFooter
+          FooterColor = clGray
+          PaintOptions.ActiveRecordColor = 16744576
+        end
+        object Panel4: TPanel
+          Left = 1
+          Top = 1
+          Width = 1007
+          Height = 144
+          Align = alTop
+          BevelInner = bvLowered
+          Ctl3D = False
+          ParentCtl3D = False
+          TabOrder = 0
+          object DBText1: TDBText
+            Left = 913
+            Top = 24
+            Width = 80
+            Height = 24
+            Alignment = taRightJustify
+            AutoSize = True
+            DataField = 'ID_RAB'
+            DataSource = dsCDSMaster
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clRed
+            Font.Height = -19
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label4: TLabel
+            Left = 908
+            Top = 8
+            Width = 80
+            Height = 13
+            Alignment = taRightJustify
+            Caption = 'ID BOM/ RAB'
+          end
+          object Label5: TLabel
+            Left = 792
+            Top = 60
+            Width = 64
+            Height = 13
+            Caption = 'Tgl. Dibuat'
+          end
+          object Label6: TLabel
+            Left = 16
+            Top = 8
+            Width = 68
+            Height = 13
+            Caption = 'Barang Jadi'
+          end
+          object Label28: TLabel
+            Left = 792
+            Top = 84
+            Width = 29
+            Height = 13
+            Caption = 'Versi'
+          end
+          object Label2: TLabel
+            Left = 312
+            Top = 8
+            Width = 60
+            Height = 13
+            Caption = 'Konstruksi'
+          end
+          object Label3: TLabel
+            Left = 312
+            Top = 47
+            Width = 34
+            Height = 13
+            Caption = 'Corak'
+          end
+          object Label1: TLabel
+            Left = 312
+            Top = 85
+            Width = 54
+            Height = 13
+            Caption = 'Qty KODI'
+          end
+          object Label16: TLabel
+            Left = 792
+            Top = 107
+            Width = 53
+            Height = 13
+            Caption = 'Toleransi'
+          end
+          object Label23: TLabel
+            Left = 908
+            Top = 107
+            Width = 10
+            Height = 13
+            Caption = '%'
+          end
+          object wwDBDateTimePicker3: TwwDBDateTimePicker
+            Left = 864
+            Top = 56
+            Width = 121
+            Height = 21
+            CalendarAttributes.Font.Charset = DEFAULT_CHARSET
+            CalendarAttributes.Font.Color = clWindowText
+            CalendarAttributes.Font.Height = -11
+            CalendarAttributes.Font.Name = 'MS Sans Serif'
+            CalendarAttributes.Font.Style = []
+            DataField = 'TGL'
+            DataSource = dsCDSMaster
+            Epoch = 1950
+            ShowButton = True
+            TabOrder = 1
+          end
+          object LookRekanan: TwwDBComboDlg
+            Left = 16
+            Top = 24
+            Width = 65
+            Height = 19
+            OnCustomDlg = LookRekananCustomDlg
+            ShowButton = True
+            Style = csDropDown
+            DataField = 'ID_PROYEK'
+            DataSource = dsCDSMaster
+            TabOrder = 0
+            WordWrap = False
+            UnboundDataType = wwDefault
+          end
+          object DBMemo2: TDBMemo
+            Left = 16
+            Top = 48
+            Width = 281
+            Height = 73
+            TabStop = False
+            Color = clWhite
+            DataField = 'NAMA_RAB'
+            DataSource = dsCDSMaster
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            ScrollBars = ssVertical
+            TabOrder = 3
+          end
+          object wwDBEdit3: TwwDBEdit
+            Left = 864
+            Top = 81
+            Width = 121
+            Height = 19
+            CharCase = ecUpperCase
+            DataField = 'VERSI'
+            DataSource = dsCDSMaster
+            TabOrder = 2
+            UnboundDataType = wwDefault
+            WantReturns = False
+            WordWrap = False
+          end
+          object LookBeam: TwwDBComboDlg
+            Left = 312
+            Top = 24
+            Width = 169
+            Height = 19
+            OnCustomDlg = LookBeamCustomDlg
+            ShowButton = True
+            Style = csDropDown
+            DataField = 'KONSTRUKSI'
+            DataSource = dsCDSMaster
+            TabOrder = 4
+            WordWrap = False
+            UnboundDataType = wwDefault
+            OnEnter = LookBeamEnter
+          end
+          object wwDBComboDlg1: TwwDBComboDlg
+            Left = 312
+            Top = 63
+            Width = 169
+            Height = 19
+            OnCustomDlg = wwDBComboDlg1CustomDlg
+            ShowButton = True
+            Style = csDropDown
+            DataField = 'CORAK'
+            DataSource = dsCDSMaster
+            TabOrder = 5
+            WordWrap = False
+            UnboundDataType = wwDefault
+            OnEnter = wwDBComboDlg1Enter
+          end
+          object GroupBox1: TGroupBox
+            Left = 488
+            Top = 10
+            Width = 289
+            Height = 131
+            Caption = 'Spesifikasi'
+            TabOrder = 6
+            object Label7: TLabel
+              Left = 237
+              Top = 35
+              Width = 30
+              Height = 13
+              Caption = 'Helai'
+            end
+            object Label8: TLabel
+              Left = 5
+              Top = 35
+              Width = 45
+              Height = 13
+              Caption = 'Dimensi'
+            end
+            object Label9: TLabel
+              Left = 72
+              Top = 11
+              Width = 24
+              Height = 13
+              Caption = 'Lusi'
+            end
+            object Label10: TLabel
+              Left = 136
+              Top = 11
+              Width = 37
+              Height = 13
+              Caption = 'Pakan'
+            end
+            object Label11: TLabel
+              Left = 5
+              Top = 54
+              Width = 60
+              Height = 13
+              Caption = 'Sisir/ Pick'
+            end
+            object Label12: TLabel
+              Left = 237
+              Top = 54
+              Width = 42
+              Height = 13
+              Caption = 'Per Inc'
+            end
+            object Label18: TLabel
+              Left = 5
+              Top = 73
+              Width = 44
+              Height = 13
+              Caption = 'Benang'
+            end
+            object Label19: TLabel
+              Left = 237
+              Top = 73
+              Width = 30
+              Height = 13
+              Caption = 'Helai'
+            end
+            object Label21: TLabel
+              Left = 5
+              Top = 92
+              Width = 47
+              Height = 13
+              Caption = 'Panjang'
+            end
+            object Label22: TLabel
+              Left = 237
+              Top = 92
+              Width = 33
+              Height = 13
+              Caption = 'Meter'
+            end
+            object Label24: TLabel
+              Left = 184
+              Top = 11
+              Width = 40
+              Height = 13
+              Caption = 'Pinggir'
+            end
+            object Label17: TLabel
+              Left = 5
+              Top = 111
+              Width = 34
+              Height = 13
+              Caption = 'Kotak'
+            end
+            object wwDBEdit2: TwwDBEdit
+              Left = 72
+              Top = 32
+              Width = 57
+              Height = 19
+              Color = clWhite
+              DataField = 'L'
+              DataSource = dsCDSMaster
+              TabOrder = 0
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+            object wwDBEdit4: TwwDBEdit
+              Left = 128
+              Top = 32
+              Width = 57
+              Height = 19
+              Color = clWhite
+              DataField = 'P'
+              DataSource = dsCDSMaster
+              TabOrder = 1
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+            object wwDBEdit5: TwwDBEdit
+              Left = 128
+              Top = 51
+              Width = 57
+              Height = 19
+              Color = clWhite
+              DataField = 'NSISIR'
+              DataSource = dsCDSMaster
+              TabOrder = 2
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+            object wwDBEdit6: TwwDBEdit
+              Left = 72
+              Top = 51
+              Width = 57
+              Height = 19
+              Color = clWhite
+              DataField = 'NPICK'
+              DataSource = dsCDSMaster
+              TabOrder = 3
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+            object wwDBEdit8: TwwDBEdit
+              Left = 72
+              Top = 70
+              Width = 57
+              Height = 19
+              Color = clYellow
+              DataField = 'HELAI'
+              DataSource = dsQLusi
+              TabOrder = 4
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+            object wwDBEdit9: TwwDBEdit
+              Left = 128
+              Top = 70
+              Width = 57
+              Height = 19
+              Color = clYellow
+              DataField = 'HELAI'
+              DataSource = dsQDimPakan
+              TabOrder = 5
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+            object wwDBEdit10: TwwDBEdit
+              Left = 72
+              Top = 89
+              Width = 57
+              Height = 19
+              Color = clYellow
+              DataField = 'PANJANG'
+              DataSource = dsQLusi
+              TabOrder = 6
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+            object wwDBEdit11: TwwDBEdit
+              Left = 128
+              Top = 89
+              Width = 57
+              Height = 19
+              Color = clYellow
+              DataField = 'PANJANG'
+              DataSource = dsQDimPakan
+              TabOrder = 7
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+            object wwDBEdit12: TwwDBEdit
+              Left = 184
+              Top = 32
+              Width = 49
+              Height = 19
+              Color = clWhite
+              DataField = 'T'
+              DataSource = dsCDSMaster
+              TabOrder = 8
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+            object wwDBEdit14: TwwDBEdit
+              Left = 184
+              Top = 70
+              Width = 49
+              Height = 19
+              Color = clYellow
+              DataField = 'HELAI'
+              DataSource = dsQTepi
+              TabOrder = 9
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+            object wwDBEdit15: TwwDBEdit
+              Left = 184
+              Top = 89
+              Width = 49
+              Height = 19
+              Color = clYellow
+              DataField = 'PANJANG'
+              DataSource = dsQTepi
+              TabOrder = 10
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+            object wwDBEdit13: TwwDBEdit
+              Left = 184
+              Top = 51
+              Width = 49
+              Height = 19
+              Color = clWhite
+              DataField = 'NSISIR'
+              DataSource = dsCDSMaster
+              TabOrder = 11
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+            object wwDBEdit16: TwwDBEdit
+              Left = 72
+              Top = 108
+              Width = 57
+              Height = 19
+              Color = clWhite
+              DataField = 'RLUSI'
+              DataSource = dsCDSMaster
+              TabOrder = 12
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+            object wwDBEdit17: TwwDBEdit
+              Left = 128
+              Top = 108
+              Width = 57
+              Height = 19
+              Color = clWhite
+              DataField = 'RPAKAN'
+              DataSource = dsCDSMaster
+              TabOrder = 13
+              UnboundDataType = wwDefault
+              WantReturns = False
+              WordWrap = False
+            end
+          end
+          object wwDBEdit1: TwwDBEdit
+            Left = 312
+            Top = 101
+            Width = 57
+            Height = 19
+            Ctl3D = False
+            DataField = 'QTY'
+            DataSource = dsCDSMaster
+            ParentCtl3D = False
+            TabOrder = 7
+            UnboundDataType = wwDefault
+            WantReturns = False
+            WordWrap = False
+          end
+          object wwDBEdit7: TwwDBEdit
+            Left = 864
+            Top = 104
+            Width = 41
+            Height = 19
+            Ctl3D = False
+            DataField = 'TOLERANSI'
+            DataSource = dsCDSMaster
+            ParentCtl3D = False
+            TabOrder = 8
+            UnboundDataType = wwDefault
+            WantReturns = False
+            WordWrap = False
+          end
+        end
+        object Panel6: TPanel
+          Left = 1
+          Top = 145
+          Width = 1007
+          Height = 32
+          Align = alTop
+          BevelInner = bvLowered
+          Color = clMoneyGreen
+          TabOrder = 1
+          object DBText2: TDBText
+            Left = 514
+            Top = 17
+            Width = 37
+            Height = 11
+            AutoSize = True
+            DataField = 'TGL_INSERT'
+            DataSource = dsCDSMaster
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clGray
+            Font.Height = -9
+            Font.Name = 'Small Fonts'
+            Font.Style = []
+            ParentFont = False
+          end
+          object Label13: TLabel
+            Left = 514
+            Top = 5
+            Width = 37
+            Height = 11
+            Caption = 'Tgl. Input'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clTeal
+            Font.Height = -9
+            Font.Name = 'Small Fonts'
+            Font.Style = []
+            ParentFont = False
+          end
+          object DBText4: TDBText
+            Left = 624
+            Top = 17
+            Width = 37
+            Height = 11
+            AutoSize = True
+            DataField = 'OPR_INSERT'
+            DataSource = dsCDSMaster
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clGray
+            Font.Height = -9
+            Font.Name = 'Small Fonts'
+            Font.Style = []
+            ParentFont = False
+          end
+          object Label15: TLabel
+            Left = 624
+            Top = 5
+            Width = 37
+            Height = 11
+            Caption = 'Operator'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clTeal
+            Font.Height = -9
+            Font.Name = 'Small Fonts'
+            Font.Style = []
+            ParentFont = False
+          end
+          object Label14: TLabel
+            Left = 402
+            Top = 5
+            Width = 52
+            Height = 11
+            Caption = 'No. Register'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clTeal
+            Font.Height = -9
+            Font.Name = 'Small Fonts'
+            Font.Style = []
+            ParentFont = False
+          end
+          object DBText3: TDBText
+            Left = 402
+            Top = 17
+            Width = 37
+            Height = 11
+            AutoSize = True
+            DataField = 'ID_RAB'
+            DataSource = dsCDSMaster
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clGray
+            Font.Height = -9
+            Font.Name = 'Small Fonts'
+            Font.Style = []
+            ParentFont = False
+          end
+          object DBText5: TDBText
+            Left = 856
+            Top = -5
+            Width = 123
+            Height = 37
+            AutoSize = True
+            DataField = 'ISPOSTED'
+            DataSource = dsCDSMaster
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clGray
+            Font.Height = -32
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+          end
+          object wwDBNavigator1: TwwDBNavigator
+            Left = 2
+            Top = 2
+            Width = 231
+            Height = 28
+            AutosizeStyle = asSizeNavButtons
+            DataSource = dsCDSMaster
+            RepeatInterval.InitialDelay = 500
+            RepeatInterval.Interval = 100
+            Align = alLeft
+            Color = clMoneyGreen
+            object wwDBNavigator1Button2: TwwNavButton
+              Left = 0
+              Top = 0
+              Width = 29
+              Height = 28
+              Hint = 'Move to prior record'
+              ImageIndex = -1
+              NumGlyphs = 2
+              Spacing = 4
+              Transparent = False
+              Caption = 'wwDBNavigator1Button2'
+              Enabled = False
+              DisabledTextColors.ShadeColor = clGray
+              DisabledTextColors.HighlightColor = clBtnHighlight
+              ParentShowHint = False
+              ShowHint = True
+              Index = 0
+              Style = nbsPrior
+            end
+            object wwDBNavigator1Button1: TwwNavButton
+              Left = 29
+              Top = 0
+              Width = 29
+              Height = 28
+              Hint = 'Move to next record'
+              ImageIndex = -1
+              NumGlyphs = 2
+              Spacing = 4
+              Transparent = False
+              Caption = 'wwDBNavigator1Button1'
+              Enabled = False
+              DisabledTextColors.ShadeColor = clGray
+              DisabledTextColors.HighlightColor = clBtnHighlight
+              ParentShowHint = False
+              ShowHint = True
+              Index = 1
+              Style = nbsNext
+            end
+            object wwDBNavigator1Insert: TwwNavButton
+              Left = 58
+              Top = 0
+              Width = 29
+              Height = 28
+              Hint = 'Insert new record'
+              ImageIndex = -1
+              NumGlyphs = 2
+              Spacing = 4
+              Transparent = False
+              Enabled = False
+              DisabledTextColors.ShadeColor = clGray
+              DisabledTextColors.HighlightColor = clBtnHighlight
+              ParentShowHint = False
+              ShowHint = True
+              Index = 2
+              Style = nbsInsert
+            end
+            object wwDBNavigator1Delete: TwwNavButton
+              Left = 87
+              Top = 0
+              Width = 29
+              Height = 28
+              Hint = 'Delete current record'
+              ImageIndex = -1
+              NumGlyphs = 2
+              Spacing = 4
+              Transparent = False
+              Caption = 'wwDBNavigator1Delete'
+              Enabled = False
+              DisabledTextColors.ShadeColor = clGray
+              DisabledTextColors.HighlightColor = clBtnHighlight
+              ParentShowHint = False
+              ShowHint = True
+              Index = 3
+              Style = nbsDelete
+            end
+            object wwDBNavigator1Edit: TwwNavButton
+              Left = 116
+              Top = 0
+              Width = 29
+              Height = 28
+              Hint = 'Edit current record'
+              ImageIndex = -1
+              NumGlyphs = 2
+              Spacing = 4
+              Transparent = False
+              Caption = 'wwDBNavigator1Edit'
+              Enabled = False
+              DisabledTextColors.ShadeColor = clGray
+              DisabledTextColors.HighlightColor = clBtnHighlight
+              ParentShowHint = False
+              ShowHint = True
+              Index = 4
+              Style = nbsEdit
+            end
+            object wwDBNavigator1Post: TwwNavButton
+              Left = 145
+              Top = 0
+              Width = 29
+              Height = 28
+              Hint = 'Post changes of current record'
+              ImageIndex = -1
+              NumGlyphs = 2
+              Spacing = 4
+              Transparent = False
+              Caption = 'wwDBNavigator1Post'
+              Enabled = False
+              DisabledTextColors.ShadeColor = clGray
+              DisabledTextColors.HighlightColor = clBtnHighlight
+              ParentShowHint = False
+              ShowHint = True
+              Index = 5
+              Style = nbsPost
+            end
+            object wwDBNavigator1Cancel: TwwNavButton
+              Left = 174
+              Top = 0
+              Width = 29
+              Height = 28
+              Hint = 'Cancel changes made to current record'
+              ImageIndex = -1
+              NumGlyphs = 2
+              Spacing = 4
+              Transparent = False
+              Caption = 'wwDBNavigator1Cancel'
+              Enabled = False
+              DisabledTextColors.ShadeColor = clGray
+              DisabledTextColors.HighlightColor = clBtnHighlight
+              ParentShowHint = False
+              ShowHint = True
+              Index = 6
+              Style = nbsCancel
+            end
+            object wwDBNavigator1Button: TwwNavButton
+              Left = 203
+              Top = 0
+              Width = 28
+              Height = 28
+              Hint = 'Find a Record'
+              ImageIndex = -1
+              NumGlyphs = 1
+              ShowText = True
+              Spacing = 4
+              Transparent = False
+              Caption = '&Find'
+              DisabledTextColors.ShadeColor = clGray
+              DisabledTextColors.HighlightColor = clBtnHighlight
+              ParentShowHint = False
+              ShowHint = True
+              OnClick = wwDBNavigator1ButtonClick
+              Index = 7
+              Style = nbsCustom
+            end
+          end
+          object BitBtnPosting: TBitBtn
+            Left = 240
+            Top = 4
+            Width = 75
+            Height = 25
+            Caption = 'P&osting'
+            TabOrder = 1
+            OnClick = BitBtnPostingClick
+            Glyph.Data = {
+              DE010000424DDE01000000000000760000002800000024000000120000000100
+              0400000000006801000000000000000000001000000000000000000000000000
+              80000080000000808000800000008000800080800000C0C0C000808080000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333444444
+              33333333333F8888883F33330000324334222222443333388F3833333388F333
+              000032244222222222433338F8833FFFFF338F3300003222222AAAAA22243338
+              F333F88888F338F30000322222A33333A2224338F33F8333338F338F00003222
+              223333333A224338F33833333338F38F00003222222333333A444338FFFF8F33
+              3338888300003AAAAAAA33333333333888888833333333330000333333333333
+              333333333333333333FFFFFF000033333333333344444433FFFF333333888888
+              00003A444333333A22222438888F333338F3333800003A2243333333A2222438
+              F38F333333833338000033A224333334422224338338FFFFF8833338000033A2
+              22444442222224338F3388888333FF380000333A2222222222AA243338FF3333
+              33FF88F800003333AA222222AA33A3333388FFFFFF8833830000333333AAAAAA
+              3333333333338888883333330000333333333333333333333333333333333333
+              0000}
+            NumGlyphs = 2
+          end
+        end
+        object Panel7: TPanel
+          Left = 1
+          Top = 480
+          Width = 1007
+          Height = 59
+          Align = alBottom
+          BevelInner = bvLowered
+          Ctl3D = False
+          ParentCtl3D = False
+          TabOrder = 3
+          object Shape3: TShape
+            Left = 639
+            Top = 16
+            Width = 129
+            Height = 25
+            Brush.Color = clGray
+          end
+          object Shape1: TShape
+            Left = 768
+            Top = 16
+            Width = 204
+            Height = 25
+            Brush.Color = clGray
+          end
+          object Label20: TLabel
+            Left = 725
+            Top = 21
+            Width = 30
+            Height = 13
+            Alignment = taRightJustify
+            Caption = 'Total'
+            Transparent = True
+          end
+          object DBText6: TDBText
+            Left = 889
+            Top = 16
+            Width = 76
+            Height = 23
+            Alignment = taRightJustify
+            AutoSize = True
+            DataField = 'total'
+            DataSource = dsCDSMaster
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clYellow
+            Font.Height = -16
+            Font.Name = 'Arial Black'
+            Font.Style = []
+            ParentFont = False
+            Transparent = True
+          end
+          object RadioGroup1: TRadioGroup
+            Left = 8
+            Top = 7
+            Width = 113
+            Height = 39
+            Caption = 'Ukuran Ketas'
+            Columns = 2
+            ItemIndex = 1
+            Items.Strings = (
+              'A4'
+              'A5')
+            TabOrder = 0
+          end
+          object CBPreview: TCheckBox
+            Left = 135
+            Top = 21
+            Width = 97
+            Height = 17
+            Caption = 'Preview'
+            TabOrder = 1
+          end
+        end
+        object LookArah: TwwDBComboBox
+          Left = 608
+          Top = 256
+          Width = 121
+          Height = 21
+          ShowButton = True
+          Style = csDropDown
+          MapList = False
+          AllowClearKey = False
+          Color = clYellow
+          DataField = 'ARAH'
+          DataSource = dsCDSDetail
+          DropDownCount = 8
+          ItemHeight = 0
+          Items.Strings = (
+            'LUSI'
+            'PAKAN'
+            'TEPI'
+            'DOBBY'
+            '-')
+          Sorted = False
+          TabOrder = 4
+          UnboundDataType = wwDefault
+        end
+        object LookWarna: TwwDBLookupComboDlg
+          Left = 304
+          Top = 88
+          Width = 121
+          Height = 21
+          GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
+          GridColor = clWhite
+          GridTitleAlignment = taLeftJustify
+          Caption = 'Lookup'
+          MaxWidth = 0
+          MaxHeight = 209
+          Selected.Strings = (
+            'WARNA'#9'30'#9'WARNA'#9'F'
+            'KD_WARNA'#9'6'#9'KODE'#9'F')
+          DataField = 'KD_WARNA'
+          DataSource = dsCDSDetail
+          LookupTable = DMFrm.QWarna
+          LookupField = 'KD_WARNA'
+          TabOrder = 6
+          AutoDropDown = False
+          ShowButton = True
+          AllowClearKey = False
+          OnCloseUp = LookWarnaCloseUp
+          OnEnter = LookWarnaEnter
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Nota'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ImageIndex = 1
+      ParentFont = False
+      OnShow = TabSheet2Show
+      object Panel5: TPanel
+        Left = 0
+        Top = 0
+        Width = 1011
+        Height = 57
+        Align = alTop
+        BevelInner = bvLowered
+        TabOrder = 0
+        object BitBtn2: TBitBtn
+          Left = 8
+          Top = 22
+          Width = 75
+          Height = 25
+          Caption = '&Oke'
+          TabOrder = 0
+          OnClick = BitBtn2Click
+          Glyph.Data = {
+            DE010000424DDE01000000000000760000002800000024000000120000000100
+            0400000000006801000000000000000000001000000000000000000000000000
+            80000080000000808000800000008000800080800000C0C0C000808080000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333444444
+            33333333333F8888883F33330000324334222222443333388F3833333388F333
+            000032244222222222433338F8833FFFFF338F3300003222222AAAAA22243338
+            F333F88888F338F30000322222A33333A2224338F33F8333338F338F00003222
+            223333333A224338F33833333338F38F00003222222333333A444338FFFF8F33
+            3338888300003AAAAAAA33333333333888888833333333330000333333333333
+            333333333333333333FFFFFF000033333333333344444433FFFF333333888888
+            00003A444333333A22222438888F333338F3333800003A2243333333A2222438
+            F38F333333833338000033A224333334422224338338FFFFF8833338000033A2
+            22444442222224338F3388888333FF380000333A2222222222AA243338FF3333
+            33FF88F800003333AA222222AA33A3333388FFFFFF8833830000333333AAAAAA
+            3333333333338888883333330000333333333333333333333333333333333333
+            0000}
+          NumGlyphs = 2
+        end
+        object BitBtn3: TBitBtn
+          Left = 96
+          Top = 23
+          Width = 75
+          Height = 25
+          Caption = 'Ca&ri'
+          TabOrder = 1
+          OnClick = BitBtn3Click
+        end
+        object BitBtn4: TBitBtn
+          Left = 176
+          Top = 23
+          Width = 75
+          Height = 25
+          Caption = '&Export'
+          TabOrder = 2
+          OnClick = BitBtn4Click
+        end
+      end
+      object wwDBGridBrowse: TwwDBGrid
+        Left = 0
+        Top = 57
+        Width = 1011
+        Height = 483
+        Selected.Strings = (
+          'id_rab'#9'9'#9'#ID'#9'F'
+          'id_proyek'#9'11'#9'#Kode'#9'F'#9'KONSTRUKSI'
+          'nama_rab'#9'41'#9'Nama'#9'F'#9'KONSTRUKSI'
+          'versi'#9'10'#9'VERSI'#9'F'
+          'tgl_insert'#9'15'#9'TANGGAL'#9'F'
+          'NLUSI'#9'10'#9'Lusi'#9'F'#9'JUMLAH BENANG'
+          'NPAKAN'#9'10'#9'Pakan'#9'F'#9'JUMLAH BENANG'
+          'NTEPI'#9'10'#9'Tepi'#9'F'#9'JUMLAH BENANG'
+          'GAMBAR'#9'30'#9'FILE GAMBAR'#9'F')
+        IniAttributes.Enabled = True
+        IniAttributes.SaveToRegistry = True
+        IniAttributes.FileName = 'MyCipsoft'
+        IniAttributes.SectionName = 'BrowseRAB'
+        IniAttributes.Delimiter = ';;'
+        IniAttributes.CheckNewFields = True
+        ExportOptions.ExportType = wwgetHTML
+        ExportOptions.Options = [esoShowHeader, esoShowFooter, esoShowTitle, esoDblQuoteFields, esoShowRecordNo, esoShowAlternating]
+        TitleColor = 10485760
+        FixedCols = 0
+        ShowHorzScrollBar = True
+        EditControlOptions = [ecoSearchOwnerForm, ecoDisableDateTimePicker, ecoDisableEditorIfReadOnly]
+        Align = alClient
+        BorderStyle = bsNone
+        DataSource = dsQBrowse
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgPerfectRowFit, dgShowFooter, dgTrailingEllipsis]
+        ParentFont = False
+        ReadOnly = True
+        RowHeightPercent = 125
+        TabOrder = 1
+        TitleAlignment = taCenter
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWhite
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+        TitleFont.Style = []
+        TitleLines = 3
+        TitleButtons = True
+        UseTFields = False
+        OnDblClick = wwDBGridBrowseDblClick
+        IndicatorIconColor = clRed
+        FooterColor = clGray
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Gambar/ Foto Desain'
+      ImageIndex = 2
+      OnShow = TabSheet3Show
+      object Image1: TImage
+        Left = 0
+        Top = 41
+        Width = 1011
+        Height = 499
+        Align = alClient
+        Center = True
+        Proportional = True
+      end
+      object Panel1: TPanel
+        Left = 0
+        Top = 0
+        Width = 1011
+        Height = 41
+        Align = alTop
+        TabOrder = 0
+        object LFile: TLabel
+          Left = 96
+          Top = 16
+          Width = 3
+          Height = 13
+        end
+        object BitBtn5: TBitBtn
+          Left = 8
+          Top = 8
+          Width = 75
+          Height = 25
+          Caption = 'Load...'
+          TabOrder = 0
+          OnClick = BitBtn5Click
+        end
+      end
+    end
+  end
+  object dsCDSMaster: TwwDataSource
+    DataSet = QMaster
+    Left = 104
+    Top = 8
+  end
+  object dsCDSDetail: TwwDataSource
+    DataSet = CDSQDetail
+    Left = 128
+    Top = 64
+  end
+  object LookRekananDlg: TwwLookupDialog
+    Selected.Strings = (
+      'NAMA_KONSTRUKSI'#9'20'#9'KONSTRUKSI'#9'F'
+      'NAMA_CORAK'#9'20'#9'CORAK'#9'F'
+      'NAMA_KEMASAN'#9'20'#9'KEMASAN'#9'F'
+      'SATUAN'#9'10'#9'SATUAN'#9'F')
+    GridTitleAlignment = taLeftJustify
+    GridColor = clWhite
+    GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
+    LookupTable = DMFrm.QLookPalekat
+    Caption = 'Lookup'
+    MaxWidth = 0
+    MaxHeight = 209
+    CharCase = ecNormal
+    UserButton1Caption = 'Refresh'
+    OnUserButton1Click = LookRekananDlgUserButton1Click
+    Left = 192
+    Top = 48
+  end
+  object LookBarangDlg: TwwLookupDialog
+    Selected.Strings = (
+      'NAMA_ITEM'#9'40'#9'NAMA ITEM'#9'F'#9
+      'KD_ITEM'#9'10'#9'KODE'#9'F'#9
+      'NO_PART'#9'12'#9'NO PART'#9'F'#9
+      'JNS_BRG'#9'20'#9'JENIS'#9'F'#9)
+    GridTitleAlignment = taLeftJustify
+    GridColor = clWhite
+    GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
+    LookupTable = QBarang
+    Caption = 'Lookup'
+    MaxWidth = 0
+    MaxHeight = 209
+    CharCase = ecNormal
+    UserButton1Caption = 'Refresh'
+    OnUserButton1Click = LookBarangDlgUserButton1Click
+    Left = 280
+    Top = 56
+  end
+  object dsQBrowse: TwwDataSource
+    DataSet = QBrowse
+    Left = 648
+    Top = 16
+  end
+  object LookBrowseDlg: TwwLookupDialog
+    Selected.Strings = (
+      'id_rab'#9'6'#9'#NO ID'#9'F'
+      'ID_PROYEK'#9'10'#9'Kode'#9'F'#9'KONSTRUKSI'
+      'nama_rab'#9'40'#9'Nama'#9'F'#9'KONSTRUKSI'
+      'versi'#9'10'#9'VERSI'#9'F')
+    GridTitleAlignment = taLeftJustify
+    GridColor = clWhite
+    GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
+    LookupTable = QBrowse
+    Caption = 'Lookup'
+    MaxWidth = 0
+    MaxHeight = 209
+    CharCase = ecNormal
+    UseTFields = False
+    Left = 728
+    Top = 48
+  end
+  object QMaster: TOracleDataSet
+    SQL.Strings = (
+      'select a.*, a.rowid from ipisma_db4.rab a'
+      'where id_rab=:id_rab')
+    Variables.Data = {0300000001000000070000003A49445F524142030000000000000000000000}
+    SequenceField.Field = 'ID_RAB'
+    SequenceField.Sequence = 'ipisma_db4.NO_REGISTER'
+    QBEDefinition.QBEFieldDefs = {
+      040000001B0000000600000049445F5241420100000000000900000049445F50
+      524F59454B010000000000080000004E414D415F524142010000000000050000
+      0056455253490100000000000A00000054474C5F494E53455254010000000000
+      0A0000004F50525F494E5345525401000000000005000000544F54414C010000
+      000000060000004953504F53540100000000000300000054474C010000000000
+      0A00000054474C5F555044415445010000000000030000005154590100000000
+      000A0000004B4F4E535452554B534901000000000005000000434F52414B0100
+      000000000100000050010000000000010000004C010000000000050000004E4C
+      555349010000000000060000004E50414B414E01000000000009000000544F4C
+      4552414E5349010000000000060000004E534953495201000000000005000000
+      4E5049434B0100000000000300000050424C0100000000000300000050425001
+      00000000000600000047414D4241520100000000000100000054010000000000
+      050000004E5445504901000000000005000000524C5553490100000000000600
+      00005250414B414E010000000000}
+    RefreshOptions = [roAfterInsert]
+    Session = DMFrm.OS
+    BeforeEdit = QMasterBeforeEdit
+    BeforeDelete = QMasterBeforeEdit
+    AfterScroll = QMasterAfterScroll
+    OnCalcFields = QMasterCalcFields
+    OnNewRecord = QMasterNewRecord
+    Left = 8
+    Top = 8
+    object QMasterID_RAB: TFloatField
+      FieldName = 'ID_RAB'
+    end
+    object QMasterID_PROYEK: TStringField
+      FieldName = 'ID_PROYEK'
+      Required = True
+      Size = 50
+    end
+    object QMasterNAMA_RAB: TStringField
+      FieldName = 'NAMA_RAB'
+      Required = True
+      Size = 255
+    end
+    object QMasterVERSI: TStringField
+      FieldName = 'VERSI'
+      Required = True
+      Size = 10
+    end
+    object QMasterTGL_INSERT: TDateTimeField
+      FieldName = 'TGL_INSERT'
+      Required = True
+    end
+    object QMasterOPR_INSERT: TStringField
+      FieldName = 'OPR_INSERT'
+      Required = True
+      Size = 30
+    end
+    object QMasterTOTAL: TFloatField
+      FieldName = 'TOTAL'
+      Required = True
+    end
+    object QMasterISPOST: TStringField
+      FieldName = 'ISPOST'
+      Required = True
+      Size = 1
+    end
+    object QMasterTGL: TDateTimeField
+      FieldName = 'TGL'
+      Required = True
+    end
+    object QMasterTGL_UPDATE: TDateTimeField
+      FieldName = 'TGL_UPDATE'
+    end
+    object QMasterISPOSTED: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'ISPOSTED'
+      Size = 10
+      Calculated = True
+    end
+    object QMasterQTY: TFloatField
+      FieldName = 'QTY'
+    end
+    object QMasterKONSTRUKSI: TStringField
+      FieldName = 'KONSTRUKSI'
+      OnChange = QMasterKONSTRUKSIChange
+      Size = 30
+    end
+    object QMasterCORAK: TStringField
+      FieldName = 'CORAK'
+      OnChange = QMasterKONSTRUKSIChange
+      Size = 30
+    end
+    object QMasterP: TFloatField
+      FieldName = 'P'
+    end
+    object QMasterL: TFloatField
+      FieldName = 'L'
+    end
+    object QMasterNLUSI: TFloatField
+      FieldName = 'NLUSI'
+    end
+    object QMasterNPAKAN: TFloatField
+      FieldName = 'NPAKAN'
+    end
+    object QMasterTOLERANSI: TFloatField
+      FieldName = 'TOLERANSI'
+    end
+    object QMasterNSISIR: TFloatField
+      FieldName = 'NSISIR'
+    end
+    object QMasterNPICK: TFloatField
+      FieldName = 'NPICK'
+    end
+    object QMasterPBL: TFloatField
+      FieldName = 'PBL'
+    end
+    object QMasterPBP: TFloatField
+      FieldName = 'PBP'
+    end
+    object QMasterGAMBAR: TStringField
+      FieldName = 'GAMBAR'
+      Size = 255
+    end
+    object QMasterT: TFloatField
+      FieldName = 'T'
+    end
+    object QMasterNTEPI: TFloatField
+      FieldName = 'NTEPI'
+    end
+    object QMasterRLUSI: TFloatField
+      FieldName = 'RLUSI'
+    end
+    object QMasterRPAKAN: TFloatField
+      FieldName = 'RPAKAN'
+    end
+  end
+  object CDSQDetail: TOracleDataSet
+    SQL.Strings = (
+      'select a.*, a.rowid from ipisma_db4.rab_detail a'
+      'where a.id_rab=:id_rab :vfilter'
+      'order by a.kd_rab')
+    Variables.Data = {
+      0300000002000000070000003A49445F52414203000000000000000000000008
+      0000003A5646494C544552010000000000000000000000}
+    QBEDefinition.QBEFieldDefs = {
+      0400000016000000060000004B445F524142010000000000090000004B445F50
+      4152454E540100000000000600000049445F5241420100000000000A0000004B
+      45544552414E47414E010000000000070000004B445F4954454D010000000000
+      0600000053415455414E01000000000003000000515459010000000000050000
+      004841524741010000000000030000004A414D01000000000004000000484152
+      49010000000000090000005355425F544F54414C0100000000000A0000005045
+      4E4A454C4153414E010000000000030000004C564C0100000000000400000041
+      52414801000000000005000000524153494F0100000000000600000052415349
+      4F3301000000000004000000515459320100000000000C000000524153494F5F
+      50414C4C45540100000000000600000048454C41493201000000000009000000
+      4E4F5F42454E414E47010000000000080000004B445F5741524E410100000000
+      00050000005741524E41010000000000}
+    Master = QMaster
+    MasterFields = 'ID_RAB'
+    RefreshOptions = [roAfterInsert]
+    BeforeQuery = CDSQDetailBeforeQuery
+    Session = DMFrm.OS
+    BeforeEdit = QMasterBeforeEdit
+    BeforePost = CDSQDetailBeforePost
+    BeforeDelete = QMasterBeforeEdit
+    OnCalcFields = CDSQDetailCalcFields
+    OnNewRecord = CDSQDetailNewRecord
+    Left = 48
+    Top = 96
+    object CDSQDetailKD_RAB: TStringField
+      FieldName = 'KD_RAB'
+      Required = True
+    end
+    object CDSQDetailKD_PARENT: TStringField
+      FieldName = 'KD_PARENT'
+    end
+    object CDSQDetailID_RAB: TFloatField
+      FieldName = 'ID_RAB'
+      Required = True
+    end
+    object CDSQDetailKETERANGAN: TStringField
+      FieldName = 'KETERANGAN'
+      Size = 255
+    end
+    object CDSQDetailKD_ITEM: TStringField
+      FieldName = 'KD_ITEM'
+      Size = 50
+    end
+    object CDSQDetailSATUAN: TStringField
+      FieldName = 'SATUAN'
+      Size = 6
+    end
+    object CDSQDetailQTY: TFloatField
+      FieldName = 'QTY'
+      Required = True
+      DisplayFormat = '0.00000'
+    end
+    object CDSQDetailHARGA: TFloatField
+      FieldName = 'HARGA'
+      Required = True
+      DisplayFormat = '0.0,0'
+    end
+    object CDSQDetailJAM: TFloatField
+      FieldName = 'JAM'
+      Required = True
+      DisplayFormat = '0.0,0'
+    end
+    object CDSQDetailHARI: TFloatField
+      FieldName = 'HARI'
+      Required = True
+    end
+    object CDSQDetailSUB_TOTAL: TFloatField
+      FieldName = 'SUB_TOTAL'
+      Required = True
+      DisplayFormat = '0.0,0'
+    end
+    object CDSQDetailPENJELASAN: TStringField
+      FieldName = 'PENJELASAN'
+      Size = 255
+    end
+    object CDSQDetailLVL: TFloatField
+      FieldName = 'LVL'
+      Required = True
+    end
+    object CDSQDetailARAH: TStringField
+      FieldName = 'ARAH'
+      OnChange = CDSQDetailARAHChange
+      Size = 10
+    end
+    object CDSQDetailMYLIST: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'MYLIST'
+      Size = 255
+      Calculated = True
+    end
+    object CDSQDetailRASIO: TFloatField
+      FieldName = 'RASIO'
+    end
+    object CDSQDetailRASIO3: TFloatField
+      FieldName = 'RASIO3'
+      DisplayFormat = '0.0,0'
+    end
+    object CDSQDetailQTY2: TFloatField
+      FieldName = 'QTY2'
+    end
+    object CDSQDetailRASIO_PALLET: TFloatField
+      FieldName = 'RASIO_PALLET'
+    end
+    object CDSQDetailHELAI2: TFloatField
+      FieldName = 'HELAI2'
+      DisplayFormat = '#,#'
+    end
+    object CDSQDetailBM: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'BM'
+      DisplayFormat = '0.00000'
+      Calculated = True
+    end
+    object CDSQDetailKG_KODI: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'KG_KODI'
+      DisplayFormat = '0.0,0'
+      Calculated = True
+    end
+    object CDSQDetailNO_BENANG: TFloatField
+      FieldName = 'NO_BENANG'
+    end
+    object CDSQDetailWASTE: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'WASTE'
+      DisplayFormat = '0.00000'
+      Calculated = True
+    end
+    object CDSQDetailHELAI: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'HELAI'
+      DisplayFormat = '0.0000'
+      Calculated = True
+    end
+    object CDSQDetailTPANJANG: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'TPANJANG'
+      DisplayFormat = '0.0000'
+      Calculated = True
+    end
+    object CDSQDetailPANJANG: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'PANJANG'
+      DisplayFormat = '0.0000'
+      Calculated = True
+    end
+    object CDSQDetailKD_WARNA: TStringField
+      FieldName = 'KD_WARNA'
+      Size = 6
+    end
+    object CDSQDetailWARNA: TStringField
+      FieldName = 'WARNA'
+      Size = 50
+    end
+  end
+  object QBrowse: TOracleDataSet
+    SQL.Strings = (
+      'select a.* from ipisma_db4.rab a')
+    QBEDefinition.QBEFieldDefs = {
+      04000000190000000600000049445F5241420100000000000900000049445F50
+      524F59454B010000000000080000004E414D415F524142010000000000050000
+      0056455253490100000000000A00000054474C5F494E53455254010000000000
+      0A0000004F50525F494E5345525401000000000005000000544F54414C010000
+      000000060000004953504F53540100000000000300000054474C010000000000
+      0A00000054474C5F555044415445010000000000030000005154590100000000
+      000A0000004B4F4E535452554B534901000000000005000000434F52414B0100
+      000000000100000050010000000000010000004C010000000000050000004E4C
+      555349010000000000060000004E50414B414E01000000000009000000544F4C
+      4552414E5349010000000000060000004E534953495201000000000005000000
+      4E5049434B0100000000000300000050424C0100000000000300000050425001
+      00000000000600000047414D4241520100000000000100000054010000000000
+      050000004E54455049010000000000}
+    QueryAllRecords = False
+    Session = DMFrm.OS
+    AfterScroll = QBrowseAfterScroll
+    Left = 568
+    Top = 16
+    object QBrowseID_RAB: TFloatField
+      FieldName = 'ID_RAB'
+      Required = True
+    end
+    object QBrowseID_PROYEK: TStringField
+      FieldName = 'ID_PROYEK'
+      Required = True
+      Size = 50
+    end
+    object QBrowseNAMA_RAB: TStringField
+      FieldName = 'NAMA_RAB'
+      Required = True
+      Size = 255
+    end
+    object QBrowseVERSI: TStringField
+      FieldName = 'VERSI'
+      Required = True
+      Size = 10
+    end
+    object QBrowseTGL_INSERT: TDateTimeField
+      FieldName = 'TGL_INSERT'
+      Required = True
+    end
+    object QBrowseOPR_INSERT: TStringField
+      FieldName = 'OPR_INSERT'
+      Required = True
+      Size = 30
+    end
+    object QBrowseTOTAL: TFloatField
+      FieldName = 'TOTAL'
+      Required = True
+    end
+    object QBrowseISPOST: TStringField
+      FieldName = 'ISPOST'
+      Required = True
+      Size = 1
+    end
+    object QBrowseTGL: TDateTimeField
+      FieldName = 'TGL'
+      Required = True
+    end
+    object QBrowseTGL_UPDATE: TDateTimeField
+      FieldName = 'TGL_UPDATE'
+    end
+    object QBrowseGAMBAR: TStringField
+      FieldName = 'GAMBAR'
+      Size = 255
+    end
+    object QBrowseNLUSI: TFloatField
+      FieldName = 'NLUSI'
+    end
+    object QBrowseNPAKAN: TFloatField
+      FieldName = 'NPAKAN'
+    end
+    object QBrowseNTEPI: TFloatField
+      FieldName = 'NTEPI'
+    end
+  end
+  object QBarang: TOracleDataSet
+    SQL.Strings = (
+      'select * from ipisma_db4.vmaterial')
+    QBEDefinition.QBEFieldDefs = {
+      040000000C000000070000004B445F4954454D010000000000090000004E414D
+      415F4954454D010000000000070000004E4F5F50415254010000000000070000
+      004A4E535F425247010000000000090000004449534B52495053490100000000
+      0005000000524153494F01000000000006000000524153494F32010000000000
+      06000000524153494F330100000000000B000000524153494F5F434F4E455301
+      00000000000C000000524153494F5F50414C4C45540100000000000500000048
+      454C4149010000000000090000004E4F5F42454E414E47010000000000}
+    Session = DMFrm.OS
+    Left = 288
+    Top = 72
+    object QBarangNAMA_ITEM: TStringField
+      DisplayLabel = 'NAMA ITEM'
+      DisplayWidth = 40
+      FieldName = 'NAMA_ITEM'
+      Required = True
+      Size = 50
+    end
+    object QBarangKD_ITEM: TStringField
+      DisplayLabel = 'KODE'
+      DisplayWidth = 10
+      FieldName = 'KD_ITEM'
+      Required = True
+      Size = 50
+    end
+    object QBarangNO_PART: TStringField
+      DisplayLabel = 'NO PART'
+      DisplayWidth = 12
+      FieldName = 'NO_PART'
+      Size = 50
+    end
+    object QBarangJNS_BRG: TStringField
+      DisplayLabel = 'JENIS'
+      DisplayWidth = 20
+      FieldName = 'JNS_BRG'
+      Size = 50
+    end
+    object QBarangDISKRIPSI: TStringField
+      FieldName = 'DISKRIPSI'
+      Visible = False
+      Size = 255
+    end
+    object QBarangRASIO: TFloatField
+      FieldName = 'RASIO'
+    end
+    object QBarangRASIO2: TFloatField
+      FieldName = 'RASIO2'
+    end
+    object QBarangRASIO3: TFloatField
+      FieldName = 'RASIO3'
+    end
+    object QBarangRASIO_CONES: TFloatField
+      FieldName = 'RASIO_CONES'
+    end
+    object QBarangRASIO_PALLET: TFloatField
+      FieldName = 'RASIO_PALLET'
+    end
+    object QBarangHELAI: TFloatField
+      FieldName = 'HELAI'
+    end
+    object QBarangNO_BENANG: TFloatField
+      FieldName = 'NO_BENANG'
+    end
+  end
+  object QSubTotal: TOracleDataSet
+    SQL.Strings = (
+      'select sum(sub_total) as sub_total from ipisma_db4.rab_detail'
+      'where id_rab=:id_rab and kd_rab like :kd_rab')
+    Variables.Data = {
+      0300000002000000070000003A49445F52414203000000000000000000000007
+      0000003A4B445F524142050000000000000000000000}
+    QBEDefinition.QBEFieldDefs = {0400000001000000090000005355425F544F54414C010000000000}
+    Session = DMFrm.OS
+    Left = 432
+    Top = 216
+    object QSubTotalSUB_TOTAL: TFloatField
+      FieldName = 'SUB_TOTAL'
+    end
+  end
+  object LookKonstruksiDlg: TwwLookupDialog
+    Selected.Strings = (
+      'NAMA_KONSTRUKSI'#9'30'#9'NAMA KONSTRUKSI'#9'F'
+      'KD_KONSTRUKSI'#9'6'#9'KODE'#9'F')
+    GridTitleAlignment = taLeftJustify
+    GridColor = clWhite
+    GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
+    LookupTable = DMFrm.QKonstruksi
+    Caption = 'Lookup'
+    MaxWidth = 0
+    MaxHeight = 209
+    CharCase = ecNormal
+    Left = 584
+    Top = 24
+  end
+  object LookCorakDlg: TwwLookupDialog
+    Selected.Strings = (
+      'NAMA_CORAK'#9'30'#9'NAMA CORAK'#9'F'
+      'KD_CORAK'#9'6'#9'KODE'#9'F')
+    GridTitleAlignment = taLeftJustify
+    GridColor = clWhite
+    GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
+    LookupTable = DMFrm.QCorak
+    Caption = 'Lookup'
+    MaxWidth = 0
+    MaxHeight = 209
+    CharCase = ecNormal
+    Left = 600
+    Top = 40
+  end
+  object OpenPictureDialog1: TOpenPictureDialog
+    Left = 240
+    Top = 64
+  end
+  object QDimPakan: TOracleDataSet
+    SQL.Strings = (
+      
+        'select sum(nvl(hari,0)) as helai, sum(nvl(rasio,0)) as pakan, su' +
+        'm(nvl(jam,0)) as panjang, sum(nvl(qty,0)) as berat from ipisma_d' +
+        'b3.rab_detail'
+      'where id_rab=:id_rab and'
+      'arah='#39'PAKAN'#39)
+    Variables.Data = {0300000001000000070000003A49445F524142030000000000000000000000}
+    QBEDefinition.QBEFieldDefs = {
+      04000000040000000500000050414B414E0100000000000700000050414E4A41
+      4E470100000000000500000042455241540100000000000500000048454C4149
+      010000000000}
+    BeforeQuery = QDimPakanBeforeQuery
+    Session = DMFrm.OS
+    Left = 720
+    Top = 88
+    object QDimPakanPAKAN: TFloatField
+      FieldName = 'PAKAN'
+    end
+    object QDimPakanPANJANG: TFloatField
+      FieldName = 'PANJANG'
+      DisplayFormat = '0.0,0'
+    end
+    object QDimPakanBERAT: TFloatField
+      FieldName = 'BERAT'
+      DisplayFormat = '0.0,0'
+    end
+    object QDimPakanHELAI: TFloatField
+      FieldName = 'HELAI'
+    end
+  end
+  object QSubTotal2: TOracleDataSet
+    SQL.Strings = (
+      
+        'select sum(nvl(jam,0)) as panjang, sum(nvl(qty2,0)) as bm, sum(n' +
+        'vl(rasio_pallet,0)) as waste, sum(nvl(qty,0)) as qty from ipisma' +
+        '_db3.rab_detail'
+      'where id_rab=:id_rab and'
+      'substr(kd_rab,1,1)='#39'1'#39)
+    Variables.Data = {0300000001000000070000003A49445F524142030000000000000000000000}
+    QBEDefinition.QBEFieldDefs = {
+      04000000040000000700000050414E4A414E4701000000000002000000424D01
+      0000000000050000005741535445010000000000030000005154590100000000
+      00}
+    BeforeQuery = QDimPakanBeforeQuery
+    Session = DMFrm.OS
+    Left = 616
+    Top = 72
+    object QSubTotal2PANJANG: TFloatField
+      FieldName = 'PANJANG'
+    end
+    object QSubTotal2BM: TFloatField
+      FieldName = 'BM'
+    end
+    object QSubTotal2WASTE: TFloatField
+      FieldName = 'WASTE'
+    end
+    object QSubTotal2QTY: TFloatField
+      FieldName = 'QTY'
+    end
+  end
+  object QLusi: TOracleDataSet
+    SQL.Strings = (
+      
+        'select sum(nvl(hari,0)) as helai, sum(nvl(rasio,0)) as lusi, sum' +
+        '(nvl(jam,0)) as panjang, sum(nvl(qty,0)) as berat from ipisma_db' +
+        '3.rab_detail'
+      'where id_rab=:id_rab and'
+      'arah='#39'LUSI'#39)
+    Variables.Data = {0300000001000000070000003A49445F524142030000000000000000000000}
+    QBEDefinition.QBEFieldDefs = {
+      0400000004000000040000004C5553490100000000000700000050414E4A414E
+      470100000000000500000042455241540100000000000500000048454C414901
+      0000000000}
+    BeforeQuery = QDimPakanBeforeQuery
+    Session = DMFrm.OS
+    Left = 752
+    Top = 88
+    object QLusiLUSI: TFloatField
+      FieldName = 'LUSI'
+    end
+    object QLusiPANJANG: TFloatField
+      FieldName = 'PANJANG'
+      DisplayFormat = '0.0,0'
+    end
+    object QLusiBERAT: TFloatField
+      FieldName = 'BERAT'
+      DisplayFormat = '0.0,0'
+    end
+    object QLusiHELAI: TFloatField
+      FieldName = 'HELAI'
+    end
+  end
+  object QTepi: TOracleDataSet
+    SQL.Strings = (
+      
+        'select sum(nvl(hari,0)) as tepi, sum(nvl(rasio,0)) as helai, sum' +
+        '(nvl(jam,0)) as panjang, sum(nvl(qty,0)) as berat from ipisma_db' +
+        '3.rab_detail'
+      'where id_rab=:id_rab and'
+      'arah='#39'TEPI'#39)
+    Variables.Data = {0300000001000000070000003A49445F524142030000000000000000000000}
+    QBEDefinition.QBEFieldDefs = {
+      04000000040000000700000050414E4A414E4701000000000005000000424552
+      415401000000000004000000544550490100000000000500000048454C414901
+      0000000000}
+    BeforeQuery = QDimPakanBeforeQuery
+    Session = DMFrm.OS
+    Left = 784
+    Top = 88
+    object QTepiTEPI: TFloatField
+      FieldName = 'TEPI'
+    end
+    object QTepiHELAI: TFloatField
+      FieldName = 'HELAI'
+    end
+    object QTepiPANJANG: TFloatField
+      FieldName = 'PANJANG'
+      DisplayFormat = '0.0,0'
+    end
+    object QTepiBERAT: TFloatField
+      FieldName = 'BERAT'
+      DisplayFormat = '0.0,0'
+    end
+  end
+  object dsQDimPakan: TwwDataSource
+    DataSet = QDimPakan
+    Left = 736
+    Top = 80
+  end
+  object dsQLusi: TwwDataSource
+    DataSet = QLusi
+    Left = 784
+    Top = 104
+  end
+  object dsQTepi: TwwDataSource
+    DataSet = QTepi
+    Left = 792
+    Top = 120
+  end
+end

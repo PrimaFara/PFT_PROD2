@@ -1,0 +1,2806 @@
+unit HasilTenun;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, Wwdbigrd, Wwdbgrid, ExtCtrls, StdCtrls, Wwdbcomb, DB,
+  OracleData, wwDialog, wwidlg, Wwdatsrc, wwSpeedButton, wwDBNavigator,
+  wwclearpanel, DBCtrls, wwdbedit, wwdbdatetimepicker, Mask, Wwdotdot,
+  ComCtrls, Buttons, QRCtrls, QuickRpt, wwdblook, Wwdbdlg, wwcheckbox,
+  Oracle, DateUtils, LMDCustomControl, LMDCustomPanel, LMDCustomBevelPanel,
+  LMDCustomParentPanel, LMDCustomGroupBox, LMDCustomButtonGroup,
+  LMDCustomRadioGroup, LMDRadioGroup, Spin;
+
+type
+  THasilTenunFrm = class(TForm)
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    Panel2: TPanel;
+    wwDBGrid2: TwwDBGrid;
+    BitBtn1: TBitBtn;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    wwDBGrid1: TwwDBGrid;
+    Panel6: TPanel;
+    QMaster: TOracleDataSet;
+    QMasterTANGGAL: TDateTimeField;
+    QMasterKETERANGAN: TStringField;
+    QMasterTGL_INSERT: TDateTimeField;
+    QMasterOPR_INSERT: TStringField;
+    QMasterISPOST: TStringField;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    Label3: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    DBEdit8: TDBEdit;
+    Label9: TLabel;
+    DBEdit9: TDBEdit;
+    DBMemo1: TDBMemo;
+    wwDBNavigator1: TwwDBNavigator;
+    wwDBNavigator1Prior: TwwNavButton;
+    wwDBNavigator1Next: TwwNavButton;
+    wwDBNavigator1Insert: TwwNavButton;
+    wwDBNavigator1Delete: TwwNavButton;
+    wwDBNavigator1Edit: TwwNavButton;
+    wwDBNavigator1Post: TwwNavButton;
+    wwDBNavigator1Cancel: TwwNavButton;
+    wwCheckBox1: TwwCheckBox;
+    QDetail: TOracleDataSet;
+    dsDetail: TwwDataSource;
+    QBrowse: TOracleDataSet;
+    dsQBrowse: TwwDataSource;
+    wwDBDateTimePicker1: TwwDBDateTimePicker;
+    dsMaster: TwwDataSource;
+    QMasterNO_REG: TFloatField;
+    QMasterNO_NOTA: TStringField;
+    QDetailNO_SERI_BEAM: TStringField;
+    QDetailSATUAN: TStringField;
+    QDetailQTY: TFloatField;
+    QDetailOPR_TENUN: TStringField;
+    QDetailTGL_INSERT: TDateTimeField;
+    QDetailOPR_INSERT: TStringField;
+    QDetailNO_REG: TFloatField;
+    QDetailLOKASI: TStringField;
+    QDetailPROSES: TStringField;
+    QDetailKONSTRUKSI: TStringField;
+    QDetailCORAK: TStringField;
+    QDetailTANGGAL: TDateTimeField;
+    QDetailPROSES2: TStringField;
+    QDetailLOKASI2: TStringField;
+    QDetailNIK: TStringField;
+    QMasterGRUP: TStringField;
+    QMasterSHIFT: TStringField;
+    QMasterINSPECTOR: TStringField;
+    QMasterNIK: TStringField;
+    QBrowseTANGGAL: TDateTimeField;
+    QBrowseNO_REG: TFloatField;
+    QBrowseISPOST: TStringField;
+    QBrowseGRUP: TStringField;
+    QBrowseSHIFT: TStringField;
+    DBEdit2: TDBEdit;
+    Label2: TLabel;
+    Label4: TLabel;
+    wwDBComboBox2: TwwDBComboBox;
+    LookKaryawan: TwwDBLookupComboDlg;
+    Label5: TLabel;
+    LookOperator: TwwDBLookupComboDlg;
+    LookLokasiProses2: TwwDBLookupComboDlg;
+    QMasterJNS_TRANSAKSI: TStringField;
+    QBrowsePROSES: TStringField;
+    QBrowseLOKASI: TStringField;
+    QBrowseKONSTRUKSI: TStringField;
+    QBrowseCORAK: TStringField;
+    QBrowseTGL_PRODUKSI: TDateTimeField;
+    QBrowseOPR_TENUN: TStringField;
+    QDetailBERAT: TFloatField;
+    QDetailKODI: TFloatField;
+    Button1: TButton;
+    Button2: TButton;
+    QAmbilData: TOracleQuery;
+    QDetailNO_PRODUKSI: TStringField;
+    QDetailGRUP: TStringField;
+    QBrowseNO_SERI_BEAM: TStringField;
+    QBrowseQTY: TFloatField;
+    QBrowseKODI: TFloatField;
+    QBrowsePCS: TFloatField;
+    Panel1: TPanel;
+    GroupBox1: TGroupBox;
+    Label6: TLabel;
+    VTglAwal: TwwDBDateTimePicker;
+    vTglAkhir: TwwDBDateTimePicker;
+    Panel7: TPanel;
+    vOperand: TLabel;
+    cbTanggal: TCheckBox;
+    BitBtn3: TBitBtn;
+    ECari: TEdit;
+    cbOtomatis: TCheckBox;
+    dbcField: TwwDBComboBox;
+    BitBtn4: TBitBtn;
+    QBrowseTotal: TOracleDataSet;
+    QBrowseTotalKODI: TFloatField;
+    QBrowseTotalPCS: TFloatField;
+    QBrowseNO_ORDER: TStringField;
+    rgTanggal: TLMDRadioGroup;
+    LRencord: TLabel;
+    QAmbilData2: TOracleQuery;
+    QBrowse2: TOracleDataSet;
+    QBrowse2NO_SERI_BEAM: TStringField;
+    QBrowse2NIK: TStringField;
+    QBrowse2OPR_TENUN: TStringField;
+    QBrowse2LOKASI: TStringField;
+    QBrowse2PROSES: TStringField;
+    QBrowse2GRUP: TStringField;
+    QBrowse2KD_KONSTRUKSI: TStringField;
+    QBrowse2NAMA_KONSTRUKSI: TStringField;
+    QBrowse2CORAK: TStringField;
+    QBrowse2HASIL: TFloatField;
+    QBrowse2HARI: TFloatField;
+    QBrowse2PERIODE_TANGGAL: TStringField;
+    dsQBrowse2: TwwDataSource;
+    TabSheet3: TTabSheet;
+    Panel8: TPanel;
+    GroupBox2: TGroupBox;
+    Label10: TLabel;
+    VTglAwal1: TwwDBDateTimePicker;
+    vTglAkhir1: TwwDBDateTimePicker;
+    BitBtn8: TBitBtn;
+    Panel9: TPanel;
+    vOperand1: TLabel;
+    cbTanggal1: TCheckBox;
+    BitBtn5: TBitBtn;
+    ECari1: TEdit;
+    cbOtomatis1: TCheckBox;
+    dbcField1: TwwDBComboBox;
+    BitBtn6: TBitBtn;
+    Panel10: TPanel;
+    Label12: TLabel;
+    BitBtn7: TBitBtn;
+    wwDBGrid3: TwwDBGrid;
+    QTotalBrowse2: TOracleDataSet;
+    QTotalBrowse2HASIL: TFloatField;
+    TabSheet4: TTabSheet;
+    Panel11: TPanel;
+    GroupBox3: TGroupBox;
+    Label11: TLabel;
+    vTglAwal2: TwwDBDateTimePicker;
+    vTglAkhir2: TwwDBDateTimePicker;
+    BitBtn9: TBitBtn;
+    Panel12: TPanel;
+    vOperand3: TLabel;
+    CheckBox1: TCheckBox;
+    BitBtn10: TBitBtn;
+    ECari3: TEdit;
+    cbOtomatis3: TCheckBox;
+    dbcField3: TwwDBComboBox;
+    BitBtn11: TBitBtn;
+    wwDBGrid4: TwwDBGrid;
+    Panel5: TPanel;
+    BitBtn2: TBitBtn;
+    Panel13: TPanel;
+    Label14: TLabel;
+    BitBtn12: TBitBtn;
+    dsQBrowse3: TwwDataSource;
+    QBrowse3: TOracleDataSet;
+    QAmbilData3: TOracleQuery;
+    QBrowseTotal3: TOracleDataSet;
+    FloatField3: TFloatField;
+    QBrowse3KONSTRUKSI: TStringField;
+    QBrowse3JENIS_MESIN: TStringField;
+    QBrowse3JML_POT_TENUN: TFloatField;
+    QBrowse3PROSENTASE: TFloatField;
+    QTransaksi: TOracleDataSet;
+    QTransaksiNAMA_TRANSAKSI: TStringField;
+    QTransaksiKD_TRANSAKSI: TStringField;
+    QTransaksiPREFIX: TStringField;
+    QTransaksiPLINE: TStringField;
+    QTransaksiPHEADER: TStringField;
+    QTransaksiDISTRIBUSI: TStringField;
+    QTransaksiTTD1: TStringField;
+    QTransaksiTTD2: TStringField;
+    QTransaksiTTD3: TStringField;
+    QTransaksiTTD4: TStringField;
+    QTransaksiDIV1: TStringField;
+    QTransaksiDIV2: TStringField;
+    QTransaksiDIV3: TStringField;
+    QTransaksiDIV4: TStringField;
+    QTransaksiJAB1: TStringField;
+    QTransaksiJAB2: TStringField;
+    QTransaksiJAB3: TStringField;
+    QTransaksiJAB4: TStringField;
+    QuickRep1: TQuickRep;
+    ColumnHeaderBand1: TQRBand;
+    QRLabel3: TQRLabel;
+    QRLabel16: TQRLabel;
+    QRLabel18: TQRLabel;
+    QRShape1: TQRShape;
+    QRShape2: TQRShape;
+    QRShape3: TQRShape;
+    QRShape5: TQRShape;
+    QRShape6: TQRShape;
+    QRShape7: TQRShape;
+    QRShape20: TQRShape;
+    QRLabel22: TQRLabel;
+    QRShape26: TQRShape;
+    QRShape54: TQRShape;
+    QRShape8: TQRShape;
+    QRLabel7: TQRLabel;
+    TitleBand1: TQRBand;
+    QRDBText8: TQRDBText;
+    QRDBText11: TQRDBText;
+    QRDBText12: TQRDBText;
+    QRLabel1: TQRLabel;
+    QRLabel2: TQRLabel;
+    QRLabel11: TQRLabel;
+    QRDBText28: TQRDBText;
+    DetailBand1: TQRBand;
+    QRSysData1: TQRSysData;
+    QRDBText9: TQRDBText;
+    QRDBText7: TQRDBText;
+    QRDBText5: TQRDBText;
+    QRShape4: TQRShape;
+    QRShape9: TQRShape;
+    QRShape10: TQRShape;
+    QRShape11: TQRShape;
+    QRShape21: TQRShape;
+    DBEdit7: TDBEdit;
+    QRShape12: TQRShape;
+    QRDBText2: TQRDBText;
+    SummaryBand1: TQRBand;
+    QRExpr1: TQRExpr;
+    QRShape15: TQRShape;
+    QRShape16: TQRShape;
+    QRShape18: TQRShape;
+    QRShape23: TQRShape;
+    QRShape24: TQRShape;
+    QRShape25: TQRShape;
+    QRExpr2: TQRExpr;
+    QRDBText29: TQRDBText;
+    QRDBText30: TQRDBText;
+    QRLabel8: TQRLabel;
+    QRLabel9: TQRLabel;
+    QRLabel10: TQRLabel;
+    QRDBText31: TQRDBText;
+    QRDBText32: TQRDBText;
+    QRDBText33: TQRDBText;
+    QRDBText34: TQRDBText;
+    QRDBText35: TQRDBText;
+    QRDBText36: TQRDBText;
+    QRLabel19: TQRLabel;
+    QRDBText1: TQRDBText;
+    QRLabel4: TQRLabel;
+    PageFooterBand1: TQRBand;
+    QRDBText10: TQRDBText;
+    QRSysData3: TQRSysData;
+    QTotalBrowse3: TOracleDataSet;
+    QBrowse3JML_POT_KODI: TFloatField;
+    BitBtn13: TBitBtn;
+    QRLabel6: TQRLabel;
+    QRLabel5: TQRLabel;
+    QRLabel12: TQRLabel;
+    QTotalBrowse3HASIL_POTONG: TFloatField;
+    QTotalBrowse3HASIL_KODI: TFloatField;
+    TabSheet5: TTabSheet;
+    Panel14: TPanel;
+    GroupBox4: TGroupBox;
+    Label15: TLabel;
+    vTglAwal3: TwwDBDateTimePicker;
+    vTglAkhir3: TwwDBDateTimePicker;
+    BitBtn14: TBitBtn;
+    Panel15: TPanel;
+    vOperand2: TLabel;
+    CheckBox3: TCheckBox;
+    BitBtn15: TBitBtn;
+    ECari2: TEdit;
+    cbOtomatis2: TCheckBox;
+    dbcField2: TwwDBComboBox;
+    BitBtn16: TBitBtn;
+    Panel16: TPanel;
+    Label17: TLabel;
+    BitBtn17: TBitBtn;
+    BitBtn18: TBitBtn;
+    wwDBGrid5: TwwDBGrid;
+    QAmbilData4: TOracleQuery;
+    QTotalBrowse4: TOracleDataSet;
+    QBrowse4: TOracleDataSet;
+    StringField1: TStringField;
+    StringField2: TStringField;
+    FloatField4: TFloatField;
+    FloatField5: TFloatField;
+    FloatField6: TFloatField;
+    dsQbrowse4: TwwDataSource;
+    QBrowseTotal4: TOracleDataSet;
+    QuickRep2: TQuickRep;
+    QRBand1: TQRBand;
+    QRLabel13: TQRLabel;
+    QRLabel14: TQRLabel;
+    QRLabel15: TQRLabel;
+    QRShape13: TQRShape;
+    QRShape14: TQRShape;
+    QRShape17: TQRShape;
+    QRShape19: TQRShape;
+    QRShape22: TQRShape;
+    QRShape27: TQRShape;
+    QRShape28: TQRShape;
+    QRLabel17: TQRLabel;
+    QRShape29: TQRShape;
+    QRShape30: TQRShape;
+    QRShape31: TQRShape;
+    QRLabel20: TQRLabel;
+    QRLabel21: TQRLabel;
+    QRLabel23: TQRLabel;
+    QRLabel24: TQRLabel;
+    QRBand2: TQRBand;
+    QRDBText3: TQRDBText;
+    QRDBText4: TQRDBText;
+    QRDBText6: TQRDBText;
+    QRLabel25: TQRLabel;
+    QRLabel26: TQRLabel;
+    QRLabel27: TQRLabel;
+    QRDBText13: TQRDBText;
+    QRBand3: TQRBand;
+    QRSysData2: TQRSysData;
+    QRDBText14: TQRDBText;
+    QRDBText15: TQRDBText;
+    QRDBText16: TQRDBText;
+    QRShape32: TQRShape;
+    QRShape33: TQRShape;
+    QRShape34: TQRShape;
+    QRShape35: TQRShape;
+    QRShape36: TQRShape;
+    DBEdit3: TDBEdit;
+    QRShape37: TQRShape;
+    QRDBText17: TQRDBText;
+    QRBand4: TQRBand;
+    QRExpr3: TQRExpr;
+    QRShape38: TQRShape;
+    QRShape39: TQRShape;
+    QRShape40: TQRShape;
+    QRShape41: TQRShape;
+    QRShape42: TQRShape;
+    QRShape43: TQRShape;
+    QRExpr4: TQRExpr;
+    QRDBText18: TQRDBText;
+    QRDBText19: TQRDBText;
+    QRLabel28: TQRLabel;
+    QRLabel29: TQRLabel;
+    QRLabel30: TQRLabel;
+    QRDBText20: TQRDBText;
+    QRDBText21: TQRDBText;
+    QRDBText22: TQRDBText;
+    QRDBText23: TQRDBText;
+    QRDBText24: TQRDBText;
+    QRDBText25: TQRDBText;
+    QRLabel31: TQRLabel;
+    QRDBText26: TQRDBText;
+    QRLabel32: TQRLabel;
+    QRBand5: TQRBand;
+    QRDBText27: TQRDBText;
+    QRSysData4: TQRSysData;
+    QTotalBrowse4HASIL_POTONG: TFloatField;
+    QTotalBrowse4HASIL_KODI: TFloatField;
+    QBrowseTotal4HASIL: TFloatField;
+    QBrowseTotal4KODI: TFloatField;
+    QuickRep3: TQuickRep;
+    QRBand6: TQRBand;
+    QRLabel33: TQRLabel;
+    QRLabel34: TQRLabel;
+    QRLabel35: TQRLabel;
+    QRShape44: TQRShape;
+    QRShape45: TQRShape;
+    QRShape46: TQRShape;
+    QRShape47: TQRShape;
+    QRShape48: TQRShape;
+    QRShape49: TQRShape;
+    QRShape50: TQRShape;
+    QRLabel36: TQRLabel;
+    QRShape51: TQRShape;
+    QRShape52: TQRShape;
+    QRShape53: TQRShape;
+    QRLabel37: TQRLabel;
+    QRLabel38: TQRLabel;
+    QRLabel39: TQRLabel;
+    QRLabel40: TQRLabel;
+    QRBand7: TQRBand;
+    QRDBText37: TQRDBText;
+    QRDBText38: TQRDBText;
+    QRDBText39: TQRDBText;
+    QRLabel41: TQRLabel;
+    QRLabel42: TQRLabel;
+    QRLabel43: TQRLabel;
+    QRDBText40: TQRDBText;
+    QRBand8: TQRBand;
+    QRSysData5: TQRSysData;
+    QRDBText41: TQRDBText;
+    QRDBText42: TQRDBText;
+    QRDBText43: TQRDBText;
+    QRShape55: TQRShape;
+    QRShape56: TQRShape;
+    QRShape57: TQRShape;
+    QRShape58: TQRShape;
+    QRShape59: TQRShape;
+    DBEdit4: TDBEdit;
+    QRShape60: TQRShape;
+    QRDBText44: TQRDBText;
+    QRBand9: TQRBand;
+    QRExpr5: TQRExpr;
+    QRShape61: TQRShape;
+    QRShape62: TQRShape;
+    QRShape63: TQRShape;
+    QRShape64: TQRShape;
+    QRShape65: TQRShape;
+    QRShape66: TQRShape;
+    QRExpr6: TQRExpr;
+    QRDBText45: TQRDBText;
+    QRDBText46: TQRDBText;
+    QRLabel44: TQRLabel;
+    QRLabel45: TQRLabel;
+    QRLabel46: TQRLabel;
+    QRDBText47: TQRDBText;
+    QRDBText48: TQRDBText;
+    QRDBText49: TQRDBText;
+    QRDBText50: TQRDBText;
+    QRDBText51: TQRDBText;
+    QRDBText52: TQRDBText;
+    QRLabel47: TQRLabel;
+    QRDBText53: TQRDBText;
+    QRLabel48: TQRLabel;
+    QRBand10: TQRBand;
+    QRDBText54: TQRDBText;
+    QRSysData6: TQRSysData;
+    QBrowseKP: TStringField;
+    QDetailKP: TStringField;
+    TabSheet6: TTabSheet;
+    Panel17: TPanel;
+    GroupBox5: TGroupBox;
+    Label13: TLabel;
+    vTglAwal4: TwwDBDateTimePicker;
+    vTglAkhir4: TwwDBDateTimePicker;
+    BitBtn19: TBitBtn;
+    Panel18: TPanel;
+    vOperand4: TLabel;
+    CheckBox5: TCheckBox;
+    BitBtn20: TBitBtn;
+    ECari4: TEdit;
+    cbOtomatis4: TCheckBox;
+    dbcField4: TwwDBComboBox;
+    BitBtn21: TBitBtn;
+    Panel19: TPanel;
+    Label18: TLabel;
+    BitBtn22: TBitBtn;
+    BitBtn23: TBitBtn;
+    dsQBrowse_Kons: TwwDataSource;
+    QBrowse_Kons: TOracleDataSet;
+    QBrowse_KonsKONSTRUKSI: TStringField;
+    QBrowse_KonsJENIS_MESIN: TStringField;
+    QBrowse_KonsJML_POT_TENUN: TFloatField;
+    QBrowse_KonsJML_POT_KODI: TFloatField;
+    QBrowse_KonsPROSENTASE: TFloatField;
+    QAmbilData5: TOracleQuery;
+    QTotalBrowse_Kons: TOracleDataSet;
+    QTotalBrowse_KonsHASIL_POTONG: TFloatField;
+    QTotalBrowse_KonsHASIL_KODI: TFloatField;
+    wwDBGrid6: TwwDBGrid;
+    QBrowseLOKASI_TENUN: TStringField;
+    Label16: TLabel;
+    TabSheet7: TTabSheet;
+    wwDBGrid7: TwwDBGrid;
+    Panel20: TPanel;
+    Label19: TLabel;
+    BitBtn24: TBitBtn;
+    BitBtn25: TBitBtn;
+    Panel21: TPanel;
+    GroupBox6: TGroupBox;
+    Label20: TLabel;
+    vTglAwal5: TwwDBDateTimePicker;
+    vTglAkhir5: TwwDBDateTimePicker;
+    Panel22: TPanel;
+    vOperand5: TLabel;
+    CheckBox7: TCheckBox;
+    BitBtn27: TBitBtn;
+    ECari5: TEdit;
+    cbOtomatis5: TCheckBox;
+    dbcField5: TwwDBComboBox;
+    BitBtn28: TBitBtn;
+    QLookBeam: TOracleDataSet;
+    LookBeam: TwwDBLookupComboDlg;
+    wwDBDateTimePicker4: TwwDBDateTimePicker;
+    QLookBeamTANGGAL: TDateTimeField;
+    QLookBeamKP: TStringField;
+    QLookBeamKONSTRUKSI: TStringField;
+    QLookBeamCORAK: TStringField;
+    QLookBeamNO_SERI_BEAM: TStringField;
+    QLookBeamNO_REG: TFloatField;
+    QLookBeamNO_BEAM: TStringField;
+    QLookBeamPROSES: TStringField;
+    QLookBeamLOKASI: TStringField;
+    QLookBeamPROSES_TUJUAN: TStringField;
+    QLookBeamLOKASI_TUJUAN: TStringField;
+    QLookBeamKD_LOKASI: TStringField;
+    QLookBeamKD_LOKASI_ORG: TStringField;
+    QLookBeamISI: TFloatField;
+    QLookBeamKETERANGAN: TStringField;
+    QLookBeamISPOST: TFloatField;
+    QLookBeamJENIS_MESIN: TStringField;
+    QLookBeamQTY_KG: TFloatField;
+    QLookBeamRESEP: TStringField;
+    QDetailJENIS_MESIN: TStringField;
+    QLookLokasiMesin: TOracleDataSet;
+    QLookLokasiMesinMYLOKASI: TStringField;
+    QLookLokasiMesinKD_LOKASI: TStringField;
+    QLookLokasiMesinLOKASI: TStringField;
+    QLookLokasiMesinPROSES: TStringField;
+    QLookLokasiMesinNAMA_MESIN: TStringField;
+    QLookSet: TOracleDataSet;
+    QLookGrup: TOracleDataSet;
+    QLookOperator: TOracleDataSet;
+    QLookOperatorNIK: TStringField;
+    QLookOperatorGRUP: TStringField;
+    QLookOperatorPROSES: TStringField;
+    QLookOperatorLOKASI: TStringField;
+    QLookOperatorNAMA_KARYAWAN: TStringField;
+    QLookOperatorJABATAN: TStringField;
+    QLookGrupGRUP: TStringField;
+    QLookLokasiProses: TOracleDataSet;
+    QLookLokasiProsesKODE: TStringField;
+    QLookLokasiProsesTANGGAL: TDateTimeField;
+    QLookLokasiProsesTGL_INSERT: TDateTimeField;
+    QLookLokasiProsesNO_SERI_BEAM: TStringField;
+    QLookLokasiProsesKONSTRUKSI: TStringField;
+    QLookLokasiProsesCORAK: TStringField;
+    QLookLokasiProsesKP: TStringField;
+    QLookLokasiProsesISI: TFloatField;
+    QLookLokasiProsesSISA: TFloatField;
+    QLookLokasiProsesPROSES: TStringField;
+    QLookLokasiProsesLOKASI: TStringField;
+    QLookLokasiProsesJENIS_MESIN: TStringField;
+    RadioGroup20: TRadioGroup;
+    QBrowse2KP: TStringField;
+    TabSheet8: TTabSheet;
+    Panel23: TPanel;
+    GroupBox7: TGroupBox;
+    Label22: TLabel;
+    vTglAwal6: TwwDBDateTimePicker;
+    vTglAkhir6: TwwDBDateTimePicker;
+    BitBtn29: TBitBtn;
+    Panel24: TPanel;
+    vOperand6: TLabel;
+    cbTanggal6: TCheckBox;
+    BitBtn30: TBitBtn;
+    ECari6: TEdit;
+    cbOtomatis6: TCheckBox;
+    dbcField6: TwwDBComboBox;
+    BitBtn31: TBitBtn;
+    wwDBGrid8: TwwDBGrid;
+    Panel25: TPanel;
+    Label24: TLabel;
+    BitBtn32: TBitBtn;
+    BitBtn33: TBitBtn;
+    QAmbilData6: TOracleQuery;
+    QBrowse6: TOracleDataSet;
+    QTotalBrowse6: TOracleDataSet;
+    QBrowse6KP: TStringField;
+    QBrowse6KONSTRUKSI: TStringField;
+    QBrowse6JENIS_MESIN: TStringField;
+    QBrowse6JML_POT_TENUN: TFloatField;
+    QBrowse6JML_POT_KODI: TFloatField;
+    QBrowse6PROSENTASE: TFloatField;
+    dsQBrowse6: TwwDataSource;
+    QTotalBrowse6HASIL_POTONG: TFloatField;
+    QTotalBrowse6HASIL_KODI: TFloatField;
+    QuickRep4: TQuickRep;
+    QRBand11: TQRBand;
+    QRLabel49: TQRLabel;
+    QRLabel50: TQRLabel;
+    QRLabel51: TQRLabel;
+    QRShape67: TQRShape;
+    QRShape68: TQRShape;
+    QRShape69: TQRShape;
+    QRShape70: TQRShape;
+    QRShape71: TQRShape;
+    QRShape72: TQRShape;
+    QRShape73: TQRShape;
+    QRLabel52: TQRLabel;
+    QRShape74: TQRShape;
+    QRShape75: TQRShape;
+    QRShape76: TQRShape;
+    QRLabel53: TQRLabel;
+    QRLabel54: TQRLabel;
+    QRLabel55: TQRLabel;
+    QRLabel56: TQRLabel;
+    QRBand12: TQRBand;
+    QRDBText55: TQRDBText;
+    QRDBText56: TQRDBText;
+    QRDBText57: TQRDBText;
+    QRLabel57: TQRLabel;
+    QRLabel58: TQRLabel;
+    QRLabel59: TQRLabel;
+    QRDBText58: TQRDBText;
+    QRBand13: TQRBand;
+    QRSysData7: TQRSysData;
+    QRDBText59: TQRDBText;
+    QRDBText60: TQRDBText;
+    QRDBText61: TQRDBText;
+    QRShape77: TQRShape;
+    QRShape78: TQRShape;
+    QRShape79: TQRShape;
+    QRShape80: TQRShape;
+    QRShape81: TQRShape;
+    DBEdit5: TDBEdit;
+    QRShape82: TQRShape;
+    QRDBText62: TQRDBText;
+    QRBand14: TQRBand;
+    QRExpr7: TQRExpr;
+    QRShape83: TQRShape;
+    QRShape84: TQRShape;
+    QRShape85: TQRShape;
+    QRShape86: TQRShape;
+    QRShape87: TQRShape;
+    QRShape88: TQRShape;
+    QRExpr8: TQRExpr;
+    QRDBText63: TQRDBText;
+    QRDBText64: TQRDBText;
+    QRLabel60: TQRLabel;
+    QRLabel61: TQRLabel;
+    QRLabel62: TQRLabel;
+    QRDBText65: TQRDBText;
+    QRDBText66: TQRDBText;
+    QRDBText67: TQRDBText;
+    QRDBText68: TQRDBText;
+    QRDBText69: TQRDBText;
+    QRDBText70: TQRDBText;
+    QRLabel63: TQRLabel;
+    QRDBText71: TQRDBText;
+    QRLabel64: TQRLabel;
+    QRBand15: TQRBand;
+    QRDBText72: TQRDBText;
+    QRSysData8: TQRSysData;
+    TabSheet9: TTabSheet;
+    Panel26: TPanel;
+    GroupBox8: TGroupBox;
+    Label23: TLabel;
+    vTglAwal7: TwwDBDateTimePicker;
+    vTglAkhir7: TwwDBDateTimePicker;
+    Panel27: TPanel;
+    BitBtn36: TBitBtn;
+    QBrowse7: TOracleDataSet;
+    QBrowseTotal7: TOracleDataSet;
+    dsQBrowse7: TwwDataSource;
+    QBrowse7LOKASI: TStringField;
+    QBrowse7GRUP: TStringField;
+    QBrowse7KODI: TFloatField;
+    QBrowse7PCS: TFloatField;
+    QBrowseTotal7KODI: TFloatField;
+    QBrowseTotal7PCS: TFloatField;
+    RG_Loom: TRadioGroup;
+    RG_Grup2: TRadioGroup;
+    BitBtn34: TBitBtn;
+    RG_Grup: TRadioGroup;
+    QBrowse7LOKASI_TENUN: TStringField;
+    wwDBGrid9: TwwDBGrid;
+    QDetailRM_LUSI: TFloatField;
+    QDetailRM_PAKAN: TFloatField;
+    QBrowseKG_LUSI: TFloatField;
+    QBrowseKG_PAKAN: TFloatField;
+    QBrowseRM_LUSI: TFloatField;
+    QBrowseRM_PAKAN: TFloatField;
+    QBrowseBEAM: TStringField;
+    QBrowseTotalKG_LUSI: TFloatField;
+    QBrowseTotalKG_PAKAN: TFloatField;
+    QBrowseTotal8: TOracleDataSet;
+    QBrowse8: TOracleDataSet;
+    dsQBrowse8: TwwDataSource;
+    QBrowse8LOKASI: TStringField;
+    QBrowse8PROSES: TStringField;
+    QBrowse8PCS: TFloatField;
+    QBrowse8KODI: TFloatField;
+    QBrowse8BEAM: TStringField;
+    QBrowseTotal8PCS: TFloatField;
+    QBrowseTotal8KODI: TFloatField;
+    BitBtn26: TBitBtn;
+    TabSheet10: TTabSheet;
+    Panel28: TPanel;
+    GroupBox9: TGroupBox;
+    Label21: TLabel;
+    vTglAwal10: TwwDBDateTimePicker;
+    vTglAkhir10: TwwDBDateTimePicker;
+    Panel29: TPanel;
+    vOperand10: TLabel;
+    Label26: TLabel;
+    BitBtn35: TBitBtn;
+    ECari10: TEdit;
+    cbOtomatis10: TCheckBox;
+    dbcField10: TwwDBComboBox;
+    BitBtn37: TBitBtn;
+    RadioGroup10: TRadioGroup;
+    SpinEdit1: TSpinEdit;
+    wwDBGrid10: TwwDBGrid;
+    QBrowse10: TOracleDataSet;
+    dsQBrowse10: TwwDataSource;
+    QAmbil_Data10: TOracleQuery;
+    QBrowseTotal10: TOracleDataSet;
+    QBrowse10PROSES: TStringField;
+    QBrowse10LOKASI: TStringField;
+    QBrowse10KP: TStringField;
+    QBrowse10KONSTRUKSI: TStringField;
+    QBrowse10RESEP: TStringField;
+    QBrowse10SISIR: TIntegerField;
+    QBrowse10PICK: TIntegerField;
+    QBrowse10BK_A: TFloatField;
+    QBrowse10BS_A: TFloatField;
+    QBrowse10BK_B: TFloatField;
+    QBrowse10BS_B: TFloatField;
+    QBrowse10BK_C: TFloatField;
+    QBrowse10BS_C: TFloatField;
+    QBrowse10BK_D: TFloatField;
+    QBrowse10BS_D: TFloatField;
+    QBrowse10BK_E: TFloatField;
+    QBrowse10BS_E: TFloatField;
+    QBrowse10BK_F: TFloatField;
+    QBrowse10BS_F: TFloatField;
+    QBrowse10BK_G: TFloatField;
+    QBrowse10BS_G: TFloatField;
+    QBrowse10QTY_A: TFloatField;
+    QBrowse10QTY_B: TFloatField;
+    QBrowse10QTY_C: TFloatField;
+    QBrowse10QTY_D: TFloatField;
+    QBrowse10QTY_E: TFloatField;
+    QBrowse10QTY_F: TFloatField;
+    QBrowse10QTY_G: TFloatField;
+    QBrowse10MESIN: TStringField;
+    QBrowse10TGL_NAIK: TDateTimeField;
+    QBrowseTotal10PROD_A: TFloatField;
+    QBrowseTotal10PROD_B: TFloatField;
+    QBrowseTotal10PROD_C: TFloatField;
+    QBrowseTotal10PROD_D: TFloatField;
+    QBrowseTotal10PROD_E: TFloatField;
+    QBrowseTotal10PROD_F: TFloatField;
+    QBrowseTotal10PROD_G: TFloatField;
+    QBrowseTotal10TOTAL: TFloatField;
+    QBrowse10JML_PROD: TFloatField;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure TabSheet2Show(Sender: TObject);
+    procedure TabSheet1Show(Sender: TObject);
+    procedure QMasterBeforeEdit(DataSet: TDataSet);
+    procedure QDetailNewRecord(DataSet: TDataSet);
+    procedure vTglAwalChange(Sender: TObject);
+    procedure BtnExportClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure QMasterNewRecord(DataSet: TDataSet);
+    procedure wwDBGrid1Enter(Sender: TObject);
+    procedure LookKaryawanEnter(Sender: TObject);
+    procedure LookKaryawanCloseUp(Sender: TObject; LookupTable,
+      FillTable: TDataSet; modified: Boolean);
+    procedure LookOperatorCloseUp(Sender: TObject; LookupTable,
+      FillTable: TDataSet; modified: Boolean);
+    procedure LookLokasiProses2Enter(Sender: TObject);
+    procedure LookLokasiProses2CloseUp(Sender: TObject; LookupTable,
+      FillTable: TDataSet; modified: Boolean);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure vTglAkhirChange(Sender: TObject);
+    procedure cbOtomatisClick(Sender: TObject);
+    procedure dbcFieldEnter(Sender: TObject);
+    procedure vOperandClick(Sender: TObject);
+    procedure cbTanggalClick(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
+    procedure wwDBGrid2TitleButtonClick(Sender: TObject;
+      AFieldName: String);
+    procedure QBrowseAfterScroll(DataSet: TDataSet);
+    procedure BitBtn8Click(Sender: TObject);
+    procedure BitBtn5Click(Sender: TObject);
+    procedure QBrowse2AfterScroll(DataSet: TDataSet);
+    procedure dbcField1Enter(Sender: TObject);
+    procedure VTglAwal1Change(Sender: TObject);
+    procedure vOperand1Click(Sender: TObject);
+    procedure BitBtn21Click(Sender: TObject);
+    procedure QBrowse3AfterScroll(DataSet: TDataSet);
+    procedure BitBtn25Click(Sender: TObject);
+    procedure BitBtn23Click(Sender: TObject);
+    procedure BitBtn9Click(Sender: TObject);
+    procedure vTglAwal2Change(Sender: TObject);
+    procedure BitBtn13Click(Sender: TObject);
+    procedure BitBtn11Click(Sender: TObject);
+    procedure BitBtn14Click(Sender: TObject);
+    procedure dbcField2Enter(Sender: TObject);
+    procedure vOperand2Click(Sender: TObject);
+    procedure BitBtn15Click(Sender: TObject);
+    procedure BitBtn16Click(Sender: TObject);
+    procedure vTglAkhir2Change(Sender: TObject);
+    procedure vTglAwal3Change(Sender: TObject);
+    procedure vTglAkhir3Change(Sender: TObject);
+    procedure BitBtn18Click(Sender: TObject);
+    procedure BitBtn10Click(Sender: TObject);
+    procedure BitBtn19Click(Sender: TObject);
+    procedure vTglAwal4Change(Sender: TObject);
+    procedure vTglAkhir4Change(Sender: TObject);
+    procedure BitBtn20Click(Sender: TObject);
+    procedure QBrowseCalcFields(DataSet: TDataSet);
+    procedure wwDBComboBox2Change(Sender: TObject);
+    procedure LookBeamCloseUp(Sender: TObject; LookupTable,
+      FillTable: TDataSet; modified: Boolean);
+    procedure LookBeamEnter(Sender: TObject);
+    procedure LookOperatorEnter(Sender: TObject);
+    procedure LookGrupCloseUp(Sender: TObject; LookupTable,
+      FillTable: TDataSet; modified: Boolean);
+    procedure LookGrupEnter(Sender: TObject);
+    procedure QLookOperatorBeforeQuery(Sender: TOracleDataSet);
+    procedure QMasterAfterCancel(DataSet: TDataSet);
+    procedure QMasterAfterDelete(DataSet: TDataSet);
+    procedure vTglAwal6Change(Sender: TObject);
+    procedure vTglAkhir6Change(Sender: TObject);
+    procedure BitBtn29Click(Sender: TObject);
+    procedure vOperand6Click(Sender: TObject);
+    procedure cbOtomatis6Click(Sender: TObject);
+    procedure dbcField6Enter(Sender: TObject);
+    procedure cbTanggal6Click(Sender: TObject);
+    procedure BitBtn30Click(Sender: TObject);
+    procedure BitBtn31Click(Sender: TObject);
+    procedure BitBtn33Click(Sender: TObject);
+    procedure QBrowse6AfterScroll(DataSet: TDataSet);
+    procedure BitBtn34Click(Sender: TObject);
+    procedure vTglAwal7Change(Sender: TObject);
+    procedure vTglAkhir7Change(Sender: TObject);
+    procedure QBrowse7AfterScroll(DataSet: TDataSet);
+    procedure BitBtn36Click(Sender: TObject);
+    procedure wwDBGrid9TitleButtonClick(Sender: TObject;
+      AFieldName: String);
+    procedure QBrowse7CalcFields(DataSet: TDataSet);
+    procedure wwDBGrid8TitleButtonClick(Sender: TObject;
+      AFieldName: String);
+    procedure wwDBGrid5TitleButtonClick(Sender: TObject;
+      AFieldName: String);
+    procedure wwDBGrid4TitleButtonClick(Sender: TObject;
+      AFieldName: String);
+    procedure wwDBGrid6TitleButtonClick(Sender: TObject;
+      AFieldName: String);
+    procedure wwDBGrid3TitleButtonClick(Sender: TObject;
+      AFieldName: String);
+    procedure wwDBGrid7TitleButtonClick(Sender: TObject;
+      AFieldName: String);
+    procedure QBrowse4AfterScroll(DataSet: TDataSet);
+    procedure cbOtomatis1Click(Sender: TObject);
+    procedure cbOtomatis2Click(Sender: TObject);
+    procedure cbOtomatis3Click(Sender: TObject);
+    procedure cbOtomatis4Click(Sender: TObject);
+    procedure cbOtomatis5Click(Sender: TObject);
+    procedure vOperand3Click(Sender: TObject);
+    procedure vOperand4Click(Sender: TObject);
+    procedure vOperand5Click(Sender: TObject);
+    procedure dbcField3Enter(Sender: TObject);
+    procedure dbcField4Enter(Sender: TObject);
+    procedure dbcField5Enter(Sender: TObject);
+    procedure QBrowse_KonsAfterScroll(DataSet: TDataSet);
+    procedure vTglAkhir5Change(Sender: TObject);
+    procedure vTglAwal5Change(Sender: TObject);
+    procedure QBrowse8AfterScroll(DataSet: TDataSet);
+    procedure BitBtn26Click(Sender: TObject);
+    procedure BitBtn27Click(Sender: TObject);
+    procedure vTglAwal10Change(Sender: TObject);
+    procedure vTglAkhir10Change(Sender: TObject);
+    procedure BitBtn35Click(Sender: TObject);
+    procedure BitBtn37Click(Sender: TObject);
+    procedure QBrowse10CalcFields(DataSet: TDataSet);
+    procedure BitBtn6Click(Sender: TObject);
+
+
+ {   procedure FormKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);        }
+
+
+
+  private
+    { Private declarations }
+    vrasio, vrasio3: real;
+    vorder, vfilter, vlokasi, vproses, vnoseri, vkonstruksi, vcorak, vjns_msn,vKP: String;
+    t1, t2, t3, t4, t5, t6 : real;
+    t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19, t20, t21, t22 : real;
+  public
+    { Public declarations }
+    vkd_lokasi, vjns_transaksi : String;
+  end;
+
+var
+  HasilTenunFrm: THasilTenunFrm;
+
+implementation
+
+uses DM, Kriteria_Tanggal1, BPHasilTenun;
+
+{$R *.dfm}
+
+procedure THasilTenunFrm.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  Action:=caFree;
+  HasilTenunFrm:=Nil;
+end;
+
+procedure THasilTenunFrm.TabSheet2Show(Sender: TObject);
+begin
+  vfilter:=' where (tanggal>=to_date('''+FormatDateTime('dd/mm/yyyy',VTglAwal.Date)+''',''dd/mm/yyyy'') and tanggal<=(to_date('''+FormatDateTime('dd/mm/yyyy',VTglAkhir.Date)+''',''dd/mm/yyyy'')+1-1/86400))';
+ // QBrowse.Open;
+  QBrowse.Close;
+  QBrowse.SetVariable('myparam',vfilter);
+  QBrowse.Open;  
+end;
+
+procedure THasilTenunFrm.TabSheet1Show(Sender: TObject);
+begin
+  QDetail.Open;
+  if QBrowse.Active then
+  begin
+    QMaster.Close;
+    QMaster.SetVariable('no_reg',QBrowseNO_REG.AsInteger);
+    QMaster.Open;
+    QDetail.Open;
+
+  end;
+
+end;
+
+procedure THasilTenunFrm.QMasterBeforeEdit(DataSet: TDataSet);
+begin
+    if QMasterISPOST.AsString='1' then
+    begin
+       ShowMessage('Maaf, sudah di-POST !, tidak bisa diubah...');
+       Abort;
+    end;
+end;
+
+procedure THasilTenunFrm.QDetailNewRecord(DataSet: TDataSet);
+begin
+
+  QDetailNO_PRODUKSI.AsString:=FormatDateTime('yymmdd',QMasterTANGGAL.AsDateTime);
+  QDetailNO_REG.AsString:=QMasterNO_REG.AsString;
+  QDetailLOKASI.AsString:=vlokasi;
+  QDetailPROSES.AsString:=vproses;
+  QDetailNO_SERI_BEAM.AsString:=vnoseri;
+  QDetailKONSTRUKSI.AsString:=vkonstruksi;
+  QDetailCORAK.AsString:=vcorak;
+  QDetailKP.AsString:=vKP;
+  QDetailJENIS_MESIN.AsString:=vjns_msn;
+  QDetailSATUAN.AsString:='PCS';
+  //QDetailTANGGAL.AsDateTime:=trunc(QMasterTANGGAL.AsDateTime);
+end;
+
+procedure THasilTenunFrm.vTglAwalChange(Sender: TObject);
+begin
+  vTglAkhir.DateTime:=EndOfTheMonth(vTglAwal.Date);
+end;
+
+procedure THasilTenunFrm.BtnExportClick(Sender: TObject);
+begin
+  if QBrowse.Active then
+  begin
+     DMFrm.SaveDialog1.DefaultExt:='XLK';
+     DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+     DMFrm.SaveDialog1.FileName:='DETAIL HASIL TENUN';
+     wwDBGrid2.ExportOptions.TitleName:='DETAIL HASIL TENUN';
+       if DMFrm.SaveDialog1.Execute then
+       begin
+         try
+         wwDBGrid2.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+         wwDBGrid2.ExportOptions.Save;
+         ShowMessage('Simpan Sukses !');
+         except
+         ShowMessage('Simpan Gagal !');
+         end;
+       end;
+  end
+  else
+    ShowMessage('Tabel belum di-OPEN !');
+
+end;
+
+procedure THasilTenunFrm.FormShow(Sender: TObject);
+begin
+  vTglAwal.Date:=Date;
+end;
+
+procedure THasilTenunFrm.QMasterNewRecord(DataSet: TDataSet);
+begin
+  QMasterISPOST.AsString:='0';
+  QMasterJNS_TRANSAKSI.AsString:=vjns_transaksi;
+  Label16.Caption:='';
+end;
+
+procedure THasilTenunFrm.wwDBGrid1Enter(Sender: TObject);
+begin
+  QDetail.Close;
+  QDetail.Open;
+  if QMaster.State<>dsBrowse then
+  try
+    QMaster.Post;
+  except
+    ShowMessage('Maaf, ada masalah di pengisian MASTER !');
+  end;
+end;
+
+procedure THasilTenunFrm.LookKaryawanEnter(Sender: TObject);
+begin
+  DMFrm.MKaryawanAktif.Open;
+end;
+
+procedure THasilTenunFrm.LookKaryawanCloseUp(Sender: TObject; LookupTable,
+  FillTable: TDataSet; modified: Boolean);
+begin
+  if modified then
+    QMasterINSPECTOR.AsString:=DMFrm.MKaryawanAktifNAMA_KARYAWAN.AsString;
+end;
+
+procedure THasilTenunFrm.LookOperatorCloseUp(Sender: TObject; LookupTable,
+  FillTable: TDataSet; modified: Boolean);
+begin
+  if modified then
+    //QDetailOPR_TENUN.AsString:=DMFrm.MKaryawanAktifNAMA_KARYAWAN.AsString;
+    QDetailGRUP.AsString:=QLookOperatorGRUP.AsString;
+    QDetailNIK.AsString:=QLookOperatorNIK.AsString;
+    QDetailOPR_TENUN.AsString:=QLookOperatorNAMA_KARYAWAN.AsString;
+end;
+
+procedure THasilTenunFrm.LookLokasiProses2Enter(Sender: TObject);
+begin
+  QLookLokasiProses.Close;
+  QLookLokasiProses.SetVariable('plokasi',QMasterSHIFT.AsString);
+  QLookLokasiProses.Open;
+  //QLookLokasiMesin.Open;
+end;
+
+procedure THasilTenunFrm.LookLokasiProses2CloseUp(Sender: TObject;
+  LookupTable, FillTable: TDataSet; modified: Boolean);
+begin
+  if modified then
+  begin
+  QDetailLOKASI.AsString:=QLookLokasiProsesLOKASI.AsString;
+    vlokasi:=QLookLokasiProsesLOKASI.AsString;
+  QDetailPROSES.AsString:=QLookLokasiProsesPROSES.AsString;
+    vproses:=QLookLokasiProsesPROSES.AsString;
+  QDetailKONSTRUKSI.AsString:=QLookLokasiProsesKONSTRUKSI.AsString;
+    vkonstruksi:=QLookLokasiProsesKONSTRUKSI.AsString;
+  QDetailCORAK.AsString:=QLookLokasiProsesCORAK.AsString;
+    vcorak:=QLookLokasiProsesCORAK.AsString;
+  QDetailNO_SERI_BEAM.AsString:=QLookLokasiProsesNO_SERI_BEAM.AsString;
+    vnoseri:=QLookLokasiProsesNO_SERI_BEAM.AsString;
+  QDetailjENIS_MESIN.AsString:=QLookLokasiProsesJENIS_MESIN.AsString;
+    vjns_msn:=QLookLokasiProsesJENIS_MESIN.AsString;
+  QDetailKP.AsString:=QLookLokasiProsesKP.AsString;
+    vKP:=QLookLokasiProsesKP.AsString;
+  end;
+  {QDetailLOKASI.AsString:=QLookLokasiMesinLOKASI.AsString;
+  vlokasi:=QLookLokasiMesinLOKASI.AsString;
+  QDetailPROSES.AsString:=QLookLokasiMesinPROSES.AsString;
+  vproses:=QLookLokasiMesinPROSES.AsString;
+  QDetailJENIS_MESIN.AsString:=QLookLokasiMesinNAMA_MESIN.AsString;  }
+end;
+
+procedure THasilTenunFrm.Button1Click(Sender: TObject);
+begin
+  if (QMaster.State=dsBrowse) and (QMasterNO_REG.AsInteger>0) then
+  begin
+    BPHasilTenunFrm:=TBPHasilTenunFrm.Create(Self);
+    BPHasilTenunFrm.ShowModal;
+    BPHasilTenunFrm.Free;
+  end;
+end;
+
+procedure THasilTenunFrm.Button2Click(Sender: TObject);
+begin
+  QAmbilData.Close;
+  QAmbilData.SetVariable('no_reg',QMasterNO_REG.AsInteger);
+  QAmbilData.SetVariable('no_produksi',FormatDateTime('yymmdd',QMasterTANGGAL.AsDateTime));
+  QAmbilData.Execute;
+  QDetail.Close;
+  QDetail.Open;
+end;
+
+procedure THasilTenunFrm.vTglAkhirChange(Sender: TObject);
+begin
+  if VTglAwal.Date>vTglAkhir.Date then
+  begin
+      ShowMessage('Tanggal Akhir harus LEBIH BESAR dari Tanggal Awal !');
+      vTglAkhir.Date:=VTglAwal.Date;
+  end;           
+end;
+
+procedure THasilTenunFrm.cbOtomatisClick(Sender: TObject);
+begin
+  if cbOtomatis.Checked then
+  begin
+    ShowMessage('Mencari data pada kolom paling kiri.'+#13+'Urutkan data terlebih dahulu supaya mudah mencari !');
+    wwDBGrid2.Options:=wwDBGrid2.Options+[dgAlwaysShowSelection];
+  end
+    else
+    wwDBGrid2.Options:=wwDBGrid2.Options-[dgAlwaysShowSelection];
+  ECari.SetFocus;
+
+end;
+
+procedure THasilTenunFrm.dbcFieldEnter(Sender: TObject);
+var
+  i : Word;
+begin
+  if (QBrowse.Active) and (dbcField.Items.Count=1) then
+  for i:=0 to wwDBGrid2.FieldCount-1 do
+    if (UpperCase(wwDBGrid2.Columns[i].FieldName)<>'TANGGAL') or (UpperCase(wwDBGrid2.Columns[i].FieldName)<>'TGL_PRODUKSI')then
+      dbcField.Items.Add(wwDBGrid2.Columns[i].FieldName);
+
+end;
+
+procedure THasilTenunFrm.vOperandClick(Sender: TObject);
+begin
+  if vOperand.Caption='LIKE' then
+    vOperand.Caption:='='
+    else
+      vOperand.Caption:='LIKE';
+
+end;
+
+procedure THasilTenunFrm.cbTanggalClick(Sender: TObject);
+begin
+  if cbTanggal.Checked then
+  begin
+    VTglAwal.Enabled:=cbTanggal.Checked;
+    vTglAkhir.Enabled:=cbTanggal.Checked;
+    VTglAwal.SetFocus;
+  end
+  else
+    ECari.SetFocus;
+
+end;
+
+procedure THasilTenunFrm.BitBtn3Click(Sender: TObject);
+var
+  i : word;
+  vpertama : boolean;
+  vloom,vrgTanggal,vgrup : String;
+begin
+  QBrowse.Open;
+  vpertama:=True;
+  vrgTanggal:='TANGGAL';
+  if cbTanggal.Checked then
+  begin
+    case rgTanggal.ItemIndex of
+    0 : vrgTanggal:='TANGGAL';
+    1 : vrgTanggal:='TGL_PRODUKSI';
+    end;
+    vfilter:=' where ('+vrgTanggal+'>=to_date('''+FormatDateTime('dd/mm/yyyy',VTglAwal.Date)+''',''dd/mm/yyyy'') and '+vrgTanggal+'<=(to_date('''+FormatDateTime('dd/mm/yyyy',VTglAkhir.Date)+''',''dd/mm/yyyy'')+1-1/86400)) and (';
+  end
+  else
+    vfilter:=' where (';
+  if (QBrowse.FieldCount>=1) then
+  begin
+    if dbcField.ItemIndex=0 then
+    begin
+      for i:=0 to wwDBGrid2.Selected.Count-1 do
+  //    for i:=0 to QBrowse.FieldCount-1 do
+      begin
+        if (QBrowse.FieldByName(wwDBGrid2.Columns[i].FieldName).FieldKind=fkData) and (UpperCase(wwDBGrid2.Columns[i].FieldName)<>'TANGGAL')
+        and (UpperCase(wwDBGrid2.Columns[i].FieldName)<>'TGL_PRODUKSI') then
+        begin
+          if vpertama then
+            begin
+              if vOperand.Caption='LIKE' then
+                vfilter:=vfilter+wwDBGrid2.Columns[i].FieldName+' like ''%'+ECari.Text+'%'''
+                else
+                   vfilter:=vfilter+wwDBGrid2.Columns[i].FieldName+' = '''+ECari.Text+'''';
+              vpertama:=False;
+            end
+            else
+              if vOperand.Caption='LIKE' then
+                vfilter:=vfilter+' or '+wwDBGrid2.Columns[i].FieldName+' like ''%'+ECari.Text+'%'''
+                else
+                  vfilter:=vfilter+' or '+wwDBGrid2.Columns[i].FieldName+' = '''+ECari.Text+''''
+        end;
+      end;
+    end
+    else
+      if vOperand.Caption='LIKE' then
+         vfilter:=vfilter+dbcField.Text+' like ''%'+ECari.Text+'%'''
+         else
+           vfilter:=vfilter+dbcField.Text+' = '''+ECari.Text+'''';
+    vfilter:=vfilter+')';
+    if QBrowse.Active then
+      vorder:=' order by '+wwDBGrid2.Columns[0].FieldName
+      else
+        vorder:=' order by no_reg';
+
+  end;
+  QBrowse.DisableControls;
+  QBrowse.Close;
+  case RadioGroup20.ItemIndex of
+  0 : vloom:='%2%';
+  1 : vloom:='%3%';
+  2 : vloom:='%5%';
+  3 : vloom:='%';
+  end;
+  case RG_Grup.ItemIndex of
+    0: vgrup:='A';
+    1: vgrup:='B';
+    2: vgrup:='C';
+    3: vgrup:='D';
+    4: vgrup:='E';
+    5: vgrup:='F';
+    6: vgrup:='G';
+ //   7: vgrup:='DS';
+    7: vgrup:='%';
+  end;
+   // showmessage('kne1') ;
+  QBrowse.SetVariable('loom',vloom);
+  QBrowse.SetVariable('grup',vgrup);
+  QBrowse.SetVariable('myparam',vfilter+vorder);
+  QBrowse.Open;
+  QBrowse.EnableControls;
+  //showmessage('kne2') ;
+  QBrowseTotal.Close;
+  QBrowseTotal.SetVariable('myparam',vfilter);
+  QBrowseTotal.SetVariable('loom',vloom);
+  QBrowseTotal.SetVariable('grup',vgrup);
+  // QBrowseTotal.SetVariable('myparam',vfilter+' and loom like '''+vloom+'''');
+  QBrowseTotal.Open;
+ // QBrowse.EnableControls;
+  wwDBGrid2.ColumnByName('KODI').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotalKODI.AsFloat);
+  wwDBGrid2.ColumnByName('PCS').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotalPCS.AsFloat);
+  wwDBGrid2.ColumnByName('KG_LUSI').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotalKG_LUSI.AsFloat);
+  wwDBGrid2.ColumnByName('KG_PAKAN').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotalKG_PAKAN.AsFloat);
+end;
+
+procedure THasilTenunFrm.wwDBGrid2TitleButtonClick(Sender: TObject;
+  AFieldName: String);
+begin
+  if ((Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName<>'') then
+  begin
+     if (Sender as TwwDBGrid).DataSource.DataSet.FieldByName(AFieldName).FieldKind=fkData then
+        begin
+          if vorder=' ASC' then
+              vorder:=' DESC'
+          else
+              vorder:=' ASC';
+          (Sender as TwwDBGrid).DataSource.DataSet.DisableControls;
+          (Sender as TwwDBGrid).DataSource.DataSet.Close;
+          ((Sender as TwwDBGrid).DataSource.DataSet as TOracleDataSet).SetVariable('myparam',vfilter+' order by '+(Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName+vorder);
+          (Sender as TwwDBGrid).DataSource.DataSet.Open;
+          (Sender as TwwDBGrid).DataSource.DataSet.EnableControls;
+        end
+        else
+          ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+  end
+  else
+  ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+
+end;
+
+procedure THasilTenunFrm.QBrowseAfterScroll(DataSet: TDataSet);
+begin
+{azmi}
+  LRencord.Caption:=IntToStr(QBrowse.RecNo)+' of '+IntToStr(QBrowse.RecordCount);
+{azmi}
+end;
+
+procedure THasilTenunFrm.BitBtn8Click(Sender: TObject);
+begin
+QBrowse2.Close;
+QAmbilData2.Close;
+QAmbilData2.SetVariable('pawal', VTglAwal1.Date);
+QAmbilData2.SetVariable('pakhir', vTglAkhir1.Date);
+QAmbilData2.Execute;
+vorder:=' order by lokasi,NIK, Proses';
+QBrowse2.SetVariable('myparam',vorder );
+QTotalBrowse2.Close;
+QTotalBrowse2.SetVariable('myparam', vorder);
+QTotalBrowse2.Open;
+QBrowse2.Open;
+wwDBGrid3.ColumnByName('hasil').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse2HASIL.AsFloat);
+end;
+
+procedure THasilTenunFrm.BitBtn5Click(Sender: TObject);
+var
+  i : word;
+  vpertama : boolean;
+begin
+QBrowse2.Open;
+  vpertama:=True;
+//  if cbTanggal1.Checked then
+//    vfilter:=' where (tanggal>=to_date('''+FormatDateTime('dd/mm/yyyy',VTglAwal1.Date)+''',''dd/mm/yyyy'') and tanggal<=(to_date('''+FormatDateTime('dd/mm/yyyy',VTglAkhir1.Date)+''',''dd/mm/yyyy'')+1-1/86400)) and ('
+//  else
+    vfilter:=' where (';
+  if (QBrowse2.FieldCount>=1) then
+  begin
+    if dbcField1.ItemIndex=0 then
+    begin
+      for i:=0 to wwDBGrid3.Selected.Count-1 do
+  //    for i:=0 to QBrowse.FieldCount-1 do
+      begin
+        if (QBrowse2.FieldByName(wwDBGrid3.Columns[i].FieldName).FieldKind=fkData) and (UpperCase(wwDBGrid3.Columns[i].FieldName)<>'NO_SERI_BEAM') then
+        begin
+          if vpertama then
+            begin
+              if vOperand1.Caption='LIKE' then
+                vfilter:=vfilter+wwDBGrid3.Columns[i].FieldName+' like ''%'+ECari1.Text+'%'''
+                else
+                   vfilter:=vfilter+wwDBGrid3.Columns[i].FieldName+' = '''+ECari1.Text+'''';
+              vpertama:=False;
+            end
+            else
+              if vOperand1.Caption='LIKE' then
+                vfilter:=vfilter+' or '+wwDBGrid3.Columns[i].FieldName+' like ''%'+ECari1.Text+'%'''
+                else
+                  vfilter:=vfilter+' or '+wwDBGrid3.Columns[i].FieldName+' = '''+ECari1.Text+''''
+        end;
+      end;
+    end
+    else
+      if vOperand1.Caption='LIKE' then
+         vfilter:=vfilter+dbcField1.Text+' like ''%'+ECari1.Text+'%'''
+         else
+           vfilter:=vfilter+dbcField1.Text+' = '''+ECari1.Text+'''';
+    vfilter:=vfilter+')';
+    if QBrowse2.Active then
+      vorder:=' order by '+wwDBGrid3.Columns[2].FieldName
+      else
+        vorder:=' order by lokasi';
+
+  end;
+
+  //QBrowse2.DisableControls;
+  QBrowse2.Close;
+  QBrowse2.SetVariable('myparam',vfilter+vorder);
+QTotalBrowse2.Close;
+QTotalBrowse2.SetVariable('myparam', vfilter+vorder);
+QTotalBrowse2.Open;
+QBrowse2.Open;
+wwDBGrid3.ColumnByName('hasil').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse2HASIL.AsFloat);
+  //QBrowse.EnableControls;
+
+end;
+
+procedure THasilTenunFrm.QBrowse2AfterScroll(DataSet: TDataSet);
+begin
+LRencord.Caption:=IntToStr(QBrowse2.RecNo)+' of '+IntToStr(QBrowse2.RecordCount);
+end;
+
+procedure THasilTenunFrm.dbcField1Enter(Sender: TObject);
+var
+  i : Word;
+begin
+  if (QBrowse2.Active) and (dbcField1.Items.Count=1) then
+  for i:=0 to wwDBGrid3.FieldCount-1 do
+    if (UpperCase(wwDBGrid3.Columns[i].FieldName)<>'NO_SERI_BEAM') or (UpperCase(wwDBGrid3.Columns[i].FieldName)<>'NO_SERI_BEAM')then
+      dbcField1.Items.Add(wwDBGrid3.Columns[i].FieldName);
+end;
+
+procedure THasilTenunFrm.VTglAwal1Change(Sender: TObject);
+begin
+  vTglAkhir1.DateTime:=EndOfTheMonth(vTglAwal1.Date);
+end;
+
+procedure THasilTenunFrm.vOperand1Click(Sender: TObject);
+begin
+  if vOperand1.Caption='LIKE' then
+    vOperand1.Caption:='='
+    else
+      vOperand1.Caption:='LIKE';
+end;
+
+procedure THasilTenunFrm.BitBtn21Click(Sender: TObject);
+begin
+  if QBrowse_Kons.Active then
+  begin
+     DMFrm.SaveDialog1.DefaultExt:='XLK';
+     DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+     DMFrm.SaveDialog1.FileName:='REKAP HASIL TENUN PER KONSTRUKSI';
+     wwDBGrid6.ExportOptions.TitleName:='REKAP HASIL TENUN PER KONSTRUKSI';
+       if DMFrm.SaveDialog1.Execute then
+       begin
+         try
+         wwDBGrid6.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+         wwDBGrid6.ExportOptions.Save;
+         ShowMessage('Simpan Sukses !');
+         except
+         ShowMessage('Simpan Gagal !');
+         end;
+       end;
+  end
+  else
+    ShowMessage('Tabel belum di-OPEN !');
+end;
+
+procedure THasilTenunFrm.QBrowse3AfterScroll(DataSet: TDataSet);
+begin
+//LRencord1.Caption:=IntToStr(QBrowse3.RecNo)+' of '+IntToStr(QBrowse3.RecordCount);
+end;
+
+procedure THasilTenunFrm.BitBtn25Click(Sender: TObject);
+begin
+QuickRep1.Preview;
+end;
+
+procedure THasilTenunFrm.BitBtn23Click(Sender: TObject);
+begin
+{  if QBrowse3.Active then
+  begin
+     DMFrm.SaveDialog1.DefaultExt:='XLK';
+     DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+     DMFrm.SaveDialog1.FileName:='REKAP HASIL TENUN PER JENIS MESIN';
+     wwDBGrid8.ExportOptions.TitleName:='REKAP HASIL TENUN PER JENIS MESIN';
+       if DMFrm.SaveDialog1.Execute then
+       begin
+         try
+         wwDBGrid8.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+         wwDBGrid8.ExportOptions.Save;
+         ShowMessage('Simpan Sukses !');
+         except
+         ShowMessage('Simpan Gagal !');
+         end;
+       end;
+  end
+  else
+    ShowMessage('Tabel belum di-OPEN !');
+            }
+end;
+
+procedure THasilTenunFrm.BitBtn9Click(Sender: TObject);
+begin
+QBrowse3.Close;
+QAmbilData3.Close;
+QAmbilData3.SetVariable('date1', VTglAwal2.Date);
+QAmbilData3.SetVariable('date2', vTglAkhir2.Date);
+QAmbilData3.Execute;
+vorder:=' order by konstruksi, jenis_mesin';
+QBrowse3.SetVariable('myparam',vorder );
+
+QTransaksi.SetVariable('kd_transaksi','876');
+QTransaksi.Open;
+QBrowse3.Open;
+QTotalBrowse3.Close;
+QTotalBrowse3.SetVariable('myparam', vorder);
+QTotalBrowse3.Open;
+QTransaksi.Close;
+  QRLabel22.Caption:='Periode Tanggal : '+vTglAwal2.Text+' s/d '+vTglAkhir2.Text;
+  QRLabel9.Caption:='Pekalongan : '+vTglAkhir2.Text;
+wwDBGrid4.ColumnByName('jml_pot_tenun').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse3HASIL_POTONG.AsFloat);
+wwDBGrid4.ColumnByName('jml_pot_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse3HASIL_KODI.AsFloat);
+end;
+
+procedure THasilTenunFrm.vTglAwal2Change(Sender: TObject);
+begin
+  vTglAkhir2.DateTime:=EndOfTheMonth(vTglAwal2.Date);
+end;
+
+procedure THasilTenunFrm.BitBtn13Click(Sender: TObject);
+begin
+QuickRep3.Preview;
+end;
+
+procedure THasilTenunFrm.BitBtn11Click(Sender: TObject);
+begin
+  if QBrowse3.Active then
+  begin
+     DMFrm.SaveDialog1.DefaultExt:='XLK';
+     DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+     DMFrm.SaveDialog1.FileName:='REKAP HASIL TENUN PER JENIS MESIN';
+     wwDBGrid4.ExportOptions.TitleName:='REKAP HASIL TENUN PER JENIS MESIN';
+       if DMFrm.SaveDialog1.Execute then
+       begin
+         try
+         wwDBGrid4.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+         wwDBGrid4.ExportOptions.Save;
+         ShowMessage('Simpan Sukses !');
+         except
+         ShowMessage('Simpan Gagal !');
+         end;
+       end;
+  end
+  else
+    ShowMessage('Tabel belum di-OPEN !');
+end;
+
+procedure THasilTenunFrm.BitBtn14Click(Sender: TObject);
+begin
+QBrowse4.Close;
+QAmbilData4.Close;
+QAmbilData4.SetVariable('date1', VTglAwal3.Date);
+QAmbilData4.SetVariable('date2', vTglAkhir3.Date);
+QAmbilData4.Execute;
+vorder:=' order by konstruksi, jenis_mesin';
+QBrowse4.SetVariable('myparam',vorder );
+
+QTransaksi.SetVariable('kd_transaksi','876');
+QTransaksi.Open;
+QBrowse4.Open;
+QTotalBrowse4.Close;
+QTotalBrowse4.SetVariable('myparam', vorder);
+QTotalBrowse4.Open;
+QTransaksi.Close;
+  QRLabel22.Caption:='Periode Tanggal : '+vTglAwal3.Text+' s/d '+vTglAkhir3.Text;
+  QRLabel9.Caption:='Pekalongan : '+vTglAkhir2.Text;
+wwDBGrid5.ColumnByName('jml_pot_tenun').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse4HASIL_POTONG.AsFloat);
+wwDBGrid5.ColumnByName('jml_pot_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse4HASIL_KODI.AsFloat);
+end;
+
+procedure THasilTenunFrm.dbcField2Enter(Sender: TObject);
+var
+  i : Word;
+begin
+  if (QBrowse4.Active) and (dbcField2.Items.Count=1) then
+  for i:=0 to wwDBGrid5.FieldCount-1 do
+    if (UpperCase(wwDBGrid5.Columns[i].FieldName)<>'NO_SERI_BEAM') or (UpperCase(wwDBGrid5.Columns[i].FieldName)<>'NO_SERI_BEAM')then
+      dbcField2.Items.Add(wwDBGrid5.Columns[i].FieldName);
+end;
+
+procedure THasilTenunFrm.vOperand2Click(Sender: TObject);
+begin
+  if vOperand2.Caption='LIKE' then
+    vOperand2.Caption:='='
+    else
+      vOperand2.Caption:='LIKE';
+end;
+
+procedure THasilTenunFrm.BitBtn15Click(Sender: TObject);
+var
+  i : word;
+  vpertama : boolean;
+begin
+QBrowse8.Open;
+  vpertama:=True;
+//  if cbTanggal1.Checked then
+//    vfilter:=' where (tanggal>=to_date('''+FormatDateTime('dd/mm/yyyy',VTglAwal1.Date)+''',''dd/mm/yyyy'') and tanggal<=(to_date('''+FormatDateTime('dd/mm/yyyy',VTglAkhir1.Date)+''',''dd/mm/yyyy'')+1-1/86400)) and ('
+//  else
+    vfilter:=' where (';
+  if (QBrowse8.FieldCount>=1) then
+  begin
+    if dbcField5.ItemIndex=0 then
+    begin
+      for i:=0 to wwDBGrid7.Selected.Count-1 do
+  //    for i:=0 to QBrowse.FieldCount-1 do
+      begin
+        if (QBrowse8.FieldByName(wwDBGrid7.Columns[i].FieldName).FieldKind=fkData) and (UpperCase(wwDBGrid7.Columns[i].FieldName)<>'TANGGAL') then
+        begin
+          if vpertama then
+            begin
+              if vOperand5.Caption='LIKE' then
+                vfilter:=vfilter+wwDBGrid7.Columns[i].FieldName+' like ''%'+ECari5.Text+'%'''
+                else
+                   vfilter:=vfilter+wwDBGrid7.Columns[i].FieldName+' = '''+ECari5.Text+'''';
+              vpertama:=False;
+            end
+            else
+              if vOperand5.Caption='LIKE' then
+                vfilter:=vfilter+' or '+wwDBGrid7.Columns[i].FieldName+' like ''%'+ECari5.Text+'%'''
+                else
+                  vfilter:=vfilter+' or '+wwDBGrid7.Columns[i].FieldName+' = '''+ECari5.Text+''''
+        end;
+      end;
+    end
+    else
+      if vOperand5.Caption='LIKE' then
+         vfilter:=vfilter+dbcField5.Text+' like ''%'+ECari5.Text+'%'''
+         else
+           vfilter:=vfilter+dbcField5.Text+' = '''+ECari5.Text+'''';
+    vfilter:=vfilter+')';
+    if QBrowse8.Active then
+      vorder:=' order by '+wwDBGrid7.Columns[0].FieldName
+      else
+        vorder:=' order by lokasi,proses';
+
+  end;
+
+  //QBrowse2.DisableControls;
+  QBrowse4.Close;
+  QBrowse4.SetVariable('myparam',vfilter+vorder);
+QTotalBrowse4.Close;
+QTotalBrowse4.SetVariable('myparam', vfilter+vorder);
+QTotalBrowse4.Open;
+QBrowse4.Open;
+wwDBGrid5.ColumnByName('jml_pot_tenun').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse4HASIL_POTONG.AsFloat);
+wwDBGrid5.ColumnByName('jml_pot_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse4HASIL_KODI.AsFloat);
+  //QBrowse.EnableControls;
+end;
+
+procedure THasilTenunFrm.BitBtn16Click(Sender: TObject);
+begin
+  if QBrowse4.Active then
+  begin
+     DMFrm.SaveDialog1.DefaultExt:='XLK';
+     DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+     DMFrm.SaveDialog1.FileName:='REKAP HASIL TENUN PER JENIS MESIN';
+     wwDBGrid5.ExportOptions.TitleName:='REKAP HASIL TENUN PER JENIS MESIN';
+       if DMFrm.SaveDialog1.Execute then
+       begin
+         try
+         wwDBGrid5.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+         wwDBGrid5.ExportOptions.Save;
+         ShowMessage('Simpan Sukses !');
+         except
+         ShowMessage('Simpan Gagal !');
+         end;
+       end;
+  end
+  else
+    ShowMessage('Tabel belum di-OPEN !');
+end;
+
+procedure THasilTenunFrm.vTglAkhir2Change(Sender: TObject);
+begin
+  if VTglAwal2.Date>vTglAkhir2.Date then
+  begin
+      ShowMessage('Tanggal Akhir harus LEBIH BESAR dari Tanggal Awal !');
+      vTglAkhir2.Date:=VTglAwal2.Date;
+  end;
+
+end;
+
+procedure THasilTenunFrm.vTglAwal3Change(Sender: TObject);
+begin
+  vTglAkhir3.DateTime:=EndOfTheMonth(vTglAwal3.Date);
+end;
+
+procedure THasilTenunFrm.vTglAkhir3Change(Sender: TObject);
+begin
+  if VTglAwal3.Date>vTglAkhir3.Date then
+  begin
+      ShowMessage('Tanggal Akhir harus LEBIH BESAR dari Tanggal Awal !');
+      vTglAkhir3.Date:=VTglAwal3.Date;
+  end;
+end;
+
+procedure THasilTenunFrm.BitBtn18Click(Sender: TObject);
+begin
+QuickRep2.Preview;
+end;
+
+procedure THasilTenunFrm.BitBtn10Click(Sender: TObject);
+var
+  i : word;
+  vpertama : boolean;
+begin
+QBrowse3.Open;
+  vpertama:=True;
+//  if cbTanggal1.Checked then
+//    vfilter:=' where (tanggal>=to_date('''+FormatDateTime('dd/mm/yyyy',VTglAwal1.Date)+''',''dd/mm/yyyy'') and tanggal<=(to_date('''+FormatDateTime('dd/mm/yyyy',VTglAkhir1.Date)+''',''dd/mm/yyyy'')+1-1/86400)) and ('
+//  else
+    vfilter:=' where (';
+  if (QBrowse3.FieldCount>=1) then
+  begin
+    if dbcField3.ItemIndex=0 then
+    begin
+      for i:=0 to wwDBGrid4.Selected.Count-1 do
+  //    for i:=0 to QBrowse.FieldCount-1 do
+      begin
+        if (QBrowse3.FieldByName(wwDBGrid4.Columns[i].FieldName).FieldKind=fkData) and (UpperCase(wwDBGrid4.Columns[i].FieldName)<>'NO_SERI_BEAM') then
+        begin
+          if vpertama then
+            begin
+              if vOperand3.Caption='LIKE' then
+                vfilter:=vfilter+wwDBGrid4.Columns[i].FieldName+' like ''%'+ECari3.Text+'%'''
+                else
+                   vfilter:=vfilter+wwDBGrid4.Columns[i].FieldName+' = '''+ECari3.Text+'''';
+              vpertama:=False;
+            end
+            else
+              if vOperand3.Caption='LIKE' then
+                vfilter:=vfilter+' or '+wwDBGrid4.Columns[i].FieldName+' like ''%'+ECari3.Text+'%'''
+                else
+                  vfilter:=vfilter+' or '+wwDBGrid4.Columns[i].FieldName+' = '''+ECari3.Text+''''
+        end;
+      end;
+    end
+    else
+      if vOperand3.Caption='LIKE' then
+         vfilter:=vfilter+dbcField3.Text+' like ''%'+ECari3.Text+'%'''
+         else
+           vfilter:=vfilter+dbcField3.Text+' = '''+ECari3.Text+'''';
+    vfilter:=vfilter+')';
+    if QBrowse3.Active then
+      vorder:=' order by '+wwDBGrid4.Columns[2].FieldName
+      else
+        vorder:=' order by lokasi';
+
+  end;
+
+  //QBrowse2.DisableControls;
+  QBrowse3.Close;
+  QBrowse3.SetVariable('myparam',vfilter+vorder);
+QTotalBrowse3.Close;
+QTotalBrowse3.SetVariable('myparam', vfilter+vorder);
+QTotalBrowse3.Open;
+QBrowse3.Open;
+wwDBGrid4.ColumnByName('jml_pot_tenun').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse3HASIL_POTONG.AsFloat);
+wwDBGrid4.ColumnByName('jml_pot_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse3HASIL_KODI.AsFloat);
+  //QBrowse.EnableControls;
+
+end;
+
+procedure THasilTenunFrm.BitBtn19Click(Sender: TObject);
+begin
+QBrowse_Kons.Close;
+QAmbilData5.Close;
+QAmbilData5.SetVariable('pawal', VTglAwal4.Date);
+QAmbilData5.SetVariable('pakhir', vTglAkhir4.Date);
+QAmbilData5.Execute;
+vorder:=' order by konstruksi, jenis_mesin';
+QBrowse_Kons.SetVariable('myparam',vorder );
+
+QTransaksi.SetVariable('kd_transaksi','876');
+QTransaksi.Open;
+QBrowse_Kons.Open;
+QTotalBrowse_Kons.Close;
+QTotalBrowse_Kons.SetVariable('myparam', vorder);
+QTotalBrowse_Kons.Open;
+QTransaksi.Close;
+  QRLabel22.Caption:='Periode Tanggal : '+vTglAwal3.Text+' s/d '+vTglAkhir3.Text;
+  QRLabel9.Caption:='Pekalongan : '+vTglAkhir3.Text;
+wwDBGrid6.ColumnByName('jml_pot_tenun').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse_KonsHASIL_POTONG.AsFloat);
+wwDBGrid6.ColumnByName('jml_pot_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse_KonsHASIL_KODI.AsFloat);
+
+end;
+
+procedure THasilTenunFrm.vTglAwal4Change(Sender: TObject);
+begin
+  vTglAkhir4.DateTime:=EndOfTheMonth(vTglAwal4.Date);
+end;
+
+procedure THasilTenunFrm.vTglAkhir4Change(Sender: TObject);
+begin
+if VTglAwal4.Date>vTglAkhir4.Date then
+  begin
+      ShowMessage('Tanggal Akhir harus LEBIH BESAR dari Tanggal Awal !');
+      vTglAkhir4.Date:=VTglAwal4.Date;
+  end;
+end;
+
+procedure THasilTenunFrm.BitBtn20Click(Sender: TObject);
+var
+  i : word;
+  vpertama : boolean;
+begin
+QBrowse_Kons.Open;
+  vpertama:=True;
+//  if cbTanggal1.Checked then
+//    vfilter:=' where (tanggal>=to_date('''+FormatDateTime('dd/mm/yyyy',VTglAwal1.Date)+''',''dd/mm/yyyy'') and tanggal<=(to_date('''+FormatDateTime('dd/mm/yyyy',VTglAkhir1.Date)+''',''dd/mm/yyyy'')+1-1/86400)) and ('
+//  else
+    vfilter:=' where (';
+  if (QBrowse_Kons.FieldCount>=1) then
+  begin
+    if dbcField4.ItemIndex=0 then
+    begin
+      for i:=0 to wwDBGrid6.Selected.Count-1 do
+  //    for i:=0 to QBrowse.FieldCount-1 do
+      begin
+        if (QBrowse_Kons.FieldByName(wwDBGrid6.Columns[i].FieldName).FieldKind=fkData) and (UpperCase(wwDBGrid6.Columns[i].FieldName)<>'NO_SERI_BEAM') then
+        begin
+          if vpertama then
+            begin
+              if vOperand4.Caption='LIKE' then
+                vfilter:=vfilter+wwDBGrid6.Columns[i].FieldName+' like ''%'+ECari4.Text+'%'''
+                else
+                   vfilter:=vfilter+wwDBGrid6.Columns[i].FieldName+' = '''+ECari4.Text+'''';
+              vpertama:=False;
+            end
+            else
+              if vOperand4.Caption='LIKE' then
+                vfilter:=vfilter+' or '+wwDBGrid6.Columns[i].FieldName+' like ''%'+ECari4.Text+'%'''
+                else
+                  vfilter:=vfilter+' or '+wwDBGrid6.Columns[i].FieldName+' = '''+ECari4.Text+''''
+        end;
+      end;
+    end
+    else
+      if vOperand4.Caption='LIKE' then
+         vfilter:=vfilter+dbcField4.Text+' like ''%'+ECari4.Text+'%'''
+         else
+           vfilter:=vfilter+dbcField4.Text+' = '''+ECari4.Text+'''';
+    vfilter:=vfilter+')';
+    if QBrowse_Kons.Active then
+      vorder:=' order by '+wwDBGrid6.Columns[2].FieldName
+      else
+        vorder:=' order by konstruksi';
+
+  end;
+
+  //QBrowse2.DisableControls;
+  QBrowse_Kons.Close;
+  QBrowse_Kons.SetVariable('myparam',vfilter+vorder);
+QTotalBrowse_Kons.Close;
+QTotalBrowse_Kons.SetVariable('myparam', vfilter+vorder);
+QTotalBrowse_Kons.Open;
+QBrowse_Kons.Open;
+wwDBGrid6.ColumnByName('jml_pot_tenun').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse_KonsHASIL_POTONG.AsFloat);
+wwDBGrid6.ColumnByName('jml_pot_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse_KonsHASIL_KODI.AsFloat);
+  //QBrowse.EnableControls;
+end;
+
+procedure THasilTenunFrm.QBrowseCalcFields(DataSet: TDataSet);
+begin
+  if QBrowseLOKASI.AsString='5' then
+    begin
+    QBrowseLOKASI_TENUN.AsString:='Tenun 1 (AJL)';
+    end
+    else
+    if QBrowseLOKASI.AsString='2' then
+      begin
+      QBrowseLOKASI_TENUN.AsString:='Tenun 2';
+      end
+      else
+      if QBrowseLOKASI.AsString='3' then
+        begin
+        QBrowseLOKASI_TENUN.AsString:='Tenun 3';
+        end;
+end;
+
+procedure THasilTenunFrm.wwDBComboBox2Change(Sender: TObject);
+begin
+  if wwDBComboBox2.Text='5' then
+    begin
+    Label16.Caption:='Tenun 1 (AJL)';
+    end
+    else
+    if wwDBComboBox2.Text='2' then
+      begin
+      Label16.Caption:='Tenun 2';
+      end
+      else
+      if wwDBComboBox2.Text='3' then
+        begin
+        Label16.Caption:='Tenun 3';
+        end
+        else
+        if wwDBComboBox2.Text='1' then
+          begin
+          Label16.Caption:='-';
+          end
+          else
+          if wwDBComboBox2.Text='4' then
+            begin
+            Label16.Caption:='-';
+            end;
+end;
+
+procedure THasilTenunFrm.LookBeamCloseUp(Sender: TObject; LookupTable,
+  FillTable: TDataSet; modified: Boolean);
+begin
+  QDetailNO_SERI_BEAM.AsString:=QLookBeamNO_SERI_BEAM.AsString;
+  vnoseri:=QLookBeamNO_SERI_BEAM.AsString;
+  QDetailKONSTRUKSI.AsString:=QLookBeamKONSTRUKSI.AsString;
+  vkonstruksi:=QLookBeamKONSTRUKSI.AsString;
+  QDetailCORAK.AsString:=QLookBeamCORAK.AsString;
+  vcorak:=QLookBeamCORAK.AsString;
+  QDetailKP.AsString:=QLookBeamKP.AsString;
+end;
+
+procedure THasilTenunFrm.LookBeamEnter(Sender: TObject);
+begin
+  //QLookBeam.SetVariable('plokasi',QMasterSHIFT.AsString);
+  //QLookBeam.SetVariable('pproses',QBrowsePROSES.AsString);
+  //QLookBeam.SetVariable('ptgl',vTglAwal.Date);
+  QLookBeam.Open;
+end;
+
+procedure THasilTenunFrm.LookOperatorEnter(Sender: TObject);
+begin
+  QLookOperator.Close;
+  QLookOperator.Open;
+end;
+
+procedure THasilTenunFrm.LookGrupCloseUp(Sender: TObject; LookupTable,
+  FillTable: TDataSet; modified: Boolean);
+begin
+  //QDetailGRUP.AsString:=QLookGrupGRUP.asstring;
+  QDetailGRUP.AsString:=QLookOperatorGRUP.asstring;
+  QDetailNIK.AsString:=QLookOperatorNIK.AsString;
+  QDetailOPR_TENUN.AsString:=QLookOperatorNAMA_KARYAWAN.AsString;
+end;
+
+procedure THasilTenunFrm.LookGrupEnter(Sender: TObject);
+begin
+  //QLookGrup.Open;
+  QLookOperator.open;
+end;
+
+
+procedure THasilTenunFrm.QLookOperatorBeforeQuery(
+  Sender: TOracleDataSet);
+begin
+
+  QLookOperator.SetVariable('plokasi',QDetailLOKASI.AsString);
+  QLookOperator.SetVariable('pproses',QDetailPROSES.AsString);
+  //QLookOperator.SetVariable('ptgl',QMasterTANGGAL.AsString);
+  //QLookOperator.SetVariable('pgrup',QDetailGRUP.AsString);
+
+end;
+
+
+procedure THasilTenunFrm.QMasterAfterCancel(DataSet: TDataSet);
+begin
+   Label16.Caption:='';
+end;
+
+procedure THasilTenunFrm.QMasterAfterDelete(DataSet: TDataSet);
+begin
+   Label16.Caption:='';
+end;
+
+procedure THasilTenunFrm.vTglAwal6Change(Sender: TObject);
+begin
+  vTglAkhir6.DateTime:=EndOfTheMonth(vTglAwal6.Date);
+end;
+
+procedure THasilTenunFrm.vTglAkhir6Change(Sender: TObject);
+begin
+  if VTglAwal6.Date>vTglAkhir6.Date then
+  begin
+      ShowMessage('Tanggal Akhir harus LEBIH BESAR dari Tanggal Awal !');
+      vTglAkhir6.Date:=VTglAwal6.Date;
+  end;
+end;
+
+procedure THasilTenunFrm.BitBtn29Click(Sender: TObject);
+begin
+QBrowse6.Close;
+QAmbilData6.Close;
+QAmbilData6.SetVariable('pawal', VTglAwal6.Date);
+QAmbilData6.SetVariable('pakhir', vTglAkhir6.Date);
+QAmbilData6.Execute;
+vorder:=' order by kp, konstruksi, jenis_mesin';
+QBrowse6.SetVariable('myparam',vorder );
+//QTransaksi.SetVariable('kd_transaksi','876');
+//QTransaksi.Open;
+
+QTotalBrowse6.Close;
+QTotalBrowse6.SetVariable('myparam', vorder);
+QTotalBrowse6.Open;
+QBrowse6.Open;
+//QTransaksi.Close;
+  QRLabel52.Caption:='Periode Tanggal : '+vTglAwal6.Text+' s/d '+vTglAkhir6.Text;
+  QRLabel61.Caption:='Pekalongan : '+vTglAkhir6.Text;
+wwDBGrid8.ColumnByName('jml_pot_tenun').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse6HASIL_POTONG.AsFloat);
+wwDBGrid8.ColumnByName('jml_pot_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse6HASIL_KODI.AsFloat);
+end;
+
+procedure THasilTenunFrm.vOperand6Click(Sender: TObject);
+begin
+  if vOperand6.Caption='LIKE' then
+    vOperand6.Caption:='='
+    else
+      vOperand6.Caption:='LIKE';
+end;
+
+procedure THasilTenunFrm.cbOtomatis6Click(Sender: TObject);
+begin
+  if cbOtomatis6.Checked then
+  begin
+    ShowMessage('Mencari data pada kolom paling kiri.'+#13+'Urutkan data terlebih dahulu supaya mudah mencari !');
+    wwDBGrid8.Options:=wwDBGrid8.Options+[dgAlwaysShowSelection];
+  end
+    else
+    wwDBGrid8.Options:=wwDBGrid8.Options-[dgAlwaysShowSelection];
+  ECari6.SetFocus;
+end;
+
+procedure THasilTenunFrm.dbcField6Enter(Sender: TObject);
+var
+  i : Word;
+begin
+  if (QBrowse6.Active) and (dbcField6.Items.Count=1) then
+  for i:=0 to wwDBGrid8.FieldCount-1 do
+    if (UpperCase(wwDBGrid8.Columns[i].FieldName)<>'NO_SERI_BEAM') or (UpperCase(wwDBGrid8.Columns[i].FieldName)<>'NO_SERI_BEAM')then
+      dbcField6.Items.Add(wwDBGrid8.Columns[i].FieldName);
+end;
+
+procedure THasilTenunFrm.cbTanggal6Click(Sender: TObject);
+begin
+  if cbTanggal6.Checked then
+  begin
+    VTglAwal6.Enabled:=cbTanggal6.Checked;
+    vTglAkhir6.Enabled:=cbTanggal6.Checked;
+    VTglAwal6.SetFocus;
+  end
+  else
+    ECari6.SetFocus;
+end;
+
+procedure THasilTenunFrm.BitBtn30Click(Sender: TObject);
+var
+  i : word;
+  vpertama : boolean;
+begin
+QBrowse6.Open;
+  vpertama:=True;
+//  if cbTanggal1.Checked then
+//    vfilter:=' where (tanggal>=to_date('''+FormatDateTime('dd/mm/yyyy',VTglAwal1.Date)+''',''dd/mm/yyyy'') and tanggal<=(to_date('''+FormatDateTime('dd/mm/yyyy',VTglAkhir1.Date)+''',''dd/mm/yyyy'')+1-1/86400)) and ('
+//  else
+    vfilter:=' where (';
+  if (QBrowse6.FieldCount>=1) then
+  begin
+    if dbcField6.ItemIndex=0 then
+    begin
+      for i:=0 to wwDBGrid8.Selected.Count-1 do
+  //    for i:=0 to QBrowse.FieldCount-1 do
+      begin
+        if (QBrowse6.FieldByName(wwDBGrid8.Columns[i].FieldName).FieldKind=fkData) and (UpperCase(wwDBGrid8.Columns[i].FieldName)<>'NO_SERI_BEAM') then
+        begin
+          if vpertama then
+            begin
+              if vOperand6.Caption='LIKE' then
+                vfilter:=vfilter+wwDBGrid8.Columns[i].FieldName+' like ''%'+ECari6.Text+'%'''
+                else
+                   vfilter:=vfilter+wwDBGrid8.Columns[i].FieldName+' = '''+ECari6.Text+'''';
+              vpertama:=False;
+            end
+            else
+              if vOperand6.Caption='LIKE' then
+                vfilter:=vfilter+' or '+wwDBGrid8.Columns[i].FieldName+' like ''%'+ECari6.Text+'%'''
+                else
+                  vfilter:=vfilter+' or '+wwDBGrid8.Columns[i].FieldName+' = '''+ECari6.Text+''''
+        end;
+      end;
+    end
+    else
+      if vOperand6.Caption='LIKE' then
+         vfilter:=vfilter+dbcField6.Text+' like ''%'+ECari6.Text+'%'''
+         else
+           vfilter:=vfilter+dbcField6.Text+' = '''+ECari6.Text+'''';
+    vfilter:=vfilter+')';
+    if QBrowse6.Active then
+      vorder:=' order by '+wwDBGrid8.Columns[2].FieldName
+      else
+        vorder:=' order by kp';
+
+  end;
+
+  //QBrowse2.DisableControls;
+  QBrowse6.Close;
+  QBrowse6.SetVariable('myparam',vfilter+vorder);
+QTotalBrowse6.Close;
+QTotalBrowse6.SetVariable('myparam', vfilter+vorder);
+QTotalBrowse6.Open;
+QBrowse6.Open;
+wwDBGrid8.ColumnByName('hasil_potong').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse6HASIL_POTONG.AsFloat);
+wwDBGrid8.ColumnByName('hasil_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalBrowse6HASIL_KODI.AsFloat);
+
+end;
+
+procedure THasilTenunFrm.BitBtn31Click(Sender: TObject);
+begin
+  if QBrowse6.Active then
+  begin
+     DMFrm.SaveDialog1.DefaultExt:='XLK';
+     DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+     DMFrm.SaveDialog1.FileName:='REKAP HASIL TENUN PER KP';
+     wwDBGrid8.ExportOptions.TitleName:='REKAP HASIL TENUN PER KP';
+       if DMFrm.SaveDialog1.Execute then
+       begin
+         try
+         wwDBGrid8.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+         wwDBGrid8.ExportOptions.Save;
+         ShowMessage('Simpan Sukses !');
+         except
+         ShowMessage('Simpan Gagal !');
+         end;
+       end;
+  end
+  else
+    ShowMessage('Tabel belum di-OPEN !');
+
+end;
+
+procedure THasilTenunFrm.BitBtn33Click(Sender: TObject);
+begin
+QuickRep4.Preview;
+end;
+
+procedure THasilTenunFrm.QBrowse6AfterScroll(DataSet: TDataSet);
+begin
+  LRencord.Caption:=IntToStr(QBrowse6.RecNo)+' of '+IntToStr(QBrowse6.RecordCount);
+end;
+
+
+{procedure THasilTenunFrm.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = VK_F4 then  // Misalkan Anda menggunakan tombol F4
+  begin
+    LookLokasiProses2.OnEnter(LookLokasiProses2);
+    LookLokasiProses2.DropDown;
+  end;
+end;   }
+
+procedure THasilTenunFrm.BitBtn34Click(Sender: TObject);
+var
+filter:string;
+vgrup:string;
+begin
+   case RG_Loom.itemIndex of
+   0: filter:='2';
+   1: filter:='3';
+   2: filter:='5';
+   3: filter:='%';
+   end;
+
+   case RG_Grup2.ItemIndex of
+    0: vgrup:='A';
+    1: vgrup:='B';
+    2: vgrup:='C';
+    3: vgrup:='D';
+    4: vgrup:='E';
+    5: vgrup:='F';
+    6: vgrup:='G';
+ //   7: vgrup:='DS';
+    7: vgrup:='%';
+   end;
+
+  QBrowse7.Close;
+  QBrowse7.SetVariable('pawal',vTglAwal7.Date);
+  QBrowse7.SetVariable('pakhir',vTglAkhir7.Date);
+  QBrowse7.SetVariable('loom',filter);
+  Qbrowse7.SetVariable('grup',vgrup);
+  QBrowse7.Open;
+
+  QBrowseTotal7.Close;
+  QBrowseTotal7.SetVariable('pawal',vTglAwal7.Date);
+  QBrowseTotal7.SetVariable('pakhir',vTglAkhir7.Date);
+  QBrowseTotal7.SetVariable('loom',filter);
+  QBrowseTotal7.SetVariable('grup',vgrup);
+  QBrowseTotal7.Open;
+  wwDBGrid9.ColumnByName('KODI').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal7KODI.AsFloat);
+  wwDBGrid9.ColumnByName('PCS').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal7PCS.AsFloat);
+    //QRLP7.Caption:='Periode : '+VTglAwal7.Text+' s/d '+vTglAkhir7.Text;
+
+
+end;
+
+procedure THasilTenunFrm.vTglAwal7Change(Sender: TObject);
+begin
+  vTglAkhir7.Date:=trunc(EndOfTheMonth(VTglAwal7.Date));
+end;
+
+procedure THasilTenunFrm.vTglAkhir7Change(Sender: TObject);
+begin
+   if VTglAwal7.Date>vTglAkhir7.Date then
+   begin
+      ShowMessage('Tanggal Akhir harus LEBIH BESAR dari Tanggal Awal !');
+      vTglAkhir7.Date:=VTglAwal7.Date;
+  end;
+end;
+
+procedure THasilTenunFrm.QBrowse7AfterScroll(DataSet: TDataSet);
+begin
+ LRencord.Caption:=IntToStr(QBrowse7.RecNo)+' of '+IntToStr(QBrowse7.RecordCount);
+end;
+
+procedure THasilTenunFrm.BitBtn36Click(Sender: TObject);
+begin
+  if QBrowse7.Active then
+  begin
+     DMFrm.SaveDialog1.DefaultExt:='XLK';
+     DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+     DMFrm.SaveDialog1.FileName:='REKAP HASIL TENUN PER LOKASI';
+     wwDBGrid9.ExportOptions.TitleName:='REKAP HASIL TENUN PER LOKASI';
+       if DMFrm.SaveDialog1.Execute then
+       begin
+         try
+         wwDBGrid9.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+         wwDBGrid9.ExportOptions.Save;
+         ShowMessage('Simpan Sukses !');
+         except
+         ShowMessage('Simpan Gagal !');
+         end;
+       end;
+  end
+  else
+    ShowMessage('Tabel belum di-OPEN !');
+end;
+
+procedure THasilTenunFrm.wwDBGrid9TitleButtonClick(Sender: TObject;
+  AFieldName: String);
+begin
+  if ((Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName<>'') then
+  begin
+     if (Sender as TwwDBGrid).DataSource.DataSet.FieldByName(AFieldName).FieldKind=fkData then
+        begin
+          if vorder=' ASC' then
+              vorder:=' DESC'
+          else
+              vorder:=' ASC';
+          (Sender as TwwDBGrid).DataSource.DataSet.DisableControls;
+          (Sender as TwwDBGrid).DataSource.DataSet.Close;
+          ((Sender as TwwDBGrid).DataSource.DataSet as TOracleDataSet).SetVariable('myparam',vfilter+' order by '+(Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName+vorder);
+          (Sender as TwwDBGrid).DataSource.DataSet.Open;
+          (Sender as TwwDBGrid).DataSource.DataSet.EnableControls;
+        end
+        else
+          ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+  end
+  else
+  ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+end;
+
+procedure THasilTenunFrm.QBrowse7CalcFields(DataSet: TDataSet);
+begin
+     if QBrowse7LOKASI.AsString='5' then
+    begin
+    QBrowse7LOKASI_TENUN.AsString:='Tenun 1 (AJL)';
+    end
+    else
+    if QBrowse7LOKASI.AsString='2' then
+      begin
+      QBrowse7LOKASI_TENUN.AsString:='Tenun 2';
+      end
+      else
+      if QBrowse7LOKASI.AsString='3' then
+        begin
+        QBrowse7LOKASI_TENUN.AsString:='Tenun 3';
+        end;
+end;
+
+procedure THasilTenunFrm.wwDBGrid8TitleButtonClick(Sender: TObject;
+  AFieldName: String);
+begin
+  if ((Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName<>'') then
+  begin
+     if (Sender as TwwDBGrid).DataSource.DataSet.FieldByName(AFieldName).FieldKind=fkData then
+        begin
+          if vorder=' ASC' then
+              vorder:=' DESC'
+          else
+              vorder:=' ASC';
+          (Sender as TwwDBGrid).DataSource.DataSet.DisableControls;
+          (Sender as TwwDBGrid).DataSource.DataSet.Close;
+          ((Sender as TwwDBGrid).DataSource.DataSet as TOracleDataSet).SetVariable('myparam',vfilter+' order by '+(Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName+vorder);
+          (Sender as TwwDBGrid).DataSource.DataSet.Open;
+          (Sender as TwwDBGrid).DataSource.DataSet.EnableControls;
+        end
+        else
+          ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+  end
+  else
+  ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+
+end;
+
+procedure THasilTenunFrm.wwDBGrid5TitleButtonClick(Sender: TObject;
+  AFieldName: String);
+begin
+  if ((Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName<>'') then
+  begin
+     if (Sender as TwwDBGrid).DataSource.DataSet.FieldByName(AFieldName).FieldKind=fkData then
+        begin
+          if vorder=' ASC' then
+              vorder:=' DESC'
+          else
+              vorder:=' ASC';
+          (Sender as TwwDBGrid).DataSource.DataSet.DisableControls;
+          (Sender as TwwDBGrid).DataSource.DataSet.Close;
+          ((Sender as TwwDBGrid).DataSource.DataSet as TOracleDataSet).SetVariable('myparam',vfilter+' order by '+(Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName+vorder);
+          (Sender as TwwDBGrid).DataSource.DataSet.Open;
+          (Sender as TwwDBGrid).DataSource.DataSet.EnableControls;
+        end
+        else
+          ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+  end
+  else
+  ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+
+end;
+
+procedure THasilTenunFrm.wwDBGrid4TitleButtonClick(Sender: TObject;
+  AFieldName: String);
+begin
+  if ((Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName<>'') then
+  begin
+     if (Sender as TwwDBGrid).DataSource.DataSet.FieldByName(AFieldName).FieldKind=fkData then
+        begin
+          if vorder=' ASC' then
+              vorder:=' DESC'
+          else
+              vorder:=' ASC';
+          (Sender as TwwDBGrid).DataSource.DataSet.DisableControls;
+          (Sender as TwwDBGrid).DataSource.DataSet.Close;
+          ((Sender as TwwDBGrid).DataSource.DataSet as TOracleDataSet).SetVariable('myparam',vfilter+' order by '+(Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName+vorder);
+          (Sender as TwwDBGrid).DataSource.DataSet.Open;
+          (Sender as TwwDBGrid).DataSource.DataSet.EnableControls;
+        end
+        else
+          ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+  end
+  else
+  ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+
+end;
+
+procedure THasilTenunFrm.wwDBGrid6TitleButtonClick(Sender: TObject;
+  AFieldName: String);
+begin
+  if ((Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName<>'') then
+  begin
+     if (Sender as TwwDBGrid).DataSource.DataSet.FieldByName(AFieldName).FieldKind=fkData then
+        begin
+          if vorder=' ASC' then
+              vorder:=' DESC'
+          else
+              vorder:=' ASC';
+          (Sender as TwwDBGrid).DataSource.DataSet.DisableControls;
+          (Sender as TwwDBGrid).DataSource.DataSet.Close;
+          ((Sender as TwwDBGrid).DataSource.DataSet as TOracleDataSet).SetVariable('myparam',vfilter+' order by '+(Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName+vorder);
+          (Sender as TwwDBGrid).DataSource.DataSet.Open;
+          (Sender as TwwDBGrid).DataSource.DataSet.EnableControls;
+        end
+        else
+          ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+  end
+  else
+  ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+
+end;
+
+procedure THasilTenunFrm.wwDBGrid3TitleButtonClick(Sender: TObject;
+  AFieldName: String);
+begin
+  if ((Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName<>'') then
+  begin
+     if (Sender as TwwDBGrid).DataSource.DataSet.FieldByName(AFieldName).FieldKind=fkData then
+        begin
+          if vorder=' ASC' then
+              vorder:=' DESC'
+          else
+              vorder:=' ASC';
+          (Sender as TwwDBGrid).DataSource.DataSet.DisableControls;
+          (Sender as TwwDBGrid).DataSource.DataSet.Close;
+          ((Sender as TwwDBGrid).DataSource.DataSet as TOracleDataSet).SetVariable('myparam',vfilter+' order by '+(Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName+vorder);
+          (Sender as TwwDBGrid).DataSource.DataSet.Open;
+          (Sender as TwwDBGrid).DataSource.DataSet.EnableControls;
+        end
+        else
+          ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+  end
+  else
+  ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+
+end;
+
+procedure THasilTenunFrm.wwDBGrid7TitleButtonClick(Sender: TObject;
+  AFieldName: String);
+begin
+  if ((Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName<>'') then
+  begin
+     if (Sender as TwwDBGrid).DataSource.DataSet.FieldByName(AFieldName).FieldKind=fkData then
+        begin
+          if vorder=' ASC' then
+              vorder:=' DESC'
+          else
+              vorder:=' ASC';
+          (Sender as TwwDBGrid).DataSource.DataSet.DisableControls;
+          (Sender as TwwDBGrid).DataSource.DataSet.Close;
+          ((Sender as TwwDBGrid).DataSource.DataSet as TOracleDataSet).SetVariable('myparam',vfilter+' order by '+(Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName+vorder);
+          (Sender as TwwDBGrid).DataSource.DataSet.Open;
+          (Sender as TwwDBGrid).DataSource.DataSet.EnableControls;
+        end
+        else
+          ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+  end
+  else
+  ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+
+end;
+
+procedure THasilTenunFrm.QBrowse4AfterScroll(DataSet: TDataSet);
+begin
+LRencord.Caption:=IntToStr(QBrowse4.RecNo)+' of '+IntToStr(QBrowse4.RecordCount);
+end;
+
+procedure THasilTenunFrm.cbOtomatis1Click(Sender: TObject);
+begin
+  if cbOtomatis1.Checked then
+  begin
+    ShowMessage('Mencari data pada kolom paling kiri.'+#13+'Urutkan data terlebih dahulu supaya mudah mencari !');
+    wwDBGrid3.Options:=wwDBGrid3.Options+[dgAlwaysShowSelection];
+  end
+    else
+    wwDBGrid3.Options:=wwDBGrid3.Options-[dgAlwaysShowSelection];
+  ECari1.SetFocus;
+end;
+
+procedure THasilTenunFrm.cbOtomatis2Click(Sender: TObject);
+begin
+  if cbOtomatis2.Checked then
+  begin
+    ShowMessage('Mencari data pada kolom paling kiri.'+#13+'Urutkan data terlebih dahulu supaya mudah mencari !');
+    wwDBGrid5.Options:=wwDBGrid5.Options+[dgAlwaysShowSelection];
+  end
+    else
+    wwDBGrid5.Options:=wwDBGrid5.Options-[dgAlwaysShowSelection];
+  ECari2.SetFocus;
+end;
+
+procedure THasilTenunFrm.cbOtomatis3Click(Sender: TObject);
+begin
+  if cbOtomatis3.Checked then
+  begin
+    ShowMessage('Mencari data pada kolom paling kiri.'+#13+'Urutkan data terlebih dahulu supaya mudah mencari !');
+    wwDBGrid4.Options:=wwDBGrid4.Options+[dgAlwaysShowSelection];
+  end
+    else
+    wwDBGrid4.Options:=wwDBGrid4.Options-[dgAlwaysShowSelection];
+  ECari3.SetFocus;
+end;
+
+procedure THasilTenunFrm.cbOtomatis4Click(Sender: TObject);
+begin
+  if cbOtomatis4.Checked then
+  begin
+    ShowMessage('Mencari data pada kolom paling kiri.'+#13+'Urutkan data terlebih dahulu supaya mudah mencari !');
+    wwDBGrid6.Options:=wwDBGrid6.Options+[dgAlwaysShowSelection];
+  end
+    else
+    wwDBGrid6.Options:=wwDBGrid6.Options-[dgAlwaysShowSelection];
+  ECari4.SetFocus;
+end;
+
+procedure THasilTenunFrm.cbOtomatis5Click(Sender: TObject);
+begin
+  if cbOtomatis5.Checked then
+  begin
+    ShowMessage('Mencari data pada kolom paling kiri.'+#13+'Urutkan data terlebih dahulu supaya mudah mencari !');
+    wwDBGrid7.Options:=wwDBGrid7.Options+[dgAlwaysShowSelection];
+  end
+    else
+    wwDBGrid7.Options:=wwDBGrid7.Options-[dgAlwaysShowSelection];
+  ECari5.SetFocus;
+end;
+
+procedure THasilTenunFrm.vOperand3Click(Sender: TObject);
+begin
+  if vOperand3.Caption='LIKE' then
+    vOperand3.Caption:='='
+    else
+      vOperand3.Caption:='LIKE';
+end;
+
+procedure THasilTenunFrm.vOperand4Click(Sender: TObject);
+begin
+  if vOperand4.Caption='LIKE' then
+    vOperand4.Caption:='='
+    else
+      vOperand4.Caption:='LIKE';
+end;
+
+procedure THasilTenunFrm.vOperand5Click(Sender: TObject);
+begin
+  if vOperand5.Caption='LIKE' then
+    vOperand5.Caption:='='
+    else
+      vOperand5.Caption:='LIKE';
+end;
+
+procedure THasilTenunFrm.dbcField3Enter(Sender: TObject);
+var
+  i : Word;
+begin
+  if (QBrowse3.Active) and (dbcField3.Items.Count=1) then
+  for i:=0 to wwDBGrid4.FieldCount-1 do
+    if (UpperCase(wwDBGrid4.Columns[i].FieldName)<>'TANGGAL') or (UpperCase(wwDBGrid4.Columns[i].FieldName)<>'TGL_PRODUKSI')then
+      dbcField3.Items.Add(wwDBGrid4.Columns[i].FieldName);
+
+end;
+
+procedure THasilTenunFrm.dbcField4Enter(Sender: TObject);
+var
+  i : Word;
+begin
+  if (QBrowse_Kons.Active) and (dbcField4.Items.Count=1) then
+  for i:=0 to wwDBGrid6.FieldCount-1 do
+    if (UpperCase(wwDBGrid6.Columns[i].FieldName)<>'TANGGAL') or (UpperCase(wwDBGrid6.Columns[i].FieldName)<>'TGL_PRODUKSI')then
+      dbcField4.Items.Add(wwDBGrid6.Columns[i].FieldName);
+end;
+
+procedure THasilTenunFrm.dbcField5Enter(Sender: TObject);
+var
+  i : Word;
+begin
+  if (QBrowse8.Active) and (dbcField5.Items.Count=1) then
+  for i:=0 to wwDBGrid7.FieldCount-1 do
+    if (UpperCase(wwDBGrid7.Columns[i].FieldName)<>'TANGGAL') then
+      dbcField5.Items.Add(wwDBGrid7.Columns[i].FieldName);
+
+end;
+
+procedure THasilTenunFrm.QBrowse_KonsAfterScroll(DataSet: TDataSet);
+begin
+{azmi}
+  LRencord.Caption:=IntToStr(QBrowse_Kons.RecNo)+' of '+IntToStr(QBrowse_Kons.RecordCount);
+{azmi}
+end;
+
+procedure THasilTenunFrm.vTglAkhir5Change(Sender: TObject);
+begin
+  if vTglAwal5.Date>vTglAkhir5.Date then
+  begin
+      ShowMessage('Tanggal Akhir harus LEBIH BESAR dari Tanggal Awal !');
+      vTglAkhir5.Date:=vTglAwal5.Date;
+  end;
+end;
+
+procedure THasilTenunFrm.vTglAwal5Change(Sender: TObject);
+begin
+  vTglAkhir5.DateTime:=EndOfTheMonth(vTglAwal5.Date);
+end;
+
+procedure THasilTenunFrm.QBrowse8AfterScroll(DataSet: TDataSet);
+begin
+ LRencord.Caption:=IntToStr(QBrowse8.RecNo)+' of '+IntToStr(QBrowse8.RecordCount);
+end;
+
+procedure THasilTenunFrm.BitBtn26Click(Sender: TObject);
+begin
+QBrowse8.DisableControls;
+QBrowse8.Close;
+QBrowse8.SetVariable('pawal', VTglAwal5.Date);
+QBrowse8.SetVariable('pakhir', vTglAkhir5.Date);
+vorder:=' order by LOKASI, PROSES';
+QBrowse8.SetVariable('myparam',vorder );
+QBrowse8.Open;
+QBrowse8.EnableControls;
+
+QBrowseTotal8.Close;
+QBrowseTotal8.SetVariable('pawal', VTglAwal5.Date);
+QBrowseTotal8.SetVariable('pakhir', vTglAkhir5.Date);
+QBrowseTotal8.Open;
+  wwDBGrid7.ColumnByName('KODI').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal8KODI.AsFloat);
+  wwDBGrid7.ColumnByName('PCS').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal8PCS.AsFloat);
+
+end;
+
+procedure THasilTenunFrm.BitBtn27Click(Sender: TObject);
+var
+  i : word;
+  vpertama : boolean;
+begin
+QBrowse8.Open;
+  vpertama:=True;
+//  if cbTanggal1.Checked then
+//    vfilter:=' where (tanggal>=to_date('''+FormatDateTime('dd/mm/yyyy',VTglAwal1.Date)+''',''dd/mm/yyyy'') and tanggal<=(to_date('''+FormatDateTime('dd/mm/yyyy',VTglAkhir1.Date)+''',''dd/mm/yyyy'')+1-1/86400)) and ('
+//  else
+    vfilter:=' where (';
+  if (QBrowse8.FieldCount>=1) then
+  begin
+    if dbcField5.ItemIndex=0 then
+    begin
+      for i:=0 to wwDBGrid7.Selected.Count-1 do
+  //    for i:=0 to QBrowse.FieldCount-1 do
+      begin
+        if (QBrowse8.FieldByName(wwDBGrid7.Columns[i].FieldName).FieldKind=fkData) and (UpperCase(wwDBGrid7.Columns[i].FieldName)<>'TANGGAL') then
+        begin
+          if vpertama then
+            begin
+              if vOperand5.Caption='LIKE' then
+                vfilter:=vfilter+wwDBGrid7.Columns[i].FieldName+' like ''%'+ECari5.Text+'%'''
+                else
+                   vfilter:=vfilter+wwDBGrid7.Columns[i].FieldName+' = '''+ECari5.Text+'''';
+              vpertama:=False;
+            end
+            else
+              if vOperand5.Caption='LIKE' then
+                vfilter:=vfilter+' or '+wwDBGrid7.Columns[i].FieldName+' like ''%'+ECari5.Text+'%'''
+                else
+                  vfilter:=vfilter+' or '+wwDBGrid7.Columns[i].FieldName+' = '''+ECari5.Text+''''
+        end;
+      end;
+    end
+    else
+      if vOperand5.Caption='LIKE' then
+         vfilter:=vfilter+dbcField5.Text+' like ''%'+ECari5.Text+'%'''
+         else
+           vfilter:=vfilter+dbcField5.Text+' = '''+ECari5.Text+'''';
+    vfilter:=vfilter+')';
+    if QBrowse8.Active then
+      vorder:=' order by '+wwDBGrid7.Columns[0].FieldName
+      else
+        vorder:=' order by lokasi,proses';
+
+  end;
+
+//QBrowse8.DisableControls;
+QBrowse8.Close;
+QBrowse8.SetVariable('myparam',vorder );
+
+//QBrowse8.EnableControls;
+
+QBrowseTotal8.Close;
+QBrowseTotal8.SetVariable('myparam', vfilter+vorder);
+QBrowse8.Open;
+QBrowseTotal8.Open;
+  wwDBGrid7.ColumnByName('KODI').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal8KODI.AsFloat);
+  wwDBGrid7.ColumnByName('PCS').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal8PCS.AsFloat);
+
+end;
+
+procedure THasilTenunFrm.vTglAwal10Change(Sender: TObject);
+begin
+  vTglAkhir10.DateTime:=EndOfTheMonth(vTglAwal10.Date);
+end;
+
+procedure THasilTenunFrm.vTglAkhir10Change(Sender: TObject);
+begin
+if VTglAwal10.Date>vTglAkhir10.Date then
+  begin
+      ShowMessage('Tanggal Akhir harus LEBIH BESAR dari Tanggal Awal !');
+      vTglAkhir10.Date:=VTglAwal10.Date;
+  end;
+end;
+
+procedure THasilTenunFrm.BitBtn35Click(Sender: TObject);
+var
+  i: word;
+  vpertama: boolean;
+  vloom, vgrup: String;
+begin
+{  t1:=0; t2:=0; t3:=0; t4:=0; t5:=0; t6:=0;
+  t7:=0; t8:=0; t9:=0; t10:=0; t11:=0; t12:=0;
+  t13:=0; t14:=0;} t15:=0; t16:=0; t17:=0; t18:=0;
+  t19:=0; t20:=0; t21:=0; t22:=0;
+    QAmbil_Data10.Close;
+    QAmbil_Data10.SetVariable('pawal',vTglAwal10.Date);
+    QAmbil_Data10.setVariable('pakhir',vTglAkhir10.Date);
+    QAmbil_Data10.Execute;
+  QBrowse10.Open;
+  vpertama := True;
+
+  vfilter := ' where (';
+  if (QBrowse10.FieldCount >= 1) then
+  begin
+    if dbcField10.ItemIndex = 0 then
+    begin
+      for i := 0 to wwDBGrid10.Selected.Count - 1 do
+      begin
+        if (QBrowse10.FieldByName(wwDBGrid10.Columns[i].FieldName).FieldKind = fkData)
+           and (UpperCase(wwDBGrid10.Columns[i].FieldName) <> 'JML_PROD') then
+        begin
+          if vpertama then
+          begin
+            if vOperand10.Caption = 'LIKE' then
+              vfilter := vfilter + wwDBGrid10.Columns[i].FieldName + ' like ''%' + ECari10.Text + '%'''
+            else
+              vfilter := vfilter + wwDBGrid10.Columns[i].FieldName + ' = ''' + ECari10.Text + '''';
+            vpertama := False;
+          end
+          else
+          begin
+            if vOperand10.Caption = 'LIKE' then
+              vfilter := vfilter + ' or ' + wwDBGrid10.Columns[i].FieldName + ' like ''%' + ECari10.Text + '%'''
+            else
+              vfilter := vfilter + ' or ' + wwDBGrid10.Columns[i].FieldName + ' = ''' + ECari10.Text + '''';
+          end;
+        end;
+      end;
+    end
+    else
+    begin
+      if vOperand10.Caption = 'LIKE' then
+        vfilter := vfilter + dbcField10.Text + ' like ''%' + ECari10.Text + '%'''
+      else
+        vfilter := vfilter + dbcField10.Text + ' = ''' + ECari10.Text + '''';
+    end;
+
+    vfilter := vfilter + ')';
+
+    // Set order by clause based on QBrowse10 state
+    if QBrowse10.Active then
+      vorder := ' order by ' + wwDBGrid10.Columns[1].FieldName
+    else
+      vorder := ' order by LOKASI,proses';
+  end;
+
+  // Set vloom and vgrup based on radio group selections
+  case RadioGroup10.ItemIndex of
+    0: vloom := '%2%';
+    1: vloom := '%3%';
+    2: vloom := '%5%';
+    3: vloom := '%';
+  end;
+
+ // Check the final query string
+ // ShowMessage('SQL: ' + vfilter + vorder);
+
+  // Close, set variables, and re-open query
+  QBrowse10.DisableControls;
+  QBrowse10.Close;
+  QBrowse10.SetVariable('loom', vloom);
+ // QBrowse10.SetVariable('grup', vgrup);
+  QBrowse10.SetVariable('myparam', vfilter + vorder);
+  QBrowse10.Open;
+  QBrowse10.EnableControls;
+
+    while not QBrowse10.Eof do
+    begin
+      t15:=t15+QBrowse10JML_PROD.AsFloat;
+      t16:=t16+QBrowse10QTY_A.AsFloat;
+      t17:=t17+QBrowse10QTY_B.AsFloat;
+      t18:=t18+QBrowse10QTY_C.AsFloat;
+      t19:=t19+QBrowse10QTY_D.AsFloat;
+      t20:=t20+QBrowse10QTY_E.AsFloat;
+      t21:=t21+QBrowse10QTY_F.AsFloat;
+      t22:=t22+QBrowse10QTY_G.AsFloat;
+      QBrowse10.Next;
+    end;
+
+ { wwDBGrid4.ColumnByName('BK_A').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t1);
+  wwDBGrid4.ColumnByName('BS_A').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t2);
+  wwDBGrid4.ColumnByName('BK_B').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t3);
+  wwDBGrid4.ColumnByName('BS_B').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t4);
+  wwDBGrid4.ColumnByName('BK_C').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t5);
+  wwDBGrid4.ColumnByName('BS_C').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t6);
+  wwDBGrid4.ColumnByName('BK_D').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t7);
+  wwDBGrid4.ColumnByName('BS_D').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t8);
+  wwDBGrid4.ColumnByName('BK_E').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t9);
+  wwDBGrid4.ColumnByName('BS_E').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t10);
+  wwDBGrid4.ColumnByName('BK_F').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t11);
+  wwDBGrid4.ColumnByName('BS_F').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t12);
+  wwDBGrid4.ColumnByName('BK_G').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t13);
+  wwDBGrid4.ColumnByName('BS_G').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t14);  }
+  wwDBGrid10.ColumnByName('jml_prod').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t15);
+  wwDBGrid10.ColumnByName('QTY_a').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t16);
+  wwDBGrid10.ColumnByName('QTY_b').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t17);
+  wwDBGrid10.ColumnByName('QTY_c').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t18);
+  wwDBGrid10.ColumnByName('QTY_d').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t19);
+  wwDBGrid10.ColumnByName('QTY_e').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t20);
+  wwDBGrid10.ColumnByName('QTY_f').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t21);
+  wwDBGrid10.ColumnByName('QTY_g').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t22);
+end;
+
+procedure THasilTenunFrm.BitBtn37Click(Sender: TObject);
+begin
+  if QBrowse10.Active then
+  begin
+  QBrowse10.Open;
+     DMFrm.SaveDialog1.DefaultExt:='XLK';
+     DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+     DMFrm.SaveDialog1.FileName:='Laporan Hasil Tenun Per No Mesin Grup';
+     wwDBGrid10.ExportOptions.TitleName:='Laporan Hasil Tenun Per No Mesin Grup';
+       if DMFrm.SaveDialog1.Execute then
+       begin
+         try
+         wwDBGrid10.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+         wwDBGrid10.ExportOptions.Save;
+         ShowMessage('Simpan Sukses !');
+         except
+         ShowMessage('Simpan Gagal !');
+         end;
+       end;
+  end
+  else
+    ShowMessage('Tabel belum di-OPEN !');
+end;
+
+procedure THasilTenunFrm.QBrowse10CalcFields(DataSet: TDataSet);
+begin
+  QBrowse10JML_PROD.AsFloat := QBrowse10QTY_A.AsFloat+ QBrowse10QTY_B.AsFloat +
+    QBrowse10QTY_C.AsFloat + QBrowse10QTY_D.AsFloat + QBrowse10QTY_E.AsFloat +
+    QBrowse10QTY_F.AsFloat + QBrowse10QTY_G.AsFloat
+end;
+
+procedure THasilTenunFrm.BitBtn6Click(Sender: TObject);
+begin
+  if QBrowse2.Active then
+  begin
+     DMFrm.SaveDialog1.DefaultExt:='XLK';
+     DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+     DMFrm.SaveDialog1.FileName:='HASIL TENUN PER FORMASI';
+     wwDBGrid3.ExportOptions.TitleName:='PER FORMASI';
+       if DMFrm.SaveDialog1.Execute then
+       begin
+         try
+         wwDBGrid3.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+         wwDBGrid3.ExportOptions.Save;
+         ShowMessage('Simpan Sukses !');
+         except
+         ShowMessage('Simpan Gagal !');
+         end;
+       end;
+  end
+  else
+    ShowMessage('Tabel belum di-OPEN !');
+end;
+
+end.

@@ -1,0 +1,937 @@
+object KonversiPaletFrm: TKonversiPaletFrm
+  Left = 363
+  Top = 84
+  BorderStyle = bsDialog
+  Caption = 'KONVERSI PALET'
+  ClientHeight = 620
+  ClientWidth = 991
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  Scaled = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 579
+    Width = 991
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    DesignSize = (
+      991
+      41)
+    object BitBtn1: TBitBtn
+      Left = 592
+      Top = 8
+      Width = 75
+      Height = 25
+      TabOrder = 1
+      Kind = bkClose
+    end
+    object Button1: TButton
+      Left = 24
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Print'
+      TabOrder = 2
+      OnClick = Button1Click
+    end
+    object BtnExport: TBitBtn
+      Left = 795
+      Top = 8
+      Width = 79
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = '&Export'
+      TabOrder = 0
+      OnClick = BtnExportClick
+      NumGlyphs = 2
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 991
+    Height = 41
+    Align = alTop
+    TabOrder = 1
+    object BtnFind: TSpeedButton
+      Left = 7
+      Top = 3
+      Width = 89
+      Height = 30
+      GroupIndex = 1
+      Caption = 'Mode &Cari'
+      NumGlyphs = 2
+      OnClick = BtnFindClick
+    end
+    object BtnOk2: TSpeedButton
+      Left = 103
+      Top = 3
+      Width = 89
+      Height = 30
+      GroupIndex = 1
+      Caption = '&Oke'
+      NumGlyphs = 2
+      OnClick = BtnOk2Click
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 41
+    Width = 991
+    Height = 538
+    ActivePage = Data
+    Align = alClient
+    TabOrder = 3
+    object Data: TTabSheet
+      Caption = 'Data'
+      object QuickRep1: TQuickRep
+        Left = 56
+        Top = 72
+        Width = 794
+        Height = 1123
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        BeforePrint = QuickRep1BeforePrint
+        DataSet = QBrowse
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        Functions.Strings = (
+          'PAGENUMBER'
+          'COLUMNNUMBER'
+          'REPORTTITLE')
+        Functions.DATA = (
+          '0'
+          '0'
+          #39#39)
+        Options = [FirstPageHeader, LastPageFooter]
+        Page.Columns = 4
+        Page.Orientation = poPortrait
+        Page.PaperSize = A4
+        Page.Values = (
+          127.000000000000000000
+          2970.000000000000000000
+          127.000000000000000000
+          2100.000000000000000000
+          127.000000000000000000
+          127.000000000000000000
+          0.000000000000000000)
+        PrinterSettings.Copies = 1
+        PrinterSettings.Duplex = False
+        PrinterSettings.FirstPage = 0
+        PrinterSettings.LastPage = 0
+        PrinterSettings.OutputBin = Auto
+        PrintIfEmpty = True
+        SnapToGrid = True
+        Units = MM
+        Zoom = 100
+        object TitleBand1: TQRBand
+          Left = 48
+          Top = 48
+          Width = 698
+          Height = 49
+          Frame.Color = clBlack
+          Frame.DrawTop = False
+          Frame.DrawBottom = False
+          Frame.DrawLeft = False
+          Frame.DrawRight = False
+          AlignToBottom = False
+          Color = clWhite
+          ForceNewColumn = False
+          ForceNewPage = False
+          Size.Values = (
+            129.645833333333300000
+            1846.791666666667000000)
+          BandType = rbTitle
+          object QRLabel2: TQRLabel
+            Left = 220
+            Top = 16
+            Width = 258
+            Height = 23
+            Frame.Color = clBlack
+            Frame.DrawTop = False
+            Frame.DrawBottom = False
+            Frame.DrawLeft = False
+            Frame.DrawRight = False
+            Size.Values = (
+              60.854166666666670000
+              582.083333333333400000
+              42.333333333333340000
+              682.625000000000000000)
+            Alignment = taCenter
+            AlignToBand = True
+            AutoSize = True
+            AutoStretch = False
+            Caption = 'DAFTAR OPERATOR MESIN'
+            Color = clWhite
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -19
+            Font.Name = 'Arial'
+            Font.Style = [fsBold]
+            ParentFont = False
+            Transparent = False
+            WordWrap = True
+            FontSize = 14
+          end
+        end
+        object ColumnHeaderBand1: TQRBand
+          Left = 48
+          Top = 97
+          Width = 174
+          Height = 40
+          Frame.Color = clBlack
+          Frame.DrawTop = False
+          Frame.DrawBottom = False
+          Frame.DrawLeft = False
+          Frame.DrawRight = False
+          AlignToBottom = False
+          Color = clWhite
+          ForceNewColumn = False
+          ForceNewPage = False
+          Size.Values = (
+            105.833333333333300000
+            460.375000000000000000)
+          BandType = rbColumnHeader
+          object QRLabel1: TQRLabel
+            Left = 0
+            Top = 24
+            Width = 93
+            Height = 15
+            Frame.Color = clBlack
+            Frame.DrawTop = False
+            Frame.DrawBottom = False
+            Frame.DrawLeft = False
+            Frame.DrawRight = False
+            Size.Values = (
+              39.687500000000000000
+              0.000000000000000000
+              63.500000000000000000
+              246.062500000000000000)
+            Alignment = taLeftJustify
+            AlignToBand = False
+            AutoSize = True
+            AutoStretch = False
+            Caption = 'OPERATOR/ MESIN'
+            Color = clWhite
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Arial'
+            Font.Style = [fsUnderline]
+            ParentFont = False
+            Transparent = False
+            WordWrap = True
+            FontSize = 8
+          end
+        end
+        object DetailBand1: TQRBand
+          Left = 48
+          Top = 192
+          Width = 174
+          Height = 16
+          Frame.Color = clBlack
+          Frame.DrawTop = False
+          Frame.DrawBottom = False
+          Frame.DrawLeft = False
+          Frame.DrawRight = False
+          AlignToBottom = False
+          Color = clWhite
+          ForceNewColumn = False
+          ForceNewPage = False
+          Size.Values = (
+            42.333333333333340000
+            460.375000000000000000)
+          BandType = rbDetail
+          object QRDBText1: TQRDBText
+            Left = 32
+            Top = 0
+            Width = 42
+            Height = 15
+            Frame.Color = clBlack
+            Frame.DrawTop = False
+            Frame.DrawBottom = False
+            Frame.DrawLeft = False
+            Frame.DrawRight = False
+            Size.Values = (
+              39.687500000000000000
+              84.666666666666670000
+              0.000000000000000000
+              111.125000000000000000)
+            Alignment = taLeftJustify
+            AlignToBand = False
+            AutoSize = True
+            AutoStretch = False
+            Color = clWhite
+            DataSet = QBrowse
+            DataField = 'PROSES'
+            Transparent = False
+            WordWrap = True
+            FontSize = 8
+          end
+        end
+        object QRBand1: TQRBand
+          Left = 48
+          Top = 216
+          Width = 174
+          Height = 8
+          Frame.Color = clBlack
+          Frame.DrawTop = False
+          Frame.DrawBottom = False
+          Frame.DrawLeft = False
+          Frame.DrawRight = False
+          AlignToBottom = False
+          Color = clWhite
+          ForceNewColumn = False
+          ForceNewPage = False
+          Size.Values = (
+            21.166666666666670000
+            460.375000000000000000)
+          BandType = rbGroupFooter
+        end
+        object QRGroup1: TQRGroup
+          Left = 48
+          Top = 137
+          Width = 174
+          Height = 32
+          Frame.Color = clBlack
+          Frame.DrawTop = False
+          Frame.DrawBottom = False
+          Frame.DrawLeft = False
+          Frame.DrawRight = False
+          AlignToBottom = False
+          BeforePrint = QRGroup1BeforePrint
+          Color = clWhite
+          ForceNewColumn = False
+          ForceNewPage = True
+          Size.Values = (
+            84.666666666666670000
+            460.375000000000000000)
+          Expression = 'QBrowse.LOKASI'
+          FooterBand = QRBand1
+          Master = QuickRep1
+          ReprintOnNewPage = False
+          object QRExpr2: TQRExpr
+            Left = 0
+            Top = 3
+            Width = 169
+            Height = 20
+            Frame.Color = clBlack
+            Frame.DrawTop = False
+            Frame.DrawBottom = False
+            Frame.DrawLeft = False
+            Frame.DrawRight = False
+            Size.Values = (
+              52.916666666666700000
+              0.000000000000000000
+              7.937500000000000000
+              447.145833333333000000)
+            Alignment = taLeftJustify
+            AlignToBand = False
+            AutoSize = False
+            AutoStretch = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Style = [fsBold]
+            Color = clWhite
+            Master = QuickRep1
+            ParentFont = False
+            ResetAfterPrint = False
+            Transparent = False
+            WordWrap = True
+            Expression = #39'PERTENUNAN '#39'+QBrowse.LOKASI'
+            FontSize = 12
+          end
+        end
+        object QRGroup2: TQRGroup
+          Left = 48
+          Top = 169
+          Width = 174
+          Height = 23
+          Frame.Color = clBlack
+          Frame.DrawTop = False
+          Frame.DrawBottom = False
+          Frame.DrawLeft = False
+          Frame.DrawRight = False
+          AlignToBottom = False
+          BeforePrint = QRGroup2BeforePrint
+          Color = clWhite
+          ForceNewColumn = False
+          ForceNewPage = False
+          Size.Values = (
+            60.854166666666670000
+            460.375000000000000000)
+          Expression = 'QBrowse.NIK'
+          FooterBand = QRBand2
+          Master = QuickRep1
+          ReprintOnNewPage = False
+          object QRLNo: TQRLabel
+            Left = 0
+            Top = 3
+            Width = 16
+            Height = 15
+            Frame.Color = clBlack
+            Frame.DrawTop = False
+            Frame.DrawBottom = False
+            Frame.DrawLeft = False
+            Frame.DrawRight = False
+            Size.Values = (
+              39.687500000000000000
+              0.000000000000000000
+              7.937500000000000000
+              42.333333333333340000)
+            Alignment = taLeftJustify
+            AlignToBand = False
+            AutoSize = True
+            AutoStretch = False
+            Caption = 'NO'
+            Color = clWhite
+            Transparent = False
+            WordWrap = True
+            FontSize = 8
+          end
+          object QRExpr1: TQRExpr
+            Left = 32
+            Top = 3
+            Width = 137
+            Height = 15
+            Frame.Color = clBlack
+            Frame.DrawTop = False
+            Frame.DrawBottom = False
+            Frame.DrawLeft = False
+            Frame.DrawRight = False
+            Size.Values = (
+              39.687500000000000000
+              84.666666666666700000
+              7.937500000000000000
+              362.479166666667000000)
+            Alignment = taLeftJustify
+            AlignToBand = False
+            AutoSize = False
+            AutoStretch = True
+            Color = clWhite
+            Master = QuickRep1
+            ResetAfterPrint = False
+            Transparent = False
+            WordWrap = True
+            Expression = 'QBrowse.NAMA_KARYAWAN + '#39', '#39' + QBrowse.NIK'
+            FontSize = 8
+          end
+        end
+        object QRBand2: TQRBand
+          Left = 48
+          Top = 208
+          Width = 174
+          Height = 8
+          Frame.Color = clBlack
+          Frame.DrawTop = False
+          Frame.DrawBottom = False
+          Frame.DrawLeft = False
+          Frame.DrawRight = False
+          AlignToBottom = False
+          Color = clWhite
+          ForceNewColumn = False
+          ForceNewPage = False
+          Size.Values = (
+            21.166666666666670000
+            460.375000000000000000)
+          BandType = rbGroupFooter
+        end
+      end
+      object wwDBGrid2: TwwDBGrid
+        Left = 0
+        Top = 33
+        Width = 983
+        Height = 477
+        ControlType.Strings = (
+          'NIK;CustomEdit;LookKaryawan;F'
+          'NIK2;CustomEdit;LookKaryawan2;F'
+          'KD_ITEM;CustomEdit;LookItem;F'
+          'AKTIF;CheckBox;1;0')
+        Selected.Strings = (
+          'KODE'#9'5'#9'KODE'#9'F'
+          'KD_ITEM'#9'15'#9'KODE'#9'F'#9'ITEM'
+          'NAMA_ITEM'#9'30'#9'NAMA'#9'F'#9'ITEM'
+          'PCS'#9'10'#9'PCS'#9'F'
+          'KG'#9'10'#9'KG'#9'F'
+          'AKTIF'#9'1'#9'AKTIF'#9'F'
+          'TGL_EDIT'#9'18'#9'TGL_EDIT'#9'F'
+          'TGL_INSERT'#9'18'#9'TGL_INSERT'#9'F')
+        IniAttributes.Delimiter = ';;'
+        ExportOptions.ExportType = wwgetHTML
+        TitleColor = clSkyBlue
+        FixedCols = 0
+        ShowHorzScrollBar = True
+        Align = alClient
+        DataSource = dsQBrowse
+        RowHeightPercent = 125
+        TabOrder = 0
+        TitleAlignment = taLeftJustify
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+        TitleFont.Style = []
+        TitleLines = 2
+        TitleButtons = False
+        UseTFields = False
+      end
+      object wwDBNavigator1: TwwDBNavigator
+        Left = 0
+        Top = 0
+        Width = 983
+        Height = 33
+        AutosizeStyle = asSizeNavButtons
+        DataSource = dsQBrowse
+        RepeatInterval.InitialDelay = 500
+        RepeatInterval.Interval = 100
+        Align = alTop
+        object wwDBNavigator1First: TwwNavButton
+          Left = 0
+          Top = 0
+          Width = 62
+          Height = 33
+          Hint = 'Move to first record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1First'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 0
+          Style = nbsFirst
+        end
+        object wwDBNavigator1PriorPage: TwwNavButton
+          Left = 62
+          Top = 0
+          Width = 62
+          Height = 33
+          Hint = 'Move backward 10 records'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1PriorPage'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 1
+          Style = nbsPriorPage
+        end
+        object wwDBNavigator1Prior: TwwNavButton
+          Left = 124
+          Top = 0
+          Width = 62
+          Height = 33
+          Hint = 'Move to prior record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Prior'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 2
+          Style = nbsPrior
+        end
+        object wwDBNavigator1Next: TwwNavButton
+          Left = 186
+          Top = 0
+          Width = 62
+          Height = 33
+          Hint = 'Move to next record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Next'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 3
+          Style = nbsNext
+        end
+        object wwDBNavigator1NextPage: TwwNavButton
+          Left = 248
+          Top = 0
+          Width = 62
+          Height = 33
+          Hint = 'Move forward 10 records'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1NextPage'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 4
+          Style = nbsNextPage
+        end
+        object wwDBNavigator1Last: TwwNavButton
+          Left = 310
+          Top = 0
+          Width = 62
+          Height = 33
+          Hint = 'Move to last record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Last'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 5
+          Style = nbsLast
+        end
+        object wwDBNavigator1Insert: TwwNavButton
+          Left = 372
+          Top = 0
+          Width = 62
+          Height = 33
+          Hint = 'Insert new record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Insert'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 6
+          Style = nbsInsert
+        end
+        object wwDBNavigator1Delete: TwwNavButton
+          Left = 434
+          Top = 0
+          Width = 61
+          Height = 33
+          Hint = 'Delete current record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Delete'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 7
+          Style = nbsDelete
+        end
+        object wwDBNavigator1Edit: TwwNavButton
+          Left = 495
+          Top = 0
+          Width = 61
+          Height = 33
+          Hint = 'Edit current record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Edit'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 8
+          Style = nbsEdit
+        end
+        object wwDBNavigator1Post: TwwNavButton
+          Left = 556
+          Top = 0
+          Width = 61
+          Height = 33
+          Hint = 'Post changes of current record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Post'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 9
+          Style = nbsPost
+        end
+        object wwDBNavigator1Cancel: TwwNavButton
+          Left = 617
+          Top = 0
+          Width = 61
+          Height = 33
+          Hint = 'Cancel changes made to current record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Cancel'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 10
+          Style = nbsCancel
+        end
+        object wwDBNavigator1Refresh: TwwNavButton
+          Left = 678
+          Top = 0
+          Width = 61
+          Height = 33
+          Hint = 'Refresh the contents of the dataset'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Refresh'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 11
+          Style = nbsRefresh
+        end
+        object wwDBNavigator1SaveBookmark: TwwNavButton
+          Left = 739
+          Top = 0
+          Width = 61
+          Height = 33
+          Hint = 'Bookmark current record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1SaveBookmark'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 12
+          Style = nbsSaveBookmark
+        end
+        object wwDBNavigator1RestoreBookmark: TwwNavButton
+          Left = 800
+          Top = 0
+          Width = 61
+          Height = 33
+          Hint = 'Go back to saved bookmark'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1RestoreBookmark'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 13
+          Style = nbsRestoreBookmark
+        end
+        object wwDBNavigator1FilterDialog: TwwNavButton
+          Left = 861
+          Top = 0
+          Width = 61
+          Height = 33
+          Hint = 'Filter the dataset'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1FilterDialog'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 14
+          Style = nbsFilterDialog
+        end
+        object wwDBNavigator1SearchDialog: TwwNavButton
+          Left = 922
+          Top = 0
+          Width = 61
+          Height = 33
+          Hint = 'Search the dataset'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1SearchDialog'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 15
+          Style = nbsSearchDialog
+        end
+      end
+    end
+  end
+  object LookItem: TwwDBLookupComboDlg
+    Left = 104
+    Top = 168
+    Width = 89
+    Height = 21
+    GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
+    GridColor = clWhite
+    GridTitleAlignment = taLeftJustify
+    Caption = 'Lookup'
+    MaxWidth = 0
+    MaxHeight = 209
+    Selected.Strings = (
+      'KD_ITEM'#9'10'#9'KODE'#9'F'
+      'NAMA_ITEM'#9'40'#9'NAMA ITEM'#9'F')
+    DataField = 'KD_ITEM'
+    DataSource = dsQBrowse
+    LookupTable = QBarang
+    LookupField = 'KD_ITEM'
+    TabOrder = 2
+    AutoDropDown = False
+    ShowButton = True
+    AllowClearKey = False
+    OnCloseUp = LookItemCloseUp
+    OnEnter = LookItemEnter
+  end
+  object QBrowse: TOracleDataSet
+    SQL.Strings = (
+      'select a.*, a.rowid from ipisma_db4.konversi_palet a')
+    QBEDefinition.QBEFieldDefs = {
+      0400000008000000040000004B4F4445010000000000070000004B445F495445
+      4D010000000000090000004E414D415F4954454D010000000000030000005043
+      53010000000000020000004B4701000000000005000000414B54494601000000
+      00000A00000054474C5F494E534552540100000000000800000054474C5F4544
+      4954010000000000}
+    QueryAllRecords = False
+    Session = DMFrm.OS
+    BeforePost = QBrowseBeforePost
+    OnNewRecord = QBrowseNewRecord
+    Left = 88
+    Top = 8
+    object QBrowseKODE: TStringField
+      FieldName = 'KODE'
+      Required = True
+      Size = 5
+    end
+    object QBrowseKD_ITEM: TStringField
+      FieldName = 'KD_ITEM'
+      Size = 15
+    end
+    object QBrowseNAMA_ITEM: TStringField
+      FieldName = 'NAMA_ITEM'
+      Required = True
+      Size = 30
+    end
+    object QBrowsePCS: TFloatField
+      FieldName = 'PCS'
+      Required = True
+    end
+    object QBrowseKG: TFloatField
+      FieldName = 'KG'
+      Required = True
+    end
+    object QBrowseAKTIF: TStringField
+      FieldName = 'AKTIF'
+      Size = 1
+    end
+    object QBrowseTGL_INSERT: TDateTimeField
+      FieldName = 'TGL_INSERT'
+    end
+    object QBrowseTGL_EDIT: TDateTimeField
+      FieldName = 'TGL_EDIT'
+    end
+  end
+  object dsQBrowse: TwwDataSource
+    DataSet = QBrowse
+    Left = 136
+    Top = 8
+  end
+  object QBarang: TOracleDataSet
+    SQL.Strings = (
+      'select * from ipisma_db4.vmaterial'
+      'order by diskripsi')
+    QBEDefinition.QBEFieldDefs = {
+      040000000C000000070000004B445F4954454D010000000000090000004E414D
+      415F4954454D010000000000070000004E4F5F50415254010000000000070000
+      004A4E535F425247010000000000090000004449534B52495053490100000000
+      0005000000524153494F01000000000006000000524153494F32010000000000
+      06000000524153494F330100000000000B000000524153494F5F434F4E455301
+      00000000000C000000524153494F5F50414C4C45540100000000000500000048
+      454C4149010000000000090000004E4F5F42454E414E47010000000000}
+    Session = DMFrm.OS
+    Left = 248
+    Top = 32
+    object QBarangKD_ITEM: TStringField
+      DisplayLabel = 'KODE'
+      DisplayWidth = 10
+      FieldName = 'KD_ITEM'
+      Required = True
+      Size = 50
+    end
+    object QBarangNAMA_ITEM: TStringField
+      DisplayLabel = 'NAMA ITEM'
+      DisplayWidth = 40
+      FieldName = 'NAMA_ITEM'
+      Required = True
+      Size = 50
+    end
+    object QBarangNO_BENANG: TFloatField
+      DisplayWidth = 10
+      FieldName = 'NO_BENANG'
+      Visible = False
+    end
+    object QBarangNO_PART: TStringField
+      DisplayLabel = 'NO PART'
+      DisplayWidth = 12
+      FieldName = 'NO_PART'
+      Visible = False
+      Size = 50
+    end
+    object QBarangJNS_BRG: TStringField
+      DisplayLabel = 'JENIS'
+      DisplayWidth = 20
+      FieldName = 'JNS_BRG'
+      Visible = False
+      Size = 50
+    end
+    object QBarangDISKRIPSI: TStringField
+      FieldName = 'DISKRIPSI'
+      Visible = False
+      Size = 255
+    end
+    object QBarangRASIO: TFloatField
+      FieldName = 'RASIO'
+      Visible = False
+    end
+    object QBarangRASIO2: TFloatField
+      FieldName = 'RASIO2'
+      Visible = False
+    end
+    object QBarangRASIO3: TFloatField
+      FieldName = 'RASIO3'
+      Visible = False
+    end
+    object QBarangRASIO_CONES: TFloatField
+      FieldName = 'RASIO_CONES'
+      Visible = False
+    end
+    object QBarangRASIO_PALLET: TFloatField
+      FieldName = 'RASIO_PALLET'
+      Visible = False
+    end
+    object QBarangHELAI: TFloatField
+      FieldName = 'HELAI'
+      Visible = False
+    end
+  end
+end

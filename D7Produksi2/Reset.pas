@@ -1,0 +1,93 @@
+unit Reset;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Oracle, StdCtrls,Registry, Buttons, ComCtrls;
+
+type
+  TResetFrm = class(TForm)
+    BitBtn1: TBitBtn;
+    GRItem: TOracleQuery;
+    Animate1: TAnimate;
+    procedure BitBtn1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    FIniFile: TRegIniFile;
+  end;
+
+var
+  ResetFrm: TResetFrm;
+
+implementation
+
+uses DM, Pembelian;
+
+{$R *.dfm}
+
+procedure TResetFrm.BitBtn1Click(Sender: TObject);
+var
+  Cleanup: TRegistry;
+  key: string;
+  //reg: string;
+begin
+ // reg.delete;
+  key := FIniFile.FileName;
+  FIniFile.Free;
+  // make sure we don't leave junk in the registry behind.
+  Cleanup := TRegistry.Create;
+  try
+    Cleanup.DeleteKey(key);
+  finally
+    Cleanup.Free;
+    ShowMessage('Reset Warna Sukses !');
+  end;
+  FormCreate(nil);
+  key := 'PRODUKSI2';
+  Cleanup := TRegistry.Create;
+  try
+    Cleanup.DeleteKey(key);
+  finally
+    Cleanup.Free;
+  end;
+
+  key := 'D:';
+  Cleanup := TRegistry.Create;
+  try
+    Cleanup.DeleteKey(key);
+  finally
+    Cleanup.Free;
+  end;
+
+  key := 'Pismatex Master';
+  Cleanup := TRegistry.Create;
+  try
+    Cleanup.DeleteKey(key);
+  finally
+    Cleanup.Free;
+  end;
+
+  key := 'Cipsoft_GL';
+  Cleanup := TRegistry.Create;
+  try
+    Cleanup.DeleteKey(key);
+  finally
+    Cleanup.Free;
+    ShowMessage('Reset Grid Sukses !');
+ResetFrm.Close;
+PembelianFrm.close;
+  end;
+end;
+
+procedure TResetFrm.FormCreate(Sender: TObject);
+begin
+FIniFile := TRegIniFile.Create('PRODUKSI2');
+//Read_Registry;
+//CheckBox2.Checked:=DMFrm.vremote;
+end;
+
+end.

@@ -1,0 +1,137 @@
+unit AbsenOperatorMesin;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, Wwdbigrd, Wwdbgrid, DB, Wwdatsrc, OracleData, ExtCtrls,
+  Buttons, StdCtrls, wwdblook, Wwdbdlg, wwdbdatetimepicker, Oracle;
+
+type
+  TAbsenOperatorMesinFrm = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    QBrowse: TOracleDataSet;
+    QBrowseNIK: TStringField;
+    QBrowseGRUP: TStringField;
+    QBrowsePROSES: TStringField;
+    QBrowseLOKASI: TStringField;
+    dsQBrowse: TwwDataSource;
+    wwDBGrid2: TwwDBGrid;
+    QBrowseNAMA_KARYAWAN: TStringField;
+    BitBtn1: TBitBtn;
+    BtnFind: TSpeedButton;
+    BtnOk2: TSpeedButton;
+    BtnExport: TBitBtn;
+    LookKaryawan: TwwDBLookupComboDlg;
+    QBrowseTANGGAL: TDateTimeField;
+    vTglAwal: TwwDBDateTimePicker;
+    Label15: TLabel;
+    BitBtn2: TBitBtn;
+    QBuatAbsen: TOracleQuery;
+    LRencord: TLabel;
+    procedure BtnFindClick(Sender: TObject);
+    procedure BtnOk2Click(Sender: TObject);
+    procedure BtnExportClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure LookKaryawanEnter(Sender: TObject);
+    procedure QBrowseBeforeQuery(Sender: TOracleDataSet);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure QBrowseAfterScroll(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  AbsenOperatorMesinFrm: TAbsenOperatorMesinFrm;
+
+implementation
+
+uses DM;
+
+{$R *.dfm}
+
+procedure TAbsenOperatorMesinFrm.BtnFindClick(Sender: TObject);
+begin
+  if not QBrowse.QBEMode then
+  begin
+//    wwDBGrid2.Options:=wwDBGrid2.Options-[dgRowSelect,dgAlwaysShowSelection];
+    QBrowse.QBEMode:=TRUE;
+  end
+  else
+    QBrowse.ClearQBE;
+
+end;
+
+procedure TAbsenOperatorMesinFrm.BtnOk2Click(Sender: TObject);
+begin
+  if QBrowse.QBEMode then
+  begin
+    QBrowse.ExecuteQBE;
+//    wwDBGrid2.Options:=wwDBGrid2.Options+[dgRowSelect,dgAlwaysShowSelection];
+  end;
+
+end;
+
+procedure TAbsenOperatorMesinFrm.BtnExportClick(Sender: TObject);
+begin
+    DMFrm.SaveDialog1.FileName:=Caption+'.html';
+    if DMFrm.SaveDialog1.Execute then
+    begin
+      try
+        wwDBGrid2.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+        wwDBGrid2.ExportOptions.TitleName:='<font size=4>'+Caption+'</font><br><font size=1></font>';
+        wwDBGrid2.ExportOptions.Save;
+        if MessageDlg('Ekspor Data Sukses, Lihat Hasil ?',mtWarning,[mbYes, mbNo],0)=mrYes then
+        begin
+          DMFrm.LMDStarter1.Command:=DMFrm.SaveDialog1.FileName;
+          DMFrm.LMDStarter1.Execute;
+        end;
+  		Except
+    	  ShowMessage('Ekspor Data Gagal !');
+  		end;
+    end;
+
+end;
+
+procedure TAbsenOperatorMesinFrm.FormShow(Sender: TObject);
+begin
+  vTglAwal.Date:=Trunc(DMFrm.QTimeJAM.AsDateTime);
+  QBrowse.Open;
+end;
+
+procedure TAbsenOperatorMesinFrm.LookKaryawanEnter(Sender: TObject);
+begin
+  DMFrm.MKaryawanAktif.Open;
+end;
+
+procedure TAbsenOperatorMesinFrm.QBrowseBeforeQuery(
+  Sender: TOracleDataSet);
+begin
+  QBrowse.SetVariable('tanggal',vTglAwal.date);
+end;
+
+procedure TAbsenOperatorMesinFrm.BitBtn2Click(Sender: TObject);
+begin
+  QBrowse.Close;
+  QBrowse.Open;
+ // if QBrowse.IsEmpty then
+//  begin
+		QBuatAbsen.Close;
+    QBuatAbsen.SetVariable('tanggal',vTglAwal.Date);
+    QBuatAbsen.Execute;
+//  end;
+  QBrowse.Close;
+  QBrowse.Open;  
+end;
+
+procedure TAbsenOperatorMesinFrm.QBrowseAfterScroll(DataSet: TDataSet);
+begin
+{azmi}
+  LRencord.Caption:=IntToStr(QBrowse.RecNo)+' of '+IntToStr(QBrowse.RecordCount);
+{azmi}
+end;
+
+end.

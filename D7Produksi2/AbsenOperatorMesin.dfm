@@ -1,0 +1,281 @@
+object AbsenOperatorMesinFrm: TAbsenOperatorMesinFrm
+  Left = 247
+  Top = 94
+  BorderStyle = bsDialog
+  Caption = 'DAFTAR ABSEN OPERATOR MESIN'
+  ClientHeight = 620
+  ClientWidth = 488
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 579
+    Width = 488
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    DesignSize = (
+      488
+      41)
+    object LRencord: TLabel
+      Left = 11
+      Top = 11
+      Width = 6
+      Height = 20
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object BitBtn1: TBitBtn
+      Left = 384
+      Top = 8
+      Width = 75
+      Height = 25
+      TabOrder = 0
+      Kind = bkClose
+    end
+    object BtnExport: TBitBtn
+      Left = 309
+      Top = 8
+      Width = 75
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = '&Export'
+      TabOrder = 1
+      OnClick = BtnExportClick
+      NumGlyphs = 2
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 488
+    Height = 41
+    Align = alTop
+    TabOrder = 1
+    object BtnFind: TSpeedButton
+      Left = 287
+      Top = 6
+      Width = 89
+      Height = 30
+      GroupIndex = 1
+      Caption = 'Mode &Cari'
+      NumGlyphs = 2
+      OnClick = BtnFindClick
+    end
+    object BtnOk2: TSpeedButton
+      Left = 375
+      Top = 6
+      Width = 89
+      Height = 30
+      GroupIndex = 1
+      Caption = '&Oke'
+      NumGlyphs = 2
+      OnClick = BtnOk2Click
+    end
+    object Label15: TLabel
+      Left = 8
+      Top = 4
+      Width = 39
+      Height = 13
+      Caption = 'Tanggal'
+    end
+    object vTglAwal: TwwDBDateTimePicker
+      Left = 8
+      Top = 18
+      Width = 113
+      Height = 22
+      BorderStyle = bsNone
+      CalendarAttributes.Font.Charset = DEFAULT_CHARSET
+      CalendarAttributes.Font.Color = clWindowText
+      CalendarAttributes.Font.Height = -11
+      CalendarAttributes.Font.Name = 'MS Sans Serif'
+      CalendarAttributes.Font.Style = []
+      Epoch = 1950
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ShowButton = True
+      TabOrder = 0
+      DisplayFormat = 'dd mmm yyyy'
+    end
+    object BitBtn2: TBitBtn
+      Left = 128
+      Top = 11
+      Width = 75
+      Height = 25
+      Caption = 'OK'
+      Default = True
+      TabOrder = 1
+      OnClick = BitBtn2Click
+      Glyph.Data = {
+        DE010000424DDE01000000000000760000002800000024000000120000000100
+        0400000000006801000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        3333333333333333333333330000333333333333333333333333F33333333333
+        00003333344333333333333333388F3333333333000033334224333333333333
+        338338F3333333330000333422224333333333333833338F3333333300003342
+        222224333333333383333338F3333333000034222A22224333333338F338F333
+        8F33333300003222A3A2224333333338F3838F338F33333300003A2A333A2224
+        33333338F83338F338F33333000033A33333A222433333338333338F338F3333
+        0000333333333A222433333333333338F338F33300003333333333A222433333
+        333333338F338F33000033333333333A222433333333333338F338F300003333
+        33333333A222433333333333338F338F00003333333333333A22433333333333
+        3338F38F000033333333333333A223333333333333338F830000333333333333
+        333A333333333333333338330000333333333333333333333333333333333333
+        0000}
+      NumGlyphs = 2
+    end
+  end
+  object wwDBGrid2: TwwDBGrid
+    Left = 0
+    Top = 41
+    Width = 488
+    Height = 538
+    ControlType.Strings = (
+      'NIK;CustomEdit;LookKaryawan;F')
+    Selected.Strings = (
+      'TANGGAL'#9'12'#9'TANGGAL'#9'F'
+      'LOKASI'#9'6'#9'LOKASI'#9#9
+      'PROSES'#9'6'#9'MESIN'#9'F'
+      'GRUP'#9'5'#9'GRUP'#9#9
+      'NIK'#9'10'#9'NIK'#9#9
+      'NAMA_KARYAWAN'#9'30'#9'NAMA KARYAWAN'#9#9)
+    IniAttributes.Delimiter = ';;'
+    ExportOptions.ExportType = wwgetHTML
+    TitleColor = clBtnFace
+    FixedCols = 0
+    ShowHorzScrollBar = True
+    Align = alClient
+    DataSource = dsQBrowse
+    RowHeightPercent = 125
+    TabOrder = 2
+    TitleAlignment = taLeftJustify
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    TitleLines = 2
+    TitleButtons = False
+    UseTFields = False
+  end
+  object LookKaryawan: TwwDBLookupComboDlg
+    Left = 160
+    Top = 72
+    Width = 89
+    Height = 21
+    GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
+    GridColor = clWhite
+    GridTitleAlignment = taLeftJustify
+    Caption = 'Lookup'
+    MaxWidth = 0
+    MaxHeight = 209
+    Selected.Strings = (
+      'NAMA_KARYAWAN'#9'19'#9'NAMA KARYAWAN'#9#9
+      'NIK'#9'5'#9'NIK'#9#9
+      'BAGIAN'#9'13'#9'BAGIAN'#9#9
+      'SUB_BAGIAN'#9'12'#9'SUB BAGIAN'#9'F'
+      'JABATAN'#9'12'#9'JABATAN'#9'F')
+    DataField = 'NIK'
+    DataSource = dsQBrowse
+    LookupTable = DMFrm.MKaryawanAktif
+    LookupField = 'NIK'
+    TabOrder = 3
+    AutoDropDown = False
+    ShowButton = True
+    AllowClearKey = False
+    OnEnter = LookKaryawanEnter
+  end
+  object QBrowse: TOracleDataSet
+    SQL.Strings = (
+      
+        'select  b.nama_karyawan, a.*, a.rowid from ipisma_db4.operator_m' +
+        'esin_real a'
+      'left outer join ihrd.vkaryawan_aktif@gjduduk b on (a.nik=b.nik)'
+      'where a.tanggal=:tanggal'
+      'order by a.lokasi, a.proses, a.grup')
+    Variables.Data = {
+      0300000001000000080000003A54414E4747414C0C0000000000000000000000}
+    QBEDefinition.QBEFieldDefs = {
+      0400000005000000030000004E494B0100000000000400000047525550010000
+      0000000600000050524F534553010000000000060000004C4F4B415349010000
+      0000000700000054414E4747414C010000000000}
+    QueryAllRecords = False
+    RefreshOptions = [roAfterInsert, roAfterUpdate]
+    BeforeQuery = QBrowseBeforeQuery
+    Session = DMFrm.OS
+    AfterScroll = QBrowseAfterScroll
+    Left = 88
+    Top = 8
+    object QBrowseLOKASI: TStringField
+      DisplayWidth = 30
+      FieldName = 'LOKASI'
+      Size = 30
+    end
+    object QBrowsePROSES: TStringField
+      DisplayWidth = 30
+      FieldName = 'PROSES'
+      Size = 30
+    end
+    object QBrowseGRUP: TStringField
+      DisplayWidth = 5
+      FieldName = 'GRUP'
+      Size = 3
+    end
+    object QBrowseNIK: TStringField
+      DisplayWidth = 10
+      FieldName = 'NIK'
+      Size = 10
+    end
+    object QBrowseNAMA_KARYAWAN: TStringField
+      DisplayLabel = 'NAMA KARYAWAN'
+      DisplayWidth = 30
+      FieldName = 'NAMA_KARYAWAN'
+      Size = 50
+    end
+    object QBrowseTANGGAL: TDateTimeField
+      FieldName = 'TANGGAL'
+      DisplayFormat = 'dd mmm yyyy'
+    end
+  end
+  object dsQBrowse: TwwDataSource
+    DataSet = QBrowse
+    Left = 176
+    Top = 32
+  end
+  object QBuatAbsen: TOracleQuery
+    SQL.Strings = (
+      'begin'
+      
+        '  delete ipisma_db4.operator_mesin_real where tanggal=trunc(:tan' +
+        'ggal);'
+      '  insert into ipisma_db4.operator_mesin_real'
+      '  (tanggal, lokasi, proses, grup, nik)'
+      
+        '  (select trunc(:tanggal), lokasi, proses, grup, nik from ipisma' +
+        '_db4.operator_mesin);'
+      '  commit;'
+      'end;')
+    Session = DMFrm.OS
+    Variables.Data = {
+      0300000001000000080000003A54414E4747414C0C0000000000000000000000}
+    Left = 232
+    Top = 16
+  end
+end
