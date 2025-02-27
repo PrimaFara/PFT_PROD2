@@ -374,6 +374,8 @@ type
     QBRiwayatKELUAR: TFloatField;
     CheckBox4: TCheckBox;
     WebBrowser1: TWebBrowser;
+    Panel8: TPanel;
+    BitBtn12: TBitBtn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure vTglAwalChange(Sender: TObject);
@@ -419,6 +421,7 @@ type
     procedure CheckBox4Click(Sender: TObject);
     procedure WebBrowser1DocumentComplete(Sender: TObject;
       const pDisp: IDispatch; var URL: OleVariant);
+    procedure BitBtn12Click(Sender: TObject);
   private
     { Private declarations }
     vrasio, vrasio3: real;
@@ -1415,7 +1418,7 @@ begin
   wwDBGrid4.ColumnByName('MASUK').FooterValue:=FormatFloat('#.#,#;(#.#,#); ',vt1);
   wwDBGrid4.ColumnByName('KELUAR').FooterValue:=FormatFloat('#.#,#;(#.#,#); ',vt2);
 
-  PanelRTop.Caption:= QBrowseNAMA_ITEM.AsString;
+  PanelRTop.Caption:='  '+QBrowseNAMA_ITEM.AsString;
 
 end;
 
@@ -1428,6 +1431,29 @@ procedure TInfoStokPaletFrm.WebBrowser1DocumentComplete(Sender: TObject;
   const pDisp: IDispatch; var URL: OleVariant);
 begin
    WebBrowser1.OleObject.ExecWB(OLECMDID_PRINT, OLECMDEXECOPT_PROMPTUSER, Unassigned, Unassigned);
+end;
+
+procedure TInfoStokPaletFrm.BitBtn12Click(Sender: TObject);
+begin
+  if QBRiwayat.Active then
+  begin
+     DMFrm.SaveDialog1.DefaultExt:='XLK';
+     DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+     DMFrm.SaveDialog1.FileName:='Riwayat MBP '+PanelRTop.Caption+' Per '+VTglAwal2.Text+' sd '+vTglAkhir2.Text+'.xlk';
+     wwDBGrid4.ExportOptions.TitleName:='Riwayat MBP '+PanelRTop.Caption+' Per '+VTglAwal2.Text+' sd '+vTglAkhir2.Text;
+       if DMFrm.SaveDialog1.Execute then
+       begin
+         try
+         wwDBGrid4.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+         wwDBGrid4.ExportOptions.Save;
+         ShowMessage('Simpan Sukses !');
+         except
+         ShowMessage('Simpan Gagal !');
+         end;
+       end;
+  end
+  else
+    ShowMessage('Tabel belum di-OPEN !');
 end;
 
 end.
