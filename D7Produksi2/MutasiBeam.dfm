@@ -13220,7 +13220,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             'PROSES'#9'14'#9'Proses'#9'T'#9'ASAL'
             'LOKASI_TUJUAN'#9'15'#9'Lokasi'#9'F'#9'TUJUAN'
             'PROSES_TUJUAN'#9'14'#9'Proses'#9'T'#9'TUJUAN'
-            'ISI'#9'8'#9'ISI'#9'F'#9'TUJUAN'
+            'ISI'#9'8'#9'ISI'#9'F'
             'PCS'#9'10'#9'PCS'#9'F'#9'QTY'
             'QTY_KG'#9'8'#9'KG'#9'F'#9'QTY'
             'POT_REV'#9'10'#9'Potong'#9'F'#9'UPDATE'
@@ -14003,10 +14003,11 @@ object MutasiBeamFrm: TMutasiBeamFrm
       'KONSTRUKSI'#9'30'#9'KONSTRUKSI'#9'F'#9
       'CORAK'#9'20'#9'CORAK'#9'F'#9
       'ISI'#9'5'#9'ISI'#9'F'#9
-      'JML_POTONG'#9'10'#9'POTONG'#9'F'
-      'QTY_KG'#9'5'#9'QTY KG'#9'F'#9
+      'QTY_KG'#9'5'#9'KG'#9'F'
+      'QTY_PCS'#9'5'#9'PCS'#9'F'
+      'HSL_WRP'#9'10'#9'HSL PREP'#9'F'
       'VORDER'#9'5'#9'ORDER'#9'F'#9
-      'HASIL'#9'5'#9'HASIL'#9'F'#9)
+      'HASIL'#9'5'#9'HSL TN'#9'F')
     GridTitleAlignment = taLeftJustify
     GridColor = clWhite
     GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
@@ -14027,7 +14028,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
   end
   object QLookBeam1: TOracleDataSet
     SQL.Strings = (
-      'select a.* from ipisma_db4.vlook_beam_sarung_v2 a'
+      'select a.* from ipisma_db4.vlook_beam_sarung_25 a'
       'where a.kd_lokasi=:kd_lokasi'
       'order by a.no_beam'
       '-- and tanggal>=trunc(sysdate-200)'
@@ -14045,8 +14046,8 @@ object MutasiBeamFrm: TMutasiBeamFrm
       000000060000005154595F4B47010000000000020000004B5001000000000007
       00000054414E4747414C010000000000040000004245414D0100000000000600
       00004B475F52455601000000000007000000504F545F52455601000000000007
-      00000048534C5F5752500100000000000A0000004A4D4C5F504F544F4E470100
-      00000000}
+      00000048534C5F575250010000000000070000005154595F5043530100000000
+      00}
     RefreshOptions = [roAfterInsert]
     Session = DMFrm.OS
     Left = 32
@@ -14092,16 +14093,21 @@ object MutasiBeamFrm: TMutasiBeamFrm
       FieldName = 'ISI'
       DisplayFormat = '#.#,#%'
     end
-    object QLookBeam1JML_POTONG: TFloatField
-      DisplayLabel = 'POTONG'
-      DisplayWidth = 10
-      FieldName = 'JML_POTONG'
-    end
     object QLookBeam1QTY_KG: TFloatField
-      DisplayLabel = 'QTY KG'
+      DisplayLabel = 'KG'
       DisplayWidth = 5
       FieldName = 'QTY_KG'
       DisplayFormat = '#.#,#'
+    end
+    object QLookBeam1QTY_PCS: TFloatField
+      DisplayLabel = 'PCS'
+      DisplayWidth = 5
+      FieldName = 'QTY_PCS'
+    end
+    object QLookBeam1HSL_WRP: TFloatField
+      DisplayLabel = 'HSL PREP'
+      DisplayWidth = 10
+      FieldName = 'HSL_WRP'
     end
     object QLookBeam1VORDER: TFloatField
       DisplayLabel = 'ORDER'
@@ -14109,6 +14115,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
       FieldName = 'VORDER'
     end
     object QLookBeam1HASIL: TFloatField
+      DisplayLabel = 'HSL TN'
       DisplayWidth = 5
       FieldName = 'HASIL'
     end

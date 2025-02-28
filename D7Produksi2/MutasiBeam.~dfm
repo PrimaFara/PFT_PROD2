@@ -33,7 +33,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
       Caption = 'Input'
       OnShow = TabSheet1Show
       object QuickRep1: TQuickRep
-        Left = 24
+        Left = 32
         Top = 24
         Width = 794
         Height = 529
@@ -14311,8 +14311,8 @@ object MutasiBeamFrm: TMutasiBeamFrm
     SQL.Strings = (
       
         'select COUNT(lokasi) LOKASI_CUCUK from ipisma_db4.beam_mutasi_de' +
-        'tail where lokasi='#39'CUCUK'#39
-      'and no_reg=:no_reg')
+        'tail '
+      'where lokasi='#39'CUCUK'#39' and no_reg=:no_reg')
     Variables.Data = {0300000001000000070000003A4E4F5F524547030000000000000000000000}
     QBEDefinition.QBEFieldDefs = {04000000010000000C0000004C4F4B4153495F435543554B010000000000}
     QueryAllRecords = False

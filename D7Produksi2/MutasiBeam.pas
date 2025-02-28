@@ -756,9 +756,10 @@ type
     QRLabel165: TQRLabel;
     QMasterMITRA: TStringField;
     QMitraPROSES2: TStringField;
-    QLookBeam1JML_POTONG: TFloatField;
     DetailPCS: TFloatField;
     QDetail_cetakMITRA: TStringField;
+    QLookBeam1HSL_WRP: TFloatField;
+    QLookBeam1QTY_PCS: TFloatField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure TabSheet1Show(Sender: TObject);
@@ -1111,7 +1112,7 @@ begin
    DetailPOT_REV.AsFloat:=QLookBeam1POT_REV.AsFloat;
    DetailJENIS_MESIN.AsString:=QLookBeam1BEAM.AsString;
    //250225
-   DetailPCS.AsFloat:=QLookBeam1JML_POTONG.AsFloat;
+   DetailPCS.AsFloat:=QLookBeam1QTY_PCS.AsFloat;
    end;
  1:
    begin
