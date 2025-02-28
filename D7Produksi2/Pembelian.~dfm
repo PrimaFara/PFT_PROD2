@@ -1,6 +1,6 @@
 object PembelianFrm: TPembelianFrm
-  Left = 275
-  Top = 144
+  Left = 212
+  Top = 130
   Width = 1081
   Height = 589
   Caption = 'Aplikasi - PRODUKSI 2'
@@ -2507,6 +2507,7 @@ object PembelianFrm: TPembelianFrm
         end
         object ProsesKanji21: TMenuItem
           Caption = 'Proses Kanji 2'
+          Enabled = False
           Visible = False
           OnClick = ProsesKanji21Click
         end
@@ -2699,7 +2700,7 @@ object PembelianFrm: TPembelianFrm
           Caption = '-'
         end
         object Palet1: TMenuItem
-          Caption = 'Pakan/Palet'
+          Caption = 'Pakan'
           object Hasil4: TMenuItem
             Caption = '876. Hasil Pakan'
             OnClick = Hasil4Click

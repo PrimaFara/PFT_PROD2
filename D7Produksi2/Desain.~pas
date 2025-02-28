@@ -787,7 +787,6 @@ type
     procedure ECari6Change(Sender: TObject);
     procedure BitBtn12Click(Sender: TObject);
     procedure QKPKAfterScroll(DataSet: TDataSet);
-
     
   private
     { Private declarations }
@@ -1972,7 +1971,7 @@ begin
      CDSQDetailRASIO.AsFloat:=QBarangRASIO.AsFloat;
      CDSQDetailRASIO.AsFloat:=QBarangRASIO_CONES.AsFloat;
      CDSQDetailNO_BENANG.AsFloat:=QBarangNO_BENANG.AsFloat;
-     CDSQDetailNAMA_ITEM.AsString:=QBarangNAMA_ITEM.AsString;
+     CDSQDetailNAMA_ITEM.AsString:=QBarangKD_SUB_KEL.AsString;
 end;
 
 procedure TDesainFrm.LookKonsEnter(Sender: TObject);
@@ -2351,6 +2350,7 @@ procedure TDesainFrm.QKPKAfterScroll(DataSet: TDataSet);
 //  vregister:=QBrowseCobNO_DESAIN.AsInteger;
  LRecords.Caption:='Data ke '+IntToStr(DataSet.RecNo)+' dari '+IntToStr(DataSet.RecordCount)+' data';
 end;
+
 
 end.
 

@@ -668,6 +668,29 @@ type
     QKPJENIS: TStringField;
     QBrowseKEL_KP: TStringField;
     QBarangKD_SUB_KEL: TStringField;
+    TabSheet9: TTabSheet;
+    wwDBGrid11: TwwDBGrid;
+    Panel12: TPanel;
+    BtnBrowse: TSpeedButton;
+    BtnEditing: TSpeedButton;
+    Label47: TLabel;
+    ECari11: TEdit;
+    BitBtn13: TBitBtn;
+    cbOtomatis11: TCheckBox;
+    BtnSimpan: TBitBtn;
+    TabSheet10: TTabSheet;
+    wwDBGrid12: TwwDBGrid;
+    Panel13: TPanel;
+    BtnBrowse2: TSpeedButton;
+    BtnEditing2: TSpeedButton;
+    Label48: TLabel;
+    ECari12: TEdit;
+    BitBtn14: TBitBtn;
+    cbOtomatis12: TCheckBox;
+    BtnSimpan2: TBitBtn;
+    CheckBox5: TCheckBox;
+    BitBtn15: TBitBtn;
+    BitBtn16: TBitBtn;
     procedure wwDBLookupComboDlg1Enter(Sender: TObject);
     procedure wwDBLookupComboDlg1CloseUp(Sender: TObject; LookupTable,
       FillTable: TDataSet; modified: Boolean);
@@ -787,6 +810,24 @@ type
     procedure ECari6Change(Sender: TObject);
     procedure BitBtn12Click(Sender: TObject);
     procedure QKPKAfterScroll(DataSet: TDataSet);
+    procedure BtnEditingClick(Sender: TObject);
+    procedure BtnBrowseClick(Sender: TObject);
+    procedure BtnSimpanClick(Sender: TObject);
+    procedure BitBtn13Click(Sender: TObject);
+    procedure CheckBox5Click(Sender: TObject);
+    procedure BitBtn14Click(Sender: TObject);
+    procedure BtnEditing2Click(Sender: TObject);
+    procedure BtnBrowse2Click(Sender: TObject);
+    procedure BtnSimpan2Click(Sender: TObject);
+    procedure cbOtomatis12Click(Sender: TObject);
+    procedure cbOtomatis11Click(Sender: TObject);
+    procedure ECari11Change(Sender: TObject);
+    procedure ECari12Change(Sender: TObject);
+    procedure TabSheet10Show(Sender: TObject);
+    procedure BitBtn15Click(Sender: TObject);
+    procedure BitBtn16Click(Sender: TObject);
+    procedure wwDBGrid11DblClick(Sender: TObject);
+    procedure wwDBGrid12DblClick(Sender: TObject);
     
   private
     { Private declarations }
@@ -1444,7 +1485,6 @@ begin
     else
     wwDBGrid1.Options:=wwDBGrid1.Options-[dgAlwaysShowSelection];
   ECari.SetFocus;
-
 end;
 
 procedure TDesainFrm.dbcFieldEnter(Sender: TObject);
@@ -1473,7 +1513,6 @@ begin
   begin
       QBrowse.SearchRecord(wwDBGrid1.Columns[0].FieldName,ECari.Text,[srFromBeginning, srPartialMatch, srIgnoreCase]);
   end;
-
 end;
 
 procedure TDesainFrm.BitBtn1Click(Sender: TObject);
@@ -2234,7 +2273,7 @@ end;
 
 procedure TDesainFrm.TabSheet9Show(Sender: TObject);
 begin
-  QKonversi.Open;
+  QKP.Open;
 end;
 
 procedure TDesainFrm.BitBtn11Click(Sender: TObject);
@@ -2341,7 +2380,6 @@ procedure TDesainFrm.BitBtn12Click(Sender: TObject);
           end
         else
           ShowMessage('Tabel belum di-OPEN !');
-
 end;
 
 procedure TDesainFrm.QKPKAfterScroll(DataSet: TDataSet);
@@ -2351,6 +2389,291 @@ procedure TDesainFrm.QKPKAfterScroll(DataSet: TDataSet);
  LRecords.Caption:='Data ke '+IntToStr(DataSet.RecNo)+' dari '+IntToStr(DataSet.RecordCount)+' data';
 end;
 
+
+procedure TDesainFrm.BtnEditingClick(Sender: TObject);
+begin
+  wwDBGrid11.Options:=wwDBGrid11.Options-[dgRowSelect];
+  wwDBGrid11.ReadOnly:=False;
+  wwDBGrid11.SetFocus;
+end;
+
+procedure TDesainFrm.BtnBrowseClick(Sender: TObject);
+begin
+  if BtnSimpan.Enabled then
+    ShowMessage('Simpan/ Posting Data Dulu !')
+    else
+    begin
+      wwDBGrid11.Options:=wwDBGrid11.Options+[dgRowSelect];
+      wwDBGrid11.ReadOnly:=True;
+      wwDBGrid11.SetFocus;
+    end;
+end;
+
+procedure TDesainFrm.BtnSimpanClick(Sender: TObject);
+begin
+      try
+          DMFrm.OS.ApplyUpdates([QKP],True);
+          BtnSimpan.Enabled:=False;
+          BtnBrowse.Down:=True;
+          BtnBrowseClick(Nil);
+        except
+            on E : Exception do
+            begin
+              ShowMessage(E.Message);
+              BtnSimpan.Enabled:=True;
+            end;
+        end;
+end;
+
+procedure TDesainFrm.BitBtn13Click(Sender: TObject);
+var
+  i : word;
+  vpertama : boolean;
+begin
+  vpertama:=True;
+  if BtnSimpan.Enabled then
+    ShowMessage('Mode CARI berfungsi jika perubahan data sudah di-POSTING/ SIMPAN !')
+    else
+    begin
+        vfilter:=' where ';
+        if (QKP.FieldCount>=1) then
+        begin
+          for i:=0 to QKP.FieldCount-1 do
+          begin
+            if QKP.Fields[i].FieldKind=fkData then
+            begin
+              if vpertama then
+                begin
+                  vfilter:=vfilter+QKP.Fields[i].FieldName+' like ''%'+ECari11.Text+'%''';
+                  vpertama:=False;
+                end
+                else
+                  vfilter:=vfilter+' or '+QKP.Fields[i].FieldName+' like ''%'+ECari11.Text+'%''';
+            end;
+          end;
+          vorder:=' order by '+wwDBGrid11.Columns[0].FieldName;
+        end;
+        QKP.SetVariable('myparam',vfilter+vorder);
+        QKP.DisableControls;
+        QKP.Close;
+        QKP.Open;
+        QKP.EnableControls;
+    end;
+end;
+
+procedure TDesainFrm.CheckBox5Click(Sender: TObject);
+begin
+  IF CheckBox5.Checked = True then
+    begin
+      QKPK.Close;
+      QKPK.SQL.Text:='select * from ipisma_db4.kode_prod_kons order by kp,keterangan,nama_konstruksi';
+      QKPK.Open;
+    end;
+
+  IF CheckBox5.Checked = false then
+    begin
+      QKPK.Close;
+      QKPK.SQL.Text:='select a.*, a.rowid from ipisma_db4.kode_prod_kons a '+
+      'where a.kd_konstruksi is null order by a.kp,a.keterangan,a.nama_konstruksi';
+      QKPK.Open;
+  end;
+end;
+
+procedure TDesainFrm.BitBtn14Click(Sender: TObject);
+var
+  i : word;
+  vpertama : boolean;
+begin
+  vpertama:=True;
+  if BtnSimpan2.Enabled then
+    ShowMessage('Mode CARI berfungsi jika perubahan data sudah di-POSTING/ SIMPAN !')
+    else
+    begin
+        vfilter:=' where ';
+        if (QKPK.FieldCount>=1) then
+        begin
+          for i:=0 to QKPK.FieldCount-1 do
+          begin
+            if QKPK.Fields[i].FieldKind=fkData then
+            begin
+              if vpertama then
+                begin
+                  vfilter:=vfilter+QKPK.Fields[i].FieldName+' like ''%'+ECari12.Text+'%''';
+                  vpertama:=False;
+                end
+                else
+                  vfilter:=vfilter+' or '+QKPK.Fields[i].FieldName+' like ''%'+ECari12.Text+'%''';
+            end;
+          end;
+          vorder:=' order by '+wwDBGrid12.Columns[0].FieldName;
+        end;
+        QKPK.SetVariable('myparam',vfilter+vorder);
+        QKPK.DisableControls;
+        QKPK.Close;
+        QKPK.Open;
+        QKPK.EnableControls;
+    end;
+end;
+
+procedure TDesainFrm.BtnEditing2Click(Sender: TObject);
+begin
+  wwDBGrid12.Options:=wwDBGrid12.Options-[dgRowSelect];
+  wwDBGrid12.ReadOnly:=False;
+  wwDBGrid12.SetFocus;
+end;
+
+procedure TDesainFrm.BtnBrowse2Click(Sender: TObject);
+begin
+  if BtnSimpan2.Enabled then
+    ShowMessage('Simpan/ Posting Data Dulu !')
+    else
+    begin
+      wwDBGrid12.Options:=wwDBGrid12.Options+[dgRowSelect];
+      wwDBGrid12.ReadOnly:=True;
+      wwDBGrid12.SetFocus;
+    end;
+end;
+
+procedure TDesainFrm.BtnSimpan2Click(Sender: TObject);
+begin
+      try
+          DMFrm.OS.ApplyUpdates([QKPK],True);
+          BtnSimpan2.Enabled:=False;
+          BtnBrowse2.Down:=True;
+          BtnBrowse2Click(Nil);
+        except
+            on E : Exception do
+            begin
+              ShowMessage(E.Message);
+              BtnSimpan2.Enabled:=True;
+            end;
+        end;
+end;
+
+procedure TDesainFrm.cbOtomatis12Click(Sender: TObject);
+begin
+  if cbOtomatis2.Checked then
+  begin
+    ShowMessage('Mencari data pada kolom paling kiri.'+#13+'Urutkan data terlebih dahulu supaya mudah mencari !');
+    wwDBGrid12.Options:=wwDBGrid12.Options+[dgAlwaysShowSelection];
+  end
+    else
+    wwDBGrid12.Options:=wwDBGrid12.Options-[dgAlwaysShowSelection];
+  ECari12.SetFocus;
+end;
+
+procedure TDesainFrm.cbOtomatis11Click(Sender: TObject);
+begin
+  if cbOtomatis11.Checked then
+  begin
+    ShowMessage('Mencari data pada kolom paling kiri.'+#13+'Urutkan data terlebih dahulu supaya mudah mencari !');
+    wwDBGrid11.Options:=wwDBGrid11.Options+[dgAlwaysShowSelection];
+  end
+    else
+    wwDBGrid11.Options:=wwDBGrid11.Options-[dgAlwaysShowSelection];
+  ECari11.SetFocus;
+end;
+
+procedure TDesainFrm.ECari11Change(Sender: TObject);
+begin
+  if cbOtomatis11.Checked then
+  begin
+      QKP.SearchRecord(wwDBGrid11.Columns[0].FieldName,ECari11.Text,[srFromBeginning, srPartialMatch, srIgnoreCase]);
+  end;
+end;
+
+procedure TDesainFrm.ECari12Change(Sender: TObject);
+begin
+  if cbOtomatis12.Checked then
+  begin
+      QKPK.SearchRecord(wwDBGrid12.Columns[0].FieldName,ECari12.Text,[srFromBeginning, srPartialMatch, srIgnoreCase]);
+  end;
+end;
+
+procedure TDesainFrm.TabSheet10Show(Sender: TObject);
+begin
+  QKPK.Open;
+end;
+
+procedure TDesainFrm.BitBtn15Click(Sender: TObject);
+begin
+      if QKPK.Active then
+          begin
+            DMFrm.SaveDialog1.DefaultExt:='XLK';
+            DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+            DMFrm.SaveDialog1.FileName:='KODE PRODUKSI KONSTRUKSI';
+            wwDBGrid12.ExportOptions.TitleName:='KODE PRODUKSI KONSTRUKSI';
+            if DMFrm.SaveDialog1.Execute then
+              begin
+                try
+                wwDBGrid12.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+                wwDBGrid12.ExportOptions.Save;
+                ShowMessage('Simpan Sukses !');
+                except
+                ShowMessage('Simpan Gagal !');
+              end;
+            end;
+          end
+        else
+          ShowMessage('Tabel belum di-OPEN !');
+end;
+
+procedure TDesainFrm.BitBtn16Click(Sender: TObject);
+begin
+      if QKP.Active then
+          begin
+            DMFrm.SaveDialog1.DefaultExt:='XLK';
+            DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+            DMFrm.SaveDialog1.FileName:='KODE PRODUKSI';
+            wwDBGrid11.ExportOptions.TitleName:='KODE PRODUKSI';
+            if DMFrm.SaveDialog1.Execute then
+              begin
+                try
+                wwDBGrid11.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+                wwDBGrid11.ExportOptions.Save;
+                ShowMessage('Simpan Sukses !');
+                except
+                ShowMessage('Simpan Gagal !');
+              end;
+            end;
+          end
+        else
+          ShowMessage('Tabel belum di-OPEN !');
+end;
+
+procedure TDesainFrm.wwDBGrid11DblClick(Sender: TObject);
+var
+  myrvdDialog : TwwRecordViewDialog;
+begin
+  myrvdDialog:=TwwRecordViewDialog.Create(Nil);
+  myrvdDialog.NavigatorButtons:=[nbsPrior, nbsNext];
+  myrvdDialog.EditFrame.Enabled:=True;
+  myrvdDialog.Style:=rvsHorizontal;
+  myrvdDialog.BorderStyle:=bsDialog;
+  myrvdDialog.EditFrame.NonFocusColor:=clYellow;
+  myrvdDialog.OKCancelOptions:=[rvokAutoCancelRec];
+  myrvdDialog.Options:=[rvoUseCustomControls,rvoShortenEditBox,rvoModalForm,rvoCloseIsCancel,rvoMaximizeMemoWidth,rvoUseDateTimePicker];
+  myrvdDialog.DataSource:=(Sender as TwwDBGrid).DataSource;
+  myrvdDialog.Selected:=(Sender as TwwDBGrid).Selected;
+  myrvdDialog.Execute;
+end;
+
+procedure TDesainFrm.wwDBGrid12DblClick(Sender: TObject);
+var
+  myrvdDialog : TwwRecordViewDialog;
+begin
+  myrvdDialog:=TwwRecordViewDialog.Create(Nil);
+  myrvdDialog.NavigatorButtons:=[nbsPrior, nbsNext];
+  myrvdDialog.EditFrame.Enabled:=True;
+  myrvdDialog.Style:=rvsHorizontal;
+  myrvdDialog.BorderStyle:=bsDialog;
+  myrvdDialog.EditFrame.NonFocusColor:=clYellow;
+  myrvdDialog.OKCancelOptions:=[rvokAutoCancelRec];
+  myrvdDialog.Options:=[rvoUseCustomControls,rvoShortenEditBox,rvoModalForm,rvoCloseIsCancel,rvoMaximizeMemoWidth,rvoUseDateTimePicker];
+  myrvdDialog.DataSource:=(Sender as TwwDBGrid).DataSource;
+  myrvdDialog.Selected:=(Sender as TwwDBGrid).Selected;
+  myrvdDialog.Execute;
+end;
 
 end.
 

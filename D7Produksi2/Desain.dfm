@@ -3,7 +3,6 @@ object DesainFrm: TDesainFrm
   Top = 77
   Width = 1174
   Height = 655
-  ActiveControl = BitBtn4
   Caption = 'DesainFrm'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -3602,6 +3601,7 @@ object DesainFrm: TDesainFrm
     object TabSheet5: TTabSheet
       Caption = 'Kode Produksi'
       ImageIndex = 4
+      TabVisible = False
       OnShow = TabSheet5Show
       object wwDBGrid9: TwwDBGrid
         Left = 0
@@ -3924,6 +3924,7 @@ object DesainFrm: TDesainFrm
     object TabSheet7: TTabSheet
       Caption = 'Kode Prod Kons'
       ImageIndex = 6
+      TabVisible = False
       OnShow = TabSheet7Show
       object wwDBGrid10: TwwDBGrid
         Left = 0
@@ -4370,6 +4371,425 @@ object DesainFrm: TDesainFrm
         end
       end
     end
+    object TabSheet9: TTabSheet
+      Caption = 'Kode Produksi'
+      ImageIndex = 8
+      OnShow = TabSheet9Show
+      object wwDBGrid11: TwwDBGrid
+        Left = 0
+        Top = 49
+        Width = 1150
+        Height = 463
+        ControlType.Strings = (
+          'KD_KEL;CustomEdit;LookJenis;F'
+          'KD_SATUAN;CustomEdit;LookSatuan;F'
+          'ISAKTIF;CheckBox;1;0'
+          'STATUS;CheckBox;1;0')
+        Selected.Strings = (
+          'KP'#9'12'#9'KP CORAK'#9'F'
+          'KELOMPOK'#9'10'#9'KD PRODUKSI'#9'F'
+          'LUSI'#9'12'#9'LUSI'#9'F'
+          'PAKAN'#9'12'#9'PAKAN'#9'F'
+          'KETERANGAN'#9'30'#9'KETERANGAN'#9'F'
+          'SISIR'#9'5'#9'SISIR'#9'F'
+          'PICK'#9'5'#9'PICK'#9'F'
+          'LCUCUK'#9'5'#9'L CUCUK'#9'F'
+          'JENIS'#9'10'#9'JENIS'#9'F'
+          'STATUS'#9'5'#9'AKTIF'#9'F'
+          'KG'#9'10'#9'KG'#9'F'
+          'TEORITIS'#9'10'#9'TEORITIS'#9'F')
+        IniAttributes.Enabled = True
+        IniAttributes.SaveToRegistry = True
+        IniAttributes.FileName = 'Pismatex Master'
+        IniAttributes.Delimiter = ';;'
+        IniAttributes.CheckNewFields = True
+        ExportOptions.ExportType = wwgetHTML
+        ExportOptions.Options = [esoShowHeader, esoShowFooter, esoShowTitle, esoDblQuoteFields, esoBestColFit, esoShowRecordNo, esoShowAlternating]
+        TitleColor = clSkyBlue
+        FixedCols = 0
+        ShowHorzScrollBar = True
+        Align = alClient
+        DataSource = Ds_Qkp
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgPerfectRowFit, dgShowFooter, dgTrailingEllipsis, dgDblClickColSizing]
+        ParentFont = False
+        ReadOnly = True
+        RowHeightPercent = 125
+        TabOrder = 0
+        TitleAlignment = taCenter
+        TitleFont.Charset = ANSI_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Lucida Sans'
+        TitleFont.Style = [fsBold]
+        TitleLines = 3
+        TitleButtons = True
+        UseTFields = False
+        OnTitleButtonClick = wwDBGrid1TitleButtonClick
+        OnDblClick = wwDBGrid11DblClick
+        PaintOptions.AlternatingRowColor = clMoneyGreen
+        PaintOptions.ActiveRecordColor = clGreen
+      end
+      object Panel12: TPanel
+        Left = 0
+        Top = 0
+        Width = 1150
+        Height = 49
+        Align = alTop
+        BevelInner = bvLowered
+        TabOrder = 1
+        object BtnBrowse: TSpeedButton
+          Left = 82
+          Top = 16
+          Width = 23
+          Height = 25
+          GroupIndex = 1
+          Down = True
+          Glyph.Data = {
+            76010000424D7601000000000000760000002800000020000000100000000100
+            04000000000000010000120B0000120B00001000000000000000000000000000
+            800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333000003
+            333333333F777773FF333333008888800333333377333F3773F3333077870787
+            7033333733337F33373F3308888707888803337F33337F33337F330777880887
+            7703337F33337FF3337F3308888000888803337F333777F3337F330777700077
+            7703337F33377733337F33088888888888033373FFFFFFFFFF73333000000000
+            00333337777777777733333308033308033333337F7F337F7F33333308033308
+            033333337F7F337F7F33333308033308033333337F73FF737F33333377800087
+            7333333373F77733733333333088888033333333373FFFF73333333333000003
+            3333333333777773333333333333333333333333333333333333}
+          NumGlyphs = 2
+          OnClick = BtnBrowseClick
+        end
+        object BtnEditing: TSpeedButton
+          Left = 8
+          Top = 16
+          Width = 75
+          Height = 25
+          GroupIndex = 1
+          Caption = '&Editing'
+          Glyph.Data = {
+            76010000424D7601000000000000760000002800000020000000100000000100
+            04000000000000010000120B0000120B00001000000000000000000000000000
+            800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333000003
+            333333333F777773FF333333008888800333333377333F3773F3333077870787
+            7033333733337F33373F3308888707888803337F33337F33337F330777880887
+            7703337F33337FF3337F3308888000888803337F333777F3337F330777700077
+            7703337F33377733337FB3088888888888033373FFFFFFFFFF733B3000000000
+            0033333777777777773333BBBB3333080333333333F3337F7F33BBBB707BB308
+            03333333373F337F7F3333BB08033308033333337F7F337F7F333B3B08033308
+            033333337F73FF737F33B33B778000877333333373F777337333333B30888880
+            33333333373FFFF73333333B3300000333333333337777733333}
+          NumGlyphs = 2
+          OnClick = BtnEditingClick
+        end
+        object Label47: TLabel
+          Left = 212
+          Top = 6
+          Width = 44
+          Height = 13
+          Caption = 'Cari Data'
+        end
+        object ECari11: TEdit
+          Left = 212
+          Top = 22
+          Width = 145
+          Height = 19
+          Ctl3D = False
+          ParentCtl3D = False
+          TabOrder = 0
+          OnChange = ECari11Change
+        end
+        object BitBtn13: TBitBtn
+          Left = 364
+          Top = 16
+          Width = 75
+          Height = 25
+          Caption = 'F&ilter'
+          Default = True
+          ModalResult = 1
+          TabOrder = 1
+          OnClick = BitBtn13Click
+          Glyph.Data = {
+            76010000424D7601000000000000760000002800000020000000100000000100
+            04000000000000010000120B0000120B00001000000000000000000000000000
+            800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
+            555555555555555555555555555555555555555555FF55555555555559055555
+            55555555577FF5555555555599905555555555557777F5555555555599905555
+            555555557777FF5555555559999905555555555777777F555555559999990555
+            5555557777777FF5555557990599905555555777757777F55555790555599055
+            55557775555777FF5555555555599905555555555557777F5555555555559905
+            555555555555777FF5555555555559905555555555555777FF55555555555579
+            05555555555555777FF5555555555557905555555555555777FF555555555555
+            5990555555555555577755555555555555555555555555555555}
+          NumGlyphs = 2
+        end
+        object cbOtomatis11: TCheckBox
+          Left = 264
+          Top = 5
+          Width = 97
+          Height = 17
+          Caption = 'Otomatis'
+          TabOrder = 2
+          OnClick = cbOtomatis11Click
+        end
+        object BtnSimpan: TBitBtn
+          Left = 123
+          Top = 17
+          Width = 75
+          Height = 25
+          Caption = '&Simpan'
+          Enabled = False
+          TabOrder = 3
+          OnClick = BtnSimpanClick
+          Glyph.Data = {
+            76010000424D7601000000000000760000002800000020000000100000000100
+            04000000000000010000130B0000130B00001000000000000000000000000000
+            800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333330070
+            7700333333337777777733333333008088003333333377F73377333333330088
+            88003333333377FFFF7733333333000000003FFFFFFF77777777000000000000
+            000077777777777777770FFFFFFF0FFFFFF07F3333337F3333370FFFFFFF0FFF
+            FFF07F3FF3FF7FFFFFF70F00F0080CCC9CC07F773773777777770FFFFFFFF039
+            99337F3FFFF3F7F777F30F0000F0F09999937F7777373777777F0FFFFFFFF999
+            99997F3FF3FFF77777770F00F000003999337F773777773777F30FFFF0FF0339
+            99337F3FF7F3733777F30F08F0F0337999337F7737F73F7777330FFFF0039999
+            93337FFFF7737777733300000033333333337777773333333333}
+          NumGlyphs = 2
+        end
+        object BitBtn16: TBitBtn
+          Left = 444
+          Top = 17
+          Width = 75
+          Height = 24
+          Caption = '&Export'
+          TabOrder = 4
+          Visible = False
+          OnClick = BitBtn16Click
+        end
+      end
+    end
+    object TabSheet10: TTabSheet
+      Caption = 'Kode Prod Kons'
+      ImageIndex = 9
+      OnShow = TabSheet10Show
+      object wwDBGrid12: TwwDBGrid
+        Left = 0
+        Top = 49
+        Width = 1150
+        Height = 463
+        ControlType.Strings = (
+          'KD_KEL;CustomEdit;LookJenis;F'
+          'KD_SATUAN;CustomEdit;LookSatuan;F'
+          'ISAKTIF;CheckBox;1;0'
+          'STATUS;CheckBox;1;0')
+        Selected.Strings = (
+          'KP'#9'20'#9'KP'#9'F'
+          'LUSI'#9'20'#9'LUSI'#9'F'
+          'PAKAN'#9'20'#9'PAKAN'#9'F'
+          'SISIR'#9'10'#9'SISIR'#9'F'
+          'PICK'#9'10'#9'PICK'#9'F'
+          'LCUCUK'#9'10'#9'LCUCUK'#9'F'
+          'KETERANGAN'#9'20'#9'KETERANGAN'#9'F'
+          'KD_KONSTRUKSI'#9'6'#9'KD_KONSTRUKSI'#9'F'
+          'NAMA_KONSTRUKSI'#9'30'#9'KONSTRUKSI'#9'F'
+          'MUTU'#9'15'#9'MUTU'#9'F'
+          'JENIS'#9'10'#9'JENIS'#9'F'
+          'STATUS'#9'6'#9'AKTIF'#9'F'
+          'KG'#9'10'#9'KG'#9'F'
+          'TEORITIS'#9'10'#9'TEORITIS'#9'F')
+        IniAttributes.Enabled = True
+        IniAttributes.SaveToRegistry = True
+        IniAttributes.FileName = 'Pismatex Master'
+        IniAttributes.Delimiter = ';;'
+        IniAttributes.CheckNewFields = True
+        ExportOptions.ExportType = wwgetHTML
+        ExportOptions.Options = [esoShowHeader, esoShowFooter, esoShowTitle, esoDblQuoteFields, esoBestColFit, esoShowRecordNo, esoShowAlternating]
+        TitleColor = clSkyBlue
+        FixedCols = 0
+        ShowHorzScrollBar = True
+        Align = alClient
+        DataSource = dsQKPK
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgPerfectRowFit, dgShowFooter, dgTrailingEllipsis, dgDblClickColSizing]
+        ParentFont = False
+        ReadOnly = True
+        RowHeightPercent = 125
+        TabOrder = 0
+        TitleAlignment = taCenter
+        TitleFont.Charset = ANSI_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Lucida Sans'
+        TitleFont.Style = [fsBold]
+        TitleLines = 3
+        TitleButtons = True
+        UseTFields = False
+        OnTitleButtonClick = wwDBGrid1TitleButtonClick
+        OnDblClick = wwDBGrid12DblClick
+        PaintOptions.AlternatingRowColor = clMoneyGreen
+        PaintOptions.ActiveRecordColor = clGreen
+      end
+      object Panel13: TPanel
+        Left = 0
+        Top = 0
+        Width = 1150
+        Height = 49
+        Align = alTop
+        BevelInner = bvLowered
+        TabOrder = 1
+        object BtnBrowse2: TSpeedButton
+          Left = 82
+          Top = 16
+          Width = 23
+          Height = 25
+          GroupIndex = 1
+          Down = True
+          Glyph.Data = {
+            76010000424D7601000000000000760000002800000020000000100000000100
+            04000000000000010000120B0000120B00001000000000000000000000000000
+            800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333000003
+            333333333F777773FF333333008888800333333377333F3773F3333077870787
+            7033333733337F33373F3308888707888803337F33337F33337F330777880887
+            7703337F33337FF3337F3308888000888803337F333777F3337F330777700077
+            7703337F33377733337F33088888888888033373FFFFFFFFFF73333000000000
+            00333337777777777733333308033308033333337F7F337F7F33333308033308
+            033333337F7F337F7F33333308033308033333337F73FF737F33333377800087
+            7333333373F77733733333333088888033333333373FFFF73333333333000003
+            3333333333777773333333333333333333333333333333333333}
+          NumGlyphs = 2
+          OnClick = BtnBrowse2Click
+        end
+        object BtnEditing2: TSpeedButton
+          Left = 8
+          Top = 16
+          Width = 75
+          Height = 25
+          GroupIndex = 1
+          Caption = '&Editing'
+          Glyph.Data = {
+            76010000424D7601000000000000760000002800000020000000100000000100
+            04000000000000010000120B0000120B00001000000000000000000000000000
+            800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333000003
+            333333333F777773FF333333008888800333333377333F3773F3333077870787
+            7033333733337F33373F3308888707888803337F33337F33337F330777880887
+            7703337F33337FF3337F3308888000888803337F333777F3337F330777700077
+            7703337F33377733337FB3088888888888033373FFFFFFFFFF733B3000000000
+            0033333777777777773333BBBB3333080333333333F3337F7F33BBBB707BB308
+            03333333373F337F7F3333BB08033308033333337F7F337F7F333B3B08033308
+            033333337F73FF737F33B33B778000877333333373F777337333333B30888880
+            33333333373FFFF73333333B3300000333333333337777733333}
+          NumGlyphs = 2
+          OnClick = BtnEditing2Click
+        end
+        object Label48: TLabel
+          Left = 207
+          Top = 6
+          Width = 44
+          Height = 13
+          Caption = 'Cari Data'
+        end
+        object ECari12: TEdit
+          Left = 207
+          Top = 22
+          Width = 145
+          Height = 19
+          Ctl3D = False
+          ParentCtl3D = False
+          TabOrder = 0
+          OnChange = ECari12Change
+        end
+        object BitBtn14: TBitBtn
+          Left = 359
+          Top = 20
+          Width = 75
+          Height = 22
+          Caption = 'F&ilter'
+          Default = True
+          ModalResult = 1
+          TabOrder = 1
+          OnClick = BitBtn14Click
+          Glyph.Data = {
+            76010000424D7601000000000000760000002800000020000000100000000100
+            04000000000000010000120B0000120B00001000000000000000000000000000
+            800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
+            555555555555555555555555555555555555555555FF55555555555559055555
+            55555555577FF5555555555599905555555555557777F5555555555599905555
+            555555557777FF5555555559999905555555555777777F555555559999990555
+            5555557777777FF5555557990599905555555777757777F55555790555599055
+            55557775555777FF5555555555599905555555555557777F5555555555559905
+            555555555555777FF5555555555559905555555555555777FF55555555555579
+            05555555555555777FF5555555555557905555555555555777FF555555555555
+            5990555555555555577755555555555555555555555555555555}
+          NumGlyphs = 2
+        end
+        object cbOtomatis12: TCheckBox
+          Left = 259
+          Top = 5
+          Width = 97
+          Height = 17
+          Caption = 'Otomatis'
+          TabOrder = 2
+          OnClick = cbOtomatis12Click
+        end
+        object BtnSimpan2: TBitBtn
+          Left = 120
+          Top = 16
+          Width = 75
+          Height = 25
+          Caption = '&Simpan'
+          Enabled = False
+          TabOrder = 3
+          OnClick = BtnSimpan2Click
+          Glyph.Data = {
+            76010000424D7601000000000000760000002800000020000000100000000100
+            04000000000000010000130B0000130B00001000000000000000000000000000
+            800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333330070
+            7700333333337777777733333333008088003333333377F73377333333330088
+            88003333333377FFFF7733333333000000003FFFFFFF77777777000000000000
+            000077777777777777770FFFFFFF0FFFFFF07F3333337F3333370FFFFFFF0FFF
+            FFF07F3FF3FF7FFFFFF70F00F0080CCC9CC07F773773777777770FFFFFFFF039
+            99337F3FFFF3F7F777F30F0000F0F09999937F7777373777777F0FFFFFFFF999
+            99997F3FF3FFF77777770F00F000003999337F773777773777F30FFFF0FF0339
+            99337F3FF7F3733777F30F08F0F0337999337F7737F73F7777330FFFF0039999
+            93337FFFF7737777733300000033333333337777773333333333}
+          NumGlyphs = 2
+        end
+        object CheckBox5: TCheckBox
+          Left = 359
+          Top = 3
+          Width = 107
+          Height = 17
+          Caption = 'Tampilkan Semua'
+          TabOrder = 4
+          OnClick = CheckBox5Click
+        end
+        object BitBtn15: TBitBtn
+          Left = 444
+          Top = 19
+          Width = 75
+          Height = 23
+          Caption = '&Export'
+          TabOrder = 5
+          Visible = False
+          OnClick = BitBtn15Click
+        end
+      end
+    end
   end
   object dsCDSMaster: TwwDataSource
     DataSet = QMaster
@@ -4453,7 +4873,7 @@ object DesainFrm: TDesainFrm
     MaxHeight = 209
     CharCase = ecNormal
     UseTFields = False
-    Left = 752
+    Left = 872
     Top = 16
   end
   object QMaster: TOracleDataSet
@@ -5040,8 +5460,8 @@ object DesainFrm: TDesainFrm
     MaxWidth = 0
     MaxHeight = 209
     CharCase = ecNormal
-    Left = 832
-    Top = 16
+    Left = 880
+    Top = 64
   end
   object LookCorakDlg: TwwLookupDialog
     Selected.Strings = (
