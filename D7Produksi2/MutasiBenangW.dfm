@@ -318,7 +318,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              989.541666666666700000
+              989.541666666666800000
               2.645833333333333000
               140.229166666666700000)
             Alignment = taLeftJustify
@@ -523,7 +523,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
               44.979166666666670000
               2444.750000000000000000
               79.375000000000000000
-              76.729166666666670000)
+              76.729166666666680000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -1009,7 +1009,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              751.416666666666700000
+              751.416666666666800000
               105.833333333333300000
               58.208333333333340000)
             Alignment = taLeftJustify
@@ -1040,7 +1040,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              878.416666666666700000
+              878.416666666666800000
               55.562500000000000000
               97.895833333333340000)
             Alignment = taLeftJustify
@@ -2369,7 +2369,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333340000
+              18.520833333333330000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -3865,7 +3865,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
         ControlType.Strings = (
           'ISPOST;CheckBox;1;0')
         Selected.Strings = (
-          'KP'#9'10'#9'KP'#9'F'
+          'KP'#9'15'#9'KP'#9'F'
           'KONSTRUKSI'#9'35'#9'Konstruksi'#9'F'
           'BEM'#9'30'#9'Beam'#9'F'
           'QTY_IN1'#9'10'#9'Sisa Awal'#9'F'
@@ -4621,7 +4621,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
   object QAmbil_Data: TOracleQuery
     SQL.Strings = (
       'begin'
-      '  ipisma_db4.Proc_prod_mutasi_b_warping25v1(:pawal,:pakhir);'
+      '  ipisma_db4.Proc_prod_mutasi_b_warping25v2(:pawal,:pakhir);'
       'end;')
     Session = DMFrm.OS
     Variables.Data = {

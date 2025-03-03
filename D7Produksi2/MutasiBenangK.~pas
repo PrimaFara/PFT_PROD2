@@ -397,10 +397,15 @@ end;
 
 procedure TMutasiBenangKFrm.vTglAwalChange(Sender: TObject);
 begin
-if VTglAwal.Date < StrToDate('01/01/2025') then
+{if VTglAwal.Date < StrToDate('01/01/2025') then
 begin
   ShowMessage('Silakan buka aplikasi Produksi GD untuk melihat data sebelum 1 Januari 2025. Terima Kasih ');
   VTglAwal.Date := StrToDate('01/01/2025');
+  Abort; }
+if VTglAwal.Date < StrToDate('02/05/2020') then
+begin
+  ShowMessage('Data Koreksi Per 1 Mei 2020 mundur tanggal sampai tanggal 2 Mei 2020');
+  VTglAwal.Date := StrToDate('02/05/2020');
   Abort;
 
 end;

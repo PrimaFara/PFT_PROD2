@@ -13874,7 +13874,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
   end
   object QBrowse: TOracleDataSet
     SQL.Strings = (
-      'select * from ipisma_db4.vbeam_mutasi24'
+      'select * from ipisma_db4.vbeam_mutasi25'
       
         'where tanggal>=:pawal and tanggal<:pakhir and kd_lokasi_org=:kd_' +
         'lokasi :porder')

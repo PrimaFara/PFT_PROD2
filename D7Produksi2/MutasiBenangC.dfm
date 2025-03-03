@@ -140,7 +140,7 @@ object MutasiBenangCFrm: TMutasiBenangCFrm
               42.333333333333340000
               1807.104166666667000000
               55.562500000000000000
-              76.729166666666670000)
+              76.729166666666680000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -231,7 +231,7 @@ object MutasiBenangCFrm: TMutasiBenangCFrm
             Frame.DrawRight = False
             Size.Values = (
               42.333333333333340000
-              915.458333333333300000
+              915.458333333333200000
               55.562500000000000000
               58.208333333333340000)
             Alignment = taLeftJustify
@@ -1251,7 +1251,7 @@ object MutasiBenangCFrm: TMutasiBenangCFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              894.291666666666700000
+              894.291666666666800000
               105.833333333333300000
               89.958333333333340000)
             Alignment = taLeftJustify
@@ -1826,7 +1826,7 @@ object MutasiBenangCFrm: TMutasiBenangCFrm
               60.854166666666680000
               1256.770833333333000000
               21.166666666666670000
-              804.333333333333300000)
+              804.333333333333200000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -3304,7 +3304,7 @@ object MutasiBenangCFrm: TMutasiBenangCFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333340000
+              18.520833333333330000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -4974,7 +4974,7 @@ object MutasiBenangCFrm: TMutasiBenangCFrm
         ControlType.Strings = (
           'ISPOST;CheckBox;1;0')
         Selected.Strings = (
-          'KP'#9'10'#9'KP'#9'F'
+          'KP'#9'15'#9'KP'#9'F'
           'KONSTRUKSI'#9'35'#9'KONSTRUKSI'#9'F'
           'BEM'#9'20'#9'BEAM'#9'F'
           'QTY1'#9'10'#9'Beam'#9'F'#9'SISA AWAL'
