@@ -1051,7 +1051,7 @@ begin
       DetailLOKASI_TUJUAN.AsString:=QLookLokasiMesinLOKASI.AsString;
       DetailPROSES_TUJUAN.AsString:=QLookLokasiMesinPROSES.AsString;
       DetailKD_LOKASI.AsString:=QLookLokasiMesinKD_LOKASI.AsString;
-      //DetailJENIS_MESIN.AsString:=QLookLokasiMesinNAMA_MESIN.AsString;    tutup 230125
+      DetailJENIS_MESIN.AsString:=QLookLokasiMesinNAMA_MESIN.AsString;    //tutup 230125 //buka 040325
       DetailISPOST.AsInteger:=1;
      end
     else

@@ -13874,7 +13874,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
   end
   object QBrowse: TOracleDataSet
     SQL.Strings = (
-      'select * from ipisma_db4.vbeam_mutasi24'
+      'select * from ipisma_db4.vbeam_mutasi25'
       
         'where tanggal>=:pawal and tanggal<:pakhir and kd_lokasi_org=:kd_' +
         'lokasi :porder')
@@ -14507,7 +14507,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
       00000000000700000054414E4747414C010000000000}
     RefreshOptions = [roAfterInsert]
     Session = DMFrm.OS
-    Left = 864
+    Left = 104
     Top = 344
     object QLookBeam2NO_BEAM: TStringField
       DisplayLabel = 'NO BEAM'
