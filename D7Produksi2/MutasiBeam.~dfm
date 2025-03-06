@@ -897,7 +897,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              878.416666666666700000
+              878.416666666666800000
               367.770833333333400000
               97.895833333333340000)
             Alignment = taCenter
@@ -1287,7 +1287,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
               42.333333333333340000
               10.583333333333330000
               2.645833333333333000
-              76.729166666666670000)
+              76.729166666666680000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = False
@@ -3198,7 +3198,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666670000
+              76.729166666666680000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -5311,7 +5311,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666670000
+              76.729166666666680000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -7372,7 +7372,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666670000
+              76.729166666666680000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -9552,7 +9552,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666670000
+              76.729166666666680000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -11667,7 +11667,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666670000
+              76.729166666666680000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True

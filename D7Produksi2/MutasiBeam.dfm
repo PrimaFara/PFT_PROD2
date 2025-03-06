@@ -26,7 +26,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
     Top = 0
     Width = 1154
     Height = 552
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -3198,7 +3198,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -5311,7 +5311,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -7372,7 +7372,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -9552,7 +9552,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -11667,7 +11667,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -13235,7 +13235,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           DataSource = dsDetail
           RowHeightPercent = 150
           TabOrder = 2
-          TitleAlignment = taLeftJustify
+          TitleAlignment = taCenter
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
           TitleFont.Height = -11
@@ -13631,6 +13631,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           'NO_REG'#9'10'#9'NO_REG'#9'F'
           'NO_NOTA'#9'13'#9'NO NOTA'#9'F'
           'NO_SERI_BEAM'#9'14'#9'No Seri Beam'#9'F'#9'DATA TERAKHIR'
+          'BEAM'#9'20'#9'Mesin'#9'F'
           'KP'#9'6'#9'KP'#9'F'#9'DATA TERAKHIR'
           'KONSTRUKSI'#9'15'#9'Konstruksi'#9'F'#9'DATA TERAKHIR'
           'CORAK'#9'17'#9'Corak'#9'F'#9'DATA TERAKHIR'
@@ -13654,7 +13655,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
         DataSource = dsQBrowse
         RowHeightPercent = 125
         TabOrder = 2
-        TitleAlignment = taLeftJustify
+        TitleAlignment = taCenter
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -11
@@ -13884,7 +13885,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
       0100000000000000000000000A0000003A4B445F4C4F4B415349050000000000
       000000000000}
     QBEDefinition.QBEFieldDefs = {
-      04000000170000000C0000004E4F5F534552495F4245414D0100000000000700
+      040000001C0000000C0000004E4F5F534552495F4245414D0100000000000700
       000054414E4747414C010000000000060000004E4F5F52454701000000000007
       0000004E4F5F4E4F54410100000000000600000050524F534553010000000000
       060000004C4F4B4153490100000000000D00000050524F5345535F54554A5541
@@ -13896,7 +13897,10 @@ object MutasiBeamFrm: TMutasiBeamFrm
       5049434B010000000000060000004E534953495201000000000006000000504F
       544F4E47010000000000040000004B4F4449010000000000060000005154595F
       4B47010000000000020000004B500100000000000A0000004B45544552414E47
-      414E010000000000050000004A454E4953010000000000}
+      414E010000000000050000004A454E4953010000000000060000004B475F5245
+      5601000000000007000000504F545F524556010000000000040000004245414D
+      010000000000060000004953504F53540100000000000A0000004245414D5F43
+      5543554B010000000000}
     QueryAllRecords = False
     Session = DMFrm.OS
     AfterScroll = QBrowseAfterScroll
@@ -13987,6 +13991,10 @@ object MutasiBeamFrm: TMutasiBeamFrm
       FieldName = 'JENIS'
       Size = 30
     end
+    object QBrowseBEAM: TStringField
+      FieldName = 'BEAM'
+      Size = 50
+    end
   end
   object dsQBrowse: TwwDataSource
     DataSet = QBrowse
@@ -14037,7 +14045,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
       03000000010000000A0000003A4B445F4C4F4B41534905000000030000003530
       0000000000}
     QBEDefinition.QBEFieldDefs = {
-      0400000013000000070000004E4F5F4245414D010000000000060000004C4F4B
+      0400000014000000070000004E4F5F4245414D010000000000060000004C4F4B
       4153490100000000000600000050524F534553010000000000090000004B445F
       4C4F4B4153490100000000000C0000004E4F5F534552495F4245414D01000000
       0000030000004953490100000000000A0000004B4F4E535452554B5349010000
@@ -14047,7 +14055,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
       00000054414E4747414C010000000000040000004245414D0100000000000600
       00004B475F52455601000000000007000000504F545F52455601000000000007
       00000048534C5F575250010000000000070000005154595F5043530100000000
-      00}
+      000A0000004245414D5F435543554B010000000000}
     RefreshOptions = [roAfterInsert]
     Session = DMFrm.OS
     Left = 32
@@ -14141,6 +14149,10 @@ object MutasiBeamFrm: TMutasiBeamFrm
     object QLookBeam1POT_REV: TFloatField
       FieldName = 'POT_REV'
       Visible = False
+    end
+    object QLookBeam1BEAM_CUCUK: TStringField
+      FieldName = 'BEAM_CUCUK'
+      Size = 100
     end
   end
   object dsQTGL: TwwDataSource

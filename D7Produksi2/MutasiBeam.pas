@@ -760,6 +760,8 @@ type
     QDetail_cetakMITRA: TStringField;
     QLookBeam1HSL_WRP: TFloatField;
     QLookBeam1QTY_PCS: TFloatField;
+    QLookBeam1BEAM_CUCUK: TStringField;
+    QBrowseBEAM: TStringField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure TabSheet1Show(Sender: TObject);
