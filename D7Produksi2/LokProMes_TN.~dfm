@@ -470,9 +470,9 @@ object LokProMes_TNFrm: TLokProMes_TNFrm
     object LTitle: TLabel
       Left = 16
       Top = 8
-      Width = 330
+      Width = 432
       Height = 23
-      Caption = 'Lokasi/Proses/Mesin Pertenunan'
+      Caption = 'Lokasi/Proses/Mesin Pertenunan dan Mitra'
       Color = clTeal
       Font.Charset = ANSI_CHARSET
       Font.Color = clWhite
@@ -485,7 +485,7 @@ object LokProMes_TNFrm: TLokProMes_TNFrm
   end
   object QMaster: TOracleDataSet
     SQL.Strings = (
-      'select a.*, a.rowid from LOKASI_PROSES a'
+      'select a.*, a.rowid from IPISMA_DB4.LOKASI_PROSES a'
       'where a.kd_lokasi='#39'50'#39
       ':myparam')
     ReadBuffer = 10
