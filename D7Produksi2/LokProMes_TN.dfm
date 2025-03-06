@@ -541,7 +541,7 @@ object LokProMes_TNFrm: TLokProMes_TNFrm
   object QKD_Mesin: TOracleDataSet
     SQL.Strings = (
       'select a.* from ipisma_db4.JENIS_MESIN a'
-      'where kelompok in('#39'AJL'#39','#39'RAPIER'#39','#39'SHUTTLE'#39')'
+      'where kelompok in('#39'AJL'#39','#39'RAPIER'#39','#39'SHUTTLE'#39','#39'-'#39')'
       ''
       ''
       '')

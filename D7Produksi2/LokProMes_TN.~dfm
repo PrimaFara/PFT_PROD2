@@ -583,7 +583,7 @@ object LokProMes_TNFrm: TLokProMes_TNFrm
       'select a.*,b.kode'
       
         'from (select a.* from ipisma_db4.JENIS_MESIN a where kelompok in' +
-        '('#39'AJL'#39','#39'RAPIER'#39','#39'SHUTTLE'#39'))a,'
+        '('#39'AJL'#39','#39'RAPIER'#39','#39'SHUTTLE'#39','#39'-'#39'))a,'
       '(select max(kd_mesin) as kode from ipisma_db4.JENIS_MESIN)b'
       ''
       '')
