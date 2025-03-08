@@ -189,8 +189,6 @@ type
     QRLabel17: TQRLabel;
     QRLabel22: TQRLabel;
     QRLabel35: TQRLabel;
-    QRLabel36: TQRLabel;
-    QRLabel37: TQRLabel;
     QRLabel38: TQRLabel;
     QRLabel39: TQRLabel;
     QRDBText13: TQRDBText;
@@ -762,6 +760,10 @@ type
     QLookBeam1QTY_PCS: TFloatField;
     QLookBeam1BEAM_CUCUK: TStringField;
     QBrowseBEAM: TStringField;
+    Label18: TLabel;
+    wwDBEdit3: TwwDBEdit;
+    QMasterNO_POL: TStringField;
+    QRDBText11: TQRDBText;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure TabSheet1Show(Sender: TObject);
