@@ -3174,7 +3174,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -5287,7 +5287,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -7348,7 +7348,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -9528,7 +9528,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -11643,7 +11643,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -14019,9 +14019,13 @@ object MutasiBeamFrm: TMutasiBeamFrm
       'ISI'#9'5'#9'ISI'#9'F'#9
       'QTY_KG'#9'5'#9'KG'#9'F'
       'QTY_PCS'#9'5'#9'PCS'#9'F'
+      'KG_REV'#9'8'#9'KG_REV'#9'F'
+      'POT_REV'#9'8'#9'POT_REV'#9'F'
       'HSL_WRP'#9'10'#9'HSL PREP'#9'F'
       'VORDER'#9'5'#9'ORDER'#9'F'#9
-      'HASIL'#9'5'#9'HSL TN'#9'F')
+      'HASIL'#9'5'#9'HSL TN'#9'F'
+      'BEAM'#9'20'#9'BEAM'#9'F'
+      'BEAM_CUCUK'#9'20'#9'BEAM_CUCUK'#9'F')
     GridTitleAlignment = taLeftJustify
     GridColor = clWhite
     GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
@@ -14042,13 +14046,13 @@ object MutasiBeamFrm: TMutasiBeamFrm
   end
   object QLookBeam1: TOracleDataSet
     SQL.Strings = (
-      'select a.* from ipisma_db4.vlook_beam_sarung_25 a'
+      'select a.* from ipisma_db4.vlook_beam_sarung_25v2 a'
       'where a.kd_lokasi=:kd_lokasi'
       'order by a.no_beam'
       '-- and tanggal>=trunc(sysdate-200)'
       '')
     Variables.Data = {
-      03000000010000000A0000003A4B445F4C4F4B41534905000000030000003530
+      03000000010000000A0000003A4B445F4C4F4B41534905000000030000003430
       0000000000}
     QBEDefinition.QBEFieldDefs = {
       0400000014000000070000004E4F5F4245414D010000000000060000004C4F4B
@@ -14118,6 +14122,14 @@ object MutasiBeamFrm: TMutasiBeamFrm
       DisplayWidth = 5
       FieldName = 'QTY_PCS'
     end
+    object QLookBeam1KG_REV: TFloatField
+      DisplayWidth = 8
+      FieldName = 'KG_REV'
+    end
+    object QLookBeam1POT_REV: TFloatField
+      DisplayWidth = 8
+      FieldName = 'POT_REV'
+    end
     object QLookBeam1HSL_WRP: TFloatField
       DisplayLabel = 'HSL PREP'
       DisplayWidth = 10
@@ -14133,6 +14145,16 @@ object MutasiBeamFrm: TMutasiBeamFrm
       DisplayWidth = 5
       FieldName = 'HASIL'
     end
+    object QLookBeam1BEAM: TStringField
+      DisplayWidth = 20
+      FieldName = 'BEAM'
+      Size = 100
+    end
+    object QLookBeam1BEAM_CUCUK: TStringField
+      DisplayWidth = 20
+      FieldName = 'BEAM_CUCUK'
+      Size = 100
+    end
     object QLookBeam1KD_LOKASI: TStringField
       DisplayWidth = 6
       FieldName = 'KD_LOKASI'
@@ -14142,23 +14164,6 @@ object MutasiBeamFrm: TMutasiBeamFrm
     object QLookBeam1KP: TStringField
       FieldName = 'KP'
       Visible = False
-    end
-    object QLookBeam1BEAM: TStringField
-      FieldName = 'BEAM'
-      Visible = False
-      Size = 100
-    end
-    object QLookBeam1KG_REV: TFloatField
-      FieldName = 'KG_REV'
-      Visible = False
-    end
-    object QLookBeam1POT_REV: TFloatField
-      FieldName = 'POT_REV'
-      Visible = False
-    end
-    object QLookBeam1BEAM_CUCUK: TStringField
-      FieldName = 'BEAM_CUCUK'
-      Size = 100
     end
   end
   object dsQTGL: TwwDataSource
