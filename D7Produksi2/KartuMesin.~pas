@@ -125,6 +125,7 @@ type
     QbeamosoJML_METER: TFloatField;
     QbeamosoQTY_KG: TFloatField;
     QKartuMesinREPRO: TStringField;
+    wwCheckBox1: TwwCheckBox;
     procedure BtnFindClick(Sender: TObject);
     procedure BtnOk2Click(Sender: TObject);
     procedure QKartuMesinCalcFields(DataSet: TDataSet);
@@ -154,6 +155,7 @@ type
     procedure QKartuMesinJML_POTONGChange(Sender: TField);
     procedure LookjnsBeamCloseUp(Sender: TObject; LookupTable,
       FillTable: TDataSet; modified: Boolean);
+
 
   private
     { Private declarations }

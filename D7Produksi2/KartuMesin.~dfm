@@ -53,11 +53,13 @@ object KartuMesinFrm: TKartuMesinFrm
       'ISPOST;CheckBox;1;0'
       'GRUP;CustomEdit;LookGrupasli;F'
       'SHIFT;CustomEdit;LookShift;F'
-      'NO_SERI_BEAM;CustomEdit;LookSeriBeam;F')
+      'NO_SERI_BEAM;CustomEdit;LookSeriBeam;F'
+      'REPRO;CustomEdit;wwCheckBox1;F')
     Selected.Strings = (
       'NO_REG'#9'7'#9'NO REG'#9'F'
       'TANGGAL'#9'11'#9'TANGGAL &&~JAM'#9'F'
       'JENIS'#9'10'#9'JENIS'#9'F'
+      'REPRO'#9'1'#9'REPROSES'#9'F'
       'NO_SERI_BEAM'#9'12'#9'No. Seri'#9'F'#9'BEAM'
       'OPR_INSERT'#9'10'#9'Ganti No. Seri'#9'F'#9'BEAM'
       'BEAM'#9'20'#9'Jenis'#9'F'#9'BEAM'
@@ -587,6 +589,22 @@ object KartuMesinFrm: TKartuMesinFrm
     UnboundDataType = wwDefault
     Visible = False
   end
+  object wwCheckBox1: TwwCheckBox
+    Left = 400
+    Top = 246
+    Width = 17
+    Height = 22
+    DisableThemes = False
+    AlwaysTransparent = False
+    ValueChecked = '1'
+    ValueUnchecked = '0'
+    DisplayValueChecked = 'True'
+    DisplayValueUnchecked = 'False'
+    NullAndBlankState = cbUnchecked
+    DataField = 'REPRO'
+    DataSource = dsQKartuMesin
+    TabOrder = 16
+  end
   object QKartuMesin: TOracleDataSet
     SQL.Strings = (
       
@@ -854,8 +872,6 @@ object KartuMesinFrm: TKartuMesinFrm
       'NAMA_MESIN'#9'25'#9'NAMA_MESIN'#9'T'
       '<New Line>'
       'JENIS'#9'20'#9'Jenis'#9'F'
-      '<New Line>'
-      'REPRO'#9'1'#9'REPROSES'#9'F'
       '<New Line>'
       'TANGGAL'#9'15'#9'Tanggal'#9'F'
       'NO_SERI_BEAM'#9'12'#9'No. Seri Beam'#9'F'

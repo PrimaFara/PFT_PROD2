@@ -26,7 +26,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
     Top = 0
     Width = 1154
     Height = 552
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -13222,6 +13222,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             'PROSES'#9'14'#9'Proses'#9'T'#9'ASAL'
             'LOKASI_TUJUAN'#9'15'#9'Lokasi'#9'F'#9'TUJUAN'
             'PROSES_TUJUAN'#9'14'#9'Proses'#9'T'#9'TUJUAN'
+            'JENIS'#9'10'#9'Jenis'#9'F'
             'ISI'#9'8'#9'ISI'#9'F'
             'PCS'#9'10'#9'PCS'#9'F'#9'QTY'
             'QTY_KG'#9'8'#9'KG'#9'F'#9'QTY'
@@ -13647,7 +13648,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           'PROSES'#9'16'#9'Proses'#9'F'#9'ASAL'
           'LOKASI_TUJUAN'#9'18'#9'Lokasi'#9'F'#9'TUJUAN'
           'PROSES_TUJUAN'#9'17'#9'Proses'#9'F'#9'TUJUAN'
-          'JENIS'#9'30'#9'JENIS'#9'F')
+          'JENIS'#9'20'#9'JENIS'#9'F')
         IniAttributes.Delimiter = ';;'
         ExportOptions.ExportType = wwgetSYLK
         TitleColor = clBtnFace
@@ -13785,7 +13786,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
       0300000001000000070000003A4E4F5F52454703000000040000006901000000
       000000}
     QBEDefinition.QBEFieldDefs = {
-      04000000120000000C0000004E4F5F534552495F4245414D0100000000000600
+      04000000130000000C0000004E4F5F534552495F4245414D0100000000000600
       00004E4F5F524547010000000000070000004E4F5F4245414D01000000000006
       00000050524F534553010000000000060000004C4F4B4153490100000000000D
       00000050524F5345535F54554A55414E0100000000000D0000004C4F4B415349
@@ -13795,7 +13796,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
       53540100000000000B0000004A454E49535F4D4553494E010000000000060000
       005154595F4B4701000000000005000000524553455001000000000006000000
       4B475F52455601000000000007000000504F545F524556010000000000030000
-      00504353010000000000}
+      00504353010000000000050000004A454E4953010000000000}
     Master = QMaster
     MasterFields = 'NO_REG'
     RefreshOptions = [roAfterInsert]
@@ -13872,6 +13873,10 @@ object MutasiBeamFrm: TMutasiBeamFrm
     end
     object DetailPCS: TFloatField
       FieldName = 'PCS'
+    end
+    object DetailJENIS: TStringField
+      FieldName = 'JENIS'
+      Size = 30
     end
   end
   object dsDetail: TwwDataSource
@@ -14011,6 +14016,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
     Selected.Strings = (
       'NO_BEAM'#9'12'#9'NO BEAM'#9'F'#9
       'NO_SERI_BEAM'#9'15'#9'NO SERI'#9'F'#9
+      'JENIS'#9'12'#9'JENIS'#9'F'
       'NO_RESEP'#9'20'#9'NO_RESEP'#9'F'#9
       'LOKASI'#9'12'#9'LOKASI'#9'F'#9
       'PROSES'#9'12'#9'PROSES'#9'F'#9
@@ -14024,8 +14030,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
       'HSL_WRP'#9'10'#9'HSL PREP'#9'F'
       'VORDER'#9'5'#9'ORDER'#9'F'#9
       'HASIL'#9'5'#9'HSL TN'#9'F'
-      'BEAM'#9'20'#9'BEAM'#9'F'
-      'BEAM_CUCUK'#9'20'#9'BEAM_CUCUK'#9'F')
+      'BEAM'#9'20'#9'BEAM'#9'F')
     GridTitleAlignment = taLeftJustify
     GridColor = clWhite
     GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
@@ -14036,7 +14041,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
     CharCase = ecNormal
     UserButton1Caption = '&Refresh'
     OnUserButton1Click = LookSeriBeamDlgUserButton1Click
-    Left = 832
+    Left = 800
     Top = 288
   end
   object dsMaster: TwwDataSource
@@ -14065,7 +14070,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
       00000054414E4747414C010000000000040000004245414D0100000000000600
       00004B475F52455601000000000007000000504F545F52455601000000000007
       00000048534C5F575250010000000000070000005154595F5043530100000000
-      000A0000004245414D5F435543554B010000000000}
+      00050000004A454E4953010000000000}
     RefreshOptions = [roAfterInsert]
     Session = DMFrm.OS
     Left = 32
@@ -14080,6 +14085,11 @@ object MutasiBeamFrm: TMutasiBeamFrm
       DisplayLabel = 'NO SERI'
       DisplayWidth = 15
       FieldName = 'NO_SERI_BEAM'
+      Size = 30
+    end
+    object QLookBeam1JENIS: TStringField
+      DisplayWidth = 12
+      FieldName = 'JENIS'
       Size = 30
     end
     object QLookBeam1NO_RESEP: TStringField
@@ -14148,11 +14158,6 @@ object MutasiBeamFrm: TMutasiBeamFrm
     object QLookBeam1BEAM: TStringField
       DisplayWidth = 20
       FieldName = 'BEAM'
-      Size = 100
-    end
-    object QLookBeam1BEAM_CUCUK: TStringField
-      DisplayWidth = 20
-      FieldName = 'BEAM_CUCUK'
       Size = 100
     end
     object QLookBeam1KD_LOKASI: TStringField
@@ -14689,43 +14694,58 @@ object MutasiBeamFrm: TMutasiBeamFrm
     Left = 40
     Top = 400
     object QLookBM_RT_TSNO_BEAM: TStringField
+      DisplayLabel = 'NO BEAM'
+      DisplayWidth = 12
       FieldName = 'NO_BEAM'
       Required = True
     end
     object QLookBM_RT_TSNO_SERI_BEAM: TStringField
+      DisplayLabel = 'NO SERI'
+      DisplayWidth = 15
       FieldName = 'NO_SERI_BEAM'
       Required = True
       Size = 30
     end
     object QLookBM_RT_TSNO_RESEP: TStringField
+      DisplayWidth = 20
       FieldName = 'NO_RESEP'
     end
     object QLookBM_RT_TSLOKASI: TStringField
+      DisplayWidth = 12
       FieldName = 'LOKASI'
       Size = 30
     end
     object QLookBM_RT_TSPROSES: TStringField
+      DisplayWidth = 12
       FieldName = 'PROSES'
       Size = 30
     end
     object QLookBM_RT_TSKONSTRUKSI: TStringField
+      DisplayWidth = 30
       FieldName = 'KONSTRUKSI'
       Size = 50
     end
     object QLookBM_RT_TSCORAK: TStringField
+      DisplayWidth = 20
       FieldName = 'CORAK'
       Size = 50
     end
     object QLookBM_RT_TSISI: TFloatField
+      DisplayWidth = 5
       FieldName = 'ISI'
     end
     object QLookBM_RT_TSQTY_KG: TFloatField
+      DisplayLabel = 'QTY KG'
+      DisplayWidth = 5
       FieldName = 'QTY_KG'
     end
     object QLookBM_RT_TSVORDER: TFloatField
+      DisplayLabel = 'ORDER'
+      DisplayWidth = 5
       FieldName = 'VORDER'
     end
     object QLookBM_RT_TSHASIL: TStringField
+      DisplayWidth = 5
       FieldName = 'HASIL'
       Size = 40
     end

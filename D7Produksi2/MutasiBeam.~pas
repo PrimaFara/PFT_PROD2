@@ -758,12 +758,13 @@ type
     QDetail_cetakMITRA: TStringField;
     QLookBeam1HSL_WRP: TFloatField;
     QLookBeam1QTY_PCS: TFloatField;
-    QLookBeam1BEAM_CUCUK: TStringField;
     QBrowseBEAM: TStringField;
     Label18: TLabel;
     wwDBEdit3: TwwDBEdit;
     QMasterNO_POL: TStringField;
     QRDBText11: TQRDBText;
+    QLookBeam1JENIS: TStringField;
+    DetailJENIS: TStringField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure TabSheet1Show(Sender: TObject);
@@ -1117,6 +1118,8 @@ begin
    DetailJENIS_MESIN.AsString:=QLookBeam1BEAM.AsString;
    //250225
    DetailPCS.AsFloat:=QLookBeam1QTY_PCS.AsFloat;
+   //130325
+   DetailJENIS.AsString:=QLookBeam1JENIS.AsString;
    end;
  1:
    begin
