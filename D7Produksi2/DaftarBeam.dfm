@@ -89,6 +89,7 @@ object DaftarBeamFrm: TDaftarBeamFrm
           'KD_LOKASI'#9'6'#9'KD_LOKASI'#9'F'
           'NO_SERI_BEAM'#9'30'#9'NO_SERI_BEAM'#9'F'
           'ISI'#9'10'#9'ISI'#9'F'
+          'JNS_BEAM'#9'25'#9'JNS_BEAM'#9'F'
           'LOKASI2'#9'30'#9'LOKASI2'#9'F'
           'PROSES2'#9'30'#9'PROSES2'#9'F'
           'LOKASI3'#9'30'#9'LOKASI3'#9'F'
@@ -579,7 +580,7 @@ object DaftarBeamFrm: TDaftarBeamFrm
             Left = 8
             Top = 19
             Width = 121
-            Height = 21
+            Height = 24
             DisableThemes = True
             CalendarAttributes.Font.Charset = DEFAULT_CHARSET
             CalendarAttributes.Font.Color = clWindowText
@@ -603,7 +604,7 @@ object DaftarBeamFrm: TDaftarBeamFrm
             Left = 160
             Top = 19
             Width = 121
-            Height = 21
+            Height = 24
             DisableThemes = True
             CalendarAttributes.Font.Charset = DEFAULT_CHARSET
             CalendarAttributes.Font.Color = clWindowText
@@ -900,6 +901,14 @@ object DaftarBeamFrm: TDaftarBeamFrm
     object QmasterPROSES3: TStringField
       FieldName = 'PROSES3'
       Size = 30
+    end
+    object QmasterJNS_BEAM: TStringField
+      FieldName = 'JNS_BEAM'
+      Size = 100
+    end
+    object QmasterISAKTIF: TStringField
+      FieldName = 'ISAKTIF'
+      Size = 1
     end
   end
   object DSQMaster: TwwDataSource

@@ -31,42 +31,8 @@ type
     QBrowseOPR_EDIT: TStringField;
     QBrowseTGL_EDIT: TDateTimeField;
     QBrowseLOKASI_LAMA: TStringField;
-    PageControl1: TPageControl;
-    TabSheet1: TTabSheet;
-    Panel1: TPanel;
-    BtnFind: TSpeedButton;
-    BtnOk2: TSpeedButton;
-    Label5: TLabel;
-    Label1: TLabel;
-    Edit1: TEdit;
-    wwDBSpinLine2: TwwDBSpinEdit;
-    wwDBGrid2: TwwDBGrid;
-    Panel3: TPanel;
-    BitBtn3: TBitBtn;
-    TabSheet2: TTabSheet;
-    wwDBGrid1: TwwDBGrid;
-    Panel2: TPanel;
-    vOperand: TLabel;
-    GroupBox1: TGroupBox;
-    Label34: TLabel;
-    VTglAwal: TwwDBDateTimePicker;
-    vTglAkhir: TwwDBDateTimePicker;
-    cbOtomatis: TCheckBox;
-    dbcField: TwwDBComboBox;
-    ECari: TEdit;
-    cbTanggal: TCheckBox;
-    BitBtn1: TBitBtn;
-    Panel5: TPanel;
-    BitBtn2: TBitBtn;
-    TabSheet3: TTabSheet;
     Qmaster: TOracleDataSet;
     DSQMaster: TwwDataSource;
-    wwDBGrid3: TwwDBGrid;
-    Panel4: TPanel;
-    BtnBrowse: TSpeedButton;
-    BtnEditing: TSpeedButton;
-    Label2: TLabel;
-    ECari2: TEdit;
     QmasterBERAT: TFloatField;
     QmasterNO_BEAM: TStringField;
     QmasterTGL_INSERT: TDateTimeField;
@@ -76,22 +42,10 @@ type
     QmasterKD_LOKASI: TStringField;
     QmasterNO_SERI_BEAM: TStringField;
     QmasterISI: TFloatField;
-    Panel6: TPanel;
-    LRecords: TLabel;
-    BtnClose: TBitBtn;
-    BtnSimpan: TBitBtn;
-    BitBtn6: TBitBtn;
-    cbOtomatis2: TCheckBox;
-    Btnfilter: TBitBtn;
     QmasterLOKASI2: TStringField;
     QmasterPROSES2: TStringField;
     QmasterLOKASI3: TStringField;
     QmasterPROSES3: TStringField;
-    TabSheet4: TTabSheet;
-    wwDBGrid4: TwwDBGrid;
-    Panel7: TPanel;
-    BtnBrowse4: TSpeedButton;
-    BtnEditing4: TSpeedButton;
     dsQBeamIsi: TwwDataSource;
     QBeamIsi: TOracleDataSet;
     QBeamIsiNO_BEAM: TStringField;
@@ -125,19 +79,47 @@ type
     QBeamIsiSHIFT: TStringField;
     QBeamIsiGRUP2: TStringField;
     QBeamIsiBEAM: TStringField;
-    Panel8: TPanel;
-    Label4: TLabel;
-    BitBtn5: TBitBtn;
-    BtnSimpan4: TBitBtn;
-    BitBtn8: TBitBtn;
-    vTglAwal4: TwwDBDateTimePicker;
-    Label3: TLabel;
-    Label6: TLabel;
-    vTglAkhir4: TwwDBDateTimePicker;
-    Label7: TLabel;
-    BtnOk: TBitBtn;
-    BtnFind4: TSpeedButton;
-    BtnOk4: TSpeedButton;
+    PageControl1: TPageControl;
+    TabSheet3: TTabSheet;
+    wwDBGrid3: TwwDBGrid;
+    Panel4: TPanel;
+    BtnBrowse: TSpeedButton;
+    BtnEditing: TSpeedButton;
+    Label2: TLabel;
+    ECari2: TEdit;
+    cbOtomatis2: TCheckBox;
+    Btnfilter: TBitBtn;
+    Panel6: TPanel;
+    LRecords: TLabel;
+    BtnClose: TBitBtn;
+    BtnSimpan: TBitBtn;
+    BitBtn6: TBitBtn;
+    TabSheet1: TTabSheet;
+    Panel1: TPanel;
+    BtnFind: TSpeedButton;
+    BtnOk2: TSpeedButton;
+    Label5: TLabel;
+    Label1: TLabel;
+    Edit1: TEdit;
+    wwDBSpinLine2: TwwDBSpinEdit;
+    wwDBGrid2: TwwDBGrid;
+    Panel3: TPanel;
+    BitBtn3: TBitBtn;
+    TabSheet2: TTabSheet;
+    wwDBGrid1: TwwDBGrid;
+    Panel2: TPanel;
+    vOperand: TLabel;
+    GroupBox1: TGroupBox;
+    Label34: TLabel;
+    VTglAwal: TwwDBDateTimePicker;
+    vTglAkhir: TwwDBDateTimePicker;
+    cbOtomatis: TCheckBox;
+    dbcField: TwwDBComboBox;
+    ECari: TEdit;
+    cbTanggal: TCheckBox;
+    BitBtn1: TBitBtn;
+    Panel5: TPanel;
+    BitBtn2: TBitBtn;
     procedure LookLokasiProses2Enter(Sender: TObject);
     procedure LookLokasiProses2CloseUp(Sender: TObject; LookupTable,
       FillTable: TDataSet; modified: Boolean);
@@ -170,19 +152,6 @@ type
     procedure ECari2Change(Sender: TObject);
     procedure BtnfilterClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure BtnEditing4Click(Sender: TObject);
-    procedure wwDBGrid4TitleButtonClick(Sender: TObject;
-      AFieldName: String);
-    procedure QBeamIsiAfterDelete(DataSet: TDataSet);
-    procedure QBeamIsiAfterPost(DataSet: TDataSet);
-    procedure BtnSimpan4Click(Sender: TObject);
-    procedure BtnBrowse4Click(Sender: TObject);
-
-    procedure QBeamIsiAfterEdit(DataSet: TDataSet);
-    procedure vTglAwal4Change(Sender: TObject);
-    procedure BtnOkClick(Sender: TObject);
-    procedure BtnFind4Click(Sender: TObject);
-    procedure BtnOk4Click(Sender: TObject);
   private
     { Private declarations }
         vfilter, vorder, vfilter2 : String;
@@ -557,135 +526,6 @@ procedure TDaftarBeamFrm.FormClose(Sender: TObject;
 begin
   Action:=caFree;
   DaftarBeamFrm:=Nil;
-end;
-
-procedure TDaftarBeamFrm.BtnEditing4Click(Sender: TObject);
-begin
-  wwDBGrid4.Options:=wwDBGrid4.Options-[dgRowSelect];
-  wwDBGrid4.ReadOnly:=False;
-  wwDBGrid4.SetFocus;
-  TabSheet1.TabVisible:=False;
-  TabSheet2.TabVisible:=False;
-end;
-
-procedure TDaftarBeamFrm.wwDBGrid4TitleButtonClick(Sender: TObject;
-  AFieldName: String);
-begin
-  if ((Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName<>'') then
-  begin
-     if (Sender as TwwDBGrid).DataSource.DataSet.FieldByName(AFieldName).FieldKind=fkData then
-        begin
-          if vorder=' ASC' then
-              vorder:=' DESC'
-          else
-              vorder:=' ASC';
-          (Sender as TwwDBGrid).DataSource.DataSet.DisableControls;
-          (Sender as TwwDBGrid).DataSource.DataSet.Close;
-          ((Sender as TwwDBGrid).DataSource.DataSet as TOracleDataSet).SetVariable('myparam',vfilter+' order by '+(Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName+vorder);
-          (Sender as TwwDBGrid).DataSource.DataSet.Open;
-          (Sender as TwwDBGrid).DataSource.DataSet.EnableControls;
-        end
-        else
-          ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
-  end
-  else
-  ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
-
-end;
-
-procedure TDaftarBeamFrm.QBeamIsiAfterDelete(DataSet: TDataSet);
-begin
-  BtnSimpan4.Enabled:=True;
-end;
-
-procedure TDaftarBeamFrm.QBeamIsiAfterPost(DataSet: TDataSet);
-begin
-  BtnSimpan4.Enabled:=True;
-end;
-
-procedure TDaftarBeamFrm.BtnSimpan4Click(Sender: TObject);
-begin
-        try
-          DMFrm.QTime.Open;
-          QBeamIsiTGL_INSERT.AsDateTime:=DMFrm.QTimeJAM.AsDateTime;
-          QBeamIsiOPR_INSERT.AsString:=DMFrm.QTimeVUSER.AsString;
-
-          DMFrm.OS.CommitUpdates([QMaster]);
-          BtnSimpan4.Enabled:=False;
-          BtnBrowse4.Down:=True;
-          BtnBrowse4Click(Nil);
-        except
-            on E : Exception do
-            begin
-              ShowMessage(E.Message);
-              BtnSimpan.Enabled:=True;
-            end;
-        end;
-end;
-
-procedure TDaftarBeamFrm.BtnBrowse4Click(Sender: TObject);
-begin
-  if BtnSimpan4.Enabled then
-    ShowMessage('Simpan/ Posting Data Dulu !')
-    else
-    begin
-      wwDBGrid4.Options:=wwDBGrid4.Options+[dgRowSelect];
-      wwDBGrid4.ReadOnly:=True;
-      wwDBGrid4.SetFocus;
-      TabSheet1.TabVisible:=True;
-      TabSheet2.TabVisible:=True;
-    end;
-end;
-
-procedure TDaftarBeamFrm.QBeamIsiAfterEdit(DataSet: TDataSet);
-begin
- BtnSimpan4.Enabled:=True;
-end;
-
-procedure TDaftarBeamFrm.vTglAwal4Change(Sender: TObject);
-begin
-  vTglAkhir4.DateTime:=vTglAwal4.Date;
-end;
-
-procedure TDaftarBeamFrm.BtnOkClick(Sender: TObject);
-begin
-   if vTglAwal.Date>vTglAkhir.DateTime then
-    ShowMessage('Tgl. Akhir harus lebih besar dari Tgl. Awal !')
-    else
-    begin
-      if QBeamIsi.QBEMode then
-        QBeamIsi.QBEMode:=False;    
-      QBeamIsi.DisableControls;
-      QBeamIsi.Close;
-  		QBeamIsi.SetVariable('pawal',Trunc(vTglAwal4.Date));
-  		QBeamIsi.SetVariable('pakhir',Trunc(vTglAkhir4.Date));
-  		QBeamIsi.SetVariable('porder',' order by tanggal');
-      QBeamIsi.Open;
-      QBeamIsi.EnableControls;
-      QBeamIsi.Refresh;
-    end;
-end;
-
-procedure TDaftarBeamFrm.BtnFind4Click(Sender: TObject);
-begin
-	wwDBGrid4.ColumnByName('NILAI').FooterValue:='';;
-  if not QBeamIsi.QBEMode then
-  begin
-    wwDBGrid4.Options:=wwDBGrid4.Options-[dgRowSelect,dgAlwaysShowSelection];
-    QBeamIsi.QBEMode:=TRUE;
-  end
-  else
-    QBeamIsi.ClearQBE;
-end;
-
-procedure TDaftarBeamFrm.BtnOk4Click(Sender: TObject);
-begin
-  if QBeamIsi.QBEMode then
-  begin
-    QBeamIsi.ExecuteQBE;
-    wwDBGrid4.Options:=wwDBGrid2.Options+[dgRowSelect,dgAlwaysShowSelection];
-    QBrowse.EnableControls;
-  end;
 end;
 
 end.

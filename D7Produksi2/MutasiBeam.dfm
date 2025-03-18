@@ -1,8 +1,8 @@
 object MutasiBeamFrm: TMutasiBeamFrm
-  Left = 198
-  Top = 122
-  Width = 1170
-  Height = 590
+  Left = -8
+  Top = -8
+  Width = 1382
+  Height = 754
   Caption = 'MutasiBeamFrm'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -24,9 +24,9 @@ object MutasiBeamFrm: TMutasiBeamFrm
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 1154
-    Height = 552
-    ActivePage = TabSheet1
+    Width = 1366
+    Height = 716
+    ActivePage = TabSheet2
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -3174,7 +3174,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666670000
+              76.729166666666680000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -3820,7 +3820,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
               44.979166666666670000
               105.833333333333300000
               2.645833333333333000
-              121.708333333333400000)
+              121.708333333333300000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -3967,7 +3967,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333340000
+              18.520833333333330000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -5287,7 +5287,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666670000
+              76.729166666666680000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -5997,7 +5997,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
               44.979166666666670000
               105.833333333333300000
               2.645833333333333000
-              121.708333333333400000)
+              121.708333333333300000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -6144,7 +6144,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333340000
+              18.520833333333330000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -7348,7 +7348,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666670000
+              76.729166666666680000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -8023,7 +8023,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
               44.979166666666670000
               105.833333333333300000
               2.645833333333333000
-              121.708333333333400000)
+              121.708333333333300000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -8187,7 +8187,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333340000
+              18.520833333333330000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -9528,7 +9528,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666670000
+              76.729166666666680000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -10158,7 +10158,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
               44.979166666666670000
               105.833333333333300000
               2.645833333333333000
-              121.708333333333400000)
+              121.708333333333300000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -10273,7 +10273,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333340000
+              18.520833333333330000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -11643,7 +11643,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666670000
+              76.729166666666680000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -12290,7 +12290,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
               44.979166666666670000
               105.833333333333300000
               2.645833333333333000
-              121.708333333333400000)
+              121.708333333333300000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -12437,7 +12437,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333340000
+              18.520833333333330000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -12951,22 +12951,22 @@ object MutasiBeamFrm: TMutasiBeamFrm
       object Panel3: TPanel
         Left = 0
         Top = 0
-        Width = 1200
-        Height = 524
-        Align = alLeft
+        Width = 1358
+        Height = 688
+        Align = alClient
         TabOrder = 0
         object Panel4: TPanel
           Left = 1
           Top = 1
-          Width = 1198
-          Height = 176
+          Width = 1356
+          Height = 159
           Align = alTop
           Ctl3D = False
           ParentCtl3D = False
           TabOrder = 0
           object Label1: TLabel
             Left = 16
-            Top = 16
+            Top = 3
             Width = 59
             Height = 13
             Caption = 'No. Register'
@@ -12974,21 +12974,21 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object Label3: TLabel
             Left = 16
-            Top = 56
+            Top = 43
             Width = 39
             Height = 13
             Caption = 'Tanggal'
           end
           object Label7: TLabel
             Left = 16
-            Top = 104
+            Top = 91
             Width = 74
             Height = 13
             Caption = 'KETERANGAN'
           end
           object Label8: TLabel
             Left = 448
-            Top = 96
+            Top = 83
             Width = 47
             Height = 13
             Caption = 'Tgl. Insert'
@@ -12996,7 +12996,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object Label9: TLabel
             Left = 448
-            Top = 136
+            Top = 123
             Width = 49
             Height = 13
             Caption = 'Opr. Insert'
@@ -13004,7 +13004,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object DBText1: TDBText
             Left = 561
-            Top = 24
+            Top = 11
             Width = 80
             Height = 24
             Alignment = taRightJustify
@@ -13020,7 +13020,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object Label2: TLabel
             Left = 334
-            Top = 16
+            Top = 3
             Width = 29
             Height = 13
             Caption = 'Mitra :'
@@ -13028,14 +13028,14 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object Label18: TLabel
             Left = 335
-            Top = 55
+            Top = 42
             Width = 41
             Height = 13
             Caption = 'No. Pol :'
           end
           object DBEdit1: TDBEdit
             Left = 16
-            Top = 32
+            Top = 19
             Width = 169
             Height = 19
             Color = clMoneyGreen
@@ -13045,7 +13045,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object DBEdit8: TDBEdit
             Left = 448
-            Top = 112
+            Top = 99
             Width = 129
             Height = 19
             Color = clMoneyGreen
@@ -13056,7 +13056,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object DBEdit9: TDBEdit
             Left = 448
-            Top = 152
+            Top = 139
             Width = 129
             Height = 19
             Color = clMoneyGreen
@@ -13067,7 +13067,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object DBMemo1: TDBMemo
             Left = 16
-            Top = 120
+            Top = 107
             Width = 401
             Height = 49
             DataField = 'KETERANGAN'
@@ -13076,7 +13076,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object DTPTanggal: TwwDBDateTimePicker
             Left = 16
-            Top = 74
+            Top = 61
             Width = 137
             Height = 21
             CalendarAttributes.Font.Charset = DEFAULT_CHARSET
@@ -13094,7 +13094,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object RadioGroup1: TRadioGroup
             Left = 216
-            Top = 14
+            Top = 1
             Width = 105
             Height = 39
             Caption = 'Resep'
@@ -13106,7 +13106,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object RadioGroup2: TRadioGroup
             Left = 216
-            Top = 55
+            Top = 42
             Width = 105
             Height = 42
             Caption = 'Serah Terima'
@@ -13118,7 +13118,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object UpdateQTY: TCheckBox
             Left = 218
-            Top = 101
+            Top = 88
             Width = 169
             Height = 17
             Caption = 'Update QTY RETUR/TS'
@@ -13132,7 +13132,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object LookMitra: TwwDBLookupComboDlg
             Left = 334
-            Top = 32
+            Top = 19
             Width = 137
             Height = 19
             GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
@@ -13156,7 +13156,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           end
           object wwDBEdit3: TwwDBEdit
             Left = 334
-            Top = 70
+            Top = 57
             Width = 137
             Height = 21
             AutoSize = False
@@ -13176,16 +13176,16 @@ object MutasiBeamFrm: TMutasiBeamFrm
         end
         object Panel5: TPanel
           Left = 1
-          Top = 482
-          Width = 1198
+          Top = 646
+          Width = 1356
           Height = 41
           Align = alBottom
           TabOrder = 1
           DesignSize = (
-            1198
+            1356
             41)
           object BitBtn2: TBitBtn
-            Left = 1099
+            Left = 1257
             Top = 8
             Width = 75
             Height = 25
@@ -13194,7 +13194,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Kind = bkClose
           end
           object BitBtn3: TBitBtn
-            Left = 999
+            Left = 1157
             Top = 8
             Width = 75
             Height = 25
@@ -13206,9 +13206,9 @@ object MutasiBeamFrm: TMutasiBeamFrm
         end
         object wwDBGrid1: TwwDBGrid
           Left = 1
-          Top = 221
-          Width = 1198
-          Height = 261
+          Top = 204
+          Width = 1356
+          Height = 442
           ControlType.Strings = (
             'KD_ITEM;CustomEdit;LookItem;F'
             'ARAH;CustomEdit;LookArah;F'
@@ -13251,8 +13251,8 @@ object MutasiBeamFrm: TMutasiBeamFrm
         end
         object Panel6: TPanel
           Left = 1
-          Top = 177
-          Width = 1198
+          Top = 160
+          Width = 1356
           Height = 44
           Align = alTop
           TabOrder = 3
@@ -13476,7 +13476,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
       object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 1146
+        Width = 1358
         Height = 65
         Align = alTop
         TabOrder = 0
@@ -13579,13 +13579,13 @@ object MutasiBeamFrm: TMutasiBeamFrm
       end
       object Panel2: TPanel
         Left = 0
-        Top = 483
-        Width = 1146
+        Top = 647
+        Width = 1358
         Height = 41
         Align = alBottom
         TabOrder = 1
         DesignSize = (
-          1146
+          1358
           41)
         object LRencord: TLabel
           Left = 16
@@ -13600,7 +13600,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           ParentFont = False
         end
         object BitBtn1: TBitBtn
-          Left = 738
+          Left = 950
           Top = 8
           Width = 75
           Height = 25
@@ -13609,7 +13609,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
           Kind = bkClose
         end
         object BtnExport: TBitBtn
-          Left = 650
+          Left = 862
           Top = 8
           Width = 75
           Height = 25
@@ -13623,8 +13623,8 @@ object MutasiBeamFrm: TMutasiBeamFrm
       object wwDBGrid2: TwwDBGrid
         Left = 0
         Top = 65
-        Width = 1146
-        Height = 418
+        Width = 1358
+        Height = 582
         ControlType.Strings = (
           'ISPOST;CheckBox;1;0')
         Selected.Strings = (

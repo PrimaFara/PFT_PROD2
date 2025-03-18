@@ -120,6 +120,8 @@ type
     BitBtn1: TBitBtn;
     Panel5: TPanel;
     BitBtn2: TBitBtn;
+    QmasterJNS_BEAM: TStringField;
+    QmasterISAKTIF: TStringField;
     procedure LookLokasiProses2Enter(Sender: TObject);
     procedure LookLokasiProses2CloseUp(Sender: TObject; LookupTable,
       FillTable: TDataSet; modified: Boolean);

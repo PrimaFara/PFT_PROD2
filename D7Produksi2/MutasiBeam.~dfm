@@ -26,7 +26,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
     Top = 0
     Width = 1154
     Height = 552
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -14694,43 +14694,58 @@ object MutasiBeamFrm: TMutasiBeamFrm
     Left = 40
     Top = 400
     object QLookBM_RT_TSNO_BEAM: TStringField
+      DisplayLabel = 'NO BEAM'
+      DisplayWidth = 12
       FieldName = 'NO_BEAM'
       Required = True
     end
     object QLookBM_RT_TSNO_SERI_BEAM: TStringField
+      DisplayLabel = 'NO SERI'
+      DisplayWidth = 15
       FieldName = 'NO_SERI_BEAM'
       Required = True
       Size = 30
     end
     object QLookBM_RT_TSNO_RESEP: TStringField
+      DisplayWidth = 20
       FieldName = 'NO_RESEP'
     end
     object QLookBM_RT_TSLOKASI: TStringField
+      DisplayWidth = 12
       FieldName = 'LOKASI'
       Size = 30
     end
     object QLookBM_RT_TSPROSES: TStringField
+      DisplayWidth = 12
       FieldName = 'PROSES'
       Size = 30
     end
     object QLookBM_RT_TSKONSTRUKSI: TStringField
+      DisplayWidth = 30
       FieldName = 'KONSTRUKSI'
       Size = 50
     end
     object QLookBM_RT_TSCORAK: TStringField
+      DisplayWidth = 20
       FieldName = 'CORAK'
       Size = 50
     end
     object QLookBM_RT_TSISI: TFloatField
+      DisplayWidth = 5
       FieldName = 'ISI'
     end
     object QLookBM_RT_TSQTY_KG: TFloatField
+      DisplayLabel = 'QTY KG'
+      DisplayWidth = 5
       FieldName = 'QTY_KG'
     end
     object QLookBM_RT_TSVORDER: TFloatField
+      DisplayLabel = 'ORDER'
+      DisplayWidth = 5
       FieldName = 'VORDER'
     end
     object QLookBM_RT_TSHASIL: TStringField
+      DisplayWidth = 5
       FieldName = 'HASIL'
       Size = 40
     end

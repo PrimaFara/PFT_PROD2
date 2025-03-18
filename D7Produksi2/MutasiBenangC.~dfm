@@ -4974,7 +4974,7 @@ object MutasiBenangCFrm: TMutasiBenangCFrm
         ControlType.Strings = (
           'ISPOST;CheckBox;1;0')
         Selected.Strings = (
-          'KP'#9'10'#9'KP'#9'F'
+          'KP'#9'15'#9'KP'#9'F'
           'KONSTRUKSI'#9'35'#9'KONSTRUKSI'#9'F'
           'BEM'#9'20'#9'BEAM'#9'F'
           'QTY1'#9'10'#9'Beam'#9'F'#9'SISA AWAL'
