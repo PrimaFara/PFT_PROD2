@@ -1780,7 +1780,7 @@ object PermintaanKoreksi_cikalanFrm: TPermintaanKoreksi_cikalanFrm
   object OracleQuery1: TOracleQuery
     SQL.Strings = (
       'begin'
-      '  ipisma_db4.proc_mutasi_kor2_v8(:pawal,:pakhir);'
+      '  ipisma_db4.proc_mutasi_kor2_25(:pawal,:pakhir);'
       'end;')
     Session = DMFrm.OS
     Variables.Data = {

@@ -335,7 +335,7 @@ Begin
   end;
 
   PermintaanKoreksi_cikalanFrm.Show;
-  ShowMessage('merene');
+  //ShowMessage('merene');
 end;
 
 procedure TPermintaanKoreksi_cikalanFrm.FormClose(Sender: TObject;
@@ -385,7 +385,7 @@ begin
   BtnDesign2.Visible:=DMFrm.cBtnDesign;
 
 QTransaksi.Close;
-QTransaksi.SetVariable('kd_transaksi','877');
+QTransaksi.SetVariable('kd_transaksi','866');
 QTransaksi.Open;
 
 PanelHeader.Caption:=QTransaksiKD_TRANSAKSI.AsString+'. '+QTransaksiNAMA_TRANSAKSI.AsString; //UpperCase(Caption);
