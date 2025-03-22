@@ -465,6 +465,7 @@ object KartuMesinFrm: TKartuMesinFrm
       'PERAWATAN'
       'OVERHOUL'
       'RETUR/ REPROSES'
+      'OVER BEAM'
       'LAINNYA')
     Sorted = False
     TabOrder = 10

@@ -62,7 +62,7 @@ object KartuMesinFrm: TKartuMesinFrm
       'REPRO'#9'1'#9'REPROSES'#9'F'
       'NO_SERI_BEAM'#9'12'#9'No. Seri'#9'F'#9'BEAM'
       'OPR_INSERT'#9'10'#9'Ganti No. Seri'#9'F'#9'BEAM'
-      'BEAM'#9'20'#9'Jenis'#9'F'#9'BEAM'
+      'BEAM'#9'20'#9'Mesin'#9'F'#9'BEAM'
       'KP'#9'6'#9'KP'#9'F'
       'KONSTRUKSI'#9'20'#9'KONSTRUKSI'#9'F'
       'CORAK'#9'20'#9'CORAK'#9'F'
