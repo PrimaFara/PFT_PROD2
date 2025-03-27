@@ -8,7 +8,7 @@ uses
   OracleData, wwDialog, wwidlg, Wwdatsrc, wwSpeedButton, wwDBNavigator,
   wwclearpanel, DBCtrls, wwdbedit, wwdbdatetimepicker, Mask, Wwdotdot,
   ComCtrls, Buttons, Oracle, QRCtrls, QuickRpt, wwdblook, Wwdbdlg, wwcheckbox,
-  DateUtils, jpeg, Wwdbspin;//QRCtrls, Oracle, QuickRpt,
+  DateUtils, jpeg, Wwdbspin, OleCtrls, SHDocVw;//QRCtrls, Oracle, QuickRpt,
 
 type
   TLapProdPersiapanFrm = class(TForm)
@@ -351,6 +351,8 @@ type
     QRLabel2: TQRLabel;
     QRLabel20: TQRLabel;
     QRLabel23: TQRLabel;
+    BitBtn12: TBitBtn;
+    WebBrowser1: TWebBrowser;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure vTglAwalChange(Sender: TObject);
@@ -394,6 +396,9 @@ type
       var PrintBand: Boolean);
     procedure QRBand5BeforePrint(Sender: TQRCustomBand;
       var PrintBand: Boolean);
+    procedure BitBtn12Click(Sender: TObject);
+    procedure WebBrowser1DocumentComplete(Sender: TObject;
+      const pDisp: IDispatch; var URL: OleVariant);
 
   private
     { Private declarations }
@@ -563,7 +568,7 @@ begin
     if QProd_DB.Active then
       vorder:=' order by '+wwDBGrid2.Columns[0].FieldName
       else
-        vorder:=' order by konstruksi';
+        vorder:=' order by kp,beam,konstruksi';
 
   end;
   QProd_DB.DisableControls;
@@ -939,7 +944,7 @@ QProd_DB.Close;
   QAmbil_Data.SetVariable('pawal', VTglAwal.Date);
   QAmbil_Data.SetVariable('pakhir', vTglAkhir.Date);
   QAmbil_Data.Execute;
-QProd_DB.SetVariable('myparam', 'order by beam,KP');
+QProd_DB.SetVariable('myparam', 'order by KP,beam,konstruksi');
 QProd_DB.Open;
 
 QTotal.Close;
@@ -1025,6 +1030,250 @@ procedure TLapProdPersiapanFrm.QRBand5BeforePrint(Sender: TQRCustomBand;
 begin
 QTransaksi.Close;
 QTransaksi.Open;
+end;
+
+procedure TLapProdPersiapanFrm.BitBtn12Click(Sender: TObject);
+var
+  HTMLFile: TStringList;
+  FilePath: string;
+  HTMLContent: string;
+  TotDB_JML_PROD, TotDB_KODI, TotDB_POT, TotDB_KG,
+  TotK_JML_PROD, TotK_KODI, TotK_POT, TotK_KG,
+  TotC_JML_PROD, TotC_KODI, TotC_POT, TotC_KG,
+  TotF_JML_PROD, TotF_KODI, TotF_POT, TotF_KG,
+  TotG_JML_PROD, TotG_KODI, TotG_POT, TotG_KG: Double; // Ubah tipe data menjadi Double
+  // Definisikan fungsi FormatNilai
+  function FormatNilai(Nilai: Double): string;
+  begin
+    if Nilai = 0 then
+      Result := '' // Jika nilai 0, kembalikan string kosong
+    else
+      Result := FormatFloat('0.00', Nilai); // Jika bukan 0, format menjadi 2 digit di belakang koma
+  end;
+begin
+  WebBrowser1.BringToFront;
+  // Lokasi file HTML
+  FilePath := ExtractFilePath(Application.ExeName) + 'Laporan_Produksi_Persiapan.html';
+  // Inisialisasi TStringList untuk menyimpan konten HTML
+  HTMLFile := TStringList.Create;
+  try
+    // Header HTML
+    HTMLContent :=
+      '<!DOCTYPE html>' +
+      '<html lang="id">' +
+      '<head>' +
+      '<meta charset="UTF-8">' +
+      '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
+      '<title></title>' +
+      '<style>' +
+      '  body { font-family: Arial, sans-serif; font-size: 12px; margin: 0; padding: 0; }' +
+      '  .container { width: 100%; max-width: 330mm; padding: 5px; margin: auto; border: 1px solid #000; }' +
+      '  .header { width: 100%; text-align: left; margin-bottom: 5px; }' +
+      '  .header-table { width: 100%; border-collapse: collapse; }' +
+      '  .header-table td { padding: 4px; vertical-align: top; }' +
+      '  .logo { font-size: 18px; font-weight: bold; text-align: left; width: 20%; }' +
+      '  .logo-judul { font-size: 16px; font-weight: bold; text-align: center; width: 60%; }' +
+      '  .label { font-weight: bold; width: 20%; padding-top: 0px; }' +
+      '  .table { width: 100%; border-collapse: collapse; margin-top: 5px; }' +
+      '  .table th, .table td { border: 1px solid #000; padding: 2px; text-align: center; }' +
+      '  .table th { background-color: #f0f0f0; }' +
+      '  .footer { margin-top: 10px; text-align: center; }' +
+      '  @media print {' +
+      '    body { margin: 0; padding: 0; }' +
+      '    .container { border: none; }' +
+      '    @page { size: F4 landscape; margin: 5mm; }' +
+      '    thead { display: table-header-group; }' +
+      '    tfoot { display: table-footer-group; }' +
+      '    .table th { position: sticky; top: 0; background-color: #f0f0f0; }' +
+      '  }' +
+      '</style>' +
+      '</head>' +
+      '<body>' +
+      '<div class="container">' +
+      '  <div class="header">' +
+      '    <table class="header-table">' +
+      '      <tr>' +
+      '        <td class="logo">PT. PRIMAFARA TEXTILE</td>' +
+      '        <td class="logo-judul"><strong>LAPORAN PRODUKSI PERSIAPAN</strong></td>' +
+      '      </tr>' +
+      '      <tr>' +
+      '        <td class="label">Sapugarut - Pekalongan</td>' +
+      '        <td class="label" style="text-align: center">Periode : ' + FormatDateTime('dd mmmm yyyy', VTglAwal.Date) + ' - ' + FormatDateTime('dd mmmm yyyy', VTglAkhir.Date) + '</td>' +
+      '      </tr>' +
+      '    </table>' +
+      '  </div>' +
+      '  <table class="table">' +
+      '    <thead>' +
+      '      <tr>' +
+      '        <th rowspan="2">KP</th>' +
+      '        <th rowspan="2">KONSTRUKSI</th>' +
+      '        <th rowspan="2">BEAM</th>' +
+      '        <th colspan="4">WARPING</th>' +
+      '        <th colspan="4">SIZING</th>' +
+      '        <th colspan="4">CUCUK</th>' +
+      '        <th colspan="4">REPROSES KANJI</th>' +
+      '        <th colspan="4">REPROSES CUCUK</th>' +
+      '      </tr>' +
+      '      <tr>' +
+      '        <th>JUMLAH BEAM</th>' +
+      '        <th>KODI</th>' +
+      '        <th>POTONG</th>' +
+      '        <th>KG</th>' +
+      '        <th>JUMLAH BEAM</th>' +
+      '        <th>KODI</th>' +
+      '        <th>POTONG</th>' +
+      '        <th>KG</th>' +
+      '        <th>JUMLAH BEAM</th>' +
+      '        <th>KODI</th>' +
+      '        <th>POTONG</th>' +
+      '        <th>KG</th>' +
+      '        <th>JUMLAH BEAM</th>' +
+      '        <th>KODI</th>' +
+      '        <th>POTONG</th>' +
+      '        <th>KG</th>' +
+      '        <th>JUMLAH BEAM</th>' +
+      '        <th>KODI</th>' +
+      '        <th>POTONG</th>' +
+      '        <th>KG</th>' +
+      '      </tr>' +
+      '    </thead>' +
+      '    <tbody>';
+    // Inisialisasi variabel total
+    TotDB_JML_PROD := 0; TotDB_KODI := 0; TotDB_POT := 0; TotDB_KG := 0;
+    TotK_JML_PROD := 0; TotK_KODI := 0; TotK_POT := 0; TotK_KG := 0;
+    TotC_JML_PROD := 0; TotC_KODI := 0; TotC_POT := 0; TotC_KG := 0;
+    TotF_JML_PROD := 0; TotF_KODI := 0; TotF_POT := 0; TotF_KG := 0;
+    TotG_JML_PROD := 0; TotG_KODI := 0; TotG_POT := 0; TotG_KG := 0;
+    // Iterasi dataset
+    wwDBGrid2.DataSource.DataSet.First;
+    while not wwDBGrid2.DataSource.DataSet.Eof do
+    begin
+      HTMLContent := HTMLContent +
+        '        <tr>' +
+        '          <td style="text-align: left">' + wwDBGrid2.DataSource.DataSet.FieldByName('KP').AsString + '</td>' +
+        '          <td style="text-align: left">' + wwDBGrid2.DataSource.DataSet.FieldByName('KONSTRUKSI').AsString + '</td>' +
+        '          <td style="text-align: left">' + wwDBGrid2.DataSource.DataSet.FieldByName('BEAM').AsString + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('DB_JML_PROD').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('DB_KODI').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('DB_POT').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('DB_KG').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('K_JML_PROD').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('K_KODI').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('K_POT').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('K_KG').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('C_JML_PROD').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('C_KODI').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('C_POT').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('C_KG').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('F_JML_PROD').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('F_KODI').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('F_POT').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('F_KG').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('G_JML_PROD').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('G_KODI').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('G_POT').AsFloat) + '</td>' +
+        '          <td style="text-align: right">' + FormatNilai(wwDBGrid2.DataSource.DataSet.FieldByName('G_KG').AsFloat) + '</td>' +
+        '        </tr>';
+      // Menambahkan nilai kolom ke total
+      TotDB_JML_PROD := TotDB_JML_PROD + wwDBGrid2.DataSource.DataSet.FieldByName('DB_JML_PROD').AsFloat;
+      TotDB_KODI := TotDB_KODI + wwDBGrid2.DataSource.DataSet.FieldByName('DB_KODI').AsFloat;
+      TotDB_POT := TotDB_POT + wwDBGrid2.DataSource.DataSet.FieldByName('DB_POT').AsFloat;
+      TotDB_KG := TotDB_KG + wwDBGrid2.DataSource.DataSet.FieldByName('DB_KG').AsFloat;
+      TotK_JML_PROD := TotK_JML_PROD + wwDBGrid2.DataSource.DataSet.FieldByName('K_JML_PROD').AsFloat;
+      TotK_KODI := TotK_KODI + wwDBGrid2.DataSource.DataSet.FieldByName('K_KODI').AsFloat;
+      TotK_POT := TotK_POT + wwDBGrid2.DataSource.DataSet.FieldByName('K_POT').AsFloat;
+      TotK_KG := TotK_KG + wwDBGrid2.DataSource.DataSet.FieldByName('K_KG').AsFloat;
+      TotC_JML_PROD := TotC_JML_PROD + wwDBGrid2.DataSource.DataSet.FieldByName('C_JML_PROD').AsFloat;
+      TotC_KODI := TotC_KODI + wwDBGrid2.DataSource.DataSet.FieldByName('C_KODI').AsFloat;
+      TotC_POT := TotC_POT + wwDBGrid2.DataSource.DataSet.FieldByName('C_POT').AsFloat;
+      TotC_KG := TotC_KG + wwDBGrid2.DataSource.DataSet.FieldByName('C_KG').AsFloat;
+      TotF_JML_PROD := TotF_JML_PROD + wwDBGrid2.DataSource.DataSet.FieldByName('F_JML_PROD').AsFloat;
+      TotF_KODI := TotF_KODI + wwDBGrid2.DataSource.DataSet.FieldByName('F_KODI').AsFloat;
+      TotF_POT := TotF_POT + wwDBGrid2.DataSource.DataSet.FieldByName('F_POT').AsFloat;
+      TotF_KG := TotF_KG + wwDBGrid2.DataSource.DataSet.FieldByName('F_KG').AsFloat;
+      TotG_JML_PROD := TotG_JML_PROD + wwDBGrid2.DataSource.DataSet.FieldByName('G_JML_PROD').AsFloat;
+      TotG_KODI := TotG_KODI + wwDBGrid2.DataSource.DataSet.FieldByName('G_KODI').AsFloat;
+      TotG_POT := TotG_POT + wwDBGrid2.DataSource.DataSet.FieldByName('G_POT').AsFloat;
+      TotG_KG := TotG_KG + wwDBGrid2.DataSource.DataSet.FieldByName('G_KG').AsFloat;
+      wwDBGrid2.DataSource.DataSet.Next;
+    end;
+    // Menambahkan baris total
+    HTMLContent := HTMLContent +
+      '        <tr>' +
+      '          <td colspan="3" style="border: 1px solid black;"><strong>Jumlah</strong></td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotDB_JML_PROD) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotDB_KODI) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotDB_POT) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotDB_KG) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotK_JML_PROD) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotK_KODI) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotK_POT) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotK_KG) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotC_JML_PROD) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotC_KODI) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotC_POT) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotC_KG) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotF_JML_PROD) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotF_KODI) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotF_POT) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotF_KG) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotG_JML_PROD) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotG_KODI) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotG_POT) + '</td>' +
+      '          <td style="text-align: right; border: 1px solid black;">' + FormatNilai(TotG_KG) + '</td>' +
+      '        </tr>' +
+      '      </tbody>' +
+      '    </table>' +
+      '    <div class="footer">' +
+      '      <table style="width: 100%;">' +
+      '        <tr>' +
+      '          <td style="text-align: center; border: 0px"></td>' +
+      '          <td style="text-align: center; border: 0px"></td>' +
+      '          <td style="text-align: center; border: 0px">Pekalongan, ' + FormatDateTime('dd mmmm yyyy', VTglAkhir.Date) + '</td>' +
+      '        </tr>' +
+      '        <tr>' +
+      '          <td style="text-align: center; border: 0px">Mengetahui</td>' +
+      '          <td style="text-align: center; border: 0px">Menyetujui</td>' +
+      '          <td style="text-align: center; border: 0px">Dibuat Oleh</td>' +
+      '        </tr>' +
+      '        <tr>' +
+      '         <td style="height: 20px;"></td>' +
+      '         <td></td>' +
+      '         <td></td>' +
+      '         <td></td>' +
+      '        </tr>' +
+      '        <tr>' +
+      '          <td style="text-align: center; border: 0px">( ........................... )</td>' +
+      '          <td style="text-align: center; border: 0px">( ........................... )</td>' +
+      '          <td style="text-align: center; border: 0px">( ........................... )</td>' +
+      '        </tr>' +
+      '        <tr>' +
+      '          <td style="text-align: center; border: 0px">Dept. Head</td>' +
+      '          <td style="text-align: center; border: 0px">SDH Preparation</td>' +
+      '          <td style="text-align: center; border: 0px">Admin Preparation</td>' +
+      '        </tr>' +
+      '      </table>' +
+      '    </div>' +
+      '  </div>' +
+      '</body>' +
+      '</html>';
+    // Simpan konten HTML ke file
+    HTMLFile.Text := HTMLContent;
+    HTMLFile.SaveToFile(FilePath);
+    // Tampilkan file HTML di WebBrowser
+    WebBrowser1.Navigate(FilePath);
+  finally
+    HTMLFile.Free;
+  end;
+end;
+
+
+procedure TLapProdPersiapanFrm.WebBrowser1DocumentComplete(Sender: TObject;
+  const pDisp: IDispatch; var URL: OleVariant);
+var
+  vaIn, vaOut: OleVariant;
+begin
+    WebBrowser1.ExecWB(OLECMDID_PRINT, OLECMDEXECOPT_PROMPTUSER, vaIn, vaOut);
 end;
 
 end.
