@@ -288,6 +288,7 @@ type
     procedure PengaturanRasio1Click(Sender: TObject);
 
 
+
   private
     { Private declarations }
     mychar : String;
@@ -1330,7 +1331,7 @@ end;
 
 procedure TPembelianFrm.SerahTerimaBenangKePalet1Click(Sender: TObject);
 begin
-ValidasiPenyerahanBB1.ShowForm((Sender as TMenuItem).Name,'890',(Sender as TMenuItem).Caption,'30','30');
+  ValidasiPenyerahanBB1.ShowForm((Sender as TMenuItem).Name,'890',(Sender as TMenuItem).Caption,'30','30');
 end;
 
 procedure TPembelianFrm.PerubahanResep1Click(Sender: TObject);
@@ -1379,5 +1380,6 @@ begin
 if HTRasioFrm=nil then HTRasioFrm:=THTRasioFrm.Create(Application);
   HTRasioFrm.Show;
 end;
+
 
 end.

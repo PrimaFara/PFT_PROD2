@@ -154,7 +154,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Frame.DrawRight = False
             Size.Values = (
               52.916666666666670000
-              121.708333333333300000
+              121.708333333333400000
               71.437500000000000000
               145.520833333333300000)
             Alignment = taCenter
@@ -508,7 +508,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Size.Values = (
               44.979166666666670000
               2500.312500000000000000
-              76.729166666666680000
+              76.729166666666670000
               171.979166666666700000)
             Alignment = taCenter
             AlignToBand = False
@@ -672,7 +672,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Size.Values = (
               39.687500000000000000
               1963.208333333333000000
-              121.708333333333300000
+              121.708333333333400000
               58.208333333333340000)
             Alignment = taCenter
             AlignToBand = False
@@ -800,7 +800,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
               39.687500000000000000
               1113.895833333333000000
               55.562500000000000000
-              68.791666666666680000)
+              68.791666666666670000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
@@ -862,7 +862,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
               39.687500000000000000
               2145.770833333333000000
               55.562500000000000000
-              68.791666666666680000)
+              68.791666666666670000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
@@ -1777,7 +1777,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
               66.145833333333340000
               1047.750000000000000000
               177.270833333333300000
-              870.479166666666800000)
+              870.479166666666700000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
@@ -5938,7 +5938,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
               66.145833333333340000
               1047.750000000000000000
               177.270833333333300000
-              870.479166666666800000)
+              870.479166666666700000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
@@ -9330,7 +9330,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Frame.DrawRight = False
             Size.Values = (
               52.916666666666670000
-              121.708333333333300000
+              121.708333333333400000
               71.437500000000000000
               145.520833333333300000)
             Alignment = taCenter
@@ -9667,7 +9667,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Size.Values = (
               44.979166666666670000
               2500.312500000000000000
-              76.729166666666680000
+              76.729166666666670000
               171.979166666666700000)
             Alignment = taCenter
             AlignToBand = False
@@ -9814,7 +9814,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Size.Values = (
               39.687500000000000000
               1963.208333333333000000
-              121.708333333333300000
+              121.708333333333400000
               58.208333333333340000)
             Alignment = taCenter
             AlignToBand = False
@@ -9942,7 +9942,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
               39.687500000000000000
               1198.562500000000000000
               55.562500000000000000
-              68.791666666666680000)
+              68.791666666666670000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
@@ -10004,7 +10004,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
               39.687500000000000000
               2145.770833333333000000
               55.562500000000000000
-              68.791666666666680000)
+              68.791666666666670000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True

@@ -871,7 +871,18 @@ end;
 
 procedure TInfoStokKelos_2Frm.QUpdate2BeforeQuery(Sender: TOracleQuery);
 begin
-  QUpdate2.SQL.Text:='  update ipisma_db4.item_saldo_kls set :myparam=:pqty where tahun=:ptahun and nama_item=:pnama'
+// QUpdate2.SQL.Text:='  update ipisma_db4.item_saldo_kls set :myparam=:pqty where tahun=:ptahun and nama_item=:pnama'
+
+QUpdate2.SQL.Text :=
+    'MERGE INTO ipisma_db4.item_saldo_kls t ' +
+    'USING (SELECT :ptahun AS tahun, :pnama AS nama_item, ' +
+           ':pqty AS qty FROM dual) s ' +
+    'ON (t.tahun = s.tahun AND t.nama_item = s.nama_item) ' +
+    'WHEN MATCHED THEN ' +
+    '  UPDATE SET t.' + QUpdate2.GetVariable('myparam') + ' = s.qty ' +
+    'WHEN NOT MATCHED THEN ' +
+    '  INSERT (tahun, nama_item, ' + QUpdate2.GetVariable('myparam') + ') ' +
+    '  VALUES (s.tahun, s.nama_item, s.qty)';
 end;
 
 end.

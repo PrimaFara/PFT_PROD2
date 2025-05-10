@@ -679,7 +679,7 @@ type
     cbOtomatis11: TCheckBox;
     BtnSimpan: TBitBtn;
     TabSheet10: TTabSheet;
-    wwDBGrid12: TwwDBGrid;
+    BitBtn16: TBitBtn;
     Panel13: TPanel;
     BtnBrowse2: TSpeedButton;
     BtnEditing2: TSpeedButton;
@@ -688,9 +688,8 @@ type
     BitBtn14: TBitBtn;
     cbOtomatis12: TCheckBox;
     BtnSimpan2: TBitBtn;
-    CheckBox5: TCheckBox;
-    BitBtn15: TBitBtn;
-    BitBtn16: TBitBtn;
+    BitBtn17: TBitBtn;
+    wwDBGrid12: TwwDBGrid;
     procedure wwDBLookupComboDlg1Enter(Sender: TObject);
     procedure wwDBLookupComboDlg1CloseUp(Sender: TObject; LookupTable,
       FillTable: TDataSet; modified: Boolean);
@@ -828,7 +827,10 @@ type
     procedure BitBtn16Click(Sender: TObject);
     procedure wwDBGrid11DblClick(Sender: TObject);
     procedure wwDBGrid12DblClick(Sender: TObject);
-    
+    procedure wwDBGrid12TitleButtonClick(Sender: TObject;
+      AFieldName: String);
+    procedure BitBtn17Click(Sender: TObject);
+
   private
     { Private declarations }
     visberubah : boolean;
@@ -1701,7 +1703,7 @@ begin
   if CheckBox1.Checked then
      DesainResumeFrm.Show
      else
-       DesainResumeFrm.Hide;
+     DesainResumeFrm.Hide;
 end;
 
 procedure TDesainFrm.QMasterJML_POTONGChange(Sender: TField);
@@ -1712,7 +1714,7 @@ end;
 
 procedure TDesainFrm.Button2Click(Sender: TObject);
 begin
-//ShowMessage('Pastikan KP, Resep, Corak dan Konstruksi sudah benar. . .');   //+ 090224  //tutup 1405247
+//ShowMessage('Pastikan KP, Resep, Corak dan Konstruksi sudah benar. . .');   //+ 090224  //tutup 140524
   if QMaster.State<>dsBrowse then
       QMaster.Post;
   vregister:=QMasterNO_DESAIN.AsInteger;
@@ -2022,19 +2024,19 @@ end;
 procedure TDesainFrm.LookKonsCloseUp(Sender: TObject; LookupTable,
   FillTable: TDataSet; modified: Boolean);
 begin
-QKPKKD_KONSTRUKSI.AsInteger:=QLookKonsKD_KONSTRUKSI.AsInteger;
-QKPKNAMA_KONSTRUKSI.AsString:=QLookKonsNAMA_KONSTRUKSI.AsString;
-QKPKMUTU.AsString:=QLookKonsMUTU.AsString;
+  QKPKKD_KONSTRUKSI.AsInteger:=QLookKonsKD_KONSTRUKSI.AsInteger;
+  QKPKNAMA_KONSTRUKSI.AsString:=QLookKonsNAMA_KONSTRUKSI.AsString;
+  //QKPKMUTU.AsString:=QLookKonsMUTU.AsString;
 end;
 
 procedure TDesainFrm.CheckBox3Click(Sender: TObject);
 begin
-IF CheckBox3.Checked = True then
-begin
-QKPK.Close;
-QKPK.SQL.Text:='select * from ipisma_db4.kode_prod_kons order by kp,keterangan,nama_konstruksi';
-QKPK.Open;
-end;
+  IF CheckBox3.Checked = True then
+  begin
+    QKPK.Close;
+    QKPK.SQL.Text:='select * from ipisma_db4.kode_prod_kons order by kp,keterangan,nama_konstruksi';
+    QKPK.Open;
+  end;
 
 IF CheckBox3.Checked = false then
 begin
@@ -2178,6 +2180,29 @@ end;
 procedure TDesainFrm.BitBtn10Click(Sender: TObject);
 begin
 case PageControl1.TabIndex of
+    1: begin
+        if QBrowse.Active then
+          begin
+          //ShowMessage('2');
+            DMFrm.SaveDialog1.DefaultExt:='XLK';
+            DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+            DMFrm.SaveDialog1.FileName:='DAFTAR NOTA RESEP';
+            wwDBGrid1.ExportOptions.TitleName:='DAFTAR NOTA RESEP';
+            if DMFrm.SaveDialog1.Execute then
+              begin
+                try
+                wwDBGrid1.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+                wwDBGrid1.ExportOptions.Save;
+                ShowMessage('Simpan Sukses !');
+                except
+                ShowMessage('Simpan Gagal !');
+              end;
+            end;
+          end
+        else
+          ShowMessage('Tabel belum di-OPEN !');
+       end;
+
     2: begin
     //ShowMessage('1');
         if QKonversi.Active then
@@ -2201,19 +2226,20 @@ case PageControl1.TabIndex of
         else
           ShowMessage('Tabel belum di-OPEN !');
        end;
-     3: begin
-   // QBrowse.DisableControls ;
-        if QKP.Active then
+
+    3: begin
+        if QLokasiResep.Active then
           begin
+          //ShowMessage('2');
             DMFrm.SaveDialog1.DefaultExt:='XLK';
             DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
-            DMFrm.SaveDialog1.FileName:='Kode Produksi';
-             wwDBGrid9.ExportOptions.TitleName:='Kode Produksi';
+            DMFrm.SaveDialog1.FileName:='LOKASI RESEP';
+            wwDBGrid5.ExportOptions.TitleName:='LOKASI RESEP';
             if DMFrm.SaveDialog1.Execute then
               begin
                 try
-                wwDBGrid9.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
-                wwDBGrid9.ExportOptions.Save;
+                wwDBGrid5.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+                wwDBGrid5.ExportOptions.Save;
                 ShowMessage('Simpan Sukses !');
                 except
                 ShowMessage('Simpan Gagal !');
@@ -2223,19 +2249,65 @@ case PageControl1.TabIndex of
         else
           ShowMessage('Tabel belum di-OPEN !');
        end;
+
+    4: begin
+        if QBrowse_Det.Active then
+          begin
+          //ShowMessage('2');
+            DMFrm.SaveDialog1.DefaultExt:='XLK';
+            DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+            DMFrm.SaveDialog1.FileName:='NOTA DETAIL RESEP';
+            wwDBGrid7.ExportOptions.TitleName:='NOTA DETAIL RESEP';
+            if DMFrm.SaveDialog1.Execute then
+              begin
+                try
+                wwDBGrid7.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+                wwDBGrid7.ExportOptions.Save;
+                ShowMessage('Simpan Sukses !');
+                except
+                ShowMessage('Simpan Gagal !');
+              end;
+            end;
+          end
+        else
+          ShowMessage('Tabel belum di-OPEN !');
+       end;
+
      5: begin
+   // QBrowse.DisableControls ;
+        if QKP.Active then
+          begin
+            DMFrm.SaveDialog1.DefaultExt:='XLK';
+            DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+            DMFrm.SaveDialog1.FileName:='Kode Produksi';
+             wwDBGrid11.ExportOptions.TitleName:='Kode Produksi';
+            if DMFrm.SaveDialog1.Execute then
+              begin
+                try
+                wwDBGrid11.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+                wwDBGrid11.ExportOptions.Save;
+                ShowMessage('Simpan Sukses !');
+                except
+                ShowMessage('Simpan Gagal !');
+              end;
+            end;
+          end
+        else
+          ShowMessage('Tabel belum di-OPEN !');
+       end;
+     6: begin
    // QBrowse.DisableControls ;
         if QKPK.Active then
           begin
             DMFrm.SaveDialog1.DefaultExt:='XLK';
             DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
             DMFrm.SaveDialog1.FileName:='Kode Prod Kons';
-             wwDBGrid10.ExportOptions.TitleName:='Kode Prod Kons';
+             {wwDBGrid10}wwDBGrid12.ExportOptions.TitleName:='Kode Prod Kons';
             if DMFrm.SaveDialog1.Execute then
               begin
                 try
-                wwDBGrid10.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
-                wwDBGrid10.ExportOptions.Save;
+                {wwDBGrid10}wwDBGrid12.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+                {wwDBGrid10}wwDBGrid12.ExportOptions.Save;
                 ShowMessage('Simpan Sukses !');
                 except
                 ShowMessage('Simpan Gagal !');
@@ -2395,6 +2467,7 @@ procedure TDesainFrm.BtnEditingClick(Sender: TObject);
   wwDBGrid11.Options:=wwDBGrid11.Options-[dgRowSelect];
   wwDBGrid11.ReadOnly:=False;
   wwDBGrid11.SetFocus;
+    BtnSimpan.Enabled:=True;
 end;
 
 procedure TDesainFrm.BtnBrowseClick(Sender: TObject);
@@ -2463,7 +2536,7 @@ end;
 
 procedure TDesainFrm.CheckBox5Click(Sender: TObject);
 begin
-  IF CheckBox5.Checked = True then
+{  IF CheckBox5.Checked = True then
     begin
       QKPK.Close;
       QKPK.SQL.Text:='select * from ipisma_db4.kode_prod_kons order by kp,keterangan,nama_konstruksi';
@@ -2476,7 +2549,7 @@ procedure TDesainFrm.CheckBox5Click(Sender: TObject);
       QKPK.SQL.Text:='select a.*, a.rowid from ipisma_db4.kode_prod_kons a '+
       'where a.kd_konstruksi is null order by a.kp,a.keterangan,a.nama_konstruksi';
       QKPK.Open;
-  end;
+  end;    }
 end;
 
 procedure TDesainFrm.BitBtn14Click(Sender: TObject);
@@ -2520,6 +2593,10 @@ procedure TDesainFrm.BtnEditing2Click(Sender: TObject);
   wwDBGrid12.Options:=wwDBGrid12.Options-[dgRowSelect];
   wwDBGrid12.ReadOnly:=False;
   wwDBGrid12.SetFocus;
+  BtnSimpan2.Enabled:=True;
+
+ { TabSheet1.TabVisible:=False;
+  TabSheet2.TabVisible:=False; }
 end;
 
 procedure TDesainFrm.BtnBrowse2Click(Sender: TObject);
@@ -2537,7 +2614,8 @@ end;
 procedure TDesainFrm.BtnSimpan2Click(Sender: TObject);
 begin
       try
-          DMFrm.OS.ApplyUpdates([QKPK],True);
+       DMFrm.OS.CommitUpdates([QKPK]);
+         // DMFrm.OS.ApplyUpdates([QKPK],True);
           BtnSimpan2.Enabled:=False;
           BtnBrowse2.Down:=True;
           BtnBrowse2Click(Nil);
@@ -2673,6 +2751,54 @@ begin
   myrvdDialog.DataSource:=(Sender as TwwDBGrid).DataSource;
   myrvdDialog.Selected:=(Sender as TwwDBGrid).Selected;
   myrvdDialog.Execute;
+end;
+
+procedure TDesainFrm.wwDBGrid12TitleButtonClick(Sender: TObject;
+  AFieldName: String);
+begin
+  if ((Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName<>'') then
+  begin
+     if (Sender as TwwDBGrid).DataSource.DataSet.FieldByName(AFieldName).FieldKind=fkData then
+        begin
+          if vorder=' ASC' then
+              vorder:=' DESC'
+          else
+              vorder:=' ASC';
+          (Sender as TwwDBGrid).DataSource.DataSet.DisableControls;
+          (Sender as TwwDBGrid).DataSource.DataSet.Close;
+          ((Sender as TwwDBGrid).DataSource.DataSet as TOracleDataSet).SetVariable('myparam',vfilter+' order by '+(Sender as TwwDBGrid).ColumnByName(AFieldName).FieldName+vorder);
+          (Sender as TwwDBGrid).DataSource.DataSet.Open;
+          (Sender as TwwDBGrid).DataSource.DataSet.EnableControls;
+        end
+        else
+          ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+  end
+  else
+  ShowMessage('Maaf, tidak bisa diurutkan menurut '+AFieldName+' !');
+end;
+
+
+procedure TDesainFrm.BitBtn17Click(Sender: TObject);
+begin
+      if QKPK.Active then
+          begin
+            DMFrm.SaveDialog1.DefaultExt:='XLK';
+            DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+            DMFrm.SaveDialog1.FileName:='KODE PRODUKSI KONSTRUKSI';
+            wwDBGrid12.ExportOptions.TitleName:='KODE PRODUKSI KONSTRUKSI';
+            if DMFrm.SaveDialog1.Execute then
+              begin
+                try
+                wwDBGrid12.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+                wwDBGrid12.ExportOptions.Save;
+                ShowMessage('Simpan Sukses !');
+                except
+                ShowMessage('Simpan Gagal !');
+              end;
+            end;
+          end
+        else
+          ShowMessage('Tabel belum di-OPEN !');
 end;
 
 end.

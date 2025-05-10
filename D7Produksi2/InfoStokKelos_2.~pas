@@ -414,6 +414,7 @@ type
     procedure dbcField1Enter(Sender: TObject);
     procedure SpinEdit1Change(Sender: TObject);
     procedure BitBtn12Click(Sender: TObject);
+    procedure QUpdate2BeforeQuery(Sender: TOracleQuery);
   private
     { Private declarations }
     vrasio, vrasio3: real;
@@ -629,6 +630,10 @@ Accept:=(QStok2AWAL1.AsFloat<>0) or
         (QStok2QTY_IN5.AsFloat<>0) or
         (QStok2QTY_IN6.AsFloat<>0) or
         (QStok2QTY_IN7.AsFloat<>0) or
+        (QStok2QTY_IN10.AsFloat<>0) or
+        (QStok2QTY_IN11.AsFloat<>0) or
+        (QStok2QTY_IN12.AsFloat<>0) or
+        (QStok2QTY_IN13.AsFloat<>0) or
         (QStok2KOREKSI_MASUK1.AsFloat<>0) or
         (QStok2QTY_OUT1.AsFloat<>0) or
         (QStok2QTY_OUT2.AsFloat<>0) or
@@ -637,6 +642,10 @@ Accept:=(QStok2AWAL1.AsFloat<>0) or
         (QStok2QTY_OUT5.AsFloat<>0) or
         (QStok2QTY_OUT6.AsFloat<>0) or
         (QStok2QTY_OUT7.AsFloat<>0) or
+        (QStok2QTY_OUT10.AsFloat<>0) or
+        (QStok2QTY_OUT11.AsFloat<>0) or
+        (QStok2QTY_OUT12.AsFloat<>0) or
+        (QStok2QTY_OUT13.AsFloat<>0) or
         (QStok2KOREKSI_KELUAR1.AsFloat<>0) or
         (QStok2AKHIR1.AsFloat<>0);
 end;
@@ -828,6 +837,13 @@ procedure TInfoStokKelos_2Frm.BitBtn12Click(Sender: TObject);
 var
   i : integer;
 begin
+//080125
+if cbStok2.Checked then
+  begin
+   ShowMessage('Untuk Tutup Stok, Hapus centang "Yang ada stok atau mutasinya saja" dulu..!!');
+   abort;
+  end
+  else
     // 261224
   i:=0;
   BitBtn12.Caption:=IntToStr(QStok2.RecordCount)+' Records';
@@ -843,7 +859,7 @@ begin
     QUpdate2.Execute;
     QStok2.Next;
   end;
-
+  
    // 261224
   QStok2.First;
   QTutupTahun.Close;
@@ -851,6 +867,25 @@ begin
   QTutupTahun.Execute;
   QStok2.EnableControls;
   BitBtn12.Caption:='CLOSED';
+end;
+
+procedure TInfoStokKelos_2Frm.QUpdate2BeforeQuery(Sender: TOracleQuery);
+begin
+//  QUpdate2.SQL.Text:='  update ipisma_db4.item_saldo_kls set :myparam=:pqty where tahun=:ptahun and nama_item=:pnama'
+
+  QUpdate2.SQL.Text :=
+    'MERGE INTO ipisma_db4.item_saldo_kls t ' +
+    'USING (SELECT :ptahun AS tahun, :pnama AS nama_item, ' +
+           ':pqty AS qty FROM dual) s ' +
+    'ON (t.tahun = s.tahun AND t.nama_item = s.nama_item) ' +
+    'WHEN MATCHED THEN ' +
+    '  UPDATE SET t.' + QUpdate2.GetVariable('myparam') + ' = s.qty, ' +
+    'WHEN NOT MATCHED THEN ' +
+    '  INSERT (tahun, KP, konstruksi, mesin, ' +
+    '          ' + QUpdate2.GetVariable('myparam') + ', ' +
+    '  VALUES (s.tahun, s.nama_item' +
+    '          s.qty) ' +
+    'WHERE s.nama_item IS NOT NULL';
 end;
 
 end.

@@ -1,7 +1,7 @@
 object DesainFrm: TDesainFrm
-  Left = 192
-  Top = 77
-  Width = 1174
+  Left = 400
+  Top = 276
+  Width = 1204
   Height = 655
   Caption = 'DesainFrm'
   Color = clBtnFace
@@ -24,7 +24,7 @@ object DesainFrm: TDesainFrm
   object TitlePanel: TPanel
     Left = 0
     Top = 0
-    Width = 1158
+    Width = 1188
     Height = 41
     Align = alTop
     BevelInner = bvRaised
@@ -41,7 +41,7 @@ object DesainFrm: TDesainFrm
   object Panel2: TPanel
     Left = 0
     Top = 581
-    Width = 1158
+    Width = 1188
     Height = 36
     Align = alBottom
     Font.Charset = DEFAULT_CHARSET
@@ -95,7 +95,7 @@ object DesainFrm: TDesainFrm
   object PageControl1: TPageControl
     Left = 0
     Top = 41
-    Width = 1158
+    Width = 1188
     Height = 540
     ActivePage = TabSheet2
     Align = alClient
@@ -3224,7 +3224,7 @@ object DesainFrm: TDesainFrm
       object Panel5: TPanel
         Left = 0
         Top = 0
-        Width = 1150
+        Width = 1180
         Height = 57
         Align = alTop
         BevelInner = bvLowered
@@ -3253,6 +3253,7 @@ object DesainFrm: TDesainFrm
           Height = 25
           Caption = '&Export'
           TabOrder = 0
+          Visible = False
           OnClick = BitBtn4Click
         end
         object GroupBox1: TGroupBox
@@ -3406,12 +3407,15 @@ object DesainFrm: TDesainFrm
       object wwDBGrid1: TwwDBGrid
         Left = 0
         Top = 57
-        Width = 1150
+        Width = 1180
         Height = 455
+        ControlType.Strings = (
+          'ISPOST;CheckBox;1;0')
         Selected.Strings = (
           'VERSI'#9'17'#9'NO. DESAIN'#9'F'
           'NO_DESAIN'#9'6'#9'REG'#9'F'
           'NO_ORDER'#9'16'#9'NO. RESEP'#9'F'
+          'ISPOST'#9'1'#9'ISPOST'#9'F'
           'KEL_KP'#9'12'#9'KP'#9'F'#9'KODE PRODUKSI'
           'KP'#9'12'#9'KP Corak'#9'F'#9'KODE PRODUKSI'
           'TGL'#9'12'#9'TGL'#9'F'
@@ -3474,7 +3478,7 @@ object DesainFrm: TDesainFrm
       object Image1: TImage
         Left = 0
         Top = 41
-        Width = 1150
+        Width = 1180
         Height = 471
         Align = alClient
         Center = True
@@ -3483,7 +3487,7 @@ object DesainFrm: TDesainFrm
       object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 1150
+        Width = 1180
         Height = 41
         Align = alTop
         TabOrder = 0
@@ -3515,10 +3519,57 @@ object DesainFrm: TDesainFrm
       Caption = 'Tabel Konversi'
       ImageIndex = 3
       OnShow = TabSheet4Show
+      object wwDBGrid3: TwwDBGrid
+        Left = 0
+        Top = 57
+        Width = 1180
+        Height = 455
+        Selected.Strings = (
+          'KODE'#9'5'#9'KODE'#9#9
+          'KONSTRUKSI'#9'20'#9'KONSTRUKSI'#9#9
+          'ARAH'#9'11'#9'ARAH'#9#9
+          'BENANG'#9'23'#9'BENANG'#9#9
+          'GRAM'#9'29'#9'GRAM'#9#9)
+        IniAttributes.Delimiter = ';;'
+        TitleColor = clBtnFace
+        FixedCols = 0
+        ShowHorzScrollBar = True
+        Align = alClient
+        DataSource = dsQKonversi
+        TabOrder = 0
+        TitleAlignment = taLeftJustify
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+        TitleFont.Style = []
+        TitleLines = 1
+        TitleButtons = False
+      end
+      object Panel11: TPanel
+        Left = 0
+        Top = 0
+        Width = 1180
+        Height = 57
+        Align = alTop
+        BevelInner = bvLowered
+        TabOrder = 1
+        object CheckBox2: TCheckBox
+          Left = 16
+          Top = 29
+          Width = 161
+          Height = 17
+          Caption = 'Tampilkan Semua'
+          Checked = True
+          State = cbChecked
+          TabOrder = 0
+          OnClick = CheckBox3Click
+        end
+      end
       object wwDBGrid8: TwwDBGrid
         Left = 0
         Top = 57
-        Width = 1150
+        Width = 1180
         Height = 455
         ControlType.Strings = (
           'NIK;CustomEdit;LookKaryawan;F'
@@ -3549,53 +3600,6 @@ object DesainFrm: TDesainFrm
         TitleLines = 2
         TitleButtons = False
         UseTFields = False
-      end
-      object wwDBGrid3: TwwDBGrid
-        Left = 0
-        Top = 57
-        Width = 1150
-        Height = 455
-        Selected.Strings = (
-          'KODE'#9'5'#9'KODE'#9#9
-          'KONSTRUKSI'#9'20'#9'KONSTRUKSI'#9#9
-          'ARAH'#9'11'#9'ARAH'#9#9
-          'BENANG'#9'23'#9'BENANG'#9#9
-          'GRAM'#9'29'#9'GRAM'#9#9)
-        IniAttributes.Delimiter = ';;'
-        TitleColor = clBtnFace
-        FixedCols = 0
-        ShowHorzScrollBar = True
-        Align = alClient
-        DataSource = dsQKonversi
-        TabOrder = 0
-        TitleAlignment = taLeftJustify
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'MS Sans Serif'
-        TitleFont.Style = []
-        TitleLines = 1
-        TitleButtons = False
-      end
-      object Panel11: TPanel
-        Left = 0
-        Top = 0
-        Width = 1150
-        Height = 57
-        Align = alTop
-        BevelInner = bvLowered
-        TabOrder = 1
-        object CheckBox2: TCheckBox
-          Left = 16
-          Top = 29
-          Width = 161
-          Height = 17
-          Caption = 'Tampilkan Semua'
-          Checked = True
-          State = cbChecked
-          TabOrder = 0
-          OnClick = CheckBox3Click
-        end
       end
     end
     object TabSheet5: TTabSheet
@@ -3683,7 +3687,7 @@ object DesainFrm: TDesainFrm
       object Panel8: TPanel
         Left = 0
         Top = 0
-        Width = 1150
+        Width = 1180
         Height = 57
         Align = alTop
         BevelInner = bvLowered
@@ -3712,6 +3716,7 @@ object DesainFrm: TDesainFrm
           Height = 25
           Caption = '&Export'
           TabOrder = 0
+          Visible = False
           OnClick = BitBtn2Click
         end
         object GroupBox2: TGroupBox
@@ -3865,7 +3870,7 @@ object DesainFrm: TDesainFrm
       object wwDBGrid5: TwwDBGrid
         Left = 0
         Top = 57
-        Width = 1150
+        Width = 1180
         Height = 455
         ControlType.Strings = (
           'ISPOST;CheckBox;1;0')
@@ -3929,7 +3934,7 @@ object DesainFrm: TDesainFrm
       object wwDBGrid10: TwwDBGrid
         Left = 0
         Top = 33
-        Width = 1150
+        Width = 1180
         Height = 479
         ControlType.Strings = (
           'NIK;CustomEdit;LookKaryawan;F'
@@ -3973,7 +3978,7 @@ object DesainFrm: TDesainFrm
       object Panel9: TPanel
         Left = 0
         Top = 0
-        Width = 1150
+        Width = 1180
         Height = 33
         Align = alTop
         BevelInner = bvLowered
@@ -4048,7 +4053,7 @@ object DesainFrm: TDesainFrm
       object wwDBGrid6: TwwDBGrid
         Left = 0
         Top = 33
-        Width = 1150
+        Width = 1180
         Height = 479
         ControlType.Strings = (
           'KD_KONSTRUKSI;CustomEdit;LookKons;F')
@@ -4116,7 +4121,7 @@ object DesainFrm: TDesainFrm
       object wwDBGrid7: TwwDBGrid
         Left = 0
         Top = 57
-        Width = 1150
+        Width = 1180
         Height = 455
         Selected.Strings = (
           'NO_DESAIN'#9'6'#9'REG'#9'F'
@@ -4191,7 +4196,7 @@ object DesainFrm: TDesainFrm
       object Panel10: TPanel
         Left = 0
         Top = 0
-        Width = 1150
+        Width = 1180
         Height = 57
         Align = alTop
         BevelInner = bvLowered
@@ -4220,6 +4225,7 @@ object DesainFrm: TDesainFrm
           Height = 25
           Caption = '&Export'
           TabOrder = 0
+          Visible = False
           OnClick = BitBtn8Click
         end
         object cbOtomatis2: TCheckBox
@@ -4378,7 +4384,7 @@ object DesainFrm: TDesainFrm
       object wwDBGrid11: TwwDBGrid
         Left = 0
         Top = 49
-        Width = 1150
+        Width = 1180
         Height = 463
         ControlType.Strings = (
           'KD_KEL;CustomEdit;LookJenis;F'
@@ -4437,7 +4443,7 @@ object DesainFrm: TDesainFrm
       object Panel12: TPanel
         Left = 0
         Top = 0
-        Width = 1150
+        Width = 1180
         Height = 49
         Align = alTop
         BevelInner = bvLowered
@@ -4579,78 +4585,17 @@ object DesainFrm: TDesainFrm
       Caption = 'Kode Prod Kons'
       ImageIndex = 9
       OnShow = TabSheet10Show
-      object wwDBGrid12: TwwDBGrid
-        Left = 0
-        Top = 49
-        Width = 1150
-        Height = 463
-        ControlType.Strings = (
-          'KD_KEL;CustomEdit;LookJenis;F'
-          'KD_SATUAN;CustomEdit;LookSatuan;F'
-          'ISAKTIF;CheckBox;1;0'
-          'STATUS;CheckBox;1;0')
-        Selected.Strings = (
-          'KP'#9'20'#9'KP'#9'F'
-          'LUSI'#9'20'#9'LUSI'#9'F'
-          'PAKAN'#9'20'#9'PAKAN'#9'F'
-          'SISIR'#9'10'#9'SISIR'#9'F'
-          'PICK'#9'10'#9'PICK'#9'F'
-          'LCUCUK'#9'10'#9'LCUCUK'#9'F'
-          'KETERANGAN'#9'20'#9'KETERANGAN'#9'F'
-          'KD_KONSTRUKSI'#9'6'#9'KD_KONSTRUKSI'#9'F'
-          'NAMA_KONSTRUKSI'#9'30'#9'KONSTRUKSI'#9'F'
-          'MUTU'#9'15'#9'MUTU'#9'F'
-          'JENIS'#9'10'#9'JENIS'#9'F'
-          'STATUS'#9'6'#9'AKTIF'#9'F'
-          'KG'#9'10'#9'KG'#9'F'
-          'TEORITIS'#9'10'#9'TEORITIS'#9'F')
-        IniAttributes.Enabled = True
-        IniAttributes.SaveToRegistry = True
-        IniAttributes.FileName = 'Pismatex Master'
-        IniAttributes.Delimiter = ';;'
-        IniAttributes.CheckNewFields = True
-        ExportOptions.ExportType = wwgetHTML
-        ExportOptions.Options = [esoShowHeader, esoShowFooter, esoShowTitle, esoDblQuoteFields, esoBestColFit, esoShowRecordNo, esoShowAlternating]
-        TitleColor = clSkyBlue
-        FixedCols = 0
-        ShowHorzScrollBar = True
-        Align = alClient
-        DataSource = dsQKPK
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'MS Sans Serif'
-        Font.Style = []
-        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgPerfectRowFit, dgShowFooter, dgTrailingEllipsis, dgDblClickColSizing]
-        ParentFont = False
-        ReadOnly = True
-        RowHeightPercent = 125
-        TabOrder = 0
-        TitleAlignment = taCenter
-        TitleFont.Charset = ANSI_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Lucida Sans'
-        TitleFont.Style = [fsBold]
-        TitleLines = 3
-        TitleButtons = True
-        UseTFields = False
-        OnTitleButtonClick = wwDBGrid1TitleButtonClick
-        OnDblClick = wwDBGrid12DblClick
-        PaintOptions.AlternatingRowColor = clMoneyGreen
-        PaintOptions.ActiveRecordColor = clGreen
-      end
       object Panel13: TPanel
         Left = 0
         Top = 0
-        Width = 1150
+        Width = 1180
         Height = 49
         Align = alTop
         BevelInner = bvLowered
-        TabOrder = 1
+        TabOrder = 0
         object BtnBrowse2: TSpeedButton
-          Left = 82
-          Top = 16
+          Left = 81
+          Top = 17
           Width = 23
           Height = 25
           GroupIndex = 1
@@ -4695,14 +4640,14 @@ object DesainFrm: TDesainFrm
           OnClick = BtnEditing2Click
         end
         object Label48: TLabel
-          Left = 207
+          Left = 212
           Top = 6
           Width = 44
           Height = 13
           Caption = 'Cari Data'
         end
         object ECari12: TEdit
-          Left = 207
+          Left = 212
           Top = 22
           Width = 145
           Height = 19
@@ -4712,10 +4657,10 @@ object DesainFrm: TDesainFrm
           OnChange = ECari12Change
         end
         object BitBtn14: TBitBtn
-          Left = 359
-          Top = 20
+          Left = 364
+          Top = 16
           Width = 75
-          Height = 22
+          Height = 25
           Caption = 'F&ilter'
           Default = True
           ModalResult = 1
@@ -4737,17 +4682,17 @@ object DesainFrm: TDesainFrm
           NumGlyphs = 2
         end
         object cbOtomatis12: TCheckBox
-          Left = 259
+          Left = 264
           Top = 5
           Width = 97
           Height = 17
           Caption = 'Otomatis'
           TabOrder = 2
-          OnClick = cbOtomatis12Click
+          OnClick = cbOtomatis11Click
         end
         object BtnSimpan2: TBitBtn
-          Left = 120
-          Top = 16
+          Left = 123
+          Top = 17
           Width = 75
           Height = 25
           Caption = '&Simpan'
@@ -4769,25 +4714,78 @@ object DesainFrm: TDesainFrm
             93337FFFF7737777733300000033333333337777773333333333}
           NumGlyphs = 2
         end
-        object CheckBox5: TCheckBox
-          Left = 359
-          Top = 3
-          Width = 107
-          Height = 17
-          Caption = 'Tampilkan Semua'
-          TabOrder = 4
-          OnClick = CheckBox5Click
-        end
-        object BitBtn15: TBitBtn
+        object BitBtn17: TBitBtn
           Left = 444
-          Top = 19
+          Top = 17
           Width = 75
-          Height = 23
+          Height = 24
           Caption = '&Export'
-          TabOrder = 5
+          TabOrder = 4
           Visible = False
-          OnClick = BitBtn15Click
+          OnClick = BitBtn17Click
         end
+      end
+      object wwDBGrid12: TwwDBGrid
+        Left = 0
+        Top = 49
+        Width = 1180
+        Height = 463
+        ControlType.Strings = (
+          'KD_KEL;CustomEdit;LookJenis;F'
+          'KD_SATUAN;CustomEdit;LookSatuan;F'
+          'ISAKTIF;CheckBox;1;0'
+          'STATUS;CheckBox;1;0'
+          'KD_KONSTRUKSI;CustomEdit;LookKons;F')
+        Selected.Strings = (
+          'KP'#9'20'#9'KP'#9'F'
+          'LUSI'#9'10'#9'LUSI'#9'F'
+          'PAKAN'#9'10'#9'PAKAN'#9'F'
+          'KETERANGAN'#9'25'#9'KETERANGAN'#9'F'
+          'PICK'#9'10'#9'PICK'#9'F'
+          'SISIR'#9'10'#9'SISIR'#9'F'
+          'LCUCUK'#9'10'#9'LCUCUK'#9'F'
+          'JENIS'#9'20'#9'JENIS'#9'F'
+          'STATUS'#9'10'#9'AKTIF'#9'F'
+          'TEORITIS'#9'10'#9'TEORITIS'#9'F'
+          'KG'#9'10'#9'KG'#9'F'
+          'KD_KONSTRUKSI'#9'6'#9'KD_KONSTRUKSI'#9'F'
+          'NAMA_KONSTRUKSI'#9'30'#9'NAMA_KONSTRUKSI'#9'F'
+          'MUTU'#9'15'#9'MUTU'#9'F')
+        IniAttributes.Enabled = True
+        IniAttributes.SaveToRegistry = True
+        IniAttributes.FileName = 'Pismatex Master'
+        IniAttributes.Delimiter = ';;'
+        IniAttributes.CheckNewFields = True
+        ExportOptions.ExportType = wwgetHTML
+        ExportOptions.Options = [esoShowHeader, esoShowFooter, esoShowTitle, esoDblQuoteFields, esoBestColFit, esoShowRecordNo, esoShowAlternating]
+        TitleColor = clSkyBlue
+        FixedCols = 0
+        ShowHorzScrollBar = True
+        Align = alClient
+        DataSource = dsQKPK
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgPerfectRowFit, dgShowFooter, dgTrailingEllipsis, dgDblClickColSizing]
+        ParentFont = False
+        ReadOnly = True
+        RowHeightPercent = 125
+        TabOrder = 1
+        TitleAlignment = taCenter
+        TitleFont.Charset = ANSI_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Lucida Sans'
+        TitleFont.Style = [fsBold]
+        TitleLines = 3
+        TitleButtons = True
+        UseTFields = False
+        OnTitleButtonClick = wwDBGrid12TitleButtonClick
+        OnDblClick = wwDBGrid12DblClick
+        PaintOptions.AlternatingRowColor = clMoneyGreen
+        PaintOptions.ActiveRecordColor = clGreen
       end
     end
   end
@@ -6619,7 +6617,7 @@ object DesainFrm: TDesainFrm
   object QKPK: TOracleDataSet
     SQL.Strings = (
       'select a.*, a.rowid from ipisma_db4.kode_prod_kons a '
-      'where a.kd_konstruksi is null'
+      '--where a.kd_konstruksi is null'
       'order by a.kp,a.nama_konstruksi,a.keterangan,a.mutu')
     Variables.Data = {
       0300000001000000080000003A4D59504152414D010000000000000000000000}

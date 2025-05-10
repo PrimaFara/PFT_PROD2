@@ -790,7 +790,23 @@ end;
 
 procedure TMutasiBenangWFrm.QUpdate2BeforeQuery(Sender: TOracleQuery);
 begin
-    QUpdate2.SQL.Text:='  update ipisma_db4.item_saldo_wrp set :myparam=:pqty where tahun=:ptahun and KP=:pkp and konstruksi=:pkonstruksi and mesin=:pmesin'
+   //tutup080525>> QUpdate2.SQL.Text:='  update ipisma_db4.item_saldo_wrp set :myparam=:pqty where tahun=:ptahun and KP=:pkp and konstruksi=:pkonstruksi and mesin=:pmesin'
+
+  QUpdate2.SQL.Text :=
+    'MERGE INTO ipisma_db4.item_saldo_wrp t ' +
+    'USING (SELECT :ptahun AS tahun, :pkp AS KP, ' +
+           ':pkonstruksi AS konstruksi, :pmesin AS mesin, ' +
+           ':pqty AS qty FROM dual) s ' +
+    'ON (t.tahun = s.tahun AND t.KP = s.KP AND ' +
+        't.konstruksi = s.konstruksi AND t.mesin = s.mesin) ' +
+    'WHEN MATCHED THEN ' +
+    '  UPDATE SET t.' + QUpdate2.GetVariable('myparam') + ' = s.qty, ' +
+    'WHEN NOT MATCHED THEN ' +
+    '  INSERT (tahun, KP, konstruksi, mesin, ' +
+    '          ' + QUpdate2.GetVariable('myparam') + ', ' +
+    '  VALUES (s.tahun, s.KP, s.konstruksi, s.mesin, ' +
+    '          s.qty) ' +
+    'WHERE s.KP IS NOT NULL';
 end;
 
 end.

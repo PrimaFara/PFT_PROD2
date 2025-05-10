@@ -4,8 +4,8 @@ object DMFrm: TDMFrm
   OnDestroy = DataModuleDestroy
   Left = 487
   Top = 131
-  Height = 538
-  Width = 748
+  Height = 582
+  Width = 799
   object SaveDialog1: TSaveDialog
     Left = 648
     Top = 56
@@ -19,6 +19,7 @@ object DMFrm: TDMFrm
     LogonUsername = 'ipisma_db4'
     LogonPassword = 'ipisma_db4'
     LogonDatabase = 'PFPROD'
+    Connected = True
     Left = 8
     Top = 8
   end

@@ -832,12 +832,32 @@ end;
 
 procedure TMutasiBenangKFrm.QUpdate2BeforeQuery(Sender: TOracleQuery);
 begin
-  QUpdate2.SQL.Text := 'update ipisma_db4.item_saldo_SZG set ' +
+ { QUpdate2.SQL.Text := 'update ipisma_db4.item_saldo_SZG set ' +
                      ':myparam1 = :pqty1, ' +
                      ':myparam2 = :pqty2, ' +
                      ':myparam3 = :pqty3 ' +
                      'where tahun = :ptahun and KP = :pkp and ' +
-                     'konstruksi = :pkonstruksi and mesin = :pmesin';
+                     'konstruksi = :pkonstruksi and mesin = :pmesin';   }
+
+ QUpdate2.SQL.Text :=
+    'MERGE INTO ipisma_db4.item_saldo_SZG t ' +
+    'USING (SELECT :ptahun AS tahun, :pkp AS KP, ' +
+           ':pkonstruksi AS konstruksi, :pmesin AS mesin, ' +
+           ':pqty1 AS qty1, :pqty2 AS qty2, :pqty3 AS qty3 FROM dual) s ' +
+    'ON (t.tahun = s.tahun AND t.KP = s.KP AND ' +
+    't.konstruksi = s.konstruksi AND t.mesin = s.mesin) ' +
+    'WHEN MATCHED THEN ' +
+    '  UPDATE SET t.' + QUpdate2.GetVariable('myparam1') + ' = s.qty1, ' +
+    '             t.' + QUpdate2.GetVariable('myparam2') + ' = s.qty2, ' +
+    '             t.' + QUpdate2.GetVariable('myparam3') + ' = s.qty3 ' +
+    'WHEN NOT MATCHED THEN ' +
+    '  INSERT (tahun, KP, konstruksi, mesin, ' +
+    '          ' + QUpdate2.GetVariable('myparam1') + ', ' +
+    '          ' + QUpdate2.GetVariable('myparam2') + ', ' +
+    '          ' + QUpdate2.GetVariable('myparam3') + ') ' +
+    '  VALUES (s.tahun, s.KP, s.konstruksi, s.mesin, ' +
+    '          s.qty1, s.qty2, s.qty3) ' +
+    'WHERE s.KP IS NOT NULL';
 end;
 
 end.

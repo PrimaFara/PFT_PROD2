@@ -445,7 +445,7 @@ object MutasiBenangKFrm: TMutasiBenangKFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              632.354166666666700000
+              632.354166666666800000
               105.833333333333300000
               89.958333333333340000)
             Alignment = taLeftJustify
@@ -1034,7 +1034,7 @@ object MutasiBenangKFrm: TMutasiBenangKFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              926.041666666666700000
+              926.041666666666800000
               105.833333333333300000
               44.979166666666670000)
             Alignment = taLeftJustify
@@ -2660,7 +2660,7 @@ object MutasiBenangKFrm: TMutasiBenangKFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333340000
+              18.520833333333330000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -4030,7 +4030,7 @@ object MutasiBenangKFrm: TMutasiBenangKFrm
         ControlType.Strings = (
           'ISPOST;CheckBox;1;0')
         Selected.Strings = (
-          'KP'#9'12'#9'KP'#9'F'
+          'KP'#9'15'#9'KP'#9'F'
           'KONSTRUKSI'#9'35'#9'Konstruksi'#9'F'
           'BEM'#9'20'#9'Beam'#9'F'
           'QTY1'#9'10'#9'Beam'#9'F'#9'Sisa Awal'

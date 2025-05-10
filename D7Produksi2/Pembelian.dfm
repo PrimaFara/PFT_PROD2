@@ -1,6 +1,6 @@
 object PembelianFrm: TPembelianFrm
-  Left = 214
-  Top = 130
+  Left = 195
+  Top = 125
   Width = 1079
   Height = 589
   Caption = 'Aplikasi - PRODUKSI 2'
@@ -2350,6 +2350,7 @@ object PembelianFrm: TPembelianFrm
       Caption = 'Master'
       object N00KonstruksiSarung1: TMenuItem
         Caption = '00. Konstruksi Sarung'
+        GroupIndex = 1
         OnClick = N00KonstruksiSarung1Click
       end
       object BengkeldanPeralatan1: TMenuItem

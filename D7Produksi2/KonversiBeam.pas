@@ -75,7 +75,6 @@ type
     QBrowseKP: TStringField;
     QBrowseRASIO: TFloatField;
     QBrowseAKTIF: TStringField;
-    QBrowseEDIT: TStringField;
     QBrowseTGL_INSERT: TDateTimeField;
     QBrowseTGL_EDIT: TDateTimeField;
     QBrowseOPR_INSERT: TStringField;
@@ -84,6 +83,9 @@ type
     QBrowseRM_LUSI: TFloatField;
     QBrowseRM_PAKAN: TFloatField;
     QKPKP: TStringField;
+    QBrowseKONVERSI: TFloatField;
+    QBrowseHELAI_L: TFloatField;
+    QBrowseHELAI_P: TFloatField;
     procedure BtnFindClick(Sender: TObject);
     procedure BtnOk2Click(Sender: TObject);
     procedure BtnExportClick(Sender: TObject);

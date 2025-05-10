@@ -1,7 +1,7 @@
 object PembelianFrm: TPembelianFrm
-  Left = 212
-  Top = 130
-  Width = 1081
+  Left = 195
+  Top = 125
+  Width = 1079
   Height = 589
   Caption = 'Aplikasi - PRODUKSI 2'
   Color = 2631761
@@ -23,7 +23,7 @@ object PembelianFrm: TPembelianFrm
   object LMDScrollText1: TLMDScrollText
     Left = 0
     Top = 0
-    Width = 1065
+    Width = 1063
     Height = 25
     Direction = sdRightToLeft
     Interval = 25
@@ -45,7 +45,7 @@ object PembelianFrm: TPembelianFrm
   object Image1: TImage
     Left = 0
     Top = 25
-    Width = 1065
+    Width = 1063
     Height = 487
     Align = alClient
     Picture.Data = {
@@ -2252,7 +2252,7 @@ object PembelianFrm: TPembelianFrm
   object StatusBar1: TStatusBar
     Left = 0
     Top = 512
-    Width = 1065
+    Width = 1063
     Height = 19
     Panels = <
       item
@@ -2350,6 +2350,7 @@ object PembelianFrm: TPembelianFrm
       Caption = 'Master'
       object N00KonstruksiSarung1: TMenuItem
         Caption = '00. Konstruksi Sarung'
+        GroupIndex = 1
         OnClick = N00KonstruksiSarung1Click
       end
       object BengkeldanPeralatan1: TMenuItem

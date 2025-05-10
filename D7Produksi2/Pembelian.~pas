@@ -288,6 +288,7 @@ type
     procedure PengaturanRasio1Click(Sender: TObject);
 
 
+
   private
     { Private declarations }
     mychar : String;
@@ -325,7 +326,7 @@ uses DM, TipeMenu, HakMenu, OrganisasiItem, OrganisasiLokasi,
   ProsesKanji, PermintaanUnpost, Unpost, KonversiBeam,SisaProsesWarping,
   PermintaanKoreksi_warping, PermintaanKoreksi_Kanji, DesainBeamTenun,ValidasiPenyerahanBB1,
   PermintaanKoreksi_MBT, LokProMes_TN, LokProMes_PREP, Mending_OP,
-  MendingTenun, HTRasio, Daftar_Op_Mending;
+  MendingTenun, HTRasio, Daftar_Op_Mending, kd_prod_kons, KodeProd_Kons;
 
 {$R *.dfm}
 
@@ -1330,7 +1331,7 @@ end;
 
 procedure TPembelianFrm.SerahTerimaBenangKePalet1Click(Sender: TObject);
 begin
-ValidasiPenyerahanBB1.ShowForm((Sender as TMenuItem).Name,'890',(Sender as TMenuItem).Caption,'30','30');
+  ValidasiPenyerahanBB1.ShowForm((Sender as TMenuItem).Name,'890',(Sender as TMenuItem).Caption,'30','30');
 end;
 
 procedure TPembelianFrm.PerubahanResep1Click(Sender: TObject);
@@ -1379,5 +1380,6 @@ begin
 if HTRasioFrm=nil then HTRasioFrm:=THTRasioFrm.Create(Application);
   HTRasioFrm.Show;
 end;
+
 
 end.
