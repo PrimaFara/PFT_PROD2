@@ -690,6 +690,8 @@ type
     BtnSimpan2: TBitBtn;
     BitBtn17: TBitBtn;
     wwDBGrid12: TwwDBGrid;
+    wwDBEdit27: TwwDBEdit;
+    QMasterNPICK2: TFloatField;
     procedure wwDBLookupComboDlg1Enter(Sender: TObject);
     procedure wwDBLookupComboDlg1CloseUp(Sender: TObject; LookupTable,
       FillTable: TDataSet; modified: Boolean);

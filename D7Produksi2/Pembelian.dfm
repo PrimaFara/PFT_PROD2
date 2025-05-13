@@ -2729,6 +2729,7 @@ object PembelianFrm: TPembelianFrm
         end
         object KartuMesin1: TMenuItem
           Caption = 'Kartu Mesin'
+          Visible = False
           OnClick = KartuMesin1Click
         end
         object SerahTerima1: TMenuItem
@@ -2770,6 +2771,10 @@ object PembelianFrm: TPembelianFrm
         object HasilKain1: TMenuItem
           Caption = 'Hasil Kain'
           OnClick = HasilKain1Click
+        end
+        object N870TambahIsiBeam1: TMenuItem
+          Caption = '870. Tambah Isi Beam'
+          OnClick = N870TambahIsiBeam1Click
         end
         object N880KoreksiMBT1: TMenuItem
           Caption = '880. Koreksi MBT'

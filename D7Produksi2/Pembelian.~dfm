@@ -2820,6 +2820,10 @@ object PembelianFrm: TPembelianFrm
           Caption = 'Laporan Hasil Tenun'
           OnClick = LapHasilTenunClick
         end
+        object N870TambahIsiBeam1: TMenuItem
+          Caption = '870. Tambah Isi Beam'
+          OnClick = N870TambahIsiBeam1Click
+        end
       end
     end
     object Window1: TMenuItem

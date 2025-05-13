@@ -337,7 +337,7 @@ object DesainFrm: TDesainFrm
             Caption = 'cm'
           end
           object Label7: TLabel
-            Left = 637
+            Left = 691
             Top = 15
             Width = 42
             Height = 13
@@ -2700,6 +2700,19 @@ object DesainFrm: TDesainFrm
             WantReturns = False
             WordWrap = False
           end
+          object wwDBEdit27: TwwDBEdit
+            Left = 632
+            Top = 11
+            Width = 57
+            Height = 19
+            Color = clWhite
+            DataField = 'NPICK2'
+            DataSource = dsCDSMaster
+            TabOrder = 32
+            UnboundDataType = wwDefault
+            WantReturns = False
+            WordWrap = False
+          end
         end
         object Panel6: TPanel
           Left = 1
@@ -4909,7 +4922,7 @@ object DesainFrm: TDesainFrm
       004E535052494E47010000000000070000004E50414B414E3301000000000004
       0000004245414D010000000000070000004E50414B414E340100000000000700
       00004E50414B414E35010000000000070000004E50414B414E36010000000000
-      060000004B454C5F4B50010000000000}
+      060000004E5049434B32010000000000}
     RefreshOptions = [roAfterInsert, roAfterUpdate]
     Session = DMFrm.OS
     BeforeEdit = QMasterBeforeEdit
@@ -5077,6 +5090,9 @@ object DesainFrm: TDesainFrm
     end
     object QMasterNPAKAN6: TFloatField
       FieldName = 'NPAKAN6'
+    end
+    object QMasterNPICK2: TFloatField
+      FieldName = 'NPICK2'
     end
   end
   object CDSQDetail: TOracleDataSet
