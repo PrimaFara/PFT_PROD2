@@ -1,9 +1,9 @@
 object BPHasilTenunFrm: TBPHasilTenunFrm
   Left = 288
-  Top = 70
+  Top = 0
   BorderStyle = bsDialog
   Caption = 'HASIL TENUN'
-  ClientHeight = 620
+  ClientHeight = 589
   ClientWidth = 924
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -801,7 +801,7 @@ object BPHasilTenunFrm: TBPHasilTenunFrm
   end
   object Panel1: TPanel
     Left = 0
-    Top = 579
+    Top = 548
     Width = 924
     Height = 41
     Align = alBottom
@@ -986,7 +986,7 @@ object BPHasilTenunFrm: TBPHasilTenunFrm
     Left = 0
     Top = 97
     Width = 924
-    Height = 482
+    Height = 451
     ControlType.Strings = (
       'NO_SERI_BEAM;CustomEdit;LookBeam;F')
     Selected.Strings = (

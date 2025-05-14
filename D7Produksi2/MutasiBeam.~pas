@@ -765,6 +765,7 @@ type
     QRDBText11: TQRDBText;
     QLookBeam1JENIS: TStringField;
     DetailJENIS: TStringField;
+    LokkJenis2: TwwDBComboBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure TabSheet1Show(Sender: TObject);

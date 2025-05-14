@@ -276,6 +276,10 @@ type
     QLookNSBBEAM: TStringField;
     QLookNSBJML_POTONG: TFloatField;
     QLookNSBJML_POT_REV: TFloatField;
+    QDetailSELISIH: TFloatField;
+    QBrowseSELISIH: TFloatField;
+    QTotalSELISIH: TFloatField;
+    QTotal1SELISIH: TFloatField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure BtnExportClick(Sender: TObject);
@@ -505,7 +509,7 @@ end;
 
 procedure TTambIsiBeamTnFrm.BtnOkClick(Sender: TObject);
 begin
- t1:=0; t2:=0;
+ t1:=0; t2:=0; t3:=0;
   if vTglAwal.Date>vTglAkhir.DateTime then
     ShowMessage('Tgl. Akhir harus lebih besar dari Tgl. Awal !')
     else
@@ -526,10 +530,12 @@ begin
        begin
         t1:=t1+QBrowsePCS.AsFloat;
         t2:=t2+QBrowsePCS_REV.AsFloat;
+        t3:=t3+QBrowseSELISIH.AsFloat;
         QBrowse.Next;
        end;
       wwDBGrid2.ColumnByName('PCS').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t1);
       wwDBGrid2.ColumnByName('PCS_REV').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t2);
+      wwDBGrid2.ColumnByName('SELISIH').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t3);
       LabelBanner.Caption:='Data : '+FormatFloat('#,#',QBrowse.RecordCount)+' Records';
     end;
 end;
@@ -924,6 +930,7 @@ begin
     QDetailNO_SERI_BEAM.AsString:=QLookNSBNO_SERI_BEAM.AsString;
     QDetailMESIN.AsString:=QLookNSBBEAM.AsString;
     QDetailPCS.AsFloat:=QLookNSBJML_POTONG.AsFloat;
+
     //QDetailKD_SUB_LOKASI.AsString:=QItem_koKD_SUB_LOKASI.AsString;
     //QDetailKDSUBLOKASI_GJ.AsString:=QItem_koKD_SUB_LOKASI.AsString;
   end;
@@ -936,9 +943,10 @@ end;
 
 procedure TTambIsiBeamTnFrm.QDetailBeforePost(DataSet: TDataSet);
 begin
-  if QDetailPCS_REV.AsString='' then
+  QDetailPCS_REV.AsFloat:=QDetailPCS.AsFloat+QDetailSELISIH.AsFloat;
+  if QDetailSELISIH.AsString='' then
      begin
-        ShowMessage('PCS harus diisi !');
+        ShowMessage('PCS SELISIH harus diisi !');
         Abort;
      end
 {     else
@@ -949,11 +957,12 @@ begin
      end   }
 
 //  ShowMessage('tekan kene');
+
 end;
 
 procedure TTambIsiBeamTnFrm.QDetailCalcFields(DataSet: TDataSet);
 begin
- // QDetailQTY5.AsFloat:=QDetailQTY3.AsFloat-QDetailQTY1.AsFloat;
+ // QDetailPCS_REV.AsFloat:=QDetailPCS.AsFloat+QDetailSELISIH.AsFloat;
 //  ShowMessage('tekan kene');
  // QDetailQTY6.AsFloat:=QDetailQTY4.AsFloat-QDetailQTY2.AsFloat;
 end;
@@ -1065,6 +1074,7 @@ begin
   QTotal.Open;
   wwDBGrid1.ColumnByName('pcs').FooterValue:=FormatFloat('0.0,0;(0.0,0);-',QTotalPCS.AsFloat);
   wwDBGrid1.ColumnByName('pcs_rev').FooterValue:=FormatFloat('0.0,0;(0.0,0);-',QTotalPCS_REV.AsFloat);
+  wwDBGrid1.ColumnByName('selisih').FooterValue:=FormatFloat('0.0,0;(0.0,0);-',QTotalSELISIH.AsFloat);
 end;
 
 procedure TTambIsiBeamTnFrm.QTotalBeforeQuery(Sender: TOracleDataSet);
@@ -1129,8 +1139,8 @@ procedure TTambIsiBeamTnFrm.BitBtn4Click(Sender: TObject);
 begin
      DMFrm.SaveDialog1.DefaultExt:='XLK';
      DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
-     DMFrm.SaveDialog1.FileName:='Browse Tambah Isi Weaving';
-     wwDBGrid2.ExportOptions.TitleName:='Browse Tambah Isi Weaving';
+     DMFrm.SaveDialog1.FileName:='Daftar Tambah Isi Beam';
+     wwDBGrid2.ExportOptions.TitleName:='Daftar Tambah Isi Beam';
        if DMFrm.SaveDialog1.Execute then
         begin
          try

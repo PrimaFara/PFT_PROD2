@@ -1619,8 +1619,9 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           Selected.Strings = (
             'NO_SERI_BEAM'#9'30'#9'NO_SERI_BEAM'#9'F'
             'MESIN'#9'30'#9'MESIN'#9'F'
-            'PCS'#9'10'#9'AWAL'#9'F'#9'JML POTONG'
-            'PCS_REV'#9'10'#9'UPDATE'#9'F'#9'JML POTONG')
+            'PCS'#9'10'#9'AWAL'#9'T'#9'JML POTONG'
+            'SELISIH'#9'10'#9'TAMBAHAN'#9'F'#9'JML POTONG'
+            'PCS_REV'#9'10'#9'AKHIR'#9'T'#9'JML POTONG')
           IniAttributes.Enabled = True
           IniAttributes.Delimiter = ';;'
           IniAttributes.CheckNewFields = True
@@ -1704,6 +1705,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           Anchors = [akTop, akRight]
           Caption = '&Print'
           TabOrder = 0
+          Visible = False
           OnClick = BtnPrintInputClick
           NumGlyphs = 2
         end
@@ -1829,6 +1831,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           Checked = True
           State = cbChecked
           TabOrder = 3
+          Visible = False
         end
       end
       object PanelBand: TPanel
@@ -2195,7 +2198,10 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
             'TANGGAL'#9'12'#9'TANGGAL'#9'F'
             'KETERANGAN'#9'30'#9'KETERANGAN'#9'F'
             'PCS'#9'10'#9'AWAL'#9'F'#9'JML POTONG'
-            'PCS_REV'#9'10'#9'UPDATE'#9'F'#9'JML POTONG')
+            'SELISIH'#9'10'#9'TAMBAHAN'#9'F'#9'JML POTONG'
+            'PCS_REV'#9'10'#9'AKHIR'#9'F'#9'JML POTONG'
+            'TGL_INSERT'#9'18'#9'TGL_INSERT'#9'F'
+            'OPR_INSERT'#9'18'#9'OPR_INSERT'#9'F')
           IniAttributes.Enabled = True
           IniAttributes.Delimiter = ';;'
           IniAttributes.CheckNewFields = True
@@ -2269,6 +2275,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
     object TabSheet3: TTabSheet
       Caption = 'SOP'
       ImageIndex = 2
+      TabVisible = False
       OnShow = TabSheet3Show
       object wwDBRichEdit1: TwwDBRichEdit
         Left = 0
@@ -2316,6 +2323,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
     object TabSheet4: TTabSheet
       Caption = 'Rekap Operator'
       ImageIndex = 3
+      TabVisible = False
       object QuickRep2: TQuickRep
         Left = 80
         Top = -674
@@ -3812,10 +3820,10 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
     SequenceField.Sequence = 'ipisma_db4.ibukti_detail'
     SequenceField.ApplyMoment = amOnNewRecord
     QBEDefinition.QBEFieldDefs = {
-      0400000006000000060000004E4F5F5245470100000000000A0000004E4F5F52
+      0400000007000000060000004E4F5F5245470100000000000A0000004E4F5F52
       45475F444554010000000000030000005043530100000000000C0000004E4F5F
       534552495F4245414D010000000000050000004D4553494E0100000000000700
-      00005043535F524556010000000000}
+      00005043535F5245560100000000000700000053454C49534948010000000000}
     RefreshOptions = [roAfterInsert, roAfterUpdate]
     Session = DMFrm.OS
     BeforeInsert = QMasterBeforeDelete
@@ -3845,6 +3853,9 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
     end
     object QDetailPCS_REV: TFloatField
       FieldName = 'PCS_REV'
+    end
+    object QDetailSELISIH: TFloatField
+      FieldName = 'SELISIH'
     end
   end
   object dsQDetail: TwwDataSource
@@ -4167,7 +4178,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       00003A50414B4849520C0000000000000000000000070000003A504F52444552
       010000000000000000000000}
     QBEDefinition.QBEFieldDefs = {
-      040000000E0000000700000054414E4747414C010000000000060000004E4F5F
+      040000000F0000000700000054414E4747414C010000000000060000004E4F5F
       524547010000000000070000004E4F5F4E4F5441010000000000080000004E4F
       5F42554B54490100000000000A0000004B45544552414E47414E010000000000
       060000004953504F53540100000000000C0000004B445F5452414E53414B5349
@@ -4175,7 +4186,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       525F494E534552540100000000000A0000004E4F5F5245475F44455401000000
       0000030000005043530100000000000C0000004E4F5F534552495F4245414D01
       0000000000050000004D4553494E010000000000070000005043535F52455601
-      0000000000}
+      00000000000700000053454C49534948010000000000}
     ReadOnly = True
     QueryAllRecords = False
     Session = DMFrm.OS
@@ -4233,6 +4244,9 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
     object QBrowsePCS_REV: TFloatField
       FieldName = 'PCS_REV'
     end
+    object QBrowseSELISIH: TFloatField
+      FieldName = 'SELISIH'
+    end
   end
   object dsQbrowse: TwwDataSource
     DataSet = QBrowse
@@ -4241,13 +4255,15 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
   end
   object QTotal: TOracleDataSet
     SQL.Strings = (
-      'select sum(pcs) as pcs, sum(pcs_rev) as pcs_rev'
+      
+        'select sum(pcs) as pcs, sum(selisih) as selisih, sum(pcs_rev) as' +
+        ' pcs_rev'
       'from ipisma_db4.kor_beam_tn_det'
       'where no_reg=:no_reg')
     Variables.Data = {0300000001000000070000003A4E4F5F524547030000000000000000000000}
     QBEDefinition.QBEFieldDefs = {
-      040000000200000003000000504353010000000000070000005043535F524556
-      010000000000}
+      040000000300000003000000504353010000000000070000005043535F524556
+      0100000000000700000053454C49534948010000000000}
     BeforeQuery = QTotalBeforeQuery
     Session = DMFrm.OS
     Left = 656
@@ -4258,6 +4274,9 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
     end
     object QTotalPCS_REV: TFloatField
       FieldName = 'PCS_REV'
+    end
+    object QTotalSELISIH: TFloatField
+      FieldName = 'SELISIH'
     end
   end
   object QRekap_TIB: TOracleDataSet
@@ -4309,7 +4328,8 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
   object QTotal1: TOracleDataSet
     SQL.Strings = (
       'select '
-      'sum(t.pcs) as pcs, '
+      'sum(t.pcs) as pcs,'
+      'sum(selisih) as selisih, '
       'sum(t.pcs_rev) as pcs_rev'
       'from ipisma_db4.vkor_beam_tn t'
       
@@ -4320,8 +4340,8 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       0100000000070000003A50414B4849520C0000000700000078710C0C01010100
       000000}
     QBEDefinition.QBEFieldDefs = {
-      040000000200000003000000504353010000000000070000005043535F524556
-      010000000000}
+      040000000300000003000000504353010000000000070000005043535F524556
+      0100000000000700000053454C49534948010000000000}
     MasterFields = 'id_rab'
     RefreshOptions = [roAfterInsert]
     Session = DMFrm.OS
@@ -4332,6 +4352,9 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
     end
     object QTotal1PCS_REV: TFloatField
       FieldName = 'PCS_REV'
+    end
+    object QTotal1SELISIH: TFloatField
+      FieldName = 'SELISIH'
     end
   end
 end

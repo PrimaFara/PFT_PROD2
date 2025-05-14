@@ -11392,16 +11392,16 @@ object HasilTenunFrm: THasilTenunFrm
     SQL.Strings = (
       'select a.*, b.NAMA_KARYAWAN, b.jabatan'
       
-        'from ipisma_db4.operator_mesin a, ipisma_db4.KARYAWAN_HRD b /*ih' +
-        'rd.karyawan b*/ '
+        'from ipisma_db4.operator_mesin a, VKARYAWAN_AKTIF_LOOK_TN b /*ip' +
+        'isma_db4.KARYAWAN_HRD b*/ /*ihrd.karyawan b*/ '
       
         'where /*a.tanggal=trunc(:ptgl) and*/ a.lokasi=:plokasi and a.pro' +
         'ses=:pproses /*and a.grup=:pgrup*/'
       'and a.nik=b.nik'
       '')
     Variables.Data = {
-      0300000002000000080000003A504C4F4B415349050000000200000032000000
-      0000080000003A5050524F5345530500000005000000472D30310000000000}
+      0300000002000000080000003A504C4F4B415349050000000200000035000000
+      0000080000003A5050524F5345530500000005000000412D33370000000000}
     QBEDefinition.QBEFieldDefs = {
       0400000007000000030000004E494B0100000000000700000054414E4747414C
       01000000000004000000475255500100000000000600000050524F5345530100

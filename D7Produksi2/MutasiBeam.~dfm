@@ -13214,7 +13214,8 @@ object MutasiBeamFrm: TMutasiBeamFrm
             'ARAH;CustomEdit;LookArah;F'
             'NO_SERI_BEAM;CustomEdit;LookSeriBeam;F'
             'LOKASI_TUJUAN;CustomEdit;LookLokasiProses2;F'
-            'JENIS_MESIN;CustomEdit;LookJnsMesin;F')
+            'JENIS_MESIN;CustomEdit;LookJnsMesin;F'
+            'JENIS;CustomEdit;LokkJenis2;F')
           Selected.Strings = (
             'NO_SERI_BEAM'#9'15'#9'NO SERI BEAM'#9'F'
             'KETERANGAN'#9'35'#9'KETERANGAN'#9'T'
@@ -13222,7 +13223,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             'PROSES'#9'14'#9'Proses'#9'T'#9'ASAL'
             'LOKASI_TUJUAN'#9'15'#9'Lokasi'#9'F'#9'TUJUAN'
             'PROSES_TUJUAN'#9'14'#9'Proses'#9'T'#9'TUJUAN'
-            'JENIS'#9'10'#9'Jenis'#9'F'
+            'JENIS'#9'18'#9'Jenis'#9'F'
             'ISI'#9'8'#9'ISI'#9'F'
             'PCS'#9'10'#9'PCS'#9'F'#9'QTY'
             'QTY_KG'#9'8'#9'KG'#9'F'#9'QTY'
@@ -13466,6 +13467,37 @@ object MutasiBeamFrm: TMutasiBeamFrm
           AllowClearKey = False
           OnCloseUp = LookJnsMesinCloseUp
           OnEnter = LookJnsMesinEnter
+        end
+        object LokkJenis2: TwwDBComboBox
+          Left = 472
+          Top = 256
+          Width = 121
+          Height = 19
+          ShowButton = True
+          Style = csDropDown
+          MapList = False
+          AllowClearKey = False
+          BorderStyle = bsNone
+          DataField = 'JENIS'
+          DropDownCount = 8
+          Frame.Enabled = True
+          Frame.NonFocusBorders = []
+          Frame.NonFocusStyle = efsFrameSingle
+          Frame.NonFocusFontColor = clBlue
+          ItemHeight = 0
+          Items.Strings = (
+            'BONGKAR/ HASIL'
+            'SANGGAN'
+            'PASANG/ MULAI'
+            'PERAWATAN'
+            'OVERHOUL'
+            'RETUR/ REPROSES'
+            'OVER BEAM'
+            'LAINNYA')
+          Sorted = False
+          TabOrder = 7
+          UnboundDataType = wwDefault
+          Visible = False
         end
       end
     end
