@@ -2768,7 +2768,8 @@ object PermintaanUnpostFrm: TPermintaanUnpostFrm
               'HASIL TENUN'
               'MBP'
               'MBT'
-              'MENDING')
+              'MENDING'
+              'TAMBAH ISI BEAM')
             ItemIndex = 0
             Sorted = False
             TabOrder = 2
