@@ -811,6 +811,7 @@ type
     procedure LookMitraCloseUp(Sender: TObject; LookupTable,
       FillTable: TDataSet; modified: Boolean);
     procedure LookMitraEnter(Sender: TObject);
+    procedure DBText1Click(Sender: TObject);
 
 
   private
@@ -1491,6 +1492,11 @@ end;
 procedure TMutasiBeamFrm.LookMitraEnter(Sender: TObject);
 begin
 QMitra.Open;
+end;
+
+procedure TMutasiBeamFrm.DBText1Click(Sender: TObject);
+begin
+  InputBox('Copy Nomer','Klik Kanan --> Copy : ',QMasterNO_nota.AsString);
 end;
 
 end.

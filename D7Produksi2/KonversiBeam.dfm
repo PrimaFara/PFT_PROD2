@@ -473,15 +473,18 @@ object KonversiBeamFrm: TKonversiBeamFrm
           'MESIN;CustomEdit;LookMesin;F'
           'KP;CustomEdit;LookKp;F')
         Selected.Strings = (
-          'KODE'#9'5'#9'KODE'#9'T'
-          'MESIN'#9'40'#9'MESIN'#9'F'
+          'KODE'#9'10'#9'KODE'#9'T'
+          'MESIN'#9'25'#9'MESIN'#9'F'
           'KP'#9'20'#9'KP'#9'F'
-          'HELAI_L'#9'10'#9'LUSI'#9'F'#9'JML HELAI'
-          'HELAI_P'#9'10'#9'PAKAN'#9'F'#9'JML HELAI'
-          'RASIO'#9'10'#9'LUSI'#9'F'#9'RASIO TOTAL'
-          'RASIO_PAKAN'#9'10'#9'PAKAN'#9'F'#9'RASIO TOTAL'
-          'RM_LUSI'#9'10'#9'LUSI'#9'F'#9'RASIO MURNI'
-          'RM_PAKAN'#9'10'#9'PAKAN'#9'F'#9'RASIO MURNI'
+          'ARAH'#9'20'#9'ARAH'#9'F'
+          'BENANG'#9'25'#9'BENANG'#9'F'
+          'HELAI'#9'10'#9'HELAI'#9'F'
+          'P_LP'#9'10'#9'Lusi/Pakan'#9'F'#9'PANJANG'
+          'P_SRG'#9'10'#9'Per Sarung'#9'F'#9'PANJANG'
+          'P_KODI'#9'10'#9'Per Kodi'#9'F'#9'PANJANG'
+          'RM_LP'#9'10'#9'Per Kodi'#9'F'#9'BERAT LUSI/PAKAN'
+          'WASTE'#9'10'#9'WASTE'#9'F'
+          'RT_LP'#9'10'#9'Per Kodi'#9'F'#9'BERAT TOTAL'
           'KONVERSI'#9'10'#9'KONVERSI'#9'F'
           'AKTIF'#9'1'#9'AKTIF'#9'F'
           'OPR_INSERT'#9'10'#9'OPERATOR'#9'T'#9'INSERT'
@@ -845,14 +848,16 @@ object KonversiBeamFrm: TKonversiBeamFrm
       'select a.*, a.rowid from ipisma_db4.konversi_beam_25 a'
       'ORDER BY KP')
     QBEDefinition.QBEFieldDefs = {
-      040000000E000000040000004B4F44450100000000000A00000054474C5F494E
+      0400000012000000040000004B4F44450100000000000A00000054474C5F494E
       534552540100000000000800000054474C5F4544495401000000000005000000
-      4D4553494E010000000000020000004B5001000000000005000000524153494F
-      0100000000000A0000004F50525F494E53455254010000000000080000004F50
-      525F454449540100000000000B000000524153494F5F50414B414E0100000000
-      0007000000524D5F4C55534901000000000008000000524D5F50414B414E0100
-      00000000080000004B4F4E56455253490100000000000700000048454C41495F
-      4C0100000000000700000048454C41495F50010000000000}
+      4D4553494E010000000000020000004B500100000000000A0000004F50525F49
+      4E53455254010000000000080000004F50525F45444954010000000000080000
+      004B4F4E56455253490100000000000400000041524148010000000000060000
+      0042454E414E470100000000000500000048454C414901000000000004000000
+      505F4C5001000000000005000000505F53524701000000000006000000505F4B
+      4F444901000000000005000000524D5F4C500100000000000500000057415354
+      450100000000000500000052545F4C5001000000000005000000414B54494601
+      0000000000}
     QueryAllRecords = False
     RefreshOptions = [roAfterInsert, roAfterUpdate]
     Session = DMFrm.OS
@@ -862,21 +867,49 @@ object KonversiBeamFrm: TKonversiBeamFrm
     Top = 8
     object QBrowseKODE: TStringField
       FieldName = 'KODE'
-      Required = True
       Size = 30
     end
     object QBrowseMESIN: TStringField
       FieldName = 'MESIN'
+      Required = True
       Size = 100
     end
     object QBrowseKP: TStringField
-      DisplayWidth = 20
       FieldName = 'KP'
       Required = True
+      Size = 30
     end
-    object QBrowseRASIO: TFloatField
-      FieldName = 'RASIO'
-      Required = True
+    object QBrowseARAH: TStringField
+      FieldName = 'ARAH'
+      Size = 30
+    end
+    object QBrowseBENANG: TStringField
+      FieldName = 'BENANG'
+      Size = 50
+    end
+    object QBrowseHELAI: TFloatField
+      FieldName = 'HELAI'
+    end
+    object QBrowseP_LP: TFloatField
+      FieldName = 'P_LP'
+    end
+    object QBrowseP_SRG: TFloatField
+      FieldName = 'P_SRG'
+    end
+    object QBrowseP_KODI: TFloatField
+      FieldName = 'P_KODI'
+    end
+    object QBrowseRM_LP: TFloatField
+      FieldName = 'RM_LP'
+    end
+    object QBrowseWASTE: TFloatField
+      FieldName = 'WASTE'
+    end
+    object QBrowseRT_LP: TFloatField
+      FieldName = 'RT_LP'
+    end
+    object QBrowseKONVERSI: TFloatField
+      FieldName = 'KONVERSI'
     end
     object QBrowseAKTIF: TStringField
       FieldName = 'AKTIF'
@@ -885,34 +918,16 @@ object KonversiBeamFrm: TKonversiBeamFrm
     object QBrowseTGL_INSERT: TDateTimeField
       FieldName = 'TGL_INSERT'
     end
-    object QBrowseTGL_EDIT: TDateTimeField
-      FieldName = 'TGL_EDIT'
-    end
     object QBrowseOPR_INSERT: TStringField
       FieldName = 'OPR_INSERT'
       Size = 30
     end
+    object QBrowseTGL_EDIT: TDateTimeField
+      FieldName = 'TGL_EDIT'
+    end
     object QBrowseOPR_EDIT: TStringField
       FieldName = 'OPR_EDIT'
       Size = 30
-    end
-    object QBrowseRASIO_PAKAN: TFloatField
-      FieldName = 'RASIO_PAKAN'
-    end
-    object QBrowseRM_LUSI: TFloatField
-      FieldName = 'RM_LUSI'
-    end
-    object QBrowseRM_PAKAN: TFloatField
-      FieldName = 'RM_PAKAN'
-    end
-    object QBrowseKONVERSI: TFloatField
-      FieldName = 'KONVERSI'
-    end
-    object QBrowseHELAI_L: TFloatField
-      FieldName = 'HELAI_L'
-    end
-    object QBrowseHELAI_P: TFloatField
-      FieldName = 'HELAI_P'
     end
   end
   object dsQBrowse: TwwDataSource

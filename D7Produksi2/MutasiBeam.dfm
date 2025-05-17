@@ -3174,7 +3174,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -5287,7 +5287,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -7348,7 +7348,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -9528,7 +9528,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -11643,7 +11643,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Size.Values = (
               134.937500000000000000
               0.000000000000000000
-              76.729166666666680000
+              76.729166666666670000
               762.000000000000000000)
             Alignment = taLeftJustify
             AlignToBand = True
@@ -13017,6 +13017,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Font.Name = 'MS Sans Serif'
             Font.Style = [fsBold]
             ParentFont = False
+            OnClick = DBText1Click
           end
           object Label2: TLabel
             Left = 334
