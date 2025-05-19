@@ -1288,7 +1288,8 @@ end;
 procedure TKelosKeluarFrm.QMasterNewRecord(DataSet: TDataSet);
 begin
   DMFrm.QTime.Open;
-  QMasterKD_TRANSAKSI.AsString:=vkode;
+    QMasterKD_TRANSAKSI.AsString:=QTransaksiKD_TRANSAKSI.AsString;       //add 190525
+  //QMasterKD_TRANSAKSI.AsString:=vkode;
   QMasterTANGGAL.AsDateTime:=DMFrm.QTimeJAM.AsDateTime;
   QMasterISPOST.AsString:='0';
   QMasterTTD1.AsString:=QTransaksiTTD1.AsString;

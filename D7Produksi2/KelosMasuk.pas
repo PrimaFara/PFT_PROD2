@@ -1,7 +1,7 @@
 unit KelosMasuk;
 
 interface
-
+                                                    
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   DateUtils, Mask, wwdbedit, Wwdbspin, DB, Wwdatsrc, OracleData, Dialogs,
@@ -1415,8 +1415,9 @@ end;
 
 procedure TKelosMasukFrm.QMasterNewRecord(DataSet: TDataSet);
 begin
-DMFrm.QTime.Open;
-  QMasterKD_TRANSAKSI.AsString:='874';
+  DMFrm.QTime.Open;
+    QMasterKD_TRANSAKSI.AsString:=QTransaksiKD_TRANSAKSI.AsString;       //add 190525
+  //QMasterKD_TRANSAKSI.AsString:='874';
   QMasterTANGGAL.AsDateTime:=DMFrm.QTimeJAM.AsDateTime;
   QMasterISPOST.AsString:='0';
   QMasterTTD1.AsString:=QTransaksiTTD1.AsString;
@@ -2300,27 +2301,27 @@ end;
 
 procedure TKelosMasukFrm.wwDBNavigatorInputButton1Click(Sender: TObject);
 begin
-Lookdesai.Enabled:=True;
+  Lookdesai.Enabled:=True;
 end;
 
 procedure TKelosMasukFrm.LookTambahanCloseUp(Sender: TObject; LookupTable,
   FillTable: TDataSet; modified: Boolean);
 begin
-QCek_Tambah.Close;
-QCek_Tambah.SetVariable('res', QTambahanNO_NOTA.AsString);
-QCek_Tambah.Open;
-if Lookkelb.ItemIndex <> 2 then
-begin
- if QCek_TambahRESEP.AsString=LookTambahan.Text then
+  QCek_Tambah.Close;
+  QCek_Tambah.SetVariable('res', QTambahanNO_NOTA.AsString);
+  QCek_Tambah.Open;
+  if Lookkelb.ItemIndex <> 2 then
+  begin
+   if QCek_TambahRESEP.AsString=LookTambahan.Text then
     begin
     ShowMessage('Resep sudah dibuat');
     Abort;
     end
- else
-  QMasterRESEP.AsString:=QTambahanNO_NOTA.AsString;//DMFrm.QDesainNO_ORDER.AsString;
- end
-else
- QMasterRESEP.AsString:=QTambahanNO_NOTA.AsString;
+   else
+    QMasterRESEP.AsString:=QTambahanNO_NOTA.AsString;//DMFrm.QDesainNO_ORDER.AsString;
+   end
+  else
+   QMasterRESEP.AsString:=QTambahanNO_NOTA.AsString;
 end;
 
 procedure TKelosMasukFrm.LookTambahanEnter(Sender: TObject);

@@ -990,6 +990,7 @@ begin
   DMFrm.QTime.Open;
   QMasterISPOST.AsString:='0';
   QMasterTANGGAL.AsDateTime:=DMFrm.QTimeJAM.AsDateTime;
+  QMasterKD_TRANSAKSI.AsString:=QTransaksiKD_TRANSAKSI.AsString;       //add 190525
 end;
 
 procedure TMutasiBeamFrm.wwDBGrid1Enter(Sender: TObject);
@@ -1416,6 +1417,7 @@ QTransaksi.Close;
 QTransaksi.SetVariable('kd_transaksi','851');
 QTransaksi.Open;
 // QMaster.Open;   aau 270818
+  
 end;
 
 procedure TMutasiBeamFrm.LookSeriBeamDlg1UserButton1Click(Sender: TObject;

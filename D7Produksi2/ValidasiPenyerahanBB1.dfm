@@ -100,7 +100,7 @@ object ValidasiPenyerahanBB1Frm: TValidasiPenyerahanBB1Frm
       Top = 76
       Width = 816
       Height = 452
-      ActivePage = TabSheet1
+      ActivePage = TabSheet2
       Align = alClient
       Style = tsFlatButtons
       TabOrder = 1

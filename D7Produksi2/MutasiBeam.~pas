@@ -811,6 +811,7 @@ type
     procedure LookMitraCloseUp(Sender: TObject; LookupTable,
       FillTable: TDataSet; modified: Boolean);
     procedure LookMitraEnter(Sender: TObject);
+    procedure DBText1Click(Sender: TObject);
 
 
   private
@@ -1415,6 +1416,7 @@ QTransaksi.Close;
 QTransaksi.SetVariable('kd_transaksi','851');
 QTransaksi.Open;
 // QMaster.Open;   aau 270818
+  QMasterKD_TRANSAKSI.AsString:=QTransaksiKD_TRANSAKSI.AsString;       //add 190525
 end;
 
 procedure TMutasiBeamFrm.LookSeriBeamDlg1UserButton1Click(Sender: TObject;
@@ -1491,6 +1493,11 @@ end;
 procedure TMutasiBeamFrm.LookMitraEnter(Sender: TObject);
 begin
 QMitra.Open;
+end;
+
+procedure TMutasiBeamFrm.DBText1Click(Sender: TObject);
+begin
+  InputBox('Copy Nomer','Klik Kanan --> Copy : ',QMasterNO_nota.AsString);
 end;
 
 end.

@@ -5850,7 +5850,7 @@ object KelosMasukFrm: TKelosMasukFrm
               'KD_KONSTRUKSI;CustomEdit;LookKonstruksi;F')
             Selected.Strings = (
               'KD_KONSTRUKSI'#9'10'#9'KODE'#9'F'#9'KONSTRUKSI'
-              'KONSTRUKSI'#9'20'#9'NAMA'#9'T'#9'KONSTRUKSI'
+              'KONSTRUKSI'#9'40'#9'NAMA'#9'T'#9'KONSTRUKSI'
               'KD_WARNA'#9'5'#9'KODE'#9'F'#9'WARNA'
               'NAMA_WARNA'#9'30'#9'NAMA'#9'T'#9'WARNA'
               'GRUP'#9'5'#9'GRUP'#9'F'

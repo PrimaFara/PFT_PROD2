@@ -1288,7 +1288,8 @@ end;
 procedure TKelosKeluarFrm.QMasterNewRecord(DataSet: TDataSet);
 begin
   DMFrm.QTime.Open;
-  QMasterKD_TRANSAKSI.AsString:=vkode;
+  QMasterKD_TRANSAKSI.AsString:=QTransaksiKD_TRANSAKSI.AsString;
+  //QMasterKD_TRANSAKSI.AsString:=vkode;
   QMasterTANGGAL.AsDateTime:=DMFrm.QTimeJAM.AsDateTime;
   QMasterISPOST.AsString:='0';
   QMasterTTD1.AsString:=QTransaksiTTD1.AsString;
@@ -1450,7 +1451,7 @@ end;
 
 procedure TKelosKeluarFrm.LookWarnaEnter(Sender: TObject);
 begin
-  DMFrm.QWarna.Open;
+  DMFrm.QWarnaBaru.Open;//DMFrm.QWarna.Open;
 end;
 
 procedure TKelosKeluarFrm.QHasilCelupBeforeOpen(
@@ -1896,15 +1897,15 @@ end;
 procedure TKelosKeluarFrm.LookWarnaDlgUserButton1Click(Sender: TObject;
   LookupTable: TDataSet);
 begin
-  DMFrm.QWarna.Close;
-  DMFrm.QWarna.Open;
+  DMFrm.QWarnaBaru.Close;//DMFrm.QWarna.Close;
+  DMFrm.QWarnaBaru.Open;//DMFrm.QWarna.Open;
 end;
 
 procedure TKelosKeluarFrm.LookWarna2CustomDlg(Sender: TObject);
 begin
   LookWarnaDlg.Execute;
-  QDetailKD_WARNA.AsString:=DMFrm.QWarnaKD_WARNA.AsString;
-  QDetailNAMA_WARNA.AsString:=DMFrm.QWarnaWARNA.AsString;
+  QDetailKD_WARNA.AsString:=DMFrm.QWarnaBaruKD_WARNA.AsString;//DMFrm.QWarnaKD_WARNA.AsString;
+  QDetailNAMA_WARNA.AsString:=DMFrm.QWarnaBaruWARNA.AsString;//DMFrm.QWarnaWARNA.AsString;
 end;
 
 procedure TKelosKeluarFrm.BtnPrintInputClick(Sender: TObject);

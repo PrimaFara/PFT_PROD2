@@ -4,7 +4,7 @@ object ReturKeGWFrm: TReturKeGWFrm
   Width = 1125
   Height = 560
   HorzScrollBar.Range = 897
-  ActiveControl = DTPTanggal
+  ActiveControl = vTglAwal
   AutoScroll = False
   Caption = '867. WASTE'
   Color = clBtnFace
@@ -218,7 +218,7 @@ object ReturKeGWFrm: TReturKeGWFrm
         Frame.DrawRight = False
         Size.Values = (
           44.979166666666670000
-          822.854166666666800000
+          822.854166666666600000
           211.666666666666700000
           100.541666666666700000)
         Alignment = taCenter
@@ -708,7 +708,7 @@ object ReturKeGWFrm: TReturKeGWFrm
           44.979166666666670000
           137.583333333333300000
           211.666666666666700000
-          97.895833333333320000)
+          97.895833333333340000)
         Alignment = taCenter
         AlignToBand = False
         AutoSize = True
@@ -1369,7 +1369,7 @@ object ReturKeGWFrm: TReturKeGWFrm
         Size.Values = (
           47.625000000000000000
           1444.625000000000000000
-          89.958333333333320000
+          89.958333333333340000
           111.125000000000000000)
         Alignment = taCenter
         AlignToBand = False
@@ -2072,7 +2072,7 @@ object ReturKeGWFrm: TReturKeGWFrm
       Top = 76
       Width = 816
       Height = 433
-      ActivePage = TabSheet1
+      ActivePage = TabSheet2
       Align = alClient
       Style = tsFlatButtons
       TabOrder = 1
@@ -3169,7 +3169,7 @@ object ReturKeGWFrm: TReturKeGWFrm
                 44.979166666666670000
                 1404.937500000000000000
                 2.645833333333333000
-                18.520833333333340000)
+                18.520833333333330000)
               Alignment = taRightJustify
               AlignToBand = False
               AutoSize = True
@@ -5496,7 +5496,7 @@ object ReturKeGWFrm: TReturKeGWFrm
               Frame.DrawRight = False
               Size.Values = (
                 44.979166666666670000
-                18.520833333333340000
+                18.520833333333330000
                 15.875000000000000000
                 201.083333333333300000)
               Alignment = taRightJustify

@@ -25,7 +25,7 @@ object PaletMasukFrm: TPaletMasukFrm
     Left = 0
     Top = 0
     Width = 81
-    Height = 609
+    Height = 602
     Align = alLeft
     BevelOuter = bvNone
     Color = 7039851
@@ -34,8 +34,8 @@ object PaletMasukFrm: TPaletMasukFrm
   object PanelRight: TPanel
     Left = 897
     Top = 0
-    Width = 244
-    Height = 609
+    Width = 236
+    Height = 602
     Align = alClient
     BevelOuter = bvNone
     Color = clAppWorkSpace
@@ -45,7 +45,7 @@ object PaletMasukFrm: TPaletMasukFrm
     Left = 81
     Top = 0
     Width = 816
-    Height = 609
+    Height = 602
     Align = alLeft
     BevelOuter = bvNone
     Ctl3D = False
@@ -90,8 +90,8 @@ object PaletMasukFrm: TPaletMasukFrm
       Left = 0
       Top = 76
       Width = 816
-      Height = 533
-      ActivePage = TabSheet1
+      Height = 526
+      ActivePage = TabSheet2
       Align = alClient
       Style = tsFlatButtons
       TabOrder = 1
@@ -207,7 +207,7 @@ object PaletMasukFrm: TPaletMasukFrm
                 44.979166666666670000
                 119.062500000000000000
                 267.229166666666700000
-                76.729166666666680000)
+                76.729166666666670000)
               Alignment = taLeftJustify
               AlignToBand = False
               AutoSize = True
@@ -298,7 +298,7 @@ object PaletMasukFrm: TPaletMasukFrm
               Frame.DrawRight = False
               Size.Values = (
                 44.979166666666670000
-                799.041666666666800000
+                799.041666666666700000
                 264.583333333333400000
                 39.687500000000000000)
               Alignment = taLeftJustify
@@ -467,7 +467,7 @@ object PaletMasukFrm: TPaletMasukFrm
               Frame.DrawRight = False
               Size.Values = (
                 44.979166666666670000
-                775.229166666666800000
+                775.229166666666700000
                 134.937500000000000000
                 238.125000000000000000)
               Alignment = taCenter
@@ -1060,7 +1060,7 @@ object PaletMasukFrm: TPaletMasukFrm
               Size.Values = (
                 55.562500000000000000
                 1481.666666666667000000
-                68.791666666666680000
+                68.791666666666670000
                 156.104166666666700000)
               Alignment = taLeftJustify
               AlignToBand = False
@@ -2626,7 +2626,7 @@ object PaletMasukFrm: TPaletMasukFrm
               Frame.DrawRight = False
               Size.Values = (
                 44.979166666666670000
-                18.520833333333330000
+                18.520833333333340000
                 15.875000000000000000
                 201.083333333333300000)
               Alignment = taLeftJustify
@@ -2888,7 +2888,7 @@ object PaletMasukFrm: TPaletMasukFrm
           Left = 0
           Top = 178
           Width = 808
-          Height = 283
+          Height = 276
           Align = alClient
           BevelOuter = bvNone
           TabOrder = 2
@@ -2967,7 +2967,7 @@ object PaletMasukFrm: TPaletMasukFrm
             Left = 0
             Top = 0
             Width = 808
-            Height = 283
+            Height = 276
             ControlType.Strings = (
               'KD_SUB_LOKASI;CustomEdit;LookLokasi;F'
               'KD_ITEM;CustomEdit;LookItem;F'
@@ -3020,7 +3020,7 @@ object PaletMasukFrm: TPaletMasukFrm
             Left = 0
             Top = 0
             Width = 808
-            Height = 283
+            Height = 276
             ControlType.Strings = (
               'KD_SUB_LOKASI;CustomEdit;LookLokasi;F'
               'KD_ITEM;CustomEdit;LookItem;F'
@@ -3098,7 +3098,7 @@ object PaletMasukFrm: TPaletMasukFrm
         end
         object PanelFooter1: TPanel
           Left = 0
-          Top = 461
+          Top = 454
           Width = 808
           Height = 41
           Align = alBottom
@@ -3509,7 +3509,7 @@ object PaletMasukFrm: TPaletMasukFrm
           Left = 0
           Top = 70
           Width = 808
-          Height = 391
+          Height = 384
           Align = alClient
           BevelOuter = bvNone
           TabOrder = 1
@@ -3517,7 +3517,7 @@ object PaletMasukFrm: TPaletMasukFrm
             Left = 0
             Top = 0
             Width = 808
-            Height = 391
+            Height = 384
             ControlType.Strings = (
               'ISPOST;CheckBox;1;0')
             Selected.Strings = (
@@ -3571,7 +3571,7 @@ object PaletMasukFrm: TPaletMasukFrm
         end
         object PanelFooter2: TPanel
           Left = 0
-          Top = 461
+          Top = 454
           Width = 808
           Height = 41
           Align = alBottom
@@ -5462,7 +5462,7 @@ object PaletMasukFrm: TPaletMasukFrm
         end
         object Panel2: TPanel
           Left = 0
-          Top = 461
+          Top = 454
           Width = 808
           Height = 41
           Align = alBottom
@@ -5767,7 +5767,7 @@ object PaletMasukFrm: TPaletMasukFrm
           Left = 0
           Top = 70
           Width = 808
-          Height = 391
+          Height = 384
           Selected.Strings = (
             'KD_KONSTRUKSI'#9'10'#9'KODE~BENANG'#9'F'
             'NAMA_ITEM'#9'25'#9'NAMA~BENANG'#9'F'
@@ -5983,7 +5983,7 @@ object PaletMasukFrm: TPaletMasukFrm
         end
         object Panel4: TPanel
           Left = 0
-          Top = 461
+          Top = 454
           Width = 808
           Height = 41
           Align = alBottom
@@ -6120,7 +6120,7 @@ object PaletMasukFrm: TPaletMasukFrm
           Left = 0
           Top = 70
           Width = 808
-          Height = 391
+          Height = 384
           Selected.Strings = (
             'KD_ITEM'#9'15'#9'KODE~BENANG'#9'F'
             'NAMA_ITEM'#9'25'#9'NAMA~BENANG'#9'F'
@@ -8137,7 +8137,7 @@ object PaletMasukFrm: TPaletMasukFrm
           Left = 0
           Top = 70
           Width = 808
-          Height = 391
+          Height = 384
           Selected.Strings = (
             'KD_ITEM'#9'15'#9'KODE~BENANG'#9'F'
             'NAMA_ITEM'#9'25'#9'NAMA~BENANG'#9'F'
@@ -8181,7 +8181,7 @@ object PaletMasukFrm: TPaletMasukFrm
         end
         object Panel6: TPanel
           Left = 0
-          Top = 461
+          Top = 454
           Width = 808
           Height = 41
           Align = alBottom
