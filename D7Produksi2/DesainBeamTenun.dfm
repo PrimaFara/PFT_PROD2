@@ -25,7 +25,7 @@ object DesainBeamTenunFrm: TDesainBeamTenunFrm
     Top = 0
     Width = 1143
     Height = 571
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet

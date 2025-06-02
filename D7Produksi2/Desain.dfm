@@ -1,7 +1,7 @@
 object DesainFrm: TDesainFrm
-  Left = 400
-  Top = 276
-  Width = 1204
+  Left = 337
+  Top = 280
+  Width = 1321
   Height = 655
   Caption = 'DesainFrm'
   Color = clBtnFace
@@ -24,7 +24,7 @@ object DesainFrm: TDesainFrm
   object TitlePanel: TPanel
     Left = 0
     Top = 0
-    Width = 1188
+    Width = 1305
     Height = 41
     Align = alTop
     BevelInner = bvRaised
@@ -41,7 +41,7 @@ object DesainFrm: TDesainFrm
   object Panel2: TPanel
     Left = 0
     Top = 581
-    Width = 1188
+    Width = 1305
     Height = 36
     Align = alBottom
     Font.Charset = DEFAULT_CHARSET
@@ -95,7 +95,7 @@ object DesainFrm: TDesainFrm
   object PageControl1: TPageControl
     Left = 0
     Top = 41
-    Width = 1188
+    Width = 1305
     Height = 540
     ActivePage = TabSheet2
     Align = alClient
@@ -112,21 +112,22 @@ object DesainFrm: TDesainFrm
       object Panel3: TPanel
         Left = 0
         Top = 0
-        Width = 1153
+        Width = 1241
         Height = 512
         Align = alLeft
         TabOrder = 1
         object wwDBGrid2: TwwDBGrid
           Left = 1
           Top = 177
-          Width = 1151
+          Width = 1239
           Height = 293
           ControlType.Strings = (
             'ARAH;CustomEdit;LookArah;F'
             'KD_ITEM;CustomEdit;wwDBLookupComboDlg1;F'
             'KD_WARNA;CustomEdit;LookWarna;F'
             'KELOMPOK;CustomEdit;LookKelompok;F'
-            'KD_KONV;CustomEdit;LookKonversi;F')
+            'KD_KONV;CustomEdit;LookKonversi;F'
+            'KONVERSI;CustomEdit;LookKonv25;F')
           Selected.Strings = (
             'NO_URUT'#9'3'#9'i'#9'F'
             'ARAH'#9'9'#9'ARAH'
@@ -137,9 +138,12 @@ object DesainFrm: TDesainFrm
             'NAMA_ITEM'#9'21'#9'Nama'#9'T'#9'BAHAN'
             'NO_BENANG'#9'5'#9'No'#9'F'#9'BAHAN'
             'RASIO'#9'6'#9'Rasio'#9'F'#9'BAHAN'
+            'KONVERSI'#9'10'#9'Konversi'#9'F'#9'BAHAN'
             'NHELAI'#9'4'#9'Jml'#9'F'#9'HELAI'
             'THELAI'#9'5'#9'Total'#9'T'#9'HELAI'
             'NSPRING'#9'10'#9'Spring'#9'F'
+            'PTOTAL'#9'10'#9'Meter'#9'F'#9'TOTAL'
+            'KGTOTAL'#9'10'#9'Kg'#9'F'#9'TOTAL'
             'PHELAI'#9'5'#9'Meter'#9'T'#9'PER HELAI'
             'KGHELAI'#9'7'#9'Gram'#9'T'#9'PER HELAI'
             'PSARUNG'#9'9'#9'Meter'#9'T'#9'PER PALEKAT'
@@ -152,7 +156,7 @@ object DesainFrm: TDesainFrm
             'KGNET'#9'8'#9'Kg'#9'T'#9'NETTO KODI')
           IniAttributes.Enabled = True
           IniAttributes.SaveToRegistry = True
-          IniAttributes.FileName = 'Pismatex'
+          IniAttributes.FileName = 'PRODUKSI2'
           IniAttributes.SectionName = 'InputDesain'
           IniAttributes.Delimiter = ';;'
           IniAttributes.CheckNewFields = True
@@ -189,7 +193,7 @@ object DesainFrm: TDesainFrm
         object Panel4: TPanel
           Left = 1
           Top = 1
-          Width = 1151
+          Width = 1239
           Height = 144
           Align = alTop
           BevelInner = bvLowered
@@ -197,7 +201,7 @@ object DesainFrm: TDesainFrm
           ParentCtl3D = False
           TabOrder = 0
           object DBText1: TDBText
-            Left = 1068
+            Left = 1149
             Top = 24
             Width = 80
             Height = 24
@@ -213,7 +217,7 @@ object DesainFrm: TDesainFrm
             ParentFont = False
           end
           object Label4: TLabel
-            Left = 1071
+            Left = 1152
             Top = 8
             Width = 72
             Height = 13
@@ -221,14 +225,14 @@ object DesainFrm: TDesainFrm
             Caption = 'No. Register'
           end
           object Label5: TLabel
-            Left = 920
+            Left = 1001
             Top = 60
             Width = 64
             Height = 13
             Caption = 'Tgl. Dibuat'
           end
           object Label28: TLabel
-            Left = 920
+            Left = 1001
             Top = 82
             Width = 64
             Height = 13
@@ -337,7 +341,7 @@ object DesainFrm: TDesainFrm
             Caption = 'cm'
           end
           object Label7: TLabel
-            Left = 691
+            Left = 637
             Top = 15
             Width = 42
             Height = 13
@@ -433,7 +437,7 @@ object DesainFrm: TDesainFrm
             Caption = 'Helai'
           end
           object Label32: TLabel
-            Left = 920
+            Left = 1001
             Top = 101
             Width = 61
             Height = 13
@@ -505,7 +509,7 @@ object DesainFrm: TDesainFrm
             Caption = 'Pakan 3'
           end
           object Label40: TLabel
-            Left = 921
+            Left = 1002
             Top = 121
             Width = 65
             Height = 13
@@ -666,8 +670,8 @@ object DesainFrm: TDesainFrm
                 Frame.DrawLeft = False
                 Frame.DrawRight = False
                 Size.Values = (
-                  68.791666666666680000
-                  759.354166666666800000
+                  68.791666666666670000
+                  759.354166666666700000
                   5.291666666666667000
                   378.354166666666700000)
                 Alignment = taCenter
@@ -1290,7 +1294,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 74.083333333333340000
-                949.854166666666800000)
+                949.854166666666700000)
               BandType = rbColumnHeader
               object QRLabel11: TQRLabel
                 Left = 7
@@ -1471,7 +1475,7 @@ object DesainFrm: TDesainFrm
               ParentFont = False
               Size.Values = (
                 39.687500000000000000
-                949.854166666666800000)
+                949.854166666666700000)
               BandType = rbDetail
               object QRDBText18: TQRDBText
                 Left = 183
@@ -1865,7 +1869,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 44.979166666666670000
-                949.854166666666800000)
+                949.854166666666700000)
               BandType = rbGroupFooter
               object QRExpr2: TQRExpr
                 Left = 48
@@ -2015,7 +2019,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 0.000000000000000000
-                949.854166666666800000)
+                949.854166666666700000)
               BandType = rbGroupFooter
             end
             object QRGroup1: TQRGroup
@@ -2035,7 +2039,7 @@ object DesainFrm: TDesainFrm
               LinkBand = QRBand1
               Size.Values = (
                 42.333333333333340000
-                949.854166666666800000)
+                949.854166666666700000)
               Expression = 'CDSQDetail2.ARAH'
               FooterBand = QRBand1
               Master = QuickRep1
@@ -2139,7 +2143,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 42.333333333333340000
-                949.854166666666800000)
+                949.854166666666700000)
               Expression = 'CDSQDetail2.KELOMPOK'
               FooterBand = QRBand2
               Master = QuickRep1
@@ -2210,7 +2214,7 @@ object DesainFrm: TDesainFrm
               ForceNewColumn = False
               ForceNewPage = False
               Size.Values = (
-                68.791666666666680000
+                68.791666666666670000
                 1899.708333333333000000)
               BandType = rbSummary
               object QRRichText1: TQRRichText
@@ -2240,7 +2244,7 @@ object DesainFrm: TDesainFrm
             end
           end
           object wwDBDateTimePicker3: TwwDBDateTimePicker
-            Left = 1024
+            Left = 1105
             Top = 56
             Width = 122
             Height = 21
@@ -2275,7 +2279,7 @@ object DesainFrm: TDesainFrm
             TabOrder = 13
           end
           object wwDBEdit3: TwwDBEdit
-            Left = 1024
+            Left = 1105
             Top = 79
             Width = 121
             Height = 19
@@ -2511,8 +2515,8 @@ object DesainFrm: TDesainFrm
             WordWrap = False
           end
           object wwDBEdit12: TwwDBEdit
-            Left = 1024
-            Top = 98
+            Left = 1105
+            Top = 99
             Width = 121
             Height = 19
             TabStop = False
@@ -2612,7 +2616,7 @@ object DesainFrm: TDesainFrm
             WordWrap = False
           end
           object LookTambahan: TwwDBLookupComboDlg
-            Left = 1024
+            Left = 1105
             Top = 120
             Width = 122
             Height = 19
@@ -2700,24 +2704,11 @@ object DesainFrm: TDesainFrm
             WantReturns = False
             WordWrap = False
           end
-          object wwDBEdit27: TwwDBEdit
-            Left = 632
-            Top = 11
-            Width = 57
-            Height = 19
-            Color = clWhite
-            DataField = 'NPICK2'
-            DataSource = dsCDSMaster
-            TabOrder = 32
-            UnboundDataType = wwDefault
-            WantReturns = False
-            WordWrap = False
-          end
         end
         object Panel6: TPanel
           Left = 1
           Top = 145
-          Width = 1151
+          Width = 1239
           Height = 32
           Align = alTop
           BevelInner = bvLowered
@@ -3025,7 +3016,7 @@ object DesainFrm: TDesainFrm
         object Panel7: TPanel
           Left = 1
           Top = 470
-          Width = 1151
+          Width = 1239
           Height = 41
           Align = alBottom
           BevelInner = bvLowered
@@ -3148,35 +3139,6 @@ object DesainFrm: TDesainFrm
           TabOrder = 6
           UnboundDataType = wwDefault
         end
-        object LookKonversi: TwwDBLookupComboDlg
-          Left = 264
-          Top = 352
-          Width = 121
-          Height = 21
-          GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
-          GridColor = clWhite
-          GridTitleAlignment = taLeftJustify
-          Caption = 'Lookup'
-          MaxWidth = 0
-          MaxHeight = 209
-          UserButton1Caption = 'Refresh'
-          OnUserButton1Click = LookKonversiUserButton1Click
-          Selected.Strings = (
-            'KODE'#9'5'#9'KODE'#9'F'
-            'KONSTRUKSI'#9'20'#9'KONSTRUKSI'#9'F'
-            'ARAH'#9'11'#9'ARAH'#9'F'
-            'BENANG'#9'23'#9'BENANG'#9'F'
-            'GRAM'#9'29'#9'GRAM'#9'F')
-          DataField = 'KD_KONV'
-          DataSource = dsCDSDetail
-          LookupTable = QKonversi
-          LookupField = 'KODE'
-          TabOrder = 7
-          Visible = False
-          AutoDropDown = False
-          ShowButton = True
-          AllowClearKey = False
-        end
         object wwDBLookupComboDlg1: TwwDBLookupComboDlg
           Left = 400
           Top = 376
@@ -3199,12 +3161,40 @@ object DesainFrm: TDesainFrm
           DataSource = dsCDSDetail
           LookupTable = QBarang
           LookupField = 'KD_ITEM'
-          TabOrder = 8
+          TabOrder = 7
           AutoDropDown = False
           ShowButton = True
           AllowClearKey = False
           OnCloseUp = wwDBLookupComboDlg1CloseUp
           OnEnter = wwDBLookupComboDlg1Enter
+        end
+        object LookKonv25: TwwDBLookupComboDlg
+          Left = 408
+          Top = 280
+          Width = 121
+          Height = 21
+          GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
+          GridColor = clWhite
+          GridTitleAlignment = taLeftJustify
+          Caption = 'Lookup'
+          MaxWidth = 0
+          MaxHeight = 209
+          Selected.Strings = (
+            'MESIN'#9'25'#9'MESIN'#9'F'
+            'KP'#9'20'#9'KP'#9'F'
+            'ARAH'#9'15'#9'ARAH'#9'F'
+            'BENANG'#9'20'#9'BENANG'#9'F'
+            'KONVERSI'#9'10'#9'KONVERSI'#9'F'#9)
+          DataField = 'KONVERSI'
+          DataSource = dsCDSDetail
+          LookupTable = QKonversi2025
+          LookupField = 'KONVERSI'
+          TabOrder = 8
+          AutoDropDown = False
+          ShowButton = True
+          AllowClearKey = False
+          OnCloseUp = LookKonv25CloseUp
+          OnEnter = LookKonv25Enter
         end
       end
       object LookBarang: TwwDBComboDlg
@@ -3237,7 +3227,7 @@ object DesainFrm: TDesainFrm
       object Panel5: TPanel
         Left = 0
         Top = 0
-        Width = 1180
+        Width = 1297
         Height = 57
         Align = alTop
         BevelInner = bvLowered
@@ -3420,7 +3410,7 @@ object DesainFrm: TDesainFrm
       object wwDBGrid1: TwwDBGrid
         Left = 0
         Top = 57
-        Width = 1180
+        Width = 1297
         Height = 455
         ControlType.Strings = (
           'ISPOST;CheckBox;1;0')
@@ -3700,7 +3690,7 @@ object DesainFrm: TDesainFrm
       object Panel8: TPanel
         Left = 0
         Top = 0
-        Width = 1180
+        Width = 1297
         Height = 57
         Align = alTop
         BevelInner = bvLowered
@@ -3883,7 +3873,7 @@ object DesainFrm: TDesainFrm
       object wwDBGrid5: TwwDBGrid
         Left = 0
         Top = 57
-        Width = 1180
+        Width = 1297
         Height = 455
         ControlType.Strings = (
           'ISPOST;CheckBox;1;0')
@@ -3947,7 +3937,7 @@ object DesainFrm: TDesainFrm
       object wwDBGrid10: TwwDBGrid
         Left = 0
         Top = 33
-        Width = 1180
+        Width = 1297
         Height = 479
         ControlType.Strings = (
           'NIK;CustomEdit;LookKaryawan;F'
@@ -3991,7 +3981,7 @@ object DesainFrm: TDesainFrm
       object Panel9: TPanel
         Left = 0
         Top = 0
-        Width = 1180
+        Width = 1297
         Height = 33
         Align = alTop
         BevelInner = bvLowered
@@ -4066,7 +4056,7 @@ object DesainFrm: TDesainFrm
       object wwDBGrid6: TwwDBGrid
         Left = 0
         Top = 33
-        Width = 1180
+        Width = 1297
         Height = 479
         ControlType.Strings = (
           'KD_KONSTRUKSI;CustomEdit;LookKons;F')
@@ -4134,7 +4124,7 @@ object DesainFrm: TDesainFrm
       object wwDBGrid7: TwwDBGrid
         Left = 0
         Top = 57
-        Width = 1180
+        Width = 1297
         Height = 455
         Selected.Strings = (
           'NO_DESAIN'#9'6'#9'REG'#9'F'
@@ -4209,7 +4199,7 @@ object DesainFrm: TDesainFrm
       object Panel10: TPanel
         Left = 0
         Top = 0
-        Width = 1180
+        Width = 1297
         Height = 57
         Align = alTop
         BevelInner = bvLowered
@@ -4397,7 +4387,7 @@ object DesainFrm: TDesainFrm
       object wwDBGrid11: TwwDBGrid
         Left = 0
         Top = 49
-        Width = 1180
+        Width = 1297
         Height = 463
         ControlType.Strings = (
           'KD_KEL;CustomEdit;LookJenis;F'
@@ -4456,7 +4446,7 @@ object DesainFrm: TDesainFrm
       object Panel12: TPanel
         Left = 0
         Top = 0
-        Width = 1180
+        Width = 1297
         Height = 49
         Align = alTop
         BevelInner = bvLowered
@@ -4922,7 +4912,7 @@ object DesainFrm: TDesainFrm
       004E535052494E47010000000000070000004E50414B414E3301000000000004
       0000004245414D010000000000070000004E50414B414E340100000000000700
       00004E50414B414E35010000000000070000004E50414B414E36010000000000
-      060000004E5049434B32010000000000}
+      060000004B454C5F4B50010000000000}
     RefreshOptions = [roAfterInsert, roAfterUpdate]
     Session = DMFrm.OS
     BeforeEdit = QMasterBeforeEdit
@@ -5091,9 +5081,6 @@ object DesainFrm: TDesainFrm
     object QMasterNPAKAN6: TFloatField
       FieldName = 'NPAKAN6'
     end
-    object QMasterNPICK2: TFloatField
-      FieldName = 'NPICK2'
-    end
   end
   object CDSQDetail: TOracleDataSet
     SQL.Strings = (
@@ -5104,7 +5091,7 @@ object DesainFrm: TDesainFrm
       03000000010000000A0000003A4E4F5F44455341494E03000000000000000000
       0000}
     QBEDefinition.QBEFieldDefs = {
-      040000001C000000070000004B445F4954454D01000000000004000000415241
+      040000001D000000070000004B445F4954454D01000000000004000000415241
       4801000000000005000000524153494F010000000000090000004E4F5F42454E
       414E47010000000000080000004B445F5741524E410100000000000500000057
       41524E41010000000000090000004E4F5F44455341494E010000000000080000
@@ -5118,7 +5105,8 @@ object DesainFrm: TDesainFrm
       000000070000004E4F5F555255540100000000000600000050544F54414C0100
       00000000070000004B47544F54414C01000000000006000000524153494F3201
       0000000000070000005448454C414932010000000000070000004B445F4B4F4E
-      56010000000000070000004E535052494E47010000000000}
+      56010000000000070000004E535052494E47010000000000080000004B4F4E56
+      45525349010000000000}
     Master = QMaster
     MasterFields = 'NO_DESAIN'
     RefreshOptions = [roAfterInsert, roAfterUpdate]
@@ -5235,12 +5223,17 @@ object DesainFrm: TDesainFrm
     object CDSQDetailTHELAI2: TFloatField
       FieldName = 'THELAI2'
     end
-    object CDSQDetailKD_KONV: TStringField
-      FieldName = 'KD_KONV'
-      Size = 5
-    end
     object CDSQDetailNSPRING: TFloatField
       FieldName = 'NSPRING'
+    end
+    object CDSQDetailKONVERSI: TFloatField
+      FieldName = 'KONVERSI'
+    end
+    object CDSQDetailPTOTAL: TFloatField
+      FieldName = 'PTOTAL'
+    end
+    object CDSQDetailKGTOTAL: TFloatField
+      FieldName = 'KGTOTAL'
     end
   end
   object QBrowse: TOracleDataSet
@@ -5355,7 +5348,6 @@ object DesainFrm: TDesainFrm
   object QBarang: TOracleDataSet
     SQL.Strings = (
       'select a.* from ipisma_db4.vmaterial a'
-      ''
       'order by a.nama_item')
     QBEDefinition.QBEFieldDefs = {
       040000001B000000070000004B445F4954454D010000000000090000004E414D
@@ -5375,8 +5367,8 @@ object DesainFrm: TDesainFrm
       534550010000000000070000004B445F4C414D41010000000000060000004953
       4A415341010000000000}
     Session = DMFrm.OS
-    Left = 368
-    Top = 392
+    Left = 352
+    Top = 384
     object QBarangNAMA_ITEM: TStringField
       DisplayLabel = 'NAMA ITEM'
       DisplayWidth = 40
@@ -7125,6 +7117,150 @@ object DesainFrm: TDesainFrm
       FieldName = 'KELOMPOK'
       Required = True
       Size = 50
+    end
+  end
+  object QKonversi2025: TOracleDataSet
+    SQL.Strings = (
+      'select a.*, a.rowid from ipisma_db4.konversi_beam_25 a'
+      'where kp=:kp and mesin=:mesin and arah=:arah'
+      'order by a.kp,a.mesin,a.arah')
+    Variables.Data = {
+      0300000003000000030000003A4B500500000005000000502E34360000000000
+      060000003A4D4553494E0500000014000000414A4C2054535544414B4F4D4120
+      504C41494E0000000000050000003A415241480500000009000000332E205041
+      4B414E0000000000}
+    QBEDefinition.QBEFieldDefs = {
+      0400000012000000040000004B4F444501000000000004000000415241480100
+      000000000600000042454E414E47010000000000050000004D4553494E010000
+      000000020000004B500100000000000500000048454C41490100000000000400
+      0000505F4C5001000000000005000000505F5352470100000000000600000050
+      5F4B4F444901000000000005000000524D5F4C50010000000000050000005741
+      5354450100000000000500000052545F4C50010000000000080000004B4F4E56
+      4552534901000000000005000000414B5449460100000000000A00000054474C
+      5F494E534552540100000000000A0000004F50525F494E534552540100000000
+      000800000054474C5F45444954010000000000080000004F50525F4544495401
+      0000000000}
+    Session = DMFrm.OS
+    Left = 212
+    Top = 473
+    object QKonversi2025MESIN: TStringField
+      DisplayWidth = 25
+      FieldName = 'MESIN'
+      Required = True
+      Size = 100
+    end
+    object QKonversi2025KP: TStringField
+      DisplayWidth = 20
+      FieldName = 'KP'
+      Required = True
+      Size = 30
+    end
+    object QKonversi2025ARAH: TStringField
+      DisplayWidth = 15
+      FieldName = 'ARAH'
+      Size = 30
+    end
+    object QKonversi2025BENANG: TStringField
+      DisplayWidth = 20
+      FieldName = 'BENANG'
+      Size = 50
+    end
+    object QKonversi2025KONVERSI: TFloatField
+      DisplayWidth = 10
+      FieldName = 'KONVERSI'
+    end
+    object QKonversi2025KODE: TStringField
+      DisplayWidth = 30
+      FieldName = 'KODE'
+      Visible = False
+      Size = 30
+    end
+    object QKonversi2025HELAI: TFloatField
+      DisplayWidth = 10
+      FieldName = 'HELAI'
+      Visible = False
+    end
+    object QKonversi2025P_LP: TFloatField
+      DisplayWidth = 10
+      FieldName = 'P_LP'
+      Visible = False
+    end
+    object QKonversi2025P_SRG: TFloatField
+      DisplayWidth = 10
+      FieldName = 'P_SRG'
+      Visible = False
+    end
+    object QKonversi2025P_KODI: TFloatField
+      DisplayWidth = 10
+      FieldName = 'P_KODI'
+      Visible = False
+    end
+    object QKonversi2025RM_LP: TFloatField
+      DisplayWidth = 10
+      FieldName = 'RM_LP'
+      Visible = False
+    end
+    object QKonversi2025WASTE: TFloatField
+      DisplayWidth = 10
+      FieldName = 'WASTE'
+      Visible = False
+    end
+    object QKonversi2025RT_LP: TFloatField
+      DisplayWidth = 10
+      FieldName = 'RT_LP'
+      Visible = False
+    end
+    object QKonversi2025AKTIF: TStringField
+      DisplayWidth = 1
+      FieldName = 'AKTIF'
+      Visible = False
+      Size = 1
+    end
+    object QKonversi2025TGL_INSERT: TDateTimeField
+      DisplayWidth = 18
+      FieldName = 'TGL_INSERT'
+      Visible = False
+    end
+    object QKonversi2025OPR_INSERT: TStringField
+      DisplayWidth = 30
+      FieldName = 'OPR_INSERT'
+      Visible = False
+      Size = 30
+    end
+    object QKonversi2025TGL_EDIT: TDateTimeField
+      DisplayWidth = 18
+      FieldName = 'TGL_EDIT'
+      Visible = False
+    end
+    object QKonversi2025OPR_EDIT: TStringField
+      DisplayWidth = 30
+      FieldName = 'OPR_EDIT'
+      Visible = False
+      Size = 30
+    end
+  end
+  object dsQKonversi2025: TwwDataSource
+    DataSet = QKonversi2025
+    Left = 900
+    Top = 385
+  end
+  object QCount: TOracleDataSet
+    SQL.Strings = (
+      'select count(*) as count from ipisma_db4.desain_detail a'
+      'where a.no_desain=:no_desain'
+      'order by a.arah, a.no_urut,a.kelompok'
+      '')
+    Variables.Data = {
+      03000000010000000A0000003A4E4F5F44455341494E03000000040000001890
+      030000000000}
+    QBEDefinition.QBEFieldDefs = {040000000100000005000000434F554E54010000000000}
+    QueryAllRecords = False
+    Session = DMFrm.OS
+    AfterScroll = QBrowseAfterScroll
+    Left = 280
+    Top = 480
+    object QCountCOUNT: TFloatField
+      FieldName = 'COUNT'
     end
   end
 end

@@ -11793,7 +11793,7 @@ object KelosMasukFrm: TKelosMasukFrm
     end
     object QBrowseKG: TFloatField
       FieldName = 'KG'
-      DisplayFormat = '#,##0.##;(#,##0.##) '
+      DisplayFormat = '#,###0.###;(#,###0.###) '
     end
     object QBrowsePCS: TFloatField
       FieldName = 'PCS'

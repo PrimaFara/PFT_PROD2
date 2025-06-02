@@ -280,6 +280,9 @@ type
     QBrowseSELISIH: TFloatField;
     QTotalSELISIH: TFloatField;
     QTotal1SELISIH: TFloatField;
+    wwDBComboBox1: TwwDBComboBox;
+    Label13: TLabel;
+    QMasterJENIS: TStringField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure BtnExportClick(Sender: TObject);
@@ -756,6 +759,12 @@ begin
         ShowMessage('TANGGAL harus diisi !');
         Abort;
      end;
+   if QMasterJENIS.AsString='' then
+      begin
+        ShowMessage('JENIS harus diisi');
+        Abort;
+      end;
+
 {     QApp.close;
      QApp.open;
    //  if  (QMasterISPOST_koreksi.AsString='0') then

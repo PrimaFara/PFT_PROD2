@@ -2363,8 +2363,13 @@ object PembelianFrm: TPembelianFrm
         GroupIndex = 1
         OnClick = MesindanAlatPertenunan1Click
       end
+      object KonversiBeamLama1: TMenuItem
+        Caption = 'Konversi Beam (Yg Dipakai Sekarang)'
+        GroupIndex = 1
+        OnClick = KonversiBeamLama1Click
+      end
       object KonversiBeam1: TMenuItem
-        Caption = 'Konversi Beam'
+        Caption = 'Konversi Beam Baru'
         GroupIndex = 1
         OnClick = KonversiBeam1Click
       end
@@ -2773,7 +2778,7 @@ object PembelianFrm: TPembelianFrm
           OnClick = HasilKain1Click
         end
         object N870TambahIsiBeam1: TMenuItem
-          Caption = '870. Tambah Isi Beam'
+          Caption = '870. Penyesuaian Isi Beam'
           OnClick = N870TambahIsiBeam1Click
         end
         object N880KoreksiMBT1: TMenuItem

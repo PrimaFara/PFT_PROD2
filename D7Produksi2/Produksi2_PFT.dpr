@@ -111,7 +111,8 @@ uses
   LokProMes_PREP in 'LokProMes_PREP.pas' {LokProMes_PREPFrm},
   MendingTenun in 'MendingTenun.pas' {MendingTenunFrm},
   HTRasio in 'HTRasio.pas' {HTRasioFrm},
-  Daftar_Op_Mending in 'Daftar_Op_mending.pas' {Daftar_Op_MendingFrm};
+  Daftar_Op_Mending in 'Daftar_Op_mending.pas' {Daftar_Op_MendingFrm},
+  KonversiBeamOLD in 'KonversiBeamOLD.pas' {KonversiBeamOLDFrm};
 
 {$R *.res}
 

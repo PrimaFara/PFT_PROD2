@@ -9905,7 +9905,7 @@ object KelosKeluarFrm: TKelosKeluarFrm
     end
     object QBrowseKG: TFloatField
       FieldName = 'KG'
-      DisplayFormat = '#,##0.##;(#,##0.##) '
+      DisplayFormat = '0.###'
     end
     object QBrowsePCS: TFloatField
       FieldName = 'PCS'
@@ -10628,10 +10628,11 @@ object KelosKeluarFrm: TKelosKeluarFrm
       00}
     BeforeQuery = QTotalBeforeQuery
     Session = DMFrm.OS
-    Left = 752
-    Top = 400
+    Left = 920
+    Top = 328
     object QBrowseTotalKG: TFloatField
       FieldName = 'KG'
+      DisplayFormat = '0.###'
     end
     object QBrowseTotalPCS: TFloatField
       FieldName = 'PCS'

@@ -78,9 +78,12 @@ begin
   finally
     Cleanup.Free;
     ShowMessage('Reset Grid Sukses !');
-ResetFrm.Close;
-PembelianFrm.close;
   end;
+
+  Close;
+//ResetFrm.Close;
+//PembelianFrm.close;
+//  end;
 end;
 
 procedure TResetFrm.FormCreate(Sender: TObject);

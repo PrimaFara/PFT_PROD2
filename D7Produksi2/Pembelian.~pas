@@ -162,6 +162,7 @@ type
     PengaturanRasio1: TMenuItem;
     Image1: TImage;
     N870TambahIsiBeam1: TMenuItem;
+    KonversiBeamLama1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure Keluar1Click(Sender: TObject);
     procedure ipeMenu1Click(Sender: TObject);

@@ -2716,7 +2716,7 @@ object DesainBeamFrm: TDesainBeamFrm
                   'OVERHOUL'
                   'RETUR/ REPROSES'
                   'LAINNYA')
-                ItemIndex = 0
+                ItemIndex = 1
                 Sorted = False
                 TabOrder = 6
                 UnboundDataType = wwDefault
@@ -2734,16 +2734,17 @@ object DesainBeamFrm: TDesainBeamFrm
               'ISPOST;CheckBox;1;0')
             Selected.Strings = (
               'TANGGAL'#9'12'#9'TANGGAL'#9'F'
-              'NO_SERI_BEAM'#9'30'#9'NO SERI BEAM'#9'F'
+              'NO_SERI_BEAM'#9'25'#9'NO SERI BEAM'#9'F'
+              'BEAM'#9'25'#9'BEAM'#9'F'#9'DESAIN'
               'ID_RAB'#9'10'#9'REG'#9'F'#9'DESAIN'
               'NO_ORDER'#9'20'#9'RESEP'#9'F'#9'DESAIN'
               'KP'#9'6'#9'KP'#9'F'#9'DESAIN'
               'KONSTRUKSI'#9'30'#9'KONSTRUKSI'#9'F'#9'DESAIN'
               'CORAK'#9'30'#9'CORAK'#9'F'#9'DESAIN'
-              'NAMA_MESIN'#9'30'#9'MESIN'#9'F'#9'DESAIN'
               'JML_POTONG'#9'10'#9'POTONG'#9'F'#9'HASIL'
               'JML_KODI'#9'10'#9'KODI'#9'F'#9'HASIL'
-              'QTY_KG'#9'10'#9'KG'#9'F'#9'HASIL')
+              'QTY_KG'#9'10'#9'KG'#9'F'#9'HASIL'
+              'NAMA_MESIN'#9'30'#9'MESIN'#9'F')
             IniAttributes.Enabled = True
             IniAttributes.SaveToRegistry = True
             IniAttributes.FileName = 'PRODUKSI2'
@@ -6321,7 +6322,7 @@ object DesainBeamFrm: TDesainBeamFrm
     Variables.Data = {
       0300000001000000080000003A4D59504152414D010000000000000000000000}
     QBEDefinition.QBEFieldDefs = {
-      040000001B0000000A0000004B4F4E535452554B534901000000000007000000
+      040000001C0000000A0000004B4F4E535452554B534901000000000007000000
       54414E4747414C0100000000000C0000004E4F5F534552495F4245414D010000
       000000080000004E4F5F4F524445520100000000000D0000004B445F4B4F4E53
       5452554B534901000000000005000000434F52414B0100000000000A0000004A
@@ -6336,7 +6337,8 @@ object DesainBeamFrm: TDesainBeamFrm
       0000005154595F4B47010000000000020000004B500100000000000B0000004A
       4D4C5F504F545F5245560100000000000500000053484946540100000000000C
       0000004A4D4C5F4B4F44495F5245560100000000000A0000005154595F4B475F
-      5245560100000000000A0000004E414D415F4D4553494E010000000000}
+      5245560100000000000A0000004E414D415F4D4553494E010000000000040000
+      004245414D010000000000}
     MasterFields = 'id_rab'
     RefreshOptions = [roAfterInsert]
     Session = DMFrm.OS
@@ -6421,6 +6423,10 @@ object DesainBeamFrm: TDesainBeamFrm
     end
     object QCekHKNAMA_MESIN: TStringField
       FieldName = 'NAMA_MESIN'
+      Size = 100
+    end
+    object QCekHKBEAM: TStringField
+      FieldName = 'BEAM'
       Size = 100
     end
   end
@@ -7524,16 +7530,19 @@ object DesainBeamFrm: TDesainBeamFrm
   object QKBeam: TOracleDataSet
     SQL.Strings = (
       'select * from IPISMA_DB4.konversi_beam a'
-      'where mesin=:mes and kp=:kprod')
+      'where mesin=:mes and kp=:kprod --and arah='#39'LUSI'#39)
     Variables.Data = {
       0300000002000000040000003A4D455305000000000000000000000006000000
       3A4B50524F44050000000000000000000000}
     QBEDefinition.QBEFieldDefs = {
-      0400000008000000040000004B4F4445010000000000050000004D4553494E01
-      0000000000020000004B5001000000000005000000524153494F010000000000
-      05000000414B54494601000000000004000000454449540100000000000A0000
-      0054474C5F494E534552540100000000000800000054474C5F45444954010000
-      000000}
+      040000000D000000040000004B4F4445010000000000050000004D4553494E01
+      0000000000020000004B5001000000000005000000414B544946010000000000
+      0A00000054474C5F494E534552540100000000000800000054474C5F45444954
+      0100000000000A0000004F50525F494E53455254010000000000080000004F50
+      525F4544495401000000000005000000524153494F0100000000000400000045
+      4449540100000000000B000000524153494F5F50414B414E0100000000000700
+      0000524D5F4C55534901000000000008000000524D5F50414B414E0100000000
+      00}
     ReadOnly = True
     QueryAllRecords = False
     Session = DMFrm.OS
@@ -7551,7 +7560,6 @@ object DesainBeamFrm: TDesainBeamFrm
     object QKBeamKP: TStringField
       FieldName = 'KP'
       Required = True
-      Size = 10
     end
     object QKBeamRASIO: TFloatField
       FieldName = 'RASIO'
@@ -7570,6 +7578,23 @@ object DesainBeamFrm: TDesainBeamFrm
     end
     object QKBeamTGL_EDIT: TDateTimeField
       FieldName = 'TGL_EDIT'
+    end
+    object QKBeamOPR_INSERT: TStringField
+      FieldName = 'OPR_INSERT'
+      Size = 30
+    end
+    object QKBeamOPR_EDIT: TStringField
+      FieldName = 'OPR_EDIT'
+      Size = 30
+    end
+    object QKBeamRASIO_PAKAN: TFloatField
+      FieldName = 'RASIO_PAKAN'
+    end
+    object QKBeamRM_LUSI: TFloatField
+      FieldName = 'RM_LUSI'
+    end
+    object QKBeamRM_PAKAN: TFloatField
+      FieldName = 'RM_PAKAN'
     end
   end
   object LookRABDlg1: TwwLookupDialog

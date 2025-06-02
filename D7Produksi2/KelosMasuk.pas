@@ -1115,7 +1115,7 @@ begin
 
       QBrowse.Refresh;
 
-      wwDBGrid2.ColumnByName('kg').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotalKG.AsFloat);
+      wwDBGrid2.ColumnByName('kg').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotalKG.AsCurrency);
       wwDBGrid2.ColumnByName('pcs').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotalPCS.AsFloat);
 
 

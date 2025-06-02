@@ -1,9 +1,9 @@
 object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
   Left = 269
   Top = 124
-  Width = 1010
-  Height = 607
-  Caption = '870. Tambah Isi Beam'
+  Width = 1368
+  Height = 922
+  Caption = '870. Penyesuaian Isi Beam'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -24,7 +24,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
   object DBText3: TDBText
     Left = 0
     Top = 49
-    Width = 994
+    Width = 1352
     Height = 27
     Align = alTop
     Alignment = taRightJustify
@@ -41,8 +41,8 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
   end
   object Label1: TLabel
     Left = 0
-    Top = 556
-    Width = 994
+    Top = 871
+    Width = 1352
     Height = 13
     Align = alBottom
     Color = clSkyBlue
@@ -51,7 +51,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
   object PanelHeader: TPanel
     Left = 0
     Top = 0
-    Width = 994
+    Width = 1352
     Height = 49
     Align = alTop
     BevelOuter = bvNone
@@ -68,8 +68,8 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
   object PageControl1: TPageControl
     Left = 0
     Top = 76
-    Width = 994
-    Height = 480
+    Width = 1352
+    Height = 795
     ActivePage = TabSheet2
     Align = alClient
     Style = tsFlatButtons
@@ -1484,7 +1484,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       object PanelMaster: TPanel
         Left = 0
         Top = 0
-        Width = 986
+        Width = 1344
         Height = 137
         Align = alTop
         BevelOuter = bvNone
@@ -1496,7 +1496,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
         ParentFont = False
         TabOrder = 0
         DesignSize = (
-          986
+          1344
           137)
         object Label6: TLabel
           Left = 8
@@ -1513,7 +1513,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
         end
         object Label9: TLabel
           Left = 9
-          Top = 16
+          Top = 7
           Width = 47
           Height = 13
           Anchors = [akLeft, akTop, akBottom]
@@ -1527,7 +1527,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
         end
         object Bevel1: TBevel
           Left = 8
-          Top = 37
+          Top = 47
           Width = 202
           Height = 10
           Anchors = [akLeft, akTop, akBottom]
@@ -1550,9 +1550,23 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           Font.Style = [fsBold]
           ParentFont = False
         end
+        object Label13: TLabel
+          Left = -556
+          Top = 31
+          Width = 30
+          Height = 13
+          Anchors = [akTop, akRight]
+          Caption = 'Jenis'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clOlive
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
         object wwDBDateTimePicker1: TwwDBDateTimePicker
           Left = 82
-          Top = 13
+          Top = 4
           Width = 128
           Height = 19
           TabStop = False
@@ -1596,20 +1610,40 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           Visible = False
           OnClick = BitBtn1Click
         end
+        object wwDBComboBox1: TwwDBComboBox
+          Left = 81
+          Top = 29
+          Width = 130
+          Height = 21
+          ShowButton = True
+          Style = csDropDown
+          MapList = False
+          AllowClearKey = False
+          DataField = 'JENIS'
+          DataSource = dsQMaster
+          DropDownCount = 8
+          ItemHeight = 0
+          Items.Strings = (
+            'UPDATE'
+            'OLOR')
+          Sorted = False
+          TabOrder = 3
+          UnboundDataType = wwDefault
+        end
       end
       object PanelDetail: TPanel
         Left = 0
         Top = 178
-        Width = 986
-        Height = 230
+        Width = 1344
+        Height = 545
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 2
         object wwDBGrid1: TwwDBGrid
           Left = 0
           Top = 0
-          Width = 986
-          Height = 230
+          Width = 1344
+          Height = 545
           ControlType.Strings = (
             'KD_SUB_LOKASI2;CustomEdit;LookLokasi2;F'
             'KETERANGAN;CustomEdit;LookItem;F'
@@ -1620,7 +1654,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
             'NO_SERI_BEAM'#9'30'#9'NO_SERI_BEAM'#9'F'
             'MESIN'#9'30'#9'MESIN'#9'F'
             'PCS'#9'10'#9'AWAL'#9'T'#9'JML POTONG'
-            'SELISIH'#9'10'#9'TAMBAHAN'#9'F'#9'JML POTONG'
+            'SELISIH'#9'10'#9'PENYESUAIAN'#9'F'#9'JML POTONG'
             'PCS_REV'#9'10'#9'AKHIR'#9'T'#9'JML POTONG')
           IniAttributes.Enabled = True
           IniAttributes.Delimiter = ';;'
@@ -1688,17 +1722,17 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       end
       object PanelFooter1: TPanel
         Left = 0
-        Top = 408
-        Width = 986
+        Top = 723
+        Width = 1344
         Height = 41
         Align = alBottom
         BevelOuter = bvNone
         TabOrder = 3
         DesignSize = (
-          986
+          1344
           41)
         object BtnPrintInput: TBitBtn
-          Left = 808
+          Left = 1166
           Top = 6
           Width = 75
           Height = 25
@@ -1710,7 +1744,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           NumGlyphs = 2
         end
         object BtnClose1: TBitBtn
-          Left = 888
+          Left = 1246
           Top = 6
           Width = 75
           Height = 25
@@ -1822,7 +1856,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           end
         end
         object CheckBox2: TCheckBox
-          Left = 745
+          Left = 1103
           Top = 11
           Width = 60
           Height = 17
@@ -1837,17 +1871,17 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       object PanelBand: TPanel
         Left = 0
         Top = 137
-        Width = 986
+        Width = 1344
         Height = 41
         Align = alTop
         BevelOuter = bvNone
         Color = clSkyBlue
         TabOrder = 1
         DesignSize = (
-          986
+          1344
           41)
         object Label14: TLabel
-          Left = 913
+          Left = 1271
           Top = 2
           Width = 43
           Height = 13
@@ -1913,7 +1947,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           Caption = 'Tgl_Insert'
         end
         object wwDBSpinLine1: TwwDBSpinEdit
-          Left = 913
+          Left = 1271
           Top = 18
           Width = 41
           Height = 21
@@ -2013,7 +2047,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       object LabelBanner: TLabel
         Left = 0
         Top = 57
-        Width = 986
+        Width = 1344
         Height = 13
         Align = alTop
         Color = clSkyBlue
@@ -2022,13 +2056,13 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       object PanelFilter: TPanel
         Left = 0
         Top = 0
-        Width = 986
+        Width = 1344
         Height = 57
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 0
         DesignSize = (
-          986
+          1344
           57)
         object Label2: TLabel
           Left = 128
@@ -2052,7 +2086,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           Caption = 'Tgl. Akhir'
         end
         object Label5: TLabel
-          Left = 922
+          Left = 1280
           Top = 16
           Width = 43
           Height = 13
@@ -2143,7 +2177,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           NumGlyphs = 2
         end
         object wwDBSpinLine2: TwwDBSpinEdit
-          Left = 922
+          Left = 1280
           Top = 32
           Width = 41
           Height = 21
@@ -2183,23 +2217,24 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       object PanelBrowse: TPanel
         Left = 0
         Top = 70
-        Width = 986
-        Height = 338
+        Width = 1344
+        Height = 653
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 1
         object wwDBGrid2: TwwDBGrid
           Left = 0
           Top = 0
-          Width = 986
-          Height = 338
+          Width = 1344
+          Height = 653
           Selected.Strings = (
-            'NO_NOTA'#9'14'#9'NO NOTA'#9'F'
             'TANGGAL'#9'12'#9'TANGGAL'#9'F'
-            'KETERANGAN'#9'30'#9'KETERANGAN'#9'F'
+            'NO_NOTA'#9'14'#9'NO NOTA'#9'F'
+            'NO_SERI_BEAM'#9'30'#9'NO_SERI_BEAM'#9'F'
             'PCS'#9'10'#9'AWAL'#9'F'#9'JML POTONG'
-            'SELISIH'#9'10'#9'TAMBAHAN'#9'F'#9'JML POTONG'
+            'SELISIH'#9'10'#9'PENYESUAIAN'#9'F'#9'JML POTONG'
             'PCS_REV'#9'10'#9'AKHIR'#9'F'#9'JML POTONG'
+            'KETERANGAN'#9'30'#9'KETERANGAN'#9'F'
             'TGL_INSERT'#9'18'#9'TGL_INSERT'#9'F'
             'OPR_INSERT'#9'18'#9'OPR_INSERT'#9'F')
           IniAttributes.Enabled = True
@@ -2240,17 +2275,17 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       end
       object PanelFooter2: TPanel
         Left = 0
-        Top = 408
-        Width = 986
+        Top = 723
+        Width = 1344
         Height = 41
         Align = alBottom
         BevelOuter = bvNone
         TabOrder = 2
         DesignSize = (
-          986
+          1344
           41)
         object BtnClose2: TBitBtn
-          Left = 890
+          Left = 1248
           Top = 8
           Width = 75
           Height = 25
@@ -2280,8 +2315,8 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       object wwDBRichEdit1: TwwDBRichEdit
         Left = 0
         Top = 0
-        Width = 986
-        Height = 449
+        Width = 1344
+        Height = 764
         Align = alClient
         AutoURLDetect = False
         Color = clInfoBk
@@ -3494,8 +3529,8 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       object wwDBGrid3: TwwDBGrid
         Left = 0
         Top = 65
-        Width = 986
-        Height = 343
+        Width = 1344
+        Height = 658
         Selected.Strings = (
           'NIK_LAMA'#9'12'#9'NIK'#9'F'
           'NAMA_OPR'#9'30'#9'NAMA OPERATOR'#9'F'
@@ -3538,16 +3573,16 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 986
+        Width = 1344
         Height = 65
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 1
         DesignSize = (
-          986
+          1344
           65)
         object Label12: TLabel
-          Left = 741
+          Left = 1099
           Top = 14
           Width = 43
           Height = 13
@@ -3602,7 +3637,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           Caption = 'Tgl. Akhir'
         end
         object wwDBSpinEdit1: TwwDBSpinEdit
-          Left = 741
+          Left = 1099
           Top = 30
           Width = 41
           Height = 21
@@ -3696,17 +3731,17 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       end
       object Panel2: TPanel
         Left = 0
-        Top = 408
-        Width = 986
+        Top = 723
+        Width = 1344
         Height = 41
         Align = alBottom
         BevelOuter = bvNone
         TabOrder = 3
         DesignSize = (
-          986
+          1344
           41)
         object BitBtn5: TBitBtn
-          Left = 618
+          Left = 976
           Top = 8
           Width = 75
           Height = 25
@@ -3717,7 +3752,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           NumGlyphs = 2
         end
         object BitBtn3: TBitBtn
-          Left = 539
+          Left = 897
           Top = 8
           Width = 75
           Height = 25
@@ -3728,7 +3763,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           NumGlyphs = 2
         end
         object cbPreview: TCheckBox
-          Left = 476
+          Left = 834
           Top = 12
           Width = 60
           Height = 17
@@ -3756,12 +3791,12 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
     SequenceField.Sequence = 'ipisma_db4.ibukti'
     SequenceField.ApplyMoment = amOnNewRecord
     QBEDefinition.QBEFieldDefs = {
-      0400000009000000070000004E4F5F4E4F54410100000000000C0000004B445F
+      040000000A000000070000004E4F5F4E4F54410100000000000C0000004B445F
       5452414E53414B53490100000000000A0000004B45544552414E47414E010000
       0000000A00000054474C5F494E534552540100000000000A0000004F50525F49
       4E53455254010000000000060000004953504F5354010000000000080000004E
       4F5F42554B54490100000000000700000054414E4747414C0100000000000600
-      00004E4F5F524547010000000000}
+      00004E4F5F524547010000000000050000004A454E4953010000000000}
     RefreshOptions = [roAfterInsert]
     Session = DMFrm.OS
     BeforeInsert = QMasterBeforeInsert
@@ -3806,6 +3841,10 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
     object QMasterOPR_INSERT: TStringField
       FieldName = 'OPR_INSERT'
       Size = 30
+    end
+    object QMasterJENIS: TStringField
+      FieldName = 'JENIS'
+      Size = 25
     end
   end
   object dsQMaster: TwwDataSource

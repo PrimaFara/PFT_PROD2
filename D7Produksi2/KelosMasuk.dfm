@@ -1771,7 +1771,7 @@ object KelosMasukFrm: TKelosMasukFrm
         Frame.DrawRight = False
         Size.Values = (
           52.916666666666670000
-          806.979166666666800000
+          806.979166666666700000
           2.645833333333333000
           399.520833333333400000)
         Alignment = taLeftJustify
@@ -1940,7 +1940,7 @@ object KelosMasukFrm: TKelosMasukFrm
         Frame.DrawRight = False
         Size.Values = (
           44.979166666666670000
-          18.520833333333330000
+          18.520833333333340000
           5.291666666666667000
           201.083333333333300000)
         Alignment = taRightJustify
@@ -11793,7 +11793,7 @@ object KelosMasukFrm: TKelosMasukFrm
     end
     object QBrowseKG: TFloatField
       FieldName = 'KG'
-      DisplayFormat = '#,##0.##;(#,##0.##) '
+      DisplayFormat = '0.###'
     end
     object QBrowsePCS: TFloatField
       FieldName = 'PCS'
@@ -12417,7 +12417,9 @@ object KelosMasukFrm: TKelosMasukFrm
   end
   object QBrowseTotal: TOracleDataSet
     SQL.Strings = (
-      'select sum(kg) as kg, sum(pcs) as pcs'
+      'select --sum(kg) as kg, '
+      'ROUND(SUM(kg), 2) as kg,'
+      'sum(pcs) as pcs'
       'from ipisma_db4.vkelos_masuk'
       'where tanggal>=:pawal and tanggal<=:pakhir'
       ':porder')
@@ -12434,6 +12436,7 @@ object KelosMasukFrm: TKelosMasukFrm
     Top = 272
     object QBrowseTotalKG: TFloatField
       FieldName = 'KG'
+      DisplayFormat = '0.###'
     end
     object QBrowseTotalPCS: TFloatField
       FieldName = 'PCS'

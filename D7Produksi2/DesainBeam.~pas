@@ -784,14 +784,6 @@ type
     QMasterBEAM: TStringField;
     wwDBComboBox5: TwwDBComboBox;
     QKBeam: TOracleDataSet;
-    QKBeamKODE: TStringField;
-    QKBeamMESIN: TStringField;
-    QKBeamKP: TStringField;
-    QKBeamRASIO: TFloatField;
-    QKBeamAKTIF: TStringField;
-    QKBeamEDIT: TStringField;
-    QKBeamTGL_INSERT: TDateTimeField;
-    QKBeamTGL_EDIT: TDateTimeField;
     LookRABDlg1: TwwLookupDialog;
     LookResep: TwwDBLookupComboDlg;
     QDesainNO_DESAIN: TFloatField;
@@ -861,6 +853,20 @@ type
     QCek_Pros_dlm: TOracleDataSet;
     QCek_Pros_dlmPROS_DLM: TFloatField;
     BitBtn39: TBitBtn;
+    QKBeamKODE: TStringField;
+    QKBeamMESIN: TStringField;
+    QKBeamKP: TStringField;
+    QKBeamRASIO: TFloatField;
+    QKBeamAKTIF: TStringField;
+    QKBeamEDIT: TStringField;
+    QKBeamTGL_INSERT: TDateTimeField;
+    QKBeamTGL_EDIT: TDateTimeField;
+    QKBeamOPR_INSERT: TStringField;
+    QKBeamOPR_EDIT: TStringField;
+    QKBeamRASIO_PAKAN: TFloatField;
+    QKBeamRM_LUSI: TFloatField;
+    QKBeamRM_PAKAN: TFloatField;
+    QCekHKBEAM: TStringField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure TabSheet1Show(Sender: TObject);
@@ -1553,8 +1559,10 @@ begin
   wwdbedit13.Text:=floattostr(b);
 
   if QKBeamRASIO.AsFloat>0 then
+  //if QKBeamRT_LP.AsFloat>0 then  konversi baru blm dipakai
   begin
     d:=b*QKBeamRASIO.AsFloat;
+    //d:=b*QKBeamRT_LP.AsFloat;  konversi baru blm dipakai
     wwDBEdit34.Text:=FloatToStr(d);
   end;
   QMaster.Post;

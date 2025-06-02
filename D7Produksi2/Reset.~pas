@@ -53,9 +53,33 @@ begin
     Cleanup.DeleteKey(key);
   finally
     Cleanup.Free;
+  end;
+
+  key := 'D:';
+  Cleanup := TRegistry.Create;
+  try
+    Cleanup.DeleteKey(key);
+  finally
+    Cleanup.Free;
+  end;
+
+  key := 'Pismatex Master';
+  Cleanup := TRegistry.Create;
+  try
+    Cleanup.DeleteKey(key);
+  finally
+    Cleanup.Free;
+  end;
+
+  key := 'Cipsoft_GL';
+  Cleanup := TRegistry.Create;
+  try
+    Cleanup.DeleteKey(key);
+  finally
+    Cleanup.Free;
     ShowMessage('Reset Grid Sukses !');
 ResetFrm.Close;
-PembelianFrm.close;
+//PembelianFrm.close;
   end;
 end;
 

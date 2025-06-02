@@ -162,6 +162,7 @@ type
     PengaturanRasio1: TMenuItem;
     Image1: TImage;
     N870TambahIsiBeam1: TMenuItem;
+    KonversiBeamLama1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure Keluar1Click(Sender: TObject);
     procedure ipeMenu1Click(Sender: TObject);
@@ -288,6 +289,7 @@ type
     procedure N853MendingTenun1Click(Sender: TObject);
     procedure PengaturanRasio1Click(Sender: TObject);
     procedure N870TambahIsiBeam1Click(Sender: TObject);
+    procedure KonversiBeamLama1Click(Sender: TObject);
 
 
 
@@ -328,7 +330,7 @@ uses DM, TipeMenu, HakMenu, OrganisasiItem, OrganisasiLokasi,
   ProsesKanji, PermintaanUnpost, Unpost, KonversiBeam,SisaProsesWarping,
   PermintaanKoreksi_warping, PermintaanKoreksi_Kanji, DesainBeamTenun,ValidasiPenyerahanBB1,
   PermintaanKoreksi_MBT, LokProMes_TN, LokProMes_PREP, Mending_OP,
-  MendingTenun, HTRasio, Daftar_Op_Mending, TambIsiBeamTn;
+  MendingTenun, HTRasio, Daftar_Op_Mending, TambIsiBeamTn, KonversiBeamOLD;
 
 {$R *.dfm}
 
@@ -1387,6 +1389,12 @@ procedure TPembelianFrm.N870TambahIsiBeam1Click(Sender: TObject);
 begin
   if TambIsiBeamTnFrm=nil then TambIsiBeamTnFrm:=TTambIsiBeamTnFrm.Create(Application);
   TambIsiBeamTnFrm.Show;
+end;
+
+procedure TPembelianFrm.KonversiBeamLama1Click(Sender: TObject);
+begin
+  if KonversiBeamOLDFrm=nil then KonversiBeamOLDFrm:=TKonversiBeamOLDFrm.Create(Application);
+  KonversiBeamOLDFrm.Show;
 end;
 
 end.

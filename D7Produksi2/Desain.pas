@@ -451,8 +451,6 @@ type
     QKonversiGRAM: TFloatField;
     dsQKonversi: TwwDataSource;
     wwDBGrid3: TwwDBGrid;
-    CDSQDetailKD_KONV: TStringField;
-    LookKonversi: TwwDBLookupComboDlg;
     TabSheet5: TTabSheet;
     wwDBGrid4: TwwDBGrid;
     Ds_Qkp: TwwDataSource;
@@ -530,7 +528,7 @@ type
  //   QKPKSTATUS: TFloatField;
     QKPKMUTU: TStringField;
     LookKons: TwwDBLookupComboDlg;
-    QLookKons: TOracleDataSet;
+ //   QLookKons: TOracleDataSet;
     QLookKonsKD_KONSTRUKSI: TStringField;
     QLookKonsNAMA_KONSTRUKSI: TStringField;
     QLookKonsSUB_KELOMPOK: TStringField;
@@ -690,8 +688,32 @@ type
     BtnSimpan2: TBitBtn;
     BitBtn17: TBitBtn;
     wwDBGrid12: TwwDBGrid;
-    wwDBEdit27: TwwDBEdit;
-    QMasterNPICK2: TFloatField;
+    QKonversi2025: TOracleDataSet;
+    QKonversi2025KODE: TStringField;
+    QKonversi2025MESIN: TStringField;
+    QKonversi2025KP: TStringField;
+    QKonversi2025ARAH: TStringField;
+    QKonversi2025BENANG: TStringField;
+    QKonversi2025HELAI: TFloatField;
+    QKonversi2025P_LP: TFloatField;
+    QKonversi2025P_SRG: TFloatField;
+    QKonversi2025P_KODI: TFloatField;
+    QKonversi2025RM_LP: TFloatField;
+    QKonversi2025WASTE: TFloatField;
+    QKonversi2025RT_LP: TFloatField;
+    QKonversi2025KONVERSI: TFloatField;
+    QKonversi2025AKTIF: TStringField;
+    QKonversi2025TGL_INSERT: TDateTimeField;
+    QKonversi2025OPR_INSERT: TStringField;
+    QKonversi2025TGL_EDIT: TDateTimeField;
+    QKonversi2025OPR_EDIT: TStringField;
+    LookKonv25: TwwDBLookupComboDlg;
+    dsQKonversi2025: TwwDataSource;
+    CDSQDetailKONVERSI: TFloatField;
+    CDSQDetailPTOTAL: TFloatField;
+    CDSQDetailKGTOTAL: TFloatField;
+    QCount: TOracleDataSet;
+    QCountCOUNT: TFloatField;
     procedure wwDBLookupComboDlg1Enter(Sender: TObject);
     procedure wwDBLookupComboDlg1CloseUp(Sender: TObject; LookupTable,
       FillTable: TDataSet; modified: Boolean);
@@ -832,6 +854,10 @@ type
     procedure wwDBGrid12TitleButtonClick(Sender: TObject;
       AFieldName: String);
     procedure BitBtn17Click(Sender: TObject);
+    procedure LookKonv25CloseUp(Sender: TObject; LookupTable,
+      FillTable: TDataSet; modified: Boolean);
+    procedure LookKonv25Enter(Sender: TObject);
+
 
   private
     { Private declarations }
@@ -982,6 +1008,7 @@ begin
 //  QMastertgl.AsDateTime:=DMFrm.QUsertgl_login.AsDateTime;
   QMastertgl.AsDateTime:=DMFrm.QTimeJAM.AsDateTime;
   QMasterPROPORSI.AsFloat:=100;
+  wwDBEdit26.Text:='';  //190525
 end;
 
 procedure TDesainFrm.BitBtnPostingClick(Sender: TObject);
@@ -1193,9 +1220,7 @@ begin
   //QBrowseCob.close;
   QBarang.Open;
   //QBrowseCob.open
-
   end;
-
 end;
 
 procedure TDesainFrm.TitleBand1BeforePrint(Sender: TQRCustomBand;
@@ -1593,9 +1618,10 @@ procedure TDesainFrm.wwDBGrid2CalcCellColors(Sender: TObject;
 begin
   if not Highlight then
   begin
-      if (Field.FieldName='ARAH') or
+      if (Field.FieldName='KGTOTAL') or (Field.FieldName='ARAH') or
          (Field.FieldName='KELOMPOK') or
          (Field.FieldName='NHELAI') or
+         (Field.FieldName='KD_WARNA') or
          (Field.FieldName='KD_ITEM') then
       begin
         ABrush.Color:=clWhite;
@@ -1715,6 +1741,8 @@ begin
 end;
 
 procedure TDesainFrm.Button2Click(Sender: TObject);
+var
+  i : integer;
 begin
 //ShowMessage('Pastikan KP, Resep, Corak dan Konstruksi sudah benar. . .');   //+ 090224  //tutup 140524
   if QMaster.State<>dsBrowse then
@@ -1726,6 +1754,19 @@ begin
   QHitung.SetVariable('no_desain',QMasterNO_DESAIN.AsInteger);
   QHitung.Execute;
   TabSheet1Show(nil);
+
+{  i:=0;
+       // CDSQDetail.DisableControls;
+  while not CDSQDetail.Eof do
+    begin
+        i:=i+1;
+        ShowMessage(CDSQDetailKONVERSI.AsString + ' ' + QMasterJML_KODI.AsString + ' ' + CDSQDetailNHELAI.AsString);
+        CDSQDetailKGTOTAL.AsInteger:=CDSQDetailKONVERSI.AsInteger * QMasterJML_KODI.AsInteger * CDSQDetailNHELAI.AsInteger;
+        CDSQDetail.Next;
+    end;
+        //CDSQDetail.EnableControls;
+        CDSQDetail.Close;
+        CDSQDetail.Open;  }
 
 end;
 
@@ -1979,7 +2020,7 @@ begin
 if wwDBDateTimePicker3.Date >= StrToDate('01/01/2017') then
 begin
   QBarang.Close;
-  QBarang.SQL.Text:='select a.* from ipisma_db4.vmaterial_baru a';
+  QBarang.SQL.Text:='select a.* from ipisma_db4.vmaterial_baru a order by nama_item';
   QBarang.Open;
 //  ShowMessage(QBarangRASIO.AsString);
 //  ShowMessage(QBarangRASIO_CONES.AsString);
@@ -2019,8 +2060,8 @@ end;
 
 procedure TDesainFrm.LookKonsEnter(Sender: TObject);
 begin
-QLookKons.Close;
-QLookKons.Open;
+//QLookKons.Close;
+//QLookKons.Open;
 end;
 
 procedure TDesainFrm.LookKonsCloseUp(Sender: TObject; LookupTable,
@@ -2383,14 +2424,20 @@ end;
 
 
 procedure TDesainFrm.LookKPCloseUp(Sender: TObject; LookupTable,
-  FillTable: TDataSet; modified: Boolean);
+  FillTable: TDataSet; modified: Boolean);      //add 150824
 begin
 //LookKPDlg.Execute;
   if modified then
   begin
   QMasterKD_KONSTRUKSI.AsString:=QLook_KPKD_KONSTRUKSI.AsString;
   QMasterKONSTRUKSI.AsString:=QLook_KPNAMA_KONSTRUKSI.AsString;
-  end//add 150824
+    QMasterKP.AsString:=QLook_KPKP.AsString;  //add 310525
+    QKEL_KP.Close;
+    QKEL_KP.SetVariable('kp',QMasterKP.AsString);
+    QKEL_KP.Open;
+    wwDBEdit26.Text:=QKEL_KPKELOMPOK.AsString;    //add 310525
+
+  end
 end;
 
 procedure TDesainFrm.BtnFindClick(Sender: TObject);
@@ -2801,6 +2848,33 @@ end;
           end
         else
           ShowMessage('Tabel belum di-OPEN !');
+end;
+
+procedure TDesainFrm.LookKonv25CloseUp(Sender: TObject; LookupTable,
+  FillTable: TDataSet; modified: Boolean);
+begin
+  CDSQDetailKONVERSI.AsString:=QKonversi2025KONVERSI.AsString;
+  
+end;
+
+procedure TDesainFrm.LookKonv25Enter(Sender: TObject);
+var
+ varah: String;
+begin
+  QKonversi2025.Close;
+  //QKonversi2025.SetVariable('kp',QMasterKP.AsString);
+    QKEL_KP.Close;
+    QKEL_KP.SetVariable('kp',QMasterKP.AsString);
+    QKEL_KP.Open;
+    QKonversi2025.SetVariable('kp',QKEL_KPKELOMPOK.AsString);    //add 310525
+  QKonversi2025.SetVariable('mesin',QMasterBEAM.AsString);
+  if Copy(CDSQDetailARAH.AsString, 4, 2) = 'LU' then varah:='LUSI'
+  else
+  if Copy(CDSQDetailARAH.AsString, 4, 2) = 'DO' then varah:='DOBBY'
+  else
+  varah:='PAKAN';
+  QKonversi2025.SetVariable('arah', varah);
+  QKonversi2025.Open;
 end;
 
 end.

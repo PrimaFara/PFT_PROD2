@@ -280,6 +280,9 @@ type
     QBrowseSELISIH: TFloatField;
     QTotalSELISIH: TFloatField;
     QTotal1SELISIH: TFloatField;
+    wwDBComboBox1: TwwDBComboBox;
+    Label13: TLabel;
+    QMasterJENIS: TStringField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure BtnExportClick(Sender: TObject);
@@ -756,6 +759,12 @@ begin
         ShowMessage('TANGGAL harus diisi !');
         Abort;
      end;
+   if QMasterJENIS.AsString='' then
+      begin
+        ShowMessage('JENIS harus diisi');
+        Abort;
+      end;
+
 {     QApp.close;
      QApp.open;
    //  if  (QMasterISPOST_koreksi.AsString='0') then
@@ -1139,8 +1148,8 @@ procedure TTambIsiBeamTnFrm.BitBtn4Click(Sender: TObject);
 begin
      DMFrm.SaveDialog1.DefaultExt:='XLK';
      DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
-     DMFrm.SaveDialog1.FileName:='Browse Tambah Isi Weaving';
-     wwDBGrid2.ExportOptions.TitleName:='Browse Tambah Isi Weaving';
+     DMFrm.SaveDialog1.FileName:='Daftar Tambah Isi Beam';
+     wwDBGrid2.ExportOptions.TitleName:='Daftar Tambah Isi Beam';
        if DMFrm.SaveDialog1.Execute then
         begin
          try
