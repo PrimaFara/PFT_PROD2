@@ -2735,16 +2735,16 @@ object DesainBeamFrm: TDesainBeamFrm
             Selected.Strings = (
               'TANGGAL'#9'12'#9'TANGGAL'#9'F'
               'NO_SERI_BEAM'#9'25'#9'NO SERI BEAM'#9'F'
-              'BEAM'#9'25'#9'BEAM'#9'F'#9'DESAIN'
               'ID_RAB'#9'10'#9'REG'#9'F'#9'DESAIN'
               'NO_ORDER'#9'20'#9'RESEP'#9'F'#9'DESAIN'
               'KP'#9'6'#9'KP'#9'F'#9'DESAIN'
               'KONSTRUKSI'#9'30'#9'KONSTRUKSI'#9'F'#9'DESAIN'
               'CORAK'#9'30'#9'CORAK'#9'F'#9'DESAIN'
+              'BEAM'#9'25'#9'MESIN'#9'F'#9'DESAIN'
+              'NAMA_MESIN'#9'30'#9'MESIN~SIZING'#9'F'
               'JML_POTONG'#9'10'#9'POTONG'#9'F'#9'HASIL'
               'JML_KODI'#9'10'#9'KODI'#9'F'#9'HASIL'
-              'QTY_KG'#9'10'#9'KG'#9'F'#9'HASIL'
-              'NAMA_MESIN'#9'30'#9'MESIN'#9'F')
+              'QTY_KG'#9'10'#9'KG'#9'F'#9'HASIL')
             IniAttributes.Enabled = True
             IniAttributes.SaveToRegistry = True
             IniAttributes.FileName = 'PRODUKSI2'

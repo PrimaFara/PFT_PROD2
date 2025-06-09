@@ -391,6 +391,24 @@ type
     BitBtn12: TBitBtn;
     QUpdate2: TOracleQuery;
     QTutupTahun: TOracleQuery;
+    CbRwyt: TCheckBox;
+    BtnExpRwyt: TBitBtn;
+    Label24: TLabel;
+    DBText2: TDBText;
+    QRiwayatTransaksi: TOracleDataSet;
+    dsQRiwayatTransaksi: TwwDataSource;
+    wwDBGrid4: TwwDBGrid;
+    QRiwayatTransaksiKD_TRANSAKSI: TStringField;
+    QRiwayatTransaksiNO_NOTA: TStringField;
+    QRiwayatTransaksiTGL: TDateTimeField;
+    QRiwayatTransaksiDISKRIPSI: TStringField;
+    QRiwayatTransaksiKD_ITEM: TStringField;
+    QRiwayatTransaksiKD_WARNA: TStringField;
+    QRiwayatTransaksiQTY_IN: TFloatField;
+    QRiwayatTransaksiQTY_OUT: TFloatField;
+    QRiwayatTransaksiTGL_INSERT: TDateTimeField;
+    QRiwayatTransaksiNAMA_TRANSAKSI: TStringField;
+    QRiwayatTransaksiKETERANGAN: TStringField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -415,6 +433,8 @@ type
     procedure SpinEdit1Change(Sender: TObject);
     procedure BitBtn12Click(Sender: TObject);
     procedure QUpdate2BeforeQuery(Sender: TOracleQuery);
+    procedure CbRwytClick(Sender: TObject);
+    procedure BtnExpRwytClick(Sender: TObject);
   private
     { Private declarations }
     vrasio, vrasio3: real;
@@ -883,6 +903,57 @@ QUpdate2.SQL.Text :=
     'WHEN NOT MATCHED THEN ' +
     '  INSERT (tahun, nama_item, ' + QUpdate2.GetVariable('myparam') + ') ' +
     '  VALUES (s.tahun, s.nama_item, s.qty)';
+end;
+
+procedure TInfoStokKelos_2Frm.CbRwytClick(Sender: TObject);
+begin
+  if CbRwyt.Checked then
+    begin
+      wwDBGrid4.BringToFront;
+      Label24.Visible:=TRUE;
+      DBText2.Visible:=TRUE;
+      BtnExpRwyt.Visible:=TRUE;
+      QRiwayatTransaksi.DisableControls;
+      QRiwayatTransaksi.Close;
+      QRiwayatTransaksi.SetVariable('diskripsi',QStok2NAMA_ITEM.AsString);
+      QRiwayatTransaksi.SetVariable('pawal',trunc(VTglAwal2.Date));
+      QRiwayatTransaksi.SetVariable('pakhir',trunc(VTglAkhir2.Date)+1-1/86400);
+      QRiwayatTransaksi.SetVariable('myparam', 'order by tgl, tgl_insert asc');
+      QRiwayatTransaksi.Open;
+      QRiwayatTransaksi.EnableControls;
+    end
+  else
+      begin
+      wwDBGrid4.SendToBack;
+      Label24.Visible:=False;
+      DBText2.Visible:=False;
+      BtnExpRwyt.Visible:=False;
+    end
+end;
+
+procedure TInfoStokKelos_2Frm.BtnExpRwytClick(Sender: TObject);
+begin
+ if QRiwayatTransaksi.Active then
+     begin
+       DMFrm.SaveDialog1.DefaultExt:='XLK';
+       DMFrm.SaveDialog1.Filter:='Excel files (*.XLK)|*.XLK';
+       DMFrm.SaveDialog1.FileName:='Riwayat Transaksi Kelos';
+       wwDBGrid4.ExportOptions.TitleName:='Riwayat Transaksi Kelos';
+       if (DMFrm.SaveDialog1.Execute)then
+          begin
+           try
+            wwDBGrid4.ExportOptions.FileName:=DMFrm.SaveDialog1.FileName;
+             // PanelTunggu.BringToFront;
+            wwDBGrid4.ExportOptions.Save;
+            wwDBGrid4.BringToFront;
+            ShowMessage('Simpan Sukses !');
+            except
+            ShowMessage('Simpan Gagal!!');
+            end;
+           end;
+       end
+       else
+         ShowMessage('Tabel belum di-OPEN !');
 end;
 
 end.

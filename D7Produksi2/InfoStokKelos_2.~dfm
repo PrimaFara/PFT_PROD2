@@ -1,8 +1,8 @@
 object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
-  Left = 195
+  Left = 380
   Top = 126
-  Width = 1174
-  Height = 604
+  Width = 1544
+  Height = 808
   Caption = 'MUTASI BENANG DI UNIT KELOS'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -22,8 +22,8 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
   TextHeight = 13
   object Panel2: TPanel
     Left = 0
-    Top = 525
-    Width = 1158
+    Top = 729
+    Width = 1528
     Height = 41
     Align = alBottom
     TabOrder = 1
@@ -71,8 +71,8 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 1158
-    Height = 525
+    Width = 1528
+    Height = 729
     ActivePage = TabSheet3
     Align = alClient
     TabOrder = 0
@@ -10235,7 +10235,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
       object Panel5: TPanel
         Left = 0
         Top = 0
-        Width = 1150
+        Width = 1520
         Height = 52
         Align = alTop
         BevelInner = bvLowered
@@ -10341,7 +10341,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
         object Panel6: TPanel
           Left = 385
           Top = 2
-          Width = 816
+          Width = 1040
           Height = 48
           Align = alLeft
           BevelOuter = bvNone
@@ -10364,7 +10364,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             OnClick = vOperand1Click
           end
           object Label1: TLabel
-            Left = 414
+            Left = 718
             Top = 24
             Width = 115
             Height = 17
@@ -10380,9 +10380,33 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             ParentFont = False
             OnClick = vOperand1Click
           end
+          object Label24: TLabel
+            Left = 536
+            Top = 6
+            Width = 25
+            Height = 13
+            Caption = 'Kode'
+            Visible = False
+          end
+          object DBText2: TDBText
+            Left = 536
+            Top = 21
+            Width = 79
+            Height = 22
+            Cursor = crHandPoint
+            AutoSize = True
+            DataField = 'DISKRIPSI'
+            DataSource = dsQRiwayatTransaksi
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clGreen
+            Font.Height = -19
+            Font.Name = 'Arial'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
           object dbcField1: TwwDBComboBox
-            Left = 744
-            Top = 15
+            Left = 904
+            Top = 23
             Width = 137
             Height = 19
             ShowButton = True
@@ -10448,8 +10472,8 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             TabOrder = 2
           end
           object cbOtomatis: TCheckBox
-            Left = 743
-            Top = 5
+            Left = 903
+            Top = 13
             Width = 98
             Height = 17
             Caption = 'Cari &Otomatis'
@@ -10462,7 +10486,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Top = 20
             Width = 97
             Height = 25
-            Caption = '&Export2Excel'
+            Caption = '&Export2'
             TabOrder = 5
             OnClick = BitBtn11Click
             Glyph.Data = {
@@ -10490,7 +10514,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             OnClick = CBstok2Click
           end
           object SpinEdit1: TSpinEdit
-            Left = 531
+            Left = 835
             Top = 19
             Width = 36
             Height = 26
@@ -10506,13 +10530,46 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Value = 1
             OnChange = SpinEdit1Change
           end
+          object CbRwyt: TCheckBox
+            Left = 400
+            Top = 5
+            Width = 112
+            Height = 17
+            Caption = 'Riwayat Transaksi'
+            TabOrder = 8
+            OnClick = CbRwytClick
+          end
+          object BtnExpRwyt: TBitBtn
+            Left = 400
+            Top = 21
+            Width = 97
+            Height = 25
+            Caption = '&Export Riwayat'
+            TabOrder = 9
+            Visible = False
+            OnClick = BtnExpRwytClick
+            Glyph.Data = {
+              76010000424D7601000000000000760000002800000020000000100000000100
+              04000000000000010000120B0000120B00001000000000000000000000000000
+              800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+              333333FFFFFFFFFFFFF33000077777770033377777777777773F000007888888
+              00037F3337F3FF37F37F00000780088800037F3337F77F37F37F000007800888
+              00037F3337F77FF7F37F00000788888800037F3337777777337F000000000000
+              00037F3FFFFFFFFFFF7F00000000000000037F77777777777F7F000FFFFFFFFF
+              00037F7F333333337F7F000FFFFFFFFF00037F7F333333337F7F000FFFFFFFFF
+              00037F7F333333337F7F000FFFFFFFFF00037F7F333333337F7F000FFFFFFFFF
+              00037F7F333333337F7F000FFFFFFFFF07037F7F33333333777F000FFFFFFFFF
+              0003737FFFFFFFFF7F7330099999999900333777777777777733}
+            NumGlyphs = 2
+          end
         end
       end
       object wwDBGrid3: TwwDBGrid
         Left = 0
         Top = 52
-        Width = 1150
-        Height = 445
+        Width = 1520
+        Height = 649
         DisableThemes = True
         DisableThemesInTitle = True
         ControlType.Strings = (
@@ -10577,6 +10634,57 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
         UseTFields = False
         OnTitleButtonClick = wwDBGrid2TitleButtonClick
         GroupFieldName = 'KONSTRUKSI'
+      end
+      object wwDBGrid4: TwwDBGrid
+        Left = 0
+        Top = 52
+        Width = 1520
+        Height = 649
+        DisableThemes = True
+        DisableThemesInTitle = True
+        Selected.Strings = (
+          'NO_NOTA'#9'20'#9'NO_NOTA'#9'F'
+          'TGL'#9'18'#9'TGL'#9'F'
+          'NAMA_TRANSAKSI'#9'30'#9'NAMA_TRANSAKSI'#9'F'
+          'DISKRIPSI'#9'30'#9'NAMA ITEM'#9'F'
+          'QTY_IN'#9'10'#9'QTY_IN'#9'F'
+          'QTY_OUT'#9'10'#9'QTY_OUT'#9'F'
+          'KETERANGAN'#9'25'#9'KETERANGAN'#9'F'
+          'TGL_INSERT'#9'18'#9'TGL_INSERT'#9'F')
+        IniAttributes.Enabled = True
+        IniAttributes.SaveToRegistry = True
+        IniAttributes.FileName = 'Pismatex Master'
+        IniAttributes.Delimiter = ';;'
+        IniAttributes.CheckNewFields = True
+        ExportOptions.ExportType = wwgetHTML
+        ExportOptions.Options = [esoShowHeader, esoShowFooter, esoShowTitle, esoDblQuoteFields, esoBestColFit, esoShowRecordNo, esoShowAlternating]
+        TitleColor = clSkyBlue
+        FixedCols = 2
+        ShowHorzScrollBar = True
+        Align = alClient
+        DataSource = dsQRiwayatTransaksi
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgPerfectRowFit, dgShowFooter, dgTrailingEllipsis, dgDblClickColSizing]
+        ParentFont = False
+        ReadOnly = True
+        RowHeightPercent = 125
+        TabOrder = 4
+        TitleAlignment = taCenter
+        TitleFont.Charset = ANSI_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Lucida Sans'
+        TitleFont.Style = [fsBold]
+        TitleLines = 3
+        TitleButtons = True
+        UseTFields = False
+        PaintOptions.AlternatingRowColor = clMoneyGreen
+        PaintOptions.ActiveRecordColor = clGreen
+        GroupFieldName = '0'
       end
     end
   end
@@ -11188,5 +11296,74 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
     Variables.Data = {0300000001000000050000003A5054474C0C0000000000000000000000}
     Left = 524
     Top = 337
+  end
+  object QRiwayatTransaksi: TOracleDataSet
+    SQL.Strings = (
+      
+        'select * from ipisma_db4.vkartu_stok_kls t where diskripsi=:disk' +
+        'ripsi and tgl>=:pawal and tgl<=:pakhir'
+      ':myparam'
+      '')
+    Variables.Data = {
+      0300000004000000060000003A504157414C0C00000007000000787D06010101
+      0100000000070000003A50414B4849520C00000007000000787D060401010100
+      0000000A0000003A4449534B5249505349050000000800000034352F53205452
+      0000000000080000003A4D59504152414D010000000000000000000000}
+    QBEDefinition.QBEFieldDefs = {
+      040000000B000000070000004E4F5F4E4F544101000000000006000000515459
+      5F494E010000000000070000005154595F4F55540100000000000A0000005447
+      4C5F494E534552540100000000000C0000004B445F5452414E53414B53490100
+      000000000E0000004E414D415F5452414E53414B534901000000000003000000
+      54474C010000000000090000004449534B524950534901000000000007000000
+      4B445F4954454D010000000000080000004B445F5741524E410100000000000A
+      0000004B45544552414E47414E010000000000}
+    Session = DMFrm.OS
+    Left = 444
+    Top = 257
+    object QRiwayatTransaksiKD_TRANSAKSI: TStringField
+      FieldName = 'KD_TRANSAKSI'
+      Size = 4
+    end
+    object QRiwayatTransaksiNO_NOTA: TStringField
+      FieldName = 'NO_NOTA'
+      Size = 26
+    end
+    object QRiwayatTransaksiTGL: TDateTimeField
+      FieldName = 'TGL'
+    end
+    object QRiwayatTransaksiDISKRIPSI: TStringField
+      FieldName = 'DISKRIPSI'
+      Size = 255
+    end
+    object QRiwayatTransaksiKD_ITEM: TStringField
+      FieldName = 'KD_ITEM'
+      Size = 50
+    end
+    object QRiwayatTransaksiKD_WARNA: TStringField
+      FieldName = 'KD_WARNA'
+      Size = 6
+    end
+    object QRiwayatTransaksiQTY_IN: TFloatField
+      FieldName = 'QTY_IN'
+    end
+    object QRiwayatTransaksiQTY_OUT: TFloatField
+      FieldName = 'QTY_OUT'
+    end
+    object QRiwayatTransaksiTGL_INSERT: TDateTimeField
+      FieldName = 'TGL_INSERT'
+    end
+    object QRiwayatTransaksiNAMA_TRANSAKSI: TStringField
+      FieldName = 'NAMA_TRANSAKSI'
+      Size = 50
+    end
+    object QRiwayatTransaksiKETERANGAN: TStringField
+      FieldName = 'KETERANGAN'
+      Size = 25
+    end
+  end
+  object dsQRiwayatTransaksi: TwwDataSource
+    DataSet = QRiwayatTransaksi
+    Left = 444
+    Top = 313
   end
 end

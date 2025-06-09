@@ -1625,7 +1625,8 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           ItemHeight = 0
           Items.Strings = (
             'UPDATE'
-            'OLOR')
+            'WASTE TENUN'
+            'WASTE PERSIAPAN')
           Sorted = False
           TabOrder = 3
           UnboundDataType = wwDefault
