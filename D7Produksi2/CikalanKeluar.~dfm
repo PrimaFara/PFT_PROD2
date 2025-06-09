@@ -2209,7 +2209,7 @@ object CikalanKeluarFrm: TCikalanKeluarFrm
                   44.979166666666670000
                   341.312500000000000000
                   10.583333333333330000
-                  92.604166666666660000)
+                  92.604166666666680000)
                 Alignment = taLeftJustify
                 AlignToBand = False
                 AutoSize = True
@@ -2643,9 +2643,9 @@ object CikalanKeluarFrm: TCikalanKeluarFrm
                 Frame.DrawRight = False
                 Size.Values = (
                   52.916666666666670000
-                  806.979166666666600000
+                  806.979166666666800000
                   2.645833333333333000
-                  399.520833333333300000)
+                  399.520833333333400000)
                 Alignment = taLeftJustify
                 AlignToBand = False
                 AutoSize = True
@@ -2832,7 +2832,7 @@ object CikalanKeluarFrm: TCikalanKeluarFrm
                 Size.Values = (
                   44.979166666666670000
                   1150.937500000000000000
-                  216.958333333333300000
+                  216.958333333333400000
                   87.312500000000000000)
                 Alignment = taLeftJustify
                 AlignToBand = False
@@ -9878,8 +9878,9 @@ object CikalanKeluarFrm: TCikalanKeluarFrm
       Size = 100
     end
     object QBrowseKD_KONSTRUKSI: TStringField
+      DisplayWidth = 10
       FieldName = 'KD_KONSTRUKSI'
-      Size = 5
+      Size = 10
     end
     object QBrowseNAMA_ITEM: TStringField
       FieldName = 'NAMA_ITEM'

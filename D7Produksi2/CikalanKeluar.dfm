@@ -280,6 +280,7 @@ object CikalanKeluarFrm: TCikalanKeluarFrm
             Font.Name = 'MS Sans Serif'
             Font.Style = [fsBold]
             ParentFont = False
+            Visible = False
           end
           object LBeam: TLabel
             Left = 341
@@ -292,6 +293,7 @@ object CikalanKeluarFrm: TCikalanKeluarFrm
             Font.Name = 'MS Sans Serif'
             Font.Style = [fsBold]
             ParentFont = False
+            Visible = False
           end
           object Label33: TLabel
             Left = 293
@@ -2643,7 +2645,7 @@ object CikalanKeluarFrm: TCikalanKeluarFrm
                 Frame.DrawRight = False
                 Size.Values = (
                   52.916666666666670000
-                  806.979166666666800000
+                  806.979166666666700000
                   2.645833333333333000
                   399.520833333333400000)
                 Alignment = taLeftJustify
