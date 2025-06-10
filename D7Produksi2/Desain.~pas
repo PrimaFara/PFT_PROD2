@@ -2020,7 +2020,7 @@ begin
 if wwDBDateTimePicker3.Date >= StrToDate('01/01/2017') then
 begin
   QBarang.Close;
-  QBarang.SQL.Text:='select a.* from ipisma_db4.vmaterial_baru a';
+  QBarang.SQL.Text:='select a.* from ipisma_db4.vmaterial_baru a order by nama_item';
   QBarang.Open;
 //  ShowMessage(QBarangRASIO.AsString);
 //  ShowMessage(QBarangRASIO_CONES.AsString);

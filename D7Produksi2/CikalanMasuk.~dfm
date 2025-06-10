@@ -4160,7 +4160,8 @@ object CikalanMasukFrm: TCikalanMasukFrm
               'WARPING LAINNYA'
               'GUDANG WARNA'
               'TENUN'
-              'MITRA/LAINNYA')
+              'MITRA/LAINNYA'
+              'RETUR KE GW')
             Sorted = False
             TabOrder = 6
             UnboundDataType = wwDefault

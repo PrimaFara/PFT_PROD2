@@ -660,7 +660,7 @@ object DesainFrm: TDesainFrm
                 1899.708333333333000000)
               BandType = rbTitle
               object QRTitle: TQRLabel
-                Left = 287
+                Left = -64
                 Top = 2
                 Width = 143
                 Height = 26
@@ -3967,7 +3967,7 @@ object DesainFrm: TDesainFrm
         Align = alClient
         DataSource = dsQKPK
         RowHeightPercent = 125
-        TabOrder = 3
+        TabOrder = 2
         TitleAlignment = taLeftJustify
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
@@ -4090,32 +4090,6 @@ object DesainFrm: TDesainFrm
         TitleFont.Style = []
         TitleLines = 1
         TitleButtons = False
-      end
-      object LookKons: TwwDBLookupComboDlg
-        Left = 72
-        Top = 256
-        Width = 121
-        Height = 21
-        GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
-        GridColor = clWhite
-        GridTitleAlignment = taLeftJustify
-        Caption = 'Lookup'
-        MaxWidth = 0
-        MaxHeight = 209
-        Selected.Strings = (
-          'NAMA_KONSTRUKSI'#9'30'#9'NAMA_KONSTRUKSI'#9'F'
-          'KD_KONSTRUKSI'#9'6'#9'KD_KONSTRUKSI'#9'F'
-          'MUTU'#9'10'#9'MUTU'#9'F')
-        DataField = 'KD_KONSTRUKSI'
-        DataSource = dsQKPK
-        LookupTable = QLookKons
-        LookupField = 'KD_KONSTRUKSI'
-        TabOrder = 2
-        AutoDropDown = False
-        ShowButton = True
-        AllowClearKey = False
-        OnCloseUp = LookKonsCloseUp
-        OnEnter = LookKonsEnter
       end
     end
     object TabSheet8: TTabSheet
@@ -4591,7 +4565,7 @@ object DesainFrm: TDesainFrm
       object Panel13: TPanel
         Left = 0
         Top = 0
-        Width = 1180
+        Width = 1297
         Height = 49
         Align = alTop
         BevelInner = bvLowered
@@ -4731,7 +4705,7 @@ object DesainFrm: TDesainFrm
       object wwDBGrid12: TwwDBGrid
         Left = 0
         Top = 49
-        Width = 1180
+        Width = 1297
         Height = 463
         ControlType.Strings = (
           'KD_KEL;CustomEdit;LookJenis;F'
@@ -4789,6 +4763,32 @@ object DesainFrm: TDesainFrm
         OnDblClick = wwDBGrid12DblClick
         PaintOptions.AlternatingRowColor = clMoneyGreen
         PaintOptions.ActiveRecordColor = clGreen
+      end
+      object LookKons: TwwDBLookupComboDlg
+        Left = 72
+        Top = 256
+        Width = 121
+        Height = 21
+        GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
+        GridColor = clWhite
+        GridTitleAlignment = taLeftJustify
+        Caption = 'Lookup'
+        MaxWidth = 0
+        MaxHeight = 209
+        Selected.Strings = (
+          'NAMA_KONSTRUKSI'#9'30'#9'NAMA_KONSTRUKSI'#9'F'
+          'KD_KONSTRUKSI'#9'6'#9'KD_KONSTRUKSI'#9'F'
+          'MUTU'#9'10'#9'MUTU'#9'F')
+        DataField = 'KD_KONSTRUKSI'
+        DataSource = dsQKPK
+        LookupTable = QLookKons
+        LookupField = 'KD_KONSTRUKSI'
+        TabOrder = 2
+        AutoDropDown = False
+        ShowButton = True
+        AllowClearKey = False
+        OnCloseUp = LookKonsCloseUp
+        OnEnter = LookKonsEnter
       end
     end
   end
@@ -6255,7 +6255,10 @@ object DesainFrm: TDesainFrm
       'select a.*, a.rowid from ipisma_db4.kode_produksi_new a '
       'where a.status = 1'
       'order by a.KP'
+      ':myparam'
       '')
+    Variables.Data = {
+      0300000001000000080000003A4D59504152414D010000000000000000000000}
     QBEDefinition.QBEFieldDefs = {
       040000000C000000020000004B50010000000000040000004C55534901000000
       00000500000050414B414E010000000000050000005349534952010000000000
@@ -6626,7 +6629,8 @@ object DesainFrm: TDesainFrm
     SQL.Strings = (
       'select a.*, a.rowid from ipisma_db4.kode_prod_kons a '
       '--where a.kd_konstruksi is null'
-      'order by a.kp,a.nama_konstruksi,a.keterangan,a.mutu')
+      'order by a.kp,a.nama_konstruksi,a.keterangan,a.mutu'
+      ':myparam')
     Variables.Data = {
       0300000001000000080000003A4D59504152414D010000000000000000000000}
     QBEDefinition.QBEFieldDefs = {

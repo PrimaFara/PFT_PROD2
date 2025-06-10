@@ -527,9 +527,9 @@ type
     QKPKJENIS: TStringField;
  //   QKPKSTATUS: TFloatField;
     QKPKMUTU: TStringField;
-    LookKons: TwwDBLookupComboDlg;
- //   QLookKons: TOracleDataSet;
-    QLookKonsKD_KONSTRUKSI: TStringField;
+    QLookKons: TOracleDataSet;
+ //   QLookKonsKD_KONSTRUKSI: TStringField;
+ QLookKonsKD_KONSTRUKSI: TStringField;
     QLookKonsNAMA_KONSTRUKSI: TStringField;
     QLookKonsSUB_KELOMPOK: TStringField;
     QLookKonsKELOMPOK: TStringField;
@@ -714,6 +714,7 @@ type
     CDSQDetailKGTOTAL: TFloatField;
     QCount: TOracleDataSet;
     QCountCOUNT: TFloatField;
+    LookKons: TwwDBLookupComboDlg;
     procedure wwDBLookupComboDlg1Enter(Sender: TObject);
     procedure wwDBLookupComboDlg1CloseUp(Sender: TObject; LookupTable,
       FillTable: TDataSet; modified: Boolean);
@@ -2060,8 +2061,8 @@ end;
 
 procedure TDesainFrm.LookKonsEnter(Sender: TObject);
 begin
-//QLookKons.Close;
-//QLookKons.Open;
+QLookKons.Close;
+QLookKons.Open;
 end;
 
 procedure TDesainFrm.LookKonsCloseUp(Sender: TObject; LookupTable,
@@ -2548,6 +2549,77 @@ procedure TDesainFrm.BtnSimpanClick(Sender: TObject);
 end;
 
 procedure TDesainFrm.BitBtn13Click(Sender: TObject);
+var
+  i: Integer;
+  vpertama: Boolean;
+  vFilterCondition: string;
+  vSQLBase: string;
+begin
+  if BtnSimpan.Enabled then
+  begin
+    ShowMessage('Mode CARI berfungsi jika perubahan data sudah di-POSTING/ SIMPAN !');
+    Exit;
+  end;
+
+  // 1. Bangun kondisi filter
+  vFilterCondition := '';
+  vpertama := True;
+  
+  for i := 0 to QKP.FieldCount - 1 do
+  begin
+    if QKP.Fields[i].FieldKind = fkData then
+    begin
+      if not vpertama then
+        vFilterCondition := vFilterCondition + ' or ';
+        
+      vFilterCondition := vFilterCondition + QKP.Fields[i].FieldName +
+                       ' like ''%' + StringReplace(ECari11.Text, '''', '''''', [rfReplaceAll]) + '%''';
+      vpertama := False;
+    end;
+  end;
+
+  // 2. Dapatkan SQL dasar (tanpa komentar dan klausa yang tidak perlu)
+  vSQLBase := 'select a.*, a.rowid from ipisma_db4.kode_produksi_new a';
+  
+  // 3. Eksekusi query dengan filter
+  try
+    QKP.DisableControls;
+    QKP.Close;
+    
+    // Format 1: Mengganti seluruh SQL (rekomendasi)
+    QKP.SQL.Clear;
+    if vFilterCondition <> '' then
+      QKP.SQL.Add(vSQLBase + ' where (' + vFilterCondition + ') ' +
+                  'order by a.kp')
+    else
+      QKP.SQL.Add(vSQLBase + ' order by a.kp');
+    
+    // Format 2: Alternatif menggunakan SetVariable (jika tetap ingin pakai parameter)
+    {
+    QKPK.SQL.Clear;
+    QKPK.SQL.Add(vSQLBase);
+    if vFilterCondition <> '' then
+      QKPK.SQL.Add('where (' + vFilterCondition + ')');
+    QKPK.SQL.Add('order by a.kp');
+    }
+
+    QKP.Open;
+  except
+    on E: Exception do
+    begin
+      ShowMessage('Error:'#13#10 + E.Message + 
+                 #13#10'SQL:'#13#10 + QKP.SQL.Text);
+      // Coba buka tanpa filter jika error
+      QKP.Close;
+      QKP.SQL.Clear;
+      QKP.SQL.Add(vSQLBase + ' order by a.kp');
+      QKP.Open;
+    end;
+  end;
+  
+  QKP.EnableControls;
+end;
+{procedure TDesainFrm.BitBtn13Click(Sender: TObject);
 var
   i : word;
   vpertama : boolean;
@@ -2581,7 +2653,7 @@ begin
         QKP.Open;
         QKP.EnableControls;
     end;
-end;
+end;                tutup 100625}
 
 procedure TDesainFrm.CheckBox5Click(Sender: TObject);
 begin
@@ -2602,6 +2674,77 @@ procedure TDesainFrm.CheckBox5Click(Sender: TObject);
 end;
 
 procedure TDesainFrm.BitBtn14Click(Sender: TObject);
+var
+  i: Integer;
+  vpertama: Boolean;
+  vFilterCondition: string;
+  vSQLBase: string;
+begin
+  if BtnSimpan2.Enabled then
+  begin
+    ShowMessage('Mode CARI berfungsi jika perubahan data sudah di-POSTING/ SIMPAN !');
+    Exit;
+  end;
+
+  // 1. Bangun kondisi filter
+  vFilterCondition := '';
+  vpertama := True;
+
+  for i := 0 to QKPK.FieldCount - 1 do
+  begin
+    if QKPK.Fields[i].FieldKind = fkData then
+    begin
+      if not vpertama then
+        vFilterCondition := vFilterCondition + ' or ';
+
+      vFilterCondition := vFilterCondition + QKPK.Fields[i].FieldName + 
+                       ' like ''%' + StringReplace(ECari12.Text, '''', '''''', [rfReplaceAll]) + '%''';
+      vpertama := False;
+    end;
+  end;
+
+  // 2. Dapatkan SQL dasar (tanpa komentar dan klausa yang tidak perlu)
+  vSQLBase := 'select a.*, a.rowid from ipisma_db4.kode_prod_kons a';
+
+  // 3. Eksekusi query dengan filter
+  try
+    QKPK.DisableControls;
+    QKPK.Close;
+    
+    // Format 1: Mengganti seluruh SQL (rekomendasi)
+    QKPK.SQL.Clear;
+    if vFilterCondition <> '' then
+      QKPK.SQL.Add(vSQLBase + ' where (' + vFilterCondition + ') ' +
+                  'order by a.kp,a.nama_konstruksi,a.keterangan,a.mutu')
+    else
+      QKPK.SQL.Add(vSQLBase + ' order by a.kp,a.nama_konstruksi,a.keterangan,a.mutu');
+
+    // Format 2: Alternatif menggunakan SetVariable (jika tetap ingin pakai parameter)
+    {
+    QKPK.SQL.Clear;
+    QKPK.SQL.Add(vSQLBase);
+    if vFilterCondition <> '' then
+      QKPK.SQL.Add('where (' + vFilterCondition + ')');
+    QKPK.SQL.Add('order by a.kp,a.nama_konstruksi,a.keterangan,a.mutu');
+    }
+
+    QKPK.Open;
+  except
+    on E: Exception do
+    begin
+      ShowMessage('Error:'#13#10 + E.Message +
+                 #13#10'SQL:'#13#10 + QKPK.SQL.Text);
+      // Coba buka tanpa filter jika error
+      QKPK.Close;
+      QKPK.SQL.Clear;
+      QKPK.SQL.Add(vSQLBase + ' order by a.kp,a.nama_konstruksi,a.keterangan,a.mutu');
+      QKPK.Open;
+    end;
+  end;
+
+  QKPK.EnableControls;
+end;
+{procedure TDesainFrm.BitBtn14Click(Sender: TObject);
 var
   i : word;
   vpertama : boolean;
@@ -2635,7 +2778,7 @@ begin
         QKPK.Open;
         QKPK.EnableControls;
     end;
-end;
+end;    }
 
 procedure TDesainFrm.BtnEditing2Click(Sender: TObject);
 begin
