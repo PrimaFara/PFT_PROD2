@@ -79,6 +79,57 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
     object TabSheet3: TTabSheet
       Caption = 'WIP Kelos'
       ImageIndex = 2
+      object wwDBGrid4: TwwDBGrid
+        Left = 0
+        Top = 52
+        Width = 1520
+        Height = 649
+        DisableThemes = True
+        DisableThemesInTitle = True
+        Selected.Strings = (
+          'NO_NOTA'#9'20'#9'NO_NOTA'#9'F'
+          'TGL'#9'18'#9'TGL'#9'F'
+          'NAMA_TRANSAKSI'#9'30'#9'NAMA_TRANSAKSI'#9'F'
+          'DISKRIPSI'#9'30'#9'NAMA ITEM'#9'F'
+          'QTY_IN'#9'10'#9'QTY_IN'#9'F'
+          'QTY_OUT'#9'10'#9'QTY_OUT'#9'F'
+          'KETERANGAN'#9'25'#9'KETERANGAN'#9'F'
+          'TGL_INSERT'#9'18'#9'TGL_INSERT'#9'F')
+        IniAttributes.Enabled = True
+        IniAttributes.SaveToRegistry = True
+        IniAttributes.FileName = 'Pismatex Master'
+        IniAttributes.Delimiter = ';;'
+        IniAttributes.CheckNewFields = True
+        ExportOptions.ExportType = wwgetHTML
+        ExportOptions.Options = [esoShowHeader, esoShowFooter, esoShowTitle, esoDblQuoteFields, esoBestColFit, esoShowRecordNo, esoShowAlternating]
+        TitleColor = clSkyBlue
+        FixedCols = 2
+        ShowHorzScrollBar = True
+        Align = alClient
+        DataSource = dsQRiwayatTransaksi
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgPerfectRowFit, dgShowFooter, dgTrailingEllipsis, dgDblClickColSizing]
+        ParentFont = False
+        ReadOnly = True
+        RowHeightPercent = 125
+        TabOrder = 4
+        TitleAlignment = taCenter
+        TitleFont.Charset = ANSI_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Lucida Sans'
+        TitleFont.Style = [fsBold]
+        TitleLines = 3
+        TitleButtons = True
+        UseTFields = False
+        PaintOptions.AlternatingRowColor = clMoneyGreen
+        PaintOptions.ActiveRecordColor = clGreen
+        GroupFieldName = '0'
+      end
       object QuickRep1: TQuickRep
         Left = 10
         Top = 24
@@ -10634,57 +10685,6 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
         UseTFields = False
         OnTitleButtonClick = wwDBGrid2TitleButtonClick
         GroupFieldName = 'KONSTRUKSI'
-      end
-      object wwDBGrid4: TwwDBGrid
-        Left = 0
-        Top = 52
-        Width = 1520
-        Height = 649
-        DisableThemes = True
-        DisableThemesInTitle = True
-        Selected.Strings = (
-          'NO_NOTA'#9'20'#9'NO_NOTA'#9'F'
-          'TGL'#9'18'#9'TGL'#9'F'
-          'NAMA_TRANSAKSI'#9'30'#9'NAMA_TRANSAKSI'#9'F'
-          'DISKRIPSI'#9'30'#9'NAMA ITEM'#9'F'
-          'QTY_IN'#9'10'#9'QTY_IN'#9'F'
-          'QTY_OUT'#9'10'#9'QTY_OUT'#9'F'
-          'KETERANGAN'#9'25'#9'KETERANGAN'#9'F'
-          'TGL_INSERT'#9'18'#9'TGL_INSERT'#9'F')
-        IniAttributes.Enabled = True
-        IniAttributes.SaveToRegistry = True
-        IniAttributes.FileName = 'Pismatex Master'
-        IniAttributes.Delimiter = ';;'
-        IniAttributes.CheckNewFields = True
-        ExportOptions.ExportType = wwgetHTML
-        ExportOptions.Options = [esoShowHeader, esoShowFooter, esoShowTitle, esoDblQuoteFields, esoBestColFit, esoShowRecordNo, esoShowAlternating]
-        TitleColor = clSkyBlue
-        FixedCols = 2
-        ShowHorzScrollBar = True
-        Align = alClient
-        DataSource = dsQRiwayatTransaksi
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'MS Sans Serif'
-        Font.Style = []
-        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgPerfectRowFit, dgShowFooter, dgTrailingEllipsis, dgDblClickColSizing]
-        ParentFont = False
-        ReadOnly = True
-        RowHeightPercent = 125
-        TabOrder = 4
-        TitleAlignment = taCenter
-        TitleFont.Charset = ANSI_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Lucida Sans'
-        TitleFont.Style = [fsBold]
-        TitleLines = 3
-        TitleButtons = True
-        UseTFields = False
-        PaintOptions.AlternatingRowColor = clMoneyGreen
-        PaintOptions.ActiveRecordColor = clGreen
-        GroupFieldName = '0'
       end
     end
   end

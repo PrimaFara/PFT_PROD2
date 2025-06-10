@@ -205,7 +205,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Frame.DrawRight = False
             Size.Values = (
               52.916666666666670000
-              121.708333333333300000
+              121.708333333333400000
               71.437500000000000000
               145.520833333333300000)
             Alignment = taCenter
@@ -559,7 +559,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Size.Values = (
               44.979166666666670000
               2500.312500000000000000
-              76.729166666666680000
+              76.729166666666670000
               171.979166666666700000)
             Alignment = taCenter
             AlignToBand = False
@@ -723,7 +723,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Size.Values = (
               39.687500000000000000
               1963.208333333333000000
-              121.708333333333300000
+              121.708333333333400000
               58.208333333333340000)
             Alignment = taCenter
             AlignToBand = False
@@ -851,7 +851,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
               39.687500000000000000
               1113.895833333333000000
               55.562500000000000000
-              68.791666666666680000)
+              68.791666666666670000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
@@ -913,7 +913,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
               39.687500000000000000
               2145.770833333333000000
               55.562500000000000000
-              68.791666666666680000)
+              68.791666666666670000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
@@ -1828,7 +1828,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
               66.145833333333340000
               1047.750000000000000000
               177.270833333333300000
-              870.479166666666800000)
+              870.479166666666700000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
@@ -5989,7 +5989,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
               66.145833333333340000
               1047.750000000000000000
               177.270833333333300000
-              870.479166666666800000)
+              870.479166666666700000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
@@ -9381,7 +9381,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Frame.DrawRight = False
             Size.Values = (
               52.916666666666670000
-              121.708333333333300000
+              121.708333333333400000
               71.437500000000000000
               145.520833333333300000)
             Alignment = taCenter
@@ -9718,7 +9718,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Size.Values = (
               44.979166666666670000
               2500.312500000000000000
-              76.729166666666680000
+              76.729166666666670000
               171.979166666666700000)
             Alignment = taCenter
             AlignToBand = False
@@ -9865,7 +9865,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
             Size.Values = (
               39.687500000000000000
               1963.208333333333000000
-              121.708333333333300000
+              121.708333333333400000
               58.208333333333340000)
             Alignment = taCenter
             AlignToBand = False
@@ -9993,7 +9993,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
               39.687500000000000000
               1198.562500000000000000
               55.562500000000000000
-              68.791666666666680000)
+              68.791666666666670000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
@@ -10055,7 +10055,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
               39.687500000000000000
               2145.770833333333000000
               55.562500000000000000
-              68.791666666666680000)
+              68.791666666666670000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
@@ -10638,7 +10638,6 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
           'QTY_IN6'#9'10'#9'Jasa~Cikalan'#9'F'#9'PEMASUKAN'
           'QTY_IN12'#9'10'#9'Jasa Cik~Lainnya'#9'F'#9'PEMASUKAN'
           'QTY_IN2'#9'10'#9'Jasa~Mitra'#9'F'#9'PEMASUKAN'
-          'QTY_IN10'#9'10'#9'Selisih~Konversi'#9'F'#9'PEMASUKAN'
           'KOREKSI_MASUK1'#9'10'#9'Koreksi'#9'F'#9'PEMASUKAN'
           'QTY_OUT1'#9'10'#9'Warping'#9'F'#9'PENGELUARAN'
           'QTY_OUT8'#9'10'#9'Lainnya'#9'F'#9'PENGELUARAN'
@@ -10650,7 +10649,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
           'QTY_OUT6'#9'10'#9'Jasa GW'#9'F'#9'PENGELUARAN'
           'QTY_OUT13'#9'10'#9'Jasa GW~Lainnya'#9'F'#9'PENGELUARAN'
           'QTY_OUT3'#9'10'#9'Jasa~Mitra'#9'F'#9'PENGELUARAN'
-          'QTY_OUT10'#9'10'#9'Selisih~Konversi'#9'F'#9'PENGELUARAN'
+          'QTY_OUT10'#9'10'#9'Retur~Ke GW'#9'F'#9'PENGELUARAN'
           'KOREKSI_KELUAR1'#9'10'#9'Koreksi'#9'F'#9'PENGELUARAN'
           'AKHIR1'#9'10'#9'Sisa Akhir'#9'F')
         IniAttributes.Enabled = True
@@ -11086,7 +11085,7 @@ object InfoStokKelos_2Frm: TInfoStokKelos_2Frm
   object QAmbil_Data2: TOracleQuery
     SQL.Strings = (
       'begin'
-      '  ipisma_db4.proc_info_wip_kelos3_v3(:pawal,:pakhir);'
+      '  ipisma_db4.proc_info_wip_kelos25(:pawal,:pakhir);'
       'end;')
     Session = DMFrm.OS
     Variables.Data = {
