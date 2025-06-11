@@ -357,6 +357,10 @@ type
     BitBtn16: TBitBtn;
     QUpdateAvfal: TOracleQuery;
     WebBrowser1: TWebBrowser;
+    QBrowse2AKHIR_POTONG: TIntegerField;
+    QBrowse2AKHIR_KODI: TIntegerField;
+    QBrowse2SELISIH_PTG: TIntegerField;
+    QBrowse2SELISIH_KODI: TFloatField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure vTglAwalChange(Sender: TObject);
@@ -419,6 +423,7 @@ type
     procedure BitBtn16Click(Sender: TObject);
     procedure WebBrowser1DocumentComplete(Sender: TObject;
       const pDisp: IDispatch; var URL: OleVariant);
+    procedure QBrowse2CalcFields(DataSet: TDataSet);
 
   private
     { Private declarations }
@@ -1222,7 +1227,7 @@ begin
        HTMLContent.Add('<td style="border: none"></td>');
        HTMLContent.Add('</tr>');
        HTMLContent.Add('<tr style="font-size: 80%; border: none">');
-       HTMLContent.Add('<td style="text-align: right; border: none"><b><u>Sukmono&nbsp;&nbsp;</u></b><br><i>SDH Weaving<i></td>');
+       HTMLContent.Add('<td style="text-align: right; border: none"><b><u>Sukmono</u></b>&nbsp;&nbsp;<br><i>SDH Weaving<i></td>');
        HTMLContent.Add('<td style="text-align: center; border: none"><b><u>Agus Pratama Edi</u></b><br><i>SH. Perenc. & Admin<i></td>');
        HTMLContent.Add('<td style="text-align: center; border: none"><b><u>Erik Yulianto</u></b><br><i>Adm. Weaving<i></td>');
        HTMLContent.Add('</tr>');
@@ -1667,6 +1672,44 @@ procedure TWipPertenunanFrm.WebBrowser1DocumentComplete(Sender: TObject;
   const pDisp: IDispatch; var URL: OleVariant);
 begin
     WebBrowser1.OleObject.ExecWB(OLECMDID_PRINT, OLECMDEXECOPT_PROMPTUSER, Unassigned, Unassigned);
+end;
+
+procedure TWipPertenunanFrm.QBrowse2CalcFields(DataSet: TDataSet);
+  var vawal_potong, vselisih_potong : integer;
+  vawal_kodi, vselisih_kodi : real;
+begin
+
+  vawal_potong:=0;
+  vawal_kodi:=0;
+  vselisih_potong:=0;
+  vselisih_kodi:=0;
+
+  // ALGORITMA LOKASI BARU : WARPING
+  if QBrowse2LOKASI.AsString='WARPING' then
+  begin
+    if QBrowse2SISA_BEAM_PTG.AsInteger>1 then
+    begin
+       vawal_potong:=QBrowse2SISA_BEAM_PTG.AsInteger;
+       vawal_kodi:=QBrowse2SISA_BEAM_KD.AsFloat;
+    end
+    else
+    begin
+       vawal_potong:=QBrowse2JML_POTONG.AsInteger;
+       vawal_kodi:=QBrowse2JML_KODI.AsFloat;
+    end;
+
+    QBrowse2SELISIH_PTG.AsInteger:=QBrowse2SISA_POTONG.AsInteger;
+    QBrowse2SELISIH_KODI.AsFloat:=QBrowse2SISA_KODI.AsFloat;
+    QBrowse2AKHIR_POTONG.AsInteger:=vawal_potong-QBrowse2HASIL_PTG.AsInteger-QBrowse2SISA_POTONG.AsInteger;
+    QBrowse2AKHIR_KODI.AsFloat:=vawal_kodi-QBrowse2HASIL_KD.AsFloat-QBrowse2SISA_KODI.AsFloat;
+  end
+  else   // ALGORITMA LOKASI BARU : NON-WARPING
+  begin
+    QBrowse2SELISIH_PTG.AsInteger:=0;
+    QBrowse2SELISIH_KODI.AsFloat:=0;
+    QBrowse2AKHIR_POTONG.AsInteger:=QBrowse2SISA_POTONG.AsInteger;
+    QBrowse2AKHIR_KODI.AsFloat:=QBrowse2SISA_KODI.AsFloat;
+  end;
 end;
 
 end.

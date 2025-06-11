@@ -23,8 +23,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 1110
-    Height = 399
+    Width = 1118
+    Height = 406
     ActivePage = TabSheet5
     Align = alClient
     TabOrder = 0
@@ -2223,7 +2223,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 1102
+        Width = 1110
         Height = 52
         Align = alTop
         BevelInner = bvLowered
@@ -2454,8 +2454,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object wwDBGrid2: TwwDBGrid
         Left = 0
         Top = 52
-        Width = 1102
-        Height = 319
+        Width = 1110
+        Height = 326
         DisableThemes = True
         DisableThemesInTitle = True
         ControlType.Strings = (
@@ -2585,7 +2585,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object Panel3: TPanel
         Left = 0
         Top = 0
-        Width = 1102
+        Width = 1110
         Height = 57
         Align = alTop
         BevelInner = bvLowered
@@ -2835,8 +2835,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object wwDBGrid3: TwwDBGrid
         Left = 0
         Top = 57
-        Width = 1102
-        Height = 314
+        Width = 1110
+        Height = 321
         DisableThemes = True
         DisableThemesInTitle = True
         ControlType.Strings = (
@@ -2853,8 +2853,10 @@ object WipPertenunanFrm: TWipPertenunanFrm
           'SISA_BEAM_KD'#9'10'#9'KODI'#9'F'#9'JUMLAH SEKARANG'
           'HASIL_PTG'#9'10'#9'POTONG'#9'F'#9'HASIL'
           'HASIL_KD'#9'10'#9'KODI'#9'F'#9'HASIL'
-          'SISA_POTONG'#9'10'#9'POTONG'#9'F'#9'SISA'
-          'SISA_KODI'#9'10'#9'KODI'#9'F'#9'SISA'
+          'SELISIH_PTG'#9'10'#9'PTG'#9'F'#9'AFFAL / SELISIH KRT'
+          'SELISIH_KODI'#9'10'#9'KODI'#9'F'#9'AFFAL / SELISIH KRT'
+          'AKHIR_POTONG'#9'10'#9'POTONG'#9'F'#9'SISA'
+          'AKHIR_KODI'#9'10'#9'KODI'#9'F'#9'SISA'
           'LOKASI_LAMA'#9'25'#9'LAMA'#9'F'#9'LOKASI'
           'LOKASI'#9'25'#9'BARU'#9'F'#9'LOKASI')
         IniAttributes.Enabled = True
@@ -2897,7 +2899,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object Panel2: TPanel
         Left = 0
         Top = 0
-        Width = 1102
+        Width = 1110
         Height = 52
         Align = alTop
         BevelInner = bvLowered
@@ -3172,8 +3174,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object wwDBGrid4: TwwDBGrid
         Left = 0
         Top = 52
-        Width = 1102
-        Height = 319
+        Width = 1110
+        Height = 326
         DisableThemes = True
         DisableThemesInTitle = True
         ControlType.Strings = (
@@ -3246,13 +3248,13 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object WebBrowser1: TWebBrowser
         Left = 0
         Top = 52
-        Width = 1102
-        Height = 127
+        Width = 1110
+        Height = 134
         Align = alClient
         TabOrder = 3
         OnDocumentComplete = WebBrowser1DocumentComplete
         ControlData = {
-          4C000000E5710000200D00000000000000000000000000000000000000000000
+          4C000000B9720000D90D00000000000000000000000000000000000000000000
           000000004C000000000000000000000001000000E0D057007335CF11AE690800
           2B2E126208000000000000004C0000000114020000000000C000000000000046
           8000000000000000000000000000000000000000000000000000000000000000
@@ -3261,7 +3263,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object Panel8: TPanel
         Left = 0
         Top = 0
-        Width = 1102
+        Width = 1110
         Height = 52
         Align = alTop
         BevelOuter = bvNone
@@ -3521,8 +3523,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
       end
       object PanelRiwayat: TPanel
         Left = 0
-        Top = 179
-        Width = 1102
+        Top = 186
+        Width = 1110
         Height = 192
         Align = alBottom
         BevelOuter = bvNone
@@ -3532,7 +3534,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
         object wwDBGrid6: TwwDBGrid
           Left = 0
           Top = 25
-          Width = 1102
+          Width = 1110
           Height = 167
           DisableThemes = True
           DisableThemesInTitle = True
@@ -3588,7 +3590,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
         object PanelRTop: TPanel
           Left = 0
           Top = 0
-          Width = 1102
+          Width = 1110
           Height = 25
           Align = alTop
           BevelOuter = bvNone
@@ -3633,8 +3635,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object wwDBGrid5: TwwDBGrid
         Left = 0
         Top = 52
-        Width = 1102
-        Height = 127
+        Width = 1110
+        Height = 134
         DisableThemes = True
         DisableThemesInTitle = True
         ControlType.Strings = (
@@ -3696,8 +3698,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
   end
   object Panel5: TPanel
     Left = 0
-    Top = 399
-    Width = 1110
+    Top = 406
+    Width = 1118
     Height = 41
     Align = alBottom
     TabOrder = 1
@@ -3779,7 +3781,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
       NumGlyphs = 2
     end
     object Panel10: TPanel
-      Left = 840
+      Left = 848
       Top = 1
       Width = 269
       Height = 39
@@ -4127,6 +4129,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
     RefreshOptions = [roAfterInsert]
     Session = DMFrm.OS
     AfterScroll = QBrowse2AfterScroll
+    OnCalcFields = QBrowse2CalcFields
     Left = 296
     Top = 200
     object QBrowse2ID_RAB: TStringField
@@ -4179,6 +4182,26 @@ object WipPertenunanFrm: TWipPertenunanFrm
     object QBrowse2LOKASI_LAMA: TStringField
       FieldName = 'LOKASI_LAMA'
       Size = 25
+    end
+    object QBrowse2AKHIR_POTONG: TIntegerField
+      FieldKind = fkCalculated
+      FieldName = 'AKHIR_POTONG'
+      Calculated = True
+    end
+    object QBrowse2AKHIR_KODI: TIntegerField
+      FieldKind = fkCalculated
+      FieldName = 'AKHIR_KODI'
+      Calculated = True
+    end
+    object QBrowse2SELISIH_PTG: TIntegerField
+      FieldKind = fkCalculated
+      FieldName = 'SELISIH_PTG'
+      Calculated = True
+    end
+    object QBrowse2SELISIH_KODI: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'SELISIH_KODI'
+      Calculated = True
     end
   end
   object dsQbrowse2: TwwDataSource

@@ -2853,8 +2853,10 @@ object WipPertenunanFrm: TWipPertenunanFrm
           'SISA_BEAM_KD'#9'10'#9'KODI'#9'F'#9'JUMLAH SEKARANG'
           'HASIL_PTG'#9'10'#9'POTONG'#9'F'#9'HASIL'
           'HASIL_KD'#9'10'#9'KODI'#9'F'#9'HASIL'
-          'SISA_POTONG'#9'10'#9'POTONG'#9'F'#9'SISA'
-          'SISA_KODI'#9'10'#9'KODI'#9'F'#9'SISA'
+          'SELISIH_PTG'#9'10'#9'PTG'#9'F'#9'AFFAL / SELISIH KRT'
+          'SELISIH_KODI'#9'10'#9'KODI'#9'F'#9'AFFAL / SELISIH KRT'
+          'AKHIR_POTONG'#9'10'#9'POTONG'#9'F'#9'SISA'
+          'AKHIR_KODI'#9'10'#9'KODI'#9'F'#9'SISA'
           'LOKASI_LAMA'#9'25'#9'LAMA'#9'F'#9'LOKASI'
           'LOKASI'#9'25'#9'BARU'#9'F'#9'LOKASI')
         IniAttributes.Enabled = True
@@ -4096,7 +4098,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
   object QAmbil_Data2: TOracleQuery
     SQL.Strings = (
       'begin'
-      '  ipisma_db4.proc_wip_tenun2(:tglawal,:tglakhir);'
+      '  ipisma_db4.proc_wip_tenun2_25(:tglawal,:tglakhir);'
       'end;')
     Session = DMFrm.OS
     Variables.Data = {
@@ -4127,6 +4129,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
     RefreshOptions = [roAfterInsert]
     Session = DMFrm.OS
     AfterScroll = QBrowse2AfterScroll
+    OnCalcFields = QBrowse2CalcFields
     Left = 296
     Top = 200
     object QBrowse2ID_RAB: TStringField
@@ -4179,6 +4182,26 @@ object WipPertenunanFrm: TWipPertenunanFrm
     object QBrowse2LOKASI_LAMA: TStringField
       FieldName = 'LOKASI_LAMA'
       Size = 25
+    end
+    object QBrowse2AKHIR_POTONG: TIntegerField
+      FieldKind = fkCalculated
+      FieldName = 'AKHIR_POTONG'
+      Calculated = True
+    end
+    object QBrowse2AKHIR_KODI: TIntegerField
+      FieldKind = fkCalculated
+      FieldName = 'AKHIR_KODI'
+      Calculated = True
+    end
+    object QBrowse2SELISIH_PTG: TIntegerField
+      FieldKind = fkCalculated
+      FieldName = 'SELISIH_PTG'
+      Calculated = True
+    end
+    object QBrowse2SELISIH_KODI: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'SELISIH_KODI'
+      Calculated = True
     end
   end
   object dsQbrowse2: TwwDataSource
