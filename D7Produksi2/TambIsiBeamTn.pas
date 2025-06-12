@@ -272,10 +272,6 @@ type
     QRekap_TIBMESIN: TStringField;
     QRekap_TIBPCS: TFloatField;
     QRekap_TIBPCS_REV: TFloatField;
-    QLookNSBNO_SERI_BEAM: TStringField;
-    QLookNSBBEAM: TStringField;
-    QLookNSBJML_POTONG: TFloatField;
-    QLookNSBJML_POT_REV: TFloatField;
     QDetailSELISIH: TFloatField;
     QBrowseSELISIH: TFloatField;
     QTotalSELISIH: TFloatField;
@@ -283,6 +279,10 @@ type
     wwDBComboBox1: TwwDBComboBox;
     Label13: TLabel;
     QMasterJENIS: TStringField;
+    QLookNSBNO_SERI_BEAM: TStringField;
+    QLookNSBBEAM: TStringField;
+    QLookNSBJML_POTONG: TFloatField;
+    QLookNSBJML_POT_NOW: TFloatField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure BtnExportClick(Sender: TObject);
@@ -938,7 +938,7 @@ begin
   begin
     QDetailNO_SERI_BEAM.AsString:=QLookNSBNO_SERI_BEAM.AsString;
     QDetailMESIN.AsString:=QLookNSBBEAM.AsString;
-    QDetailPCS.AsFloat:=QLookNSBJML_POTONG.AsFloat;
+    QDetailPCS.AsFloat:=QLookNSBJML_POT_NOW.AsFloat;//QDetailPCS.AsFloat:=QLookNSBJML_POTONG.AsFloat;
 
     //QDetailKD_SUB_LOKASI.AsString:=QItem_koKD_SUB_LOKASI.AsString;
     //QDetailKDSUBLOKASI_GJ.AsString:=QItem_koKD_SUB_LOKASI.AsString;
