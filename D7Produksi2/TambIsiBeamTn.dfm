@@ -1,8 +1,8 @@
 object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
-  Left = 269
-  Top = 124
+  Left = 218
+  Top = 143
   Width = 1368
-  Height = 922
+  Height = 779
   Caption = '870. Penyesuaian Isi Beam'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -41,7 +41,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
   end
   object Label1: TLabel
     Left = 0
-    Top = 871
+    Top = 728
     Width = 1352
     Height = 13
     Align = alBottom
@@ -69,7 +69,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
     Left = 0
     Top = 76
     Width = 1352
-    Height = 795
+    Height = 652
     ActivePage = TabSheet2
     Align = alClient
     Style = tsFlatButtons
@@ -138,7 +138,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           ForceNewColumn = False
           ForceNewPage = False
           Size.Values = (
-            121.708333333333300000
+            121.708333333333400000
             1899.708333333333000000)
           BandType = rbPageHeader
           object QRDBText2: TQRDBText
@@ -386,7 +386,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
             Frame.DrawLeft = False
             Frame.DrawRight = False
             Size.Values = (
-              68.791666666666680000
+              68.791666666666670000
               746.125000000000000000
               0.000000000000000000
               407.458333333333400000)
@@ -1636,7 +1636,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
         Left = 0
         Top = 178
         Width = 1344
-        Height = 545
+        Height = 402
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 2
@@ -1644,7 +1644,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           Left = 0
           Top = 0
           Width = 1344
-          Height = 545
+          Height = 402
           ControlType.Strings = (
             'KD_SUB_LOKASI2;CustomEdit;LookLokasi2;F'
             'KETERANGAN;CustomEdit;LookItem;F'
@@ -1707,7 +1707,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           Selected.Strings = (
             'NO_SERI_BEAM'#9'30'#9'NO_SERI_BEAM'#9'F'
             'BEAM'#9'30'#9'MESIN'#9'F'
-            'JML_POTONG'#9'10'#9'JML POT'#9'F')
+            'JML_POT_NOW'#9'10'#9'JML_POT'#9'F')
           DataField = 'NO_SERI_BEAM'
           DataSource = dsQDetail
           LookupTable = QLookNSB
@@ -1723,7 +1723,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       end
       object PanelFooter1: TPanel
         Left = 0
-        Top = 723
+        Top = 580
         Width = 1344
         Height = 41
         Align = alBottom
@@ -2219,7 +2219,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
         Left = 0
         Top = 70
         Width = 1344
-        Height = 653
+        Height = 510
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 1
@@ -2227,11 +2227,14 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
           Left = 0
           Top = 0
           Width = 1344
-          Height = 653
+          Height = 510
+          ControlType.Strings = (
+            'ISPOST;CheckBox;1;0')
           Selected.Strings = (
             'TANGGAL'#9'12'#9'TANGGAL'#9'F'
-            'NO_NOTA'#9'14'#9'NO NOTA'#9'F'
-            'NO_SERI_BEAM'#9'30'#9'NO_SERI_BEAM'#9'F'
+            'NO_NOTA'#9'15'#9'NO NOTA'#9'F'
+            'ISPOST'#9'10'#9'ISPOST'#9'F'
+            'NO_SERI_BEAM'#9'20'#9'NO_SERI_BEAM'#9'F'
             'PCS'#9'10'#9'AWAL'#9'F'#9'JML POTONG'
             'SELISIH'#9'10'#9'PENYESUAIAN'#9'F'#9'JML POTONG'
             'PCS_REV'#9'10'#9'AKHIR'#9'F'#9'JML POTONG'
@@ -2276,7 +2279,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       end
       object PanelFooter2: TPanel
         Left = 0
-        Top = 723
+        Top = 580
         Width = 1344
         Height = 41
         Align = alBottom
@@ -2317,7 +2320,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
         Left = 0
         Top = 0
         Width = 1344
-        Height = 764
+        Height = 621
         Align = alClient
         AutoURLDetect = False
         Color = clInfoBk
@@ -3531,7 +3534,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
         Left = 0
         Top = 65
         Width = 1344
-        Height = 658
+        Height = 515
         Selected.Strings = (
           'NIK_LAMA'#9'12'#9'NIK'#9'F'
           'NAMA_OPR'#9'30'#9'NAMA OPERATOR'#9'F'
@@ -3732,7 +3735,7 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
       end
       object Panel2: TPanel
         Left = 0
-        Top = 723
+        Top = 580
         Width = 1344
         Height = 41
         Align = alBottom
@@ -4101,35 +4104,45 @@ object TambIsiBeamTnFrm: TTambIsiBeamTnFrm
   end
   object QLookNSB: TOracleDataSet
     SQL.Strings = (
+      'select * from ipisma_db4.vpenyesuaian_pot_beam a'
+      ''
       
-        'select a.no_seri_beam, a.beam, a.jml_potong, a.jml_pot_rev from ' +
-        'ipisma_db4.vbeam_isi_24 a'
+        '/*select a.no_seri_beam, a.beam, a.jml_potong, a.jml_pot_rev fro' +
+        'm ipisma_db4.vbeam_isi_24 a'
       'where tanggal>= to_date('#39'01-01-2024'#39', '#39'dd-mm-yyyy'#39')'
-      'order by a.no_seri_beam'
+      'order by a.no_seri_beam*/'
       '')
     QBEDefinition.QBEFieldDefs = {
       04000000040000000C0000004E4F5F534552495F4245414D0100000000000A00
-      00004A4D4C5F504F544F4E470100000000000B0000004A4D4C5F504F545F5245
-      56010000000000040000004245414D010000000000}
+      00004A4D4C5F504F544F4E47010000000000040000004245414D010000000000
+      0B0000004A4D4C5F504F545F4E4F57010000000000}
     ReadOnly = True
     QueryAllRecords = False
     Session = DMFrm.OS
     Left = 664
     Top = 328
     object QLookNSBNO_SERI_BEAM: TStringField
+      DisplayWidth = 30
       FieldName = 'NO_SERI_BEAM'
       Required = True
       Size = 30
     end
     object QLookNSBBEAM: TStringField
+      DisplayLabel = 'MESIN'
+      DisplayWidth = 30
       FieldName = 'BEAM'
       Size = 100
     end
-    object QLookNSBJML_POTONG: TFloatField
-      FieldName = 'JML_POTONG'
+    object QLookNSBJML_POT_NOW: TFloatField
+      DisplayLabel = 'JML_POT'
+      DisplayWidth = 10
+      FieldName = 'JML_POT_NOW'
     end
-    object QLookNSBJML_POT_REV: TFloatField
-      FieldName = 'JML_POT_REV'
+    object QLookNSBJML_POTONG: TFloatField
+      DisplayLabel = 'JML POT'
+      DisplayWidth = 10
+      FieldName = 'JML_POTONG'
+      Visible = False
     end
   end
   object QHak_PH: TOracleDataSet

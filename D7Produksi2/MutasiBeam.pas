@@ -1440,7 +1440,7 @@ end;
 
 procedure TMutasiBeamFrm.DetailBeforePost(DataSet: TDataSet);
 begin
-  If UpdateQTY.Checked = True then
+{  If UpdateQTY.Checked = True then
     begin
       wwDBGrid1.ColumnByName('KG_REV').ReadOnly:=False;
       wwDBGrid1.ColumnByName('POT_REV').ReadOnly:=False;
@@ -1449,7 +1449,7 @@ begin
   begin
    wwDBGrid1.ColumnByName('KG_REV').ReadOnly:=True;
    wwDBGrid1.ColumnByName('POT_REV').ReadOnly:=True;
-   end
+   end     }
 end;
 
 
