@@ -897,57 +897,64 @@ begin
 end;
 
 procedure TWipPertenunanFrm.BitBtn5Click(Sender: TObject);
+  var t01, t02, t03, t04 : real;
 begin
-case rgTanggal.ItemIndex of
-0:
-  begin
-    QBrowse2.Close;
-    QAmbil_Data2.Close;
-    QAmbil_Data2.SetVariable('tglawal',VTglAwal2.Date);
-    QAmbil_Data2.setVariable('tglakhir',vTglAkhir2.Date);
-    QAmbil_Data2.Execute;
+  case rgTanggal.ItemIndex of
+  0: begin
+       QBrowse2.Close;
+       QAmbil_Data2.Close;
+       QAmbil_Data2.SetVariable('tglawal',VTglAwal2.Date);
+       QAmbil_Data2.setVariable('tglakhir',vTglAkhir2.Date);
+       QAmbil_Data2.Execute;
 
-    if QBrowse2.Active then
-      vorder:=' order by '+wwDBGrid3.Columns[1].FieldName
-      else
-        vorder:=' order by no_beam';
+       if QBrowse2.Active then vorder:=' order by '+wwDBGrid3.Columns[1].FieldName else vorder:=' order by no_beam';
+       // QBrowse2.Close;
+       QBrowse2.SetVariable('myparam', vorder);
+       //QBrowse2.SQL.Text:='select * from ipisma_db4.wip_tenun2 order by no_beam';
+       QBrowse2.Open;
 
-   // QBrowse2.Close;
-    QBrowse2.SetVariable('myparam', vorder);
-    //QBrowse2.SQL.Text:='select * from ipisma_db4.wip_tenun2 order by no_beam';
-    QBrowse2.Open;
-    QBrowseTotal2.Close;
-    QBrowseTotal2.Open;
-    wwDBGrid3.ColumnByName('jml_potong').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2a.AsFloat);
-    wwDBGrid3.ColumnByName('jml_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2b.AsFloat);
-    wwDBGrid3.ColumnByName('sisa_beam_ptg').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2c.AsFloat);
-    wwDBGrid3.ColumnByName('sisa_beam_kd').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2d.AsFloat);
-    wwDBGrid3.ColumnByName('hasil_ptg').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2e.AsFloat);
-    wwDBGrid3.ColumnByName('hasil_kd').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2f.AsFloat);
-    wwDBGrid3.ColumnByName('sisa_potong').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2g.AsFloat);
-    wwDBGrid3.ColumnByName('sisa_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2h.AsFloat);
+       while not QBrowse2.Eof do
+       begin
+         t01:=t01+QBrowse2SELISIH_PTG.AsFloat;
+         t02:=t02+QBrowse2SELISIH_KODI.AsFloat;
+         t03:=t03+QBrowse2AKHIR_POTONG.AsFloat;
+         t04:=t04+QBrowse2AKHIR_KODI.AsFloat;
+         QBrowse2.Next;
+       end;
+       
+
+       QBrowseTotal2.Close;
+       QBrowseTotal2.Open;
+       wwDBGrid3.ColumnByName('jml_potong').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2a.AsFloat);
+       wwDBGrid3.ColumnByName('jml_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2b.AsFloat);
+       wwDBGrid3.ColumnByName('sisa_beam_ptg').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2c.AsFloat);
+       wwDBGrid3.ColumnByName('sisa_beam_kd').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2d.AsFloat);
+       wwDBGrid3.ColumnByName('hasil_ptg').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2e.AsFloat);
+       wwDBGrid3.ColumnByName('hasil_kd').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2f.AsFloat);
+       {wwDBGrid3.ColumnByName('sisa_potong').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2g.AsFloat);
+       wwDBGrid3.ColumnByName('sisa_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QBrowseTotal2h.AsFloat);}
+       wwDBGrid3.ColumnByName('selisih_ptg').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t01);
+       wwDBGrid3.ColumnByName('selisih_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t02);
+       wwDBGrid3.ColumnByName('akhir_potong').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t03);
+       wwDBGrid3.ColumnByName('akhir_kodi').FooterValue:=FormatFloat('#.#,#;#.#,#; ',t04);
   end;
 
-1:
-  begin
-  ShowMessage('wes tekan');
-    QBrowse2.Close;
-    QAmbil_Data3.Close;
-    QAmbil_Data3.SetVariable('tglawal',VTglAwal2.Date);
-    QAmbil_Data3.setVariable('tglakhir',vTglAkhir2.Date);
-    QAmbil_Data3.Execute;
+  1: begin
+     ShowMessage('wes tekan');
+     QBrowse2.Close;
+     QAmbil_Data3.Close;
+     QAmbil_Data3.SetVariable('tglawal',VTglAwal2.Date);
+     QAmbil_Data3.setVariable('tglakhir',vTglAkhir2.Date);
+     QAmbil_Data3.Execute;
 
-    if QBrowse2.Active then
-      vorder:=' order by '+wwDBGrid3.Columns[1].FieldName
-      else
-        vorder:=' order by no_beam';
+     if QBrowse2.Active then vorder:=' order by '+wwDBGrid3.Columns[1].FieldName else vorder:=' order by no_beam';
 
-//    QBrowse2.SQL.Text:='select * from ipisma_db4.wip_tenun2 order by no_beam';
-   // QBrowse2.Close;
-    QBrowse2.SetVariable('myparam', vorder);
-    QBrowse2.Open;
+     //    QBrowse2.SQL.Text:='select * from ipisma_db4.wip_tenun2 order by no_beam';
+     // QBrowse2.Close;
+     QBrowse2.SetVariable('myparam', vorder);
+     QBrowse2.Open;
   end;
-end;
+  end;
 end;
 
 procedure TWipPertenunanFrm.BitBtn6Click(Sender: TObject);
@@ -1030,7 +1037,7 @@ end;
 
 procedure TWipPertenunanFrm.VTglAwal2Change(Sender: TObject);
 begin
-  vTglAkhir2.DateTime:=vTglAwal2.Date;
+  vTglAkhir2.DateTime:=EndOfTheMonth(vTglAwal2.Date);
 end;
 
 procedure TWipPertenunanFrm.BitBtn7Click(Sender: TObject);
