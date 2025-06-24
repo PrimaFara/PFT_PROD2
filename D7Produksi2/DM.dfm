@@ -19,6 +19,7 @@ object DMFrm: TDMFrm
     LogonUsername = 'ipisma_db4'
     LogonPassword = 'ipisma_db4'
     LogonDatabase = 'PFPROD'
+    Connected = True
     Left = 8
     Top = 8
   end
