@@ -362,6 +362,7 @@ type
     QBrowse2SELISIH_PTG: TIntegerField;
     QBrowse2SELISIH_KODI: TFloatField;
     QMBTQTY_AFFAL_RIIL_OUT: TFloatField;
+    QMBTQTY_AKHIR_RIIL: TFloatField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure vTglAwalChange(Sender: TObject);
@@ -1341,7 +1342,7 @@ begin
 end;
 
 procedure TWipPertenunanFrm.BitBtn12Click(Sender: TObject);
-var t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14, t15 :real;
+var t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14, t15, t16 :real;
 begin
 
   WebBrowser1.SendToBack;
@@ -1362,7 +1363,7 @@ begin
   QMBT.Open;
 
   t1:=0; t2:=0;  t3:=0;  t4:=0;  t5:=0;  t6:=0;  t7:=0;  t8:=0;
-  t9:=0; t10:=0;  t11:=0;  t12:=0;  t13:=0; t14:=0; t15;
+  t9:=0; t10:=0;  t11:=0;  t12:=0;  t13:=0; t14:=0; t15:=0; t16:=0;
 
   while not QMBT.Eof do
   begin
@@ -1381,6 +1382,7 @@ begin
     t13:=t13+QMBTQTY_AFFAL_RIIL_OUT.AsFloat;
     t14:=t14+QMBTQTY_KOREKSI_OUT.AsFloat;
     t15:=t15+QMBTqty_akhir.AsFloat;
+    t16:=t16+QMBTQTY_AKHIR_RIIL.AsFloat;
     QMBT.Next;
   end;
 
@@ -1399,6 +1401,7 @@ begin
   wwDBGrid5.ColumnByName('QTY_AFFAL_RIIL_OUT').FooterValue:=FormatFloat('#,##0.##;(#,##0.##);-',t13);
   wwDBGrid5.ColumnByName('QTY_KOREKSI_OUT').FooterValue:=FormatFloat('#,##0.##;(#,##0.##);-',t14);
   wwDBGrid5.ColumnByName('qty_akhir').FooterValue:=FormatFloat('#,##0.##;(#,##0.##);-',t15);
+  wwDBGrid5.ColumnByName('QTY_AKHIR_RIIL').FooterValue:=FormatFloat('#,##0.##;(#,##0.##);-',t16);
 
 end;
 
@@ -1431,7 +1434,7 @@ procedure TWipPertenunanFrm.BitBtn13Click(Sender: TObject);
 var
   i : word;
   vpertama : boolean;
-  t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15 :real;
+  t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16 :real;
 begin
 
   if vtglawal4.Date < StrToDate('01/09/2024') then
@@ -1489,7 +1492,7 @@ begin
   QMBT.EnableControls;
 
   t1:=0; t2:=0;  t3:=0;  t4:=0;  t5:=0;  t6:=0;  t7:=0;  t8:=0;
-  t9:=0; t10:=0;  t11:=0;  t12:=0;  t13:=0; t14:=0; t15:=0;
+  t9:=0; t10:=0;  t11:=0;  t12:=0;  t13:=0; t14:=0; t15:=0; t16:=0;
 
   while not QMBT.Eof do
   begin
@@ -1508,6 +1511,7 @@ begin
     t13:=t13+QMBTQTY_AFFAL_RIIL_OUT.AsFloat;
     t14:=t14+QMBTQTY_KOREKSI_OUT.AsFloat;
     t15:=t15+QMBTqty_akhir.AsFloat;
+    t16:=t16+QMBTQTY_AKHIR_RIIL.AsFloat;
     QMBT.Next;
   end;
 
@@ -1526,6 +1530,7 @@ begin
   wwDBGrid5.ColumnByName('QTY_AFFAL_RIIL_OUT').FooterValue:=FormatFloat('#.#,#;(#.#,#)',t13);
   wwDBGrid5.ColumnByName('QTY_KOREKSI_OUT').FooterValue:=FormatFloat('#.#,#;(#.#,#)',t14);
   wwDBGrid5.ColumnByName('qty_akhir').FooterValue:=FormatFloat('#,##0.##;(#,##0.##);-',t15);
+  wwDBGrid5.ColumnByName('qty_akhir_riil').FooterValue:=FormatFloat('#,##0.##;(#,##0.##);-',t16);
 end;
 
 procedure TWipPertenunanFrm.BitBtn14Click(Sender: TObject);
