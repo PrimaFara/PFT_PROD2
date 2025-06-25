@@ -2761,6 +2761,10 @@ object PembelianFrm: TPembelianFrm
           Caption = 'Hasil Tenun'
           OnClick = HasilTenunClick
         end
+        object HasilHanduk1: TMenuItem
+          Caption = 'Hasil Handuk'
+          OnClick = HasilHanduk1Click
+        end
         object N853MendingTenun1: TMenuItem
           Caption = '853. Mending Tenun'
           OnClick = N853MendingTenun1Click
