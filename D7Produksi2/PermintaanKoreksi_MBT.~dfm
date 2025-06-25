@@ -242,8 +242,6 @@ object PermintaanKoreksi_MBTFrm: TPermintaanKoreksi_MBTFrm
           Items.Strings = (
             'Per. Konstruksi_IN'#9'KONSTR_IN'
             'Per. Konstruksi_OUT'#9'KONSTR_OUT'
-            'Selisih Kartu'#9'SELISIH_KARTU'
-            'RETUR'#9'RETUR'
             'AVFAL'#9'AVFAL'
             'KOREKSI_IN'#9'KOR_IN'
             'KOREKSI_OUT'#9'KOR_OUT')
