@@ -163,6 +163,7 @@ type
     Image1: TImage;
     N870TambahIsiBeam1: TMenuItem;
     KonversiBeamLama1: TMenuItem;
+    HasilHanduk1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure Keluar1Click(Sender: TObject);
     procedure ipeMenu1Click(Sender: TObject);
@@ -290,6 +291,7 @@ type
     procedure PengaturanRasio1Click(Sender: TObject);
     procedure N870TambahIsiBeam1Click(Sender: TObject);
     procedure KonversiBeamLama1Click(Sender: TObject);
+    procedure HasilHanduk1Click(Sender: TObject);
 
 
 
@@ -330,7 +332,8 @@ uses DM, TipeMenu, HakMenu, OrganisasiItem, OrganisasiLokasi,
   ProsesKanji, PermintaanUnpost, Unpost, KonversiBeam,SisaProsesWarping,
   PermintaanKoreksi_warping, PermintaanKoreksi_Kanji, DesainBeamTenun,ValidasiPenyerahanBB1,
   PermintaanKoreksi_MBT, LokProMes_TN, LokProMes_PREP, Mending_OP,
-  MendingTenun, HTRasio, Daftar_Op_Mending, TambIsiBeamTn, KonversiBeamOLD;
+  MendingTenun, HTRasio, Daftar_Op_Mending, TambIsiBeamTn, KonversiBeamOLD,
+  HasilTenunAtsBwh;
 
 {$R *.dfm}
 
@@ -1395,6 +1398,17 @@ procedure TPembelianFrm.KonversiBeamLama1Click(Sender: TObject);
 begin
   if KonversiBeamOLDFrm=nil then KonversiBeamOLDFrm:=TKonversiBeamOLDFrm.Create(Application);
   KonversiBeamOLDFrm.Show;
+end;
+
+procedure TPembelianFrm.HasilHanduk1Click(Sender: TObject);
+begin
+  if HasilTenunAtsBwhFrm=nil then HasilTenunAtsBwhFrm:=THasilTenunAtsBwhFrm.Create(Self);
+  HasilTenunAtsBwhFrm.vjns_transaksi:='HASIL TENUN';
+  HasilTenunAtsBwhFrm.vkd_lokasi:='50';
+    mychar:=(Sender as TMenuItem).Caption;
+    Delete(mychar,Pos('&',mychar),1);
+  HasilTenunAtsBwhFrm.Caption:=mychar;
+  HasilTenunAtsBwhFrm.Show;
 end;
 
 end.
