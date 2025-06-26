@@ -107,9 +107,9 @@ object BPHasilTenunFrm: TBPHasilTenunFrm
         FontSize = 10
       end
       object QRLabel10: TQRLabel
-        Left = 243
+        Left = 263
         Top = 16
-        Width = 212
+        Width = 172
         Height = 26
         Frame.Color = clBlack
         Frame.DrawTop = False
@@ -118,9 +118,9 @@ object BPHasilTenunFrm: TBPHasilTenunFrm
         Frame.DrawRight = False
         Size.Values = (
           68.791666666666680000
-          642.937500000000000000
+          695.854166666666800000
           42.333333333333340000
-          560.916666666666800000)
+          455.083333333333300000)
         Alignment = taCenter
         AlignToBand = True
         AutoSize = True
@@ -1267,8 +1267,8 @@ object BPHasilTenunFrm: TBPHasilTenunFrm
   object QLookBeam: TOracleDataSet
     SQL.Strings = (
       
-        'select a.* from ipisma_db4.VLOOK_BEAM_ht24_V2 a /*vlook_beam_has' +
-        'iltenun a*/'
+        'select a.* from ipisma_db4.vlook_beam_HT25 /*VLOOK_BEAM_ht24_V2*' +
+        '/ a /*vlook_beam_hasiltenun a*/'
       
         'where a.lokasi=:plokasi and a.proses=:pproses and a.tanggal<=tru' +
         'nc(:ptgl)+1-1/86400'

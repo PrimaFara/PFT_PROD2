@@ -715,6 +715,8 @@ type
     QCount: TOracleDataSet;
     QCountCOUNT: TFloatField;
     LookKons: TwwDBLookupComboDlg;
+    wwDBEdit27: TwwDBEdit;
+    QMasterNPICK2: TFloatField;
     procedure wwDBLookupComboDlg1Enter(Sender: TObject);
     procedure wwDBLookupComboDlg1CloseUp(Sender: TObject; LookupTable,
       FillTable: TDataSet; modified: Boolean);
@@ -3011,7 +3013,7 @@ procedure TDesainFrm.LookKonv25Enter(Sender: TObject);
     QKEL_KP.Open;
     QKonversi2025.SetVariable('kp',QKEL_KPKELOMPOK.AsString);    //add 310525
   QKonversi2025.SetVariable('mesin',QMasterBEAM.AsString);
-  if Copy(CDSQDetailARAH.AsString, 4, 2) = 'LU' then varah:='LUSI'
+  if Copy(CDSQDetailARAH.AsString, 4, 2) = 'LU' then varah:='LUSI%'   //add % 270625
   else
   if Copy(CDSQDetailARAH.AsString, 4, 2) = 'DO' then varah:='DOBBY'
   else

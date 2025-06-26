@@ -341,7 +341,7 @@ object DesainFrm: TDesainFrm
             Caption = 'cm'
           end
           object Label7: TLabel
-            Left = 637
+            Left = 704
             Top = 15
             Width = 42
             Height = 13
@@ -660,7 +660,7 @@ object DesainFrm: TDesainFrm
                 1899.708333333333000000)
               BandType = rbTitle
               object QRTitle: TQRLabel
-                Left = -64
+                Left = 287
                 Top = 2
                 Width = 143
                 Height = 26
@@ -670,8 +670,8 @@ object DesainFrm: TDesainFrm
                 Frame.DrawLeft = False
                 Frame.DrawRight = False
                 Size.Values = (
-                  68.791666666666670000
-                  759.354166666666700000
+                  68.791666666666680000
+                  759.354166666666800000
                   5.291666666666667000
                   378.354166666666700000)
                 Alignment = taCenter
@@ -1294,7 +1294,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 74.083333333333340000
-                949.854166666666700000)
+                949.854166666666800000)
               BandType = rbColumnHeader
               object QRLabel11: TQRLabel
                 Left = 7
@@ -1475,7 +1475,7 @@ object DesainFrm: TDesainFrm
               ParentFont = False
               Size.Values = (
                 39.687500000000000000
-                949.854166666666700000)
+                949.854166666666800000)
               BandType = rbDetail
               object QRDBText18: TQRDBText
                 Left = 183
@@ -1869,7 +1869,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 44.979166666666670000
-                949.854166666666700000)
+                949.854166666666800000)
               BandType = rbGroupFooter
               object QRExpr2: TQRExpr
                 Left = 48
@@ -2019,7 +2019,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 0.000000000000000000
-                949.854166666666700000)
+                949.854166666666800000)
               BandType = rbGroupFooter
             end
             object QRGroup1: TQRGroup
@@ -2039,7 +2039,7 @@ object DesainFrm: TDesainFrm
               LinkBand = QRBand1
               Size.Values = (
                 42.333333333333340000
-                949.854166666666700000)
+                949.854166666666800000)
               Expression = 'CDSQDetail2.ARAH'
               FooterBand = QRBand1
               Master = QuickRep1
@@ -2143,7 +2143,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 42.333333333333340000
-                949.854166666666700000)
+                949.854166666666800000)
               Expression = 'CDSQDetail2.KELOMPOK'
               FooterBand = QRBand2
               Master = QuickRep1
@@ -2214,7 +2214,7 @@ object DesainFrm: TDesainFrm
               ForceNewColumn = False
               ForceNewPage = False
               Size.Values = (
-                68.791666666666670000
+                68.791666666666680000
                 1899.708333333333000000)
               BandType = rbSummary
               object QRRichText1: TQRRichText
@@ -2704,6 +2704,19 @@ object DesainFrm: TDesainFrm
             WantReturns = False
             WordWrap = False
           end
+          object wwDBEdit27: TwwDBEdit
+            Left = 632
+            Top = 11
+            Width = 57
+            Height = 19
+            Color = clWhite
+            DataField = 'NPICK2'
+            DataSource = dsCDSMaster
+            TabOrder = 32
+            UnboundDataType = wwDefault
+            WantReturns = False
+            WordWrap = False
+          end
         end
         object Panel6: TPanel
           Left = 1
@@ -3134,7 +3147,9 @@ object DesainFrm: TDesainFrm
             'DASAR'
             'KEMBANGAN'
             '-'
-            'WARNA DASAR')
+            'WARNA DASAR'
+            'LUSI BAWAH'
+            'LUSI ATAS')
           Sorted = False
           TabOrder = 6
           UnboundDataType = wwDefault
@@ -4912,7 +4927,7 @@ object DesainFrm: TDesainFrm
       004E535052494E47010000000000070000004E50414B414E3301000000000004
       0000004245414D010000000000070000004E50414B414E340100000000000700
       00004E50414B414E35010000000000070000004E50414B414E36010000000000
-      060000004B454C5F4B50010000000000}
+      060000004E5049434B32010000000000}
     RefreshOptions = [roAfterInsert, roAfterUpdate]
     Session = DMFrm.OS
     BeforeEdit = QMasterBeforeEdit
@@ -5080,6 +5095,9 @@ object DesainFrm: TDesainFrm
     end
     object QMasterNPAKAN6: TFloatField
       FieldName = 'NPAKAN6'
+    end
+    object QMasterNPICK2: TFloatField
+      FieldName = 'NPICK2'
     end
   end
   object CDSQDetail: TOracleDataSet
@@ -7126,7 +7144,7 @@ object DesainFrm: TDesainFrm
   object QKonversi2025: TOracleDataSet
     SQL.Strings = (
       'select a.*, a.rowid from ipisma_db4.konversi_beam_25 a'
-      'where kp=:kp and mesin=:mesin and arah=:arah'
+      'where kp=:kp and mesin=:mesin and arah like :arah'
       'order by a.kp,a.mesin,a.arah')
     Variables.Data = {
       0300000003000000030000003A4B500500000005000000502E34360000000000

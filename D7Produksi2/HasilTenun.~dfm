@@ -739,7 +739,7 @@ object HasilTenunFrm: THasilTenunFrm
             Size.Values = (
               55.562500000000000000
               1481.666666666667000000
-              68.791666666666670000
+              68.791666666666680000
               156.104166666666700000)
             Alignment = taLeftJustify
             AlignToBand = False
@@ -1709,7 +1709,7 @@ object HasilTenunFrm: THasilTenunFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333340000
+              18.520833333333330000
               15.875000000000000000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -3034,7 +3034,7 @@ object HasilTenunFrm: THasilTenunFrm
             Size.Values = (
               55.562500000000000000
               1481.666666666667000000
-              68.791666666666670000
+              68.791666666666680000
               156.104166666666700000)
             Alignment = taLeftJustify
             AlignToBand = False
@@ -4004,7 +4004,7 @@ object HasilTenunFrm: THasilTenunFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333340000
+              18.520833333333330000
               15.875000000000000000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -11204,7 +11204,7 @@ object HasilTenunFrm: THasilTenunFrm
   end
   object QLookBeam: TOracleDataSet
     SQL.Strings = (
-      'select * from ipisma_db4.vlook_beam_HTv22'
+      'select * from ipisma_db4.vlook_beam_HT25 --vlook_beam_HTv22'
       'order by no_seri_beam'
       ''
       '/*select * from ipisma_db4.vlook_beam_sarung'

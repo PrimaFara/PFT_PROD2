@@ -341,9 +341,9 @@ object DesainFrm: TDesainFrm
             Caption = 'cm'
           end
           object Label7: TLabel
-            Left = 637
+            Left = 704
             Top = 15
-            Width = 42
+            Width = 44
             Height = 13
             Caption = 'Per Inc'
           end
@@ -660,7 +660,7 @@ object DesainFrm: TDesainFrm
                 1899.708333333333000000)
               BandType = rbTitle
               object QRTitle: TQRLabel
-                Left = 287
+                Left = -64
                 Top = 2
                 Width = 143
                 Height = 26
@@ -670,8 +670,8 @@ object DesainFrm: TDesainFrm
                 Frame.DrawLeft = False
                 Frame.DrawRight = False
                 Size.Values = (
-                  68.791666666666670000
-                  759.354166666666700000
+                  68.791666666666680000
+                  759.354166666666800000
                   5.291666666666667000
                   378.354166666666700000)
                 Alignment = taCenter
@@ -1294,7 +1294,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 74.083333333333340000
-                949.854166666666700000)
+                949.854166666666800000)
               BandType = rbColumnHeader
               object QRLabel11: TQRLabel
                 Left = 7
@@ -1475,7 +1475,7 @@ object DesainFrm: TDesainFrm
               ParentFont = False
               Size.Values = (
                 39.687500000000000000
-                949.854166666666700000)
+                949.854166666666800000)
               BandType = rbDetail
               object QRDBText18: TQRDBText
                 Left = 183
@@ -1869,7 +1869,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 44.979166666666670000
-                949.854166666666700000)
+                949.854166666666800000)
               BandType = rbGroupFooter
               object QRExpr2: TQRExpr
                 Left = 48
@@ -2019,7 +2019,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 0.000000000000000000
-                949.854166666666700000)
+                949.854166666666800000)
               BandType = rbGroupFooter
             end
             object QRGroup1: TQRGroup
@@ -2039,7 +2039,7 @@ object DesainFrm: TDesainFrm
               LinkBand = QRBand1
               Size.Values = (
                 42.333333333333340000
-                949.854166666666700000)
+                949.854166666666800000)
               Expression = 'CDSQDetail2.ARAH'
               FooterBand = QRBand1
               Master = QuickRep1
@@ -2143,7 +2143,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 42.333333333333340000
-                949.854166666666700000)
+                949.854166666666800000)
               Expression = 'CDSQDetail2.KELOMPOK'
               FooterBand = QRBand2
               Master = QuickRep1
@@ -2214,7 +2214,7 @@ object DesainFrm: TDesainFrm
               ForceNewColumn = False
               ForceNewPage = False
               Size.Values = (
-                68.791666666666670000
+                68.791666666666680000
                 1899.708333333333000000)
               BandType = rbSummary
               object QRRichText1: TQRRichText
@@ -2700,6 +2700,19 @@ object DesainFrm: TDesainFrm
             Height = 19
             Color = clWhite
             TabOrder = 31
+            UnboundDataType = wwDefault
+            WantReturns = False
+            WordWrap = False
+          end
+          object wwDBEdit27: TwwDBEdit
+            Left = 632
+            Top = 11
+            Width = 57
+            Height = 19
+            Color = clWhite
+            DataField = 'NPICK2'
+            DataSource = dsCDSMaster
+            TabOrder = 32
             UnboundDataType = wwDefault
             WantReturns = False
             WordWrap = False
@@ -3967,7 +3980,7 @@ object DesainFrm: TDesainFrm
         Align = alClient
         DataSource = dsQKPK
         RowHeightPercent = 125
-        TabOrder = 3
+        TabOrder = 2
         TitleAlignment = taLeftJustify
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
@@ -4090,32 +4103,6 @@ object DesainFrm: TDesainFrm
         TitleFont.Style = []
         TitleLines = 1
         TitleButtons = False
-      end
-      object LookKons: TwwDBLookupComboDlg
-        Left = 72
-        Top = 256
-        Width = 121
-        Height = 21
-        GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
-        GridColor = clWhite
-        GridTitleAlignment = taLeftJustify
-        Caption = 'Lookup'
-        MaxWidth = 0
-        MaxHeight = 209
-        Selected.Strings = (
-          'NAMA_KONSTRUKSI'#9'30'#9'NAMA_KONSTRUKSI'#9'F'
-          'KD_KONSTRUKSI'#9'6'#9'KD_KONSTRUKSI'#9'F'
-          'MUTU'#9'10'#9'MUTU'#9'F')
-        DataField = 'KD_KONSTRUKSI'
-        DataSource = dsQKPK
-        LookupTable = QLookKons
-        LookupField = 'KD_KONSTRUKSI'
-        TabOrder = 2
-        AutoDropDown = False
-        ShowButton = True
-        AllowClearKey = False
-        OnCloseUp = LookKonsCloseUp
-        OnEnter = LookKonsEnter
       end
     end
     object TabSheet8: TTabSheet
@@ -4591,7 +4578,7 @@ object DesainFrm: TDesainFrm
       object Panel13: TPanel
         Left = 0
         Top = 0
-        Width = 1180
+        Width = 1297
         Height = 49
         Align = alTop
         BevelInner = bvLowered
@@ -4731,7 +4718,7 @@ object DesainFrm: TDesainFrm
       object wwDBGrid12: TwwDBGrid
         Left = 0
         Top = 49
-        Width = 1180
+        Width = 1297
         Height = 463
         ControlType.Strings = (
           'KD_KEL;CustomEdit;LookJenis;F'
@@ -4789,6 +4776,32 @@ object DesainFrm: TDesainFrm
         OnDblClick = wwDBGrid12DblClick
         PaintOptions.AlternatingRowColor = clMoneyGreen
         PaintOptions.ActiveRecordColor = clGreen
+      end
+      object LookKons: TwwDBLookupComboDlg
+        Left = 72
+        Top = 256
+        Width = 121
+        Height = 21
+        GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
+        GridColor = clWhite
+        GridTitleAlignment = taLeftJustify
+        Caption = 'Lookup'
+        MaxWidth = 0
+        MaxHeight = 209
+        Selected.Strings = (
+          'NAMA_KONSTRUKSI'#9'30'#9'NAMA_KONSTRUKSI'#9'F'
+          'KD_KONSTRUKSI'#9'6'#9'KD_KONSTRUKSI'#9'F'
+          'MUTU'#9'10'#9'MUTU'#9'F')
+        DataField = 'KD_KONSTRUKSI'
+        DataSource = dsQKPK
+        LookupTable = QLookKons
+        LookupField = 'KD_KONSTRUKSI'
+        TabOrder = 2
+        AutoDropDown = False
+        ShowButton = True
+        AllowClearKey = False
+        OnCloseUp = LookKonsCloseUp
+        OnEnter = LookKonsEnter
       end
     end
   end
@@ -4912,7 +4925,7 @@ object DesainFrm: TDesainFrm
       004E535052494E47010000000000070000004E50414B414E3301000000000004
       0000004245414D010000000000070000004E50414B414E340100000000000700
       00004E50414B414E35010000000000070000004E50414B414E36010000000000
-      060000004B454C5F4B50010000000000}
+      060000004E5049434B32010000000000}
     RefreshOptions = [roAfterInsert, roAfterUpdate]
     Session = DMFrm.OS
     BeforeEdit = QMasterBeforeEdit
@@ -5080,6 +5093,9 @@ object DesainFrm: TDesainFrm
     end
     object QMasterNPAKAN6: TFloatField
       FieldName = 'NPAKAN6'
+    end
+    object QMasterNPICK2: TFloatField
+      FieldName = 'NPICK2'
     end
   end
   object CDSQDetail: TOracleDataSet
@@ -6255,7 +6271,10 @@ object DesainFrm: TDesainFrm
       'select a.*, a.rowid from ipisma_db4.kode_produksi_new a '
       'where a.status = 1'
       'order by a.KP'
+      ':myparam'
       '')
+    Variables.Data = {
+      0300000001000000080000003A4D59504152414D010000000000000000000000}
     QBEDefinition.QBEFieldDefs = {
       040000000C000000020000004B50010000000000040000004C55534901000000
       00000500000050414B414E010000000000050000005349534952010000000000
@@ -6626,7 +6645,8 @@ object DesainFrm: TDesainFrm
     SQL.Strings = (
       'select a.*, a.rowid from ipisma_db4.kode_prod_kons a '
       '--where a.kd_konstruksi is null'
-      'order by a.kp,a.nama_konstruksi,a.keterangan,a.mutu')
+      'order by a.kp,a.nama_konstruksi,a.keterangan,a.mutu'
+      ':myparam')
     Variables.Data = {
       0300000001000000080000003A4D59504152414D010000000000000000000000}
     QBEDefinition.QBEFieldDefs = {
@@ -7122,7 +7142,7 @@ object DesainFrm: TDesainFrm
   object QKonversi2025: TOracleDataSet
     SQL.Strings = (
       'select a.*, a.rowid from ipisma_db4.konversi_beam_25 a'
-      'where kp=:kp and mesin=:mesin and arah=:arah'
+      'where kp=:kp and mesin=:mesin and arah like :arah'
       'order by a.kp,a.mesin,a.arah')
     Variables.Data = {
       0300000003000000030000003A4B500500000005000000502E34360000000000

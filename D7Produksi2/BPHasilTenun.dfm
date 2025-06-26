@@ -1267,8 +1267,8 @@ object BPHasilTenunFrm: TBPHasilTenunFrm
   object QLookBeam: TOracleDataSet
     SQL.Strings = (
       
-        'select a.* from ipisma_db4.vlook_beam_HT25 /*VLOOK_BEAM_ht24_V2*' +
-        '/ a /*vlook_beam_hasiltenun a*/'
+        'select a.* from ipisma_db4.vlook_beam_HT25_06 /*VLOOK_BEAM_ht24_' +
+        'V2*/ a /*vlook_beam_hasiltenun a*/'
       
         'where a.lokasi=:plokasi and a.proses=:pproses and a.tanggal<=tru' +
         'nc(:ptgl)+1-1/86400'

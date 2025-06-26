@@ -867,6 +867,7 @@ type
     QKBeamRM_LUSI: TFloatField;
     QKBeamRM_PAKAN: TFloatField;
     QCekHKBEAM: TStringField;
+    QKBeamRT_LP: TFloatField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure TabSheet1Show(Sender: TObject);
@@ -1558,11 +1559,11 @@ begin
 //  d:=a*QKBeamRASIO.AsFloat;
   wwdbedit13.Text:=floattostr(b);
 
-  if QKBeamRASIO.AsFloat>0 then
-  //if QKBeamRT_LP.AsFloat>0 then  konversi baru blm dipakai
+  //if QKBeamRASIO.AsFloat>0 then
+  if QKBeamRT_LP.AsFloat>0 then  //konversi 2025 270625
   begin
-    d:=b*QKBeamRASIO.AsFloat;
-    //d:=b*QKBeamRT_LP.AsFloat;  konversi baru blm dipakai
+    //d:=b*QKBeamRASIO.AsFloat;
+    d:=b*QKBeamRT_LP.AsFloat;  //konversi 2025 270625
     wwDBEdit34.Text:=FloatToStr(d);
   end;
   QMaster.Post;

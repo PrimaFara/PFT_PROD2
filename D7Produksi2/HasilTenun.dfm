@@ -11204,7 +11204,7 @@ object HasilTenunFrm: THasilTenunFrm
   end
   object QLookBeam: TOracleDataSet
     SQL.Strings = (
-      'select * from ipisma_db4.vlook_beam_HT25 --vlook_beam_HTv22'
+      'select * from ipisma_db4.vlook_beam_HT25_06 --vlook_beam_HTv22'
       'order by no_seri_beam'
       ''
       '/*select * from ipisma_db4.vlook_beam_sarung'
