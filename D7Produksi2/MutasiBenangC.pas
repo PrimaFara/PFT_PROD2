@@ -738,7 +738,7 @@ QBrowse.Close;
   QAmbil_Data.SetVariable('pawal',VTglAwal.Date);
   QAmbil_Data.SetVariable('pakhir',vTglAkhir.Date);
   QAmbil_Data.Execute;
-QBrowse.SetVariable('myparam', 'order by bem desc');
+QBrowse.SetVariable('myparam', 'order by kp,konstruksi,bem desc');
 QBrowse.Open;
 //QBrowse.Refresh;
 QBrowseTotal.Close;

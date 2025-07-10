@@ -297,6 +297,13 @@ type
     BitBtn12: TBitBtn;
     QTutupTahun: TOracleQuery;
     QUpdate2: TOracleQuery;
+    QRwytWrp: TOracleDataSet;
+    dsQRwytWrp: TwwDataSource;
+    CbRwytWrp: TCheckBox;
+    BtnExpRytWrp: TBitBtn;
+    DBText1: TDBText;
+    Label28: TLabel;
+    wwDBGrid3: TwwDBGrid;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure vTglAwalChange(Sender: TObject);
@@ -320,6 +327,7 @@ type
     procedure SpinEdit1Change(Sender: TObject);
     procedure BitBtn12Click(Sender: TObject);
     procedure QUpdate2BeforeQuery(Sender: TOracleQuery);
+    procedure CbRwytWrpClick(Sender: TObject);
   private
     { Private declarations }
     vrasio, vrasio3: real;
@@ -807,6 +815,31 @@ begin
     '  VALUES (s.tahun, s.KP, s.konstruksi, s.mesin, ' +
     '          s.qty) ' +
     'WHERE s.KP IS NOT NULL';
+end;
+
+procedure TMutasiBenangWFrm.CbRwytWrpClick(Sender: TObject);
+begin
+  if CbRwytWrp.Checked then
+    begin
+      wwDBGrid3.BringToFront;
+      Label28.Visible:=TRUE;
+      DBText1.Visible:=TRUE;
+      BtnExpRytWrp.Visible:=TRUE;
+      QRwytWrp.DisableControls;
+      QRwytWrp.Close;
+      QRwytWrp.SetVariable('kd_produksi',QBrowseKP.AsString);
+      QRwytWrp.SetVariable('pawal',trunc(VTglAwal.Date));
+      QRwytWrp.SetVariable('pakhir',trunc(VTglAkhir.Date)+1-1/86400);
+      QRwytWrp.Open;
+      QRwytWrp.EnableControls;
+    end
+  else
+      begin
+      wwDBGrid3.SendToBack;
+      Label28.Visible:=False;
+      DBText1.Visible:=False;
+      BtnExpRytWrp.Visible:=False;
+    end
 end;
 
 end.

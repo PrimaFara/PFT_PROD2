@@ -214,6 +214,13 @@ type
     QDetailKD_ITEM2: TStringField;
     QBrowseNO_RESEP: TStringField;
     QBrowseISPOST: TStringField;
+    QKBeam: TOracleDataSet;
+    QKBeamMESIN: TStringField;
+    QKBeamKP: TStringField;
+    QKBeamARAH: TStringField;
+    QKBeamRT_LP: TFloatField;
+    CmbArah: TwwDBComboBox;
+    LookKonv25: TwwDBLookupComboDlg;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure BtnExportClick(Sender: TObject);
@@ -267,6 +274,10 @@ type
     procedure wwCheckBox1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure wwDBGrid1UpdateFooter(Sender: TObject);
+    procedure LookKonv25Enter(Sender: TObject);
+    procedure LookKonv25CloseUp(Sender: TObject; LookupTable,
+      FillTable: TDataSet; modified: Boolean);
+    procedure QDetailQTY5Change(Sender: TField);
 
   private
     { Private declarations }
@@ -852,8 +863,8 @@ begin
     QDetailQTY1.AsFloat:=QItem_koQTY1.AsFloat;
     QDetailQTY2.AsFloat:=QItem_koQTY2.AsFloat;
     QDetailQTY3.AsFloat:=QItem_koQTY3.AsFloat;
-//    QDetailKD_WARNA.AsString:=QItem_koKD_WARNA.AsString;
- //   QDetailNO_BATCH.AsString:=QItem_koWARNA.AsString;
+//QDetailKD_WARNA.AsString:=QItem_koKD_WARNA.AsString;
+//QDetailNO_BATCH.AsString:=QItem_koWARNA.AsString;
     //QDetailKD_SUB_LOKASI.AsString:=QItem_koKD_SUB_LOKASI.AsString;
     //QDetailKDSUBLOKASI_GJ.AsString:=QItem_koKD_SUB_LOKASI.AsString;
   end;
@@ -862,6 +873,7 @@ end;
 procedure TPermintaanKoreksi_kanjiFrm.QDetailNewRecord(DataSet: TDataSet);
 begin
   QDetailIBUKTI.AsInteger:=QMasterIBUKTI.AsInteger;
+  QDetailNO_BUKTI.AsString:='LUSI';
 end;
 
 procedure TPermintaanKoreksi_kanjiFrm.QDetailBeforePost(DataSet: TDataSet);
@@ -1021,6 +1033,28 @@ wwDBGrid1.ColumnByName('QTY7').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalSE
 wwDBGrid1.ColumnByName('QTY8').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalSELISIH2.AsFloat);
 wwDBGrid1.ColumnByName('QTY9').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalSELISIH3.AsFloat);
 
+end;
+
+procedure TPermintaanKoreksi_kanjiFrm.LookKonv25Enter(Sender: TObject);
+var
+ mes,kprod,larah: String;
+begin
+  QKBeam.Close;
+  QKBeam.SetVariable('mes', Qitem_koMESIN.AsString);
+  QKBeam.SetVariable('kprod', Qitem_koKP.AsString);
+  QKBeam.SetVariable('larah', CmbArah.Text);
+  QKBeam.Open;
+end;
+
+procedure TPermintaanKoreksi_kanjiFrm.LookKonv25CloseUp(Sender: TObject;
+  LookupTable, FillTable: TDataSet; modified: Boolean);
+begin
+  QDetailRASIO.AsFloat:=QKBeamRT_LP.AsFloat;
+end;
+
+procedure TPermintaanKoreksi_kanjiFrm.QDetailQTY5Change(Sender: TField);
+begin
+    QDetailQTY6.AsFloat:=(QDetailQTY5.AsFloat/20)*QDetailRASIO.AsFloat;//QKBeamRT_LP.AsFloat;
 end;
 
 end.

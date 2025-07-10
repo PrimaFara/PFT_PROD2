@@ -1368,8 +1368,7 @@ begin
   if WipPertenunanFrm=nil then WipPertenunanFrm:=TWipPertenunanFrm.Create(Application);
   WipPertenunanFrm.Show;
 end;
-
-
+ 
 procedure TPembelianFrm.OperatorMending1Click(Sender: TObject);
 begin
   if Daftar_Op_mendingFrm=nil then Daftar_Op_mendingFrm:=TDaftar_Op_mendingFrm.Create(Application);

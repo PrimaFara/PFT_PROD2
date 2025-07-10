@@ -379,6 +379,22 @@ object KartuMesinFrm: TKartuMesinFrm
     TabOrder = 5
     UnboundDataType = wwDefault
   end
+  object wwCheckBox1: TwwCheckBox
+    Left = 400
+    Top = 246
+    Width = 63
+    Height = 32
+    DisableThemes = False
+    AlwaysTransparent = False
+    ValueChecked = '1'
+    ValueUnchecked = '0'
+    DisplayValueChecked = 'True'
+    DisplayValueUnchecked = 'False'
+    NullAndBlankState = cbUnchecked
+    DataField = 'REPRO'
+    DataSource = dsQKartuMesin
+    TabOrder = 8
+  end
   object LookLokasi: TwwDBLookupComboDlg
     Left = 240
     Top = 218
@@ -401,7 +417,7 @@ object KartuMesinFrm: TKartuMesinFrm
     Frame.NonFocusBorders = []
     Frame.NonFocusStyle = efsFrameSingle
     Frame.NonFocusFontColor = clBlue
-    TabOrder = 8
+    TabOrder = 9
     Visible = False
     AutoDropDown = False
     ShowButton = True
@@ -432,7 +448,7 @@ object KartuMesinFrm: TKartuMesinFrm
     Frame.NonFocusBorders = []
     Frame.NonFocusStyle = efsFrameSingle
     Frame.NonFocusFontColor = clBlue
-    TabOrder = 9
+    TabOrder = 10
     Visible = False
     AutoDropDown = False
     ShowButton = True
@@ -468,7 +484,7 @@ object KartuMesinFrm: TKartuMesinFrm
       'OVER BEAM'
       'LAINNYA')
     Sorted = False
-    TabOrder = 10
+    TabOrder = 11
     UnboundDataType = wwDefault
     Visible = False
   end
@@ -487,7 +503,7 @@ object KartuMesinFrm: TKartuMesinFrm
     Frame.NonFocusBorders = []
     Frame.NonFocusStyle = efsFrameSingle
     Frame.NonFocusFontColor = clBlue
-    TabOrder = 11
+    TabOrder = 12
     WordWrap = False
     UnboundDataType = wwDefault
     Visible = False
@@ -515,7 +531,7 @@ object KartuMesinFrm: TKartuMesinFrm
     Frame.NonFocusBorders = []
     Frame.NonFocusStyle = efsFrameSingle
     Frame.NonFocusFontColor = clBlue
-    TabOrder = 12
+    TabOrder = 13
     Visible = False
     AutoDropDown = True
     ShowButton = True
@@ -530,7 +546,7 @@ object KartuMesinFrm: TKartuMesinFrm
     Height = 73
     DataField = 'KETERANGAN'
     DataSource = dsQKartuMesin
-    TabOrder = 13
+    TabOrder = 14
     Visible = False
   end
   object LookGrupasli: TwwDBLookupComboDlg
@@ -555,7 +571,7 @@ object KartuMesinFrm: TKartuMesinFrm
     Frame.NonFocusBorders = []
     Frame.NonFocusStyle = efsFrameSingle
     Frame.NonFocusFontColor = clBlue
-    TabOrder = 14
+    TabOrder = 15
     Visible = False
     AutoDropDown = True
     ShowButton = True
@@ -586,25 +602,9 @@ object KartuMesinFrm: TKartuMesinFrm
       'SIANG'
       'MALAM')
     Sorted = False
-    TabOrder = 15
+    TabOrder = 16
     UnboundDataType = wwDefault
     Visible = False
-  end
-  object wwCheckBox1: TwwCheckBox
-    Left = 400
-    Top = 246
-    Width = 17
-    Height = 22
-    DisableThemes = False
-    AlwaysTransparent = False
-    ValueChecked = '1'
-    ValueUnchecked = '0'
-    DisplayValueChecked = 'True'
-    DisplayValueUnchecked = 'False'
-    NullAndBlankState = cbUnchecked
-    DataField = 'REPRO'
-    DataSource = dsQKartuMesin
-    TabOrder = 16
   end
   object QKartuMesin: TOracleDataSet
     SQL.Strings = (
@@ -624,7 +624,7 @@ object KartuMesinFrm: TKartuMesinFrm
     SequenceField.Sequence = 'ipisma_db4.NO_REG_PROD'
     SequenceField.ApplyMoment = amOnNewRecord
     QBEDefinition.QBEFieldDefs = {
-      040000001C000000060000004E4F5F5245470100000000000700000054414E47
+      040000001D000000060000004E4F5F5245470100000000000700000054414E47
       47414C010000000000070000004E4F5F4E4F54410100000000000C0000004E4F
       5F534552495F4245414D0100000000000A0000004F50525F494E534552540100
       000000000A00000054474C5F494E534552540100000000000A0000004B455445
@@ -639,7 +639,8 @@ object KartuMesinFrm: TKartuMesinFrm
       004B50010000000000080000004B445F4D4553494E0100000000000A0000004E
       414D415F4D4553494E0100000000000500000047525550320100000000000900
       0000475255505F42415255010000000000040000004245414D01000000000005
-      000000524550524F010000000000}
+      000000524550524F0100000000000D0000004E4F5F534552495F4245414D3201
+      0000000000}
     RefreshOptions = [roAfterInsert, roAfterUpdate]
     Session = DMFrm.OS
     OnCalcFields = QKartuMesinCalcFields
@@ -1066,62 +1067,42 @@ object KartuMesinFrm: TKartuMesinFrm
   end
   object QKBeam: TOracleDataSet
     SQL.Strings = (
-      'select * from IPISMA_DB4.konversi_beam a'
-      'where mesin=:mes and kp=:kprod')
+      'select mesin, '
+      'kp, '
+      'arah, '
+      'sum(nvl(rt_lp, 0)) as rt_lp'
+      'from IPISMA_DB4.konversi_beam_25 a'
+      'where mesin=:mes and kp=:kprod and arah=:arah'
+      'group by mesin, kp, arah')
     Variables.Data = {
-      0300000002000000040000003A4D455305000000000000000000000006000000
-      3A4B50524F44050000000000000000000000}
+      0300000003000000040000003A4D45530500000014000000414A4C2054535544
+      414B4F4D4120504C41494E0000000000060000003A4B50524F44050000000900
+      0000502E343620504B4C0000000000050000003A415241480500000000000000
+      00000000}
     QBEDefinition.QBEFieldDefs = {
-      040000000A000000040000004B4F4445010000000000050000004D4553494E01
-      0000000000020000004B5001000000000005000000524153494F010000000000
-      05000000414B54494601000000000004000000454449540100000000000A0000
-      0054474C5F494E534552540100000000000800000054474C5F45444954010000
-      0000000A0000004F50525F494E53455254010000000000080000004F50525F45
-      444954010000000000}
+      0400000004000000050000004D4553494E010000000000020000004B50010000
+      00000004000000415241480100000000000500000052545F4C50010000000000}
     ReadOnly = True
     QueryAllRecords = False
     Session = DMFrm.OS
     Left = 534
     Top = 352
-    object QKBeamKODE: TStringField
-      FieldName = 'KODE'
-      Required = True
-      Size = 30
-    end
     object QKBeamMESIN: TStringField
       FieldName = 'MESIN'
+      Required = True
       Size = 100
     end
     object QKBeamKP: TStringField
       FieldName = 'KP'
       Required = True
-      Size = 10
-    end
-    object QKBeamRASIO: TFloatField
-      FieldName = 'RASIO'
-      Required = True
-    end
-    object QKBeamAKTIF: TStringField
-      FieldName = 'AKTIF'
-      Size = 1
-    end
-    object QKBeamEDIT: TStringField
-      FieldName = 'EDIT'
-      Size = 1
-    end
-    object QKBeamTGL_INSERT: TDateTimeField
-      FieldName = 'TGL_INSERT'
-    end
-    object QKBeamTGL_EDIT: TDateTimeField
-      FieldName = 'TGL_EDIT'
-    end
-    object QKBeamOPR_INSERT: TStringField
-      FieldName = 'OPR_INSERT'
       Size = 30
     end
-    object QKBeamOPR_EDIT: TStringField
-      FieldName = 'OPR_EDIT'
+    object QKBeamARAH: TStringField
+      FieldName = 'ARAH'
       Size = 30
+    end
+    object QKBeamRT_LP: TFloatField
+      FieldName = 'RT_LP'
     end
   end
   object Qbeamoso: TOracleDataSet
@@ -1129,14 +1110,17 @@ object KartuMesinFrm: TKartuMesinFrm
       'select kp,no_seri_beam, '
       'jml_potong, '
       'jml_kodi, '
-      'jml_meter,qty_kg from IPISMA_DB4.beam_isi a'
+      
+        'jml_meter,qty_kg,decode(arah,'#39#39','#39'LUSI'#39',arah) as arah from IPISMA' +
+        '_DB4.beam_isi a'
       'where no_seri_beam=:bem')
     Variables.Data = {0300000001000000040000003A42454D050000000000000000000000}
     QBEDefinition.QBEFieldDefs = {
-      0400000006000000020000004B500100000000000C0000004E4F5F534552495F
+      0400000007000000020000004B500100000000000C0000004E4F5F534552495F
       4245414D0100000000000A0000004A4D4C5F504F544F4E470100000000000800
       00004A4D4C5F4B4F4449010000000000090000004A4D4C5F4D45544552010000
-      000000060000005154595F4B47010000000000}
+      000000060000005154595F4B4701000000000004000000415241480100000000
+      00}
     ReadOnly = True
     QueryAllRecords = False
     Session = DMFrm.OS
@@ -1161,6 +1145,10 @@ object KartuMesinFrm: TKartuMesinFrm
     end
     object QbeamosoQTY_KG: TFloatField
       FieldName = 'QTY_KG'
+    end
+    object QbeamosoARAH: TStringField
+      FieldName = 'ARAH'
+      Size = 30
     end
   end
   object QJns_Beam: TOracleDataSet

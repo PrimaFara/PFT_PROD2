@@ -445,7 +445,7 @@ object MutasiBenangKFrm: TMutasiBenangKFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              632.354166666666700000
+              632.354166666666800000
               105.833333333333300000
               89.958333333333340000)
             Alignment = taLeftJustify
@@ -1034,7 +1034,7 @@ object MutasiBenangKFrm: TMutasiBenangKFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              926.041666666666700000
+              926.041666666666800000
               105.833333333333300000
               44.979166666666670000)
             Alignment = taLeftJustify
@@ -2660,7 +2660,7 @@ object MutasiBenangKFrm: TMutasiBenangKFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333340000
+              18.520833333333330000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -4815,12 +4815,15 @@ object MutasiBenangKFrm: TMutasiBenangKFrm
     end
     object QBrowseQTY_OUT13: TFloatField
       FieldName = 'QTY_OUT13'
+      DisplayFormat = '#.#,#;(#.#,#); '
     end
     object QBrowseQTY_OUT14: TFloatField
       FieldName = 'QTY_OUT14'
+      DisplayFormat = '#.#,#;(#.#,#); '
     end
     object QBrowseQTY_OUT15: TFloatField
       FieldName = 'QTY_OUT15'
+      DisplayFormat = '#.#,#;(#.#,#); '
     end
     object QBrowseQTY_IN13: TFloatField
       FieldName = 'QTY_IN13'
@@ -5075,7 +5078,7 @@ object MutasiBenangKFrm: TMutasiBenangKFrm
   object QAmbil_Data: TOracleQuery
     SQL.Strings = (
       'begin'
-      '  ipisma_db4.Proc_prod_mutasi_b_kanji25_06(:pawal,:pakhir);'
+      '  ipisma_db4.Proc_prod_mutasi_b_kanji2507(:pawal,:pakhir);'
       '/*ipisma_db4.Proc_prod_mutasi_b_kanjiAS(:pawal,:pakhir);*/'
       'end;')
     Session = DMFrm.OS

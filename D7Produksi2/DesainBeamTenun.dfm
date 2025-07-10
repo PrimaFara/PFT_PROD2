@@ -1216,9 +1216,9 @@ object DesainBeamTenunFrm: TDesainBeamTenunFrm
           object Label9: TLabel
             Left = 216
             Top = 11
-            Width = 42
+            Width = 34
             Height = 13
-            Caption = 'Qty Hasil'
+            Caption = 'Potong'
           end
           object DBText2: TDBText
             Left = 496
@@ -1279,16 +1279,16 @@ object DesainBeamTenunFrm: TDesainBeamTenunFrm
           object Label53: TLabel
             Left = 216
             Top = 33
-            Width = 46
+            Width = 27
             Height = 13
-            Caption = 'Qty Meter'
+            Caption = 'Meter'
           end
           object Label54: TLabel
             Left = 216
             Top = 54
-            Width = 32
+            Width = 13
             Height = 13
-            Caption = 'Qty Kg'
+            Caption = 'Kg'
           end
           object wwDBNavigator1: TwwDBNavigator
             Left = 14
@@ -4741,17 +4741,23 @@ object DesainBeamTenunFrm: TDesainBeamTenunFrm
   end
   object QKBeam: TOracleDataSet
     SQL.Strings = (
-      'select * from IPISMA_DB4.konversi_beam a'
-      'where mesin=:mes and kp=:kprod')
+      'select * from IPISMA_DB4.konversi_beam_25 a'
+      'where mesin=:mes and kp=:kprod and arah='#39'LUSI'#39)
     Variables.Data = {
-      0300000002000000040000003A4D455305000000000000000000000006000000
-      3A4B50524F44050000000000000000000000}
+      0300000002000000040000003A4D45530500000014000000414A4C2054535544
+      414B4F4D4120504C41494E0000000000060000003A4B50524F44050000000500
+      0000502E34360000000000}
     QBEDefinition.QBEFieldDefs = {
-      0400000008000000040000004B4F4445010000000000050000004D4553494E01
-      0000000000020000004B5001000000000005000000524153494F010000000000
-      05000000414B54494601000000000004000000454449540100000000000A0000
-      0054474C5F494E534552540100000000000800000054474C5F45444954010000
-      000000}
+      0400000012000000040000004B4F4445010000000000050000004D4553494E01
+      0000000000020000004B5001000000000005000000414B544946010000000000
+      0A00000054474C5F494E534552540100000000000800000054474C5F45444954
+      01000000000004000000415241480100000000000600000042454E414E470100
+      000000000500000048454C414901000000000004000000505F4C500100000000
+      0005000000505F53524701000000000006000000505F4B4F4449010000000000
+      05000000524D5F4C500100000000000500000057415354450100000000000500
+      000052545F4C50010000000000080000004B4F4E56455253490100000000000A
+      0000004F50525F494E53455254010000000000080000004F50525F4544495401
+      0000000000}
     ReadOnly = True
     QueryAllRecords = False
     Session = DMFrm.OS
@@ -4759,35 +4765,67 @@ object DesainBeamTenunFrm: TDesainBeamTenunFrm
     Top = 296
     object QKBeamKODE: TStringField
       FieldName = 'KODE'
-      Required = True
       Size = 30
     end
     object QKBeamMESIN: TStringField
       FieldName = 'MESIN'
+      Required = True
       Size = 100
     end
     object QKBeamKP: TStringField
       FieldName = 'KP'
       Required = True
-      Size = 10
+      Size = 30
     end
-    object QKBeamRASIO: TFloatField
-      FieldName = 'RASIO'
-      Required = True
+    object QKBeamARAH: TStringField
+      FieldName = 'ARAH'
+      Size = 30
+    end
+    object QKBeamBENANG: TStringField
+      FieldName = 'BENANG'
+      Size = 50
+    end
+    object QKBeamHELAI: TFloatField
+      FieldName = 'HELAI'
+    end
+    object QKBeamP_LP: TFloatField
+      FieldName = 'P_LP'
+    end
+    object QKBeamP_SRG: TFloatField
+      FieldName = 'P_SRG'
+    end
+    object QKBeamP_KODI: TFloatField
+      FieldName = 'P_KODI'
+    end
+    object QKBeamRM_LP: TFloatField
+      FieldName = 'RM_LP'
+    end
+    object QKBeamWASTE: TFloatField
+      FieldName = 'WASTE'
+    end
+    object QKBeamRT_LP: TFloatField
+      FieldName = 'RT_LP'
+    end
+    object QKBeamKONVERSI: TFloatField
+      FieldName = 'KONVERSI'
     end
     object QKBeamAKTIF: TStringField
       FieldName = 'AKTIF'
       Size = 1
     end
-    object QKBeamEDIT: TStringField
-      FieldName = 'EDIT'
-      Size = 1
-    end
     object QKBeamTGL_INSERT: TDateTimeField
       FieldName = 'TGL_INSERT'
     end
+    object QKBeamOPR_INSERT: TStringField
+      FieldName = 'OPR_INSERT'
+      Size = 30
+    end
     object QKBeamTGL_EDIT: TDateTimeField
       FieldName = 'TGL_EDIT'
+    end
+    object QKBeamOPR_EDIT: TStringField
+      FieldName = 'OPR_EDIT'
+      Size = 30
     end
   end
   object LookRABDlg1: TwwLookupDialog

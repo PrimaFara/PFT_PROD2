@@ -1,8 +1,8 @@
 object MendingTenunFrm: TMendingTenunFrm
   Left = 269
   Top = 124
-  Width = 1010
-  Height = 607
+  Width = 1079
+  Height = 710
   Caption = '853. Mending Tenun'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -24,7 +24,7 @@ object MendingTenunFrm: TMendingTenunFrm
   object DBText3: TDBText
     Left = 0
     Top = 49
-    Width = 994
+    Width = 1063
     Height = 27
     Align = alTop
     Alignment = taRightJustify
@@ -41,8 +41,8 @@ object MendingTenunFrm: TMendingTenunFrm
   end
   object Label1: TLabel
     Left = 0
-    Top = 556
-    Width = 994
+    Top = 659
+    Width = 1063
     Height = 13
     Align = alBottom
     Color = clSkyBlue
@@ -51,7 +51,7 @@ object MendingTenunFrm: TMendingTenunFrm
   object PanelHeader: TPanel
     Left = 0
     Top = 0
-    Width = 994
+    Width = 1063
     Height = 49
     Align = alTop
     BevelOuter = bvNone
@@ -68,8 +68,8 @@ object MendingTenunFrm: TMendingTenunFrm
   object PageControl1: TPageControl
     Left = 0
     Top = 76
-    Width = 994
-    Height = 480
+    Width = 1063
+    Height = 583
     ActivePage = TabSheet2
     Align = alClient
     Style = tsFlatButtons
@@ -138,7 +138,7 @@ object MendingTenunFrm: TMendingTenunFrm
           ForceNewColumn = False
           ForceNewPage = False
           Size.Values = (
-            121.708333333333300000
+            121.708333333333400000
             1899.708333333333000000)
           BandType = rbPageHeader
           object QRDBText2: TQRDBText
@@ -386,7 +386,7 @@ object MendingTenunFrm: TMendingTenunFrm
             Frame.DrawLeft = False
             Frame.DrawRight = False
             Size.Values = (
-              68.791666666666680000
+              68.791666666666670000
               746.125000000000000000
               0.000000000000000000
               407.458333333333400000)
@@ -1484,7 +1484,7 @@ object MendingTenunFrm: TMendingTenunFrm
       object PanelMaster: TPanel
         Left = 0
         Top = 0
-        Width = 986
+        Width = 1055
         Height = 137
         Align = alTop
         BevelOuter = bvNone
@@ -1496,7 +1496,7 @@ object MendingTenunFrm: TMendingTenunFrm
         ParentFont = False
         TabOrder = 0
         DesignSize = (
-          986
+          1055
           137)
         object Label6: TLabel
           Left = 8
@@ -1638,16 +1638,16 @@ object MendingTenunFrm: TMendingTenunFrm
       object PanelDetail: TPanel
         Left = 0
         Top = 178
-        Width = 986
-        Height = 230
+        Width = 1055
+        Height = 333
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 2
         object wwDBGrid1: TwwDBGrid
           Left = 0
           Top = 0
-          Width = 986
-          Height = 230
+          Width = 1055
+          Height = 333
           ControlType.Strings = (
             'KD_SUB_LOKASI2;CustomEdit;LookLokasi2;F'
             'KETERANGAN;CustomEdit;LookItem;F'
@@ -1748,17 +1748,17 @@ object MendingTenunFrm: TMendingTenunFrm
       end
       object PanelFooter1: TPanel
         Left = 0
-        Top = 408
-        Width = 986
+        Top = 511
+        Width = 1055
         Height = 41
         Align = alBottom
         BevelOuter = bvNone
         TabOrder = 3
         DesignSize = (
-          986
+          1055
           41)
         object BtnPrintInput: TBitBtn
-          Left = 808
+          Left = 877
           Top = 6
           Width = 75
           Height = 25
@@ -1769,7 +1769,7 @@ object MendingTenunFrm: TMendingTenunFrm
           NumGlyphs = 2
         end
         object BtnClose1: TBitBtn
-          Left = 888
+          Left = 957
           Top = 6
           Width = 75
           Height = 25
@@ -1881,7 +1881,7 @@ object MendingTenunFrm: TMendingTenunFrm
           end
         end
         object CheckBox2: TCheckBox
-          Left = 745
+          Left = 814
           Top = 11
           Width = 60
           Height = 17
@@ -1895,17 +1895,17 @@ object MendingTenunFrm: TMendingTenunFrm
       object PanelBand: TPanel
         Left = 0
         Top = 137
-        Width = 986
+        Width = 1055
         Height = 41
         Align = alTop
         BevelOuter = bvNone
         Color = clSkyBlue
         TabOrder = 1
         DesignSize = (
-          986
+          1055
           41)
         object Label14: TLabel
-          Left = 913
+          Left = 982
           Top = 2
           Width = 43
           Height = 13
@@ -1971,7 +1971,7 @@ object MendingTenunFrm: TMendingTenunFrm
           Caption = 'Tgl_Insert'
         end
         object wwDBSpinLine1: TwwDBSpinEdit
-          Left = 913
+          Left = 982
           Top = 18
           Width = 41
           Height = 21
@@ -2071,7 +2071,7 @@ object MendingTenunFrm: TMendingTenunFrm
       object LabelBanner: TLabel
         Left = 0
         Top = 57
-        Width = 986
+        Width = 1055
         Height = 13
         Align = alTop
         Color = clSkyBlue
@@ -2080,13 +2080,13 @@ object MendingTenunFrm: TMendingTenunFrm
       object PanelFilter: TPanel
         Left = 0
         Top = 0
-        Width = 986
+        Width = 1055
         Height = 57
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 0
         DesignSize = (
-          986
+          1055
           57)
         object Label2: TLabel
           Left = 128
@@ -2110,7 +2110,7 @@ object MendingTenunFrm: TMendingTenunFrm
           Caption = 'Tgl. Akhir'
         end
         object Label5: TLabel
-          Left = 922
+          Left = 991
           Top = 16
           Width = 43
           Height = 13
@@ -2201,7 +2201,7 @@ object MendingTenunFrm: TMendingTenunFrm
           NumGlyphs = 2
         end
         object wwDBSpinLine2: TwwDBSpinEdit
-          Left = 922
+          Left = 991
           Top = 32
           Width = 41
           Height = 21
@@ -2241,16 +2241,16 @@ object MendingTenunFrm: TMendingTenunFrm
       object PanelBrowse: TPanel
         Left = 0
         Top = 70
-        Width = 986
-        Height = 338
+        Width = 1055
+        Height = 441
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 1
         object wwDBGrid2: TwwDBGrid
           Left = 0
           Top = 0
-          Width = 986
-          Height = 338
+          Width = 1055
+          Height = 441
           Selected.Strings = (
             'NO_NOTA'#9'14'#9'NO NOTA'#9'F'
             'TANGGAL'#9'12'#9'TANGGAL'#9'F'
@@ -2299,17 +2299,17 @@ object MendingTenunFrm: TMendingTenunFrm
       end
       object PanelFooter2: TPanel
         Left = 0
-        Top = 408
-        Width = 986
+        Top = 511
+        Width = 1055
         Height = 41
         Align = alBottom
         BevelOuter = bvNone
         TabOrder = 2
         DesignSize = (
-          986
+          1055
           41)
         object BtnClose2: TBitBtn
-          Left = 890
+          Left = 959
           Top = 8
           Width = 75
           Height = 25
@@ -2338,8 +2338,8 @@ object MendingTenunFrm: TMendingTenunFrm
       object wwDBRichEdit1: TwwDBRichEdit
         Left = 0
         Top = 0
-        Width = 986
-        Height = 449
+        Width = 1055
+        Height = 552
         Align = alClient
         AutoURLDetect = False
         Color = clInfoBk
@@ -2383,7 +2383,7 @@ object MendingTenunFrm: TMendingTenunFrm
       ImageIndex = 3
       object QuickRep2: TQuickRep
         Left = 80
-        Top = -674
+        Top = -114
         Width = 794
         Height = 1123
         Frame.Color = clBlack
@@ -2542,7 +2542,7 @@ object MendingTenunFrm: TMendingTenunFrm
             FontSize = 8
           end
           object QRLabel18: TQRLabel
-            Left = 212
+            Left = 266
             Top = 115
             Width = 113
             Height = 17
@@ -2553,7 +2553,7 @@ object MendingTenunFrm: TMendingTenunFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              560.916666666666700000
+              703.791666666666800000
               304.270833333333400000
               298.979166666666700000)
             Alignment = taCenter
@@ -2567,7 +2567,7 @@ object MendingTenunFrm: TMendingTenunFrm
             FontSize = 10
           end
           object QRLabel21: TQRLabel
-            Left = 228
+            Left = 282
             Top = 130
             Width = 81
             Height = 17
@@ -2578,7 +2578,7 @@ object MendingTenunFrm: TMendingTenunFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              603.250000000000000000
+              746.125000000000000000
               343.958333333333400000
               214.312500000000000000)
             Alignment = taCenter
@@ -2617,9 +2617,9 @@ object MendingTenunFrm: TMendingTenunFrm
             FontSize = 10
           end
           object QRLabel34: TQRLabel
-            Left = 420
+            Left = 426
             Top = 130
-            Width = 85
+            Width = 72
             Height = 17
             Frame.Color = clBlack
             Frame.DrawTop = False
@@ -2628,21 +2628,21 @@ object MendingTenunFrm: TMendingTenunFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              1111.250000000000000000
+              1127.125000000000000000
               343.958333333333400000
-              224.895833333333300000)
+              190.500000000000000000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
             AutoStretch = False
-            Caption = 'Adm. Weaving'
+            Caption = 'SH Weaving'
             Color = clWhite
             Transparent = False
             WordWrap = True
             FontSize = 10
           end
           object QRLabel12: TQRLabel
-            Left = 233
+            Left = 355
             Top = 54
             Width = 72
             Height = 17
@@ -2653,7 +2653,7 @@ object MendingTenunFrm: TMendingTenunFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              616.479166666666800000
+              939.270833333333400000
               142.875000000000000000
               190.500000000000000000)
             Alignment = taCenter
@@ -2661,31 +2661,6 @@ object MendingTenunFrm: TMendingTenunFrm
             AutoSize = True
             AutoStretch = False
             Caption = 'Mengetahui,'
-            Color = clWhite
-            Transparent = False
-            WordWrap = True
-            FontSize = 10
-          end
-          object QRLabel16: TQRLabel
-            Left = 439
-            Top = 54
-            Width = 42
-            Height = 17
-            Frame.Color = clBlack
-            Frame.DrawTop = False
-            Frame.DrawBottom = False
-            Frame.DrawLeft = False
-            Frame.DrawRight = False
-            Size.Values = (
-              44.979166666666670000
-              1161.520833333333000000
-              142.875000000000000000
-              111.125000000000000000)
-            Alignment = taCenter
-            AlignToBand = False
-            AutoSize = True
-            AutoStretch = False
-            Caption = 'Dibuat,'
             Color = clWhite
             Transparent = False
             WordWrap = True
@@ -2738,6 +2713,81 @@ object MendingTenunFrm: TMendingTenunFrm
             Color = clWhite
             DataSet = DMFrm.QDateTimeUser
             DataField = 'TGL'
+            Transparent = False
+            WordWrap = True
+            FontSize = 10
+          end
+          object QRLabel4: TQRLabel
+            Left = 611
+            Top = 54
+            Width = 42
+            Height = 17
+            Frame.Color = clBlack
+            Frame.DrawTop = False
+            Frame.DrawBottom = False
+            Frame.DrawLeft = False
+            Frame.DrawRight = False
+            Size.Values = (
+              44.979166666666670000
+              1616.604166666667000000
+              142.875000000000000000
+              111.125000000000000000)
+            Alignment = taCenter
+            AlignToBand = False
+            AutoSize = True
+            AutoStretch = False
+            Caption = 'Dibuat,'
+            Color = clWhite
+            Transparent = False
+            WordWrap = True
+            FontSize = 10
+          end
+          object QRLabel13: TQRLabel
+            Left = 577
+            Top = 115
+            Width = 113
+            Height = 17
+            Frame.Color = clBlack
+            Frame.DrawTop = False
+            Frame.DrawBottom = False
+            Frame.DrawLeft = False
+            Frame.DrawRight = False
+            Size.Values = (
+              44.979166666666670000
+              1526.645833333333000000
+              304.270833333333400000
+              298.979166666666700000)
+            Alignment = taCenter
+            AlignToBand = False
+            AutoSize = True
+            AutoStretch = False
+            Caption = '( ........................ )'
+            Color = clWhite
+            Transparent = False
+            WordWrap = True
+            FontSize = 10
+          end
+          object QRLabel29: TQRLabel
+            Left = 592
+            Top = 130
+            Width = 85
+            Height = 17
+            Frame.Color = clBlack
+            Frame.DrawTop = False
+            Frame.DrawBottom = False
+            Frame.DrawLeft = False
+            Frame.DrawRight = False
+            Size.Values = (
+              44.979166666666670000
+              1566.333333333333000000
+              343.958333333333400000
+              224.895833333333300000)
+            Alignment = taCenter
+            AlignToBand = False
+            AutoSize = True
+            AutoStretch = False
+            Caption = 'Adm. Weaving'
+            Color = clWhite
             Transparent = False
             WordWrap = True
             FontSize = 10
@@ -2841,7 +2891,7 @@ object MendingTenunFrm: TMendingTenunFrm
               44.979166666666670000
               1418.166666666667000000
               2.645833333333333000
-              66.145833333333320000)
+              66.145833333333340000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
@@ -3304,7 +3354,7 @@ object MendingTenunFrm: TMendingTenunFrm
             Size.Values = (
               42.333333333333340000
               1518.708333333333000000
-              431.270833333333300000
+              431.270833333333400000
               134.937500000000000000)
             Alignment = taCenter
             AlignToBand = False
@@ -3551,8 +3601,8 @@ object MendingTenunFrm: TMendingTenunFrm
       object wwDBGrid3: TwwDBGrid
         Left = 0
         Top = 65
-        Width = 986
-        Height = 343
+        Width = 1055
+        Height = 446
         Selected.Strings = (
           'NIK_LAMA'#9'12'#9'NIK'#9'F'
           'NAMA_OPR'#9'30'#9'NAMA OPERATOR'#9'F'
@@ -3595,16 +3645,16 @@ object MendingTenunFrm: TMendingTenunFrm
       object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 986
+        Width = 1055
         Height = 65
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 1
         DesignSize = (
-          986
+          1055
           65)
         object Label12: TLabel
-          Left = 741
+          Left = 810
           Top = 14
           Width = 43
           Height = 13
@@ -3659,7 +3709,7 @@ object MendingTenunFrm: TMendingTenunFrm
           Caption = 'Tgl. Akhir'
         end
         object wwDBSpinEdit1: TwwDBSpinEdit
-          Left = 741
+          Left = 810
           Top = 30
           Width = 41
           Height = 21
@@ -3753,17 +3803,17 @@ object MendingTenunFrm: TMendingTenunFrm
       end
       object Panel2: TPanel
         Left = 0
-        Top = 408
-        Width = 986
+        Top = 511
+        Width = 1055
         Height = 41
         Align = alBottom
         BevelOuter = bvNone
         TabOrder = 3
         DesignSize = (
-          986
+          1055
           41)
         object BitBtn5: TBitBtn
-          Left = 618
+          Left = 687
           Top = 8
           Width = 75
           Height = 25
@@ -3774,7 +3824,7 @@ object MendingTenunFrm: TMendingTenunFrm
           NumGlyphs = 2
         end
         object BitBtn3: TBitBtn
-          Left = 539
+          Left = 608
           Top = 8
           Width = 75
           Height = 25
@@ -3785,7 +3835,7 @@ object MendingTenunFrm: TMendingTenunFrm
           NumGlyphs = 2
         end
         object cbPreview: TCheckBox
-          Left = 476
+          Left = 545
           Top = 12
           Width = 60
           Height = 17

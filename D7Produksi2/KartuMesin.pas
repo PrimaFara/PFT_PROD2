@@ -104,16 +104,6 @@ type
     QLookBeamJNS_BEAM: TStringField;
     Qbeamoso: TOracleDataSet;
     QbeamosoKP: TStringField;
-    QKBeamKODE: TStringField;
-    QKBeamMESIN: TStringField;
-    QKBeamKP: TStringField;
-    QKBeamRASIO: TFloatField;
-    QKBeamAKTIF: TStringField;
-    QKBeamEDIT: TStringField;
-    QKBeamTGL_INSERT: TDateTimeField;
-    QKBeamTGL_EDIT: TDateTimeField;
-    QKBeamOPR_INSERT: TStringField;
-    QKBeamOPR_EDIT: TStringField;
     QJns_Beam: TOracleDataSet;
     QJns_BeamNAMA_MESIN: TStringField;
     QJns_BeamKD_MESIN: TStringField;
@@ -126,6 +116,11 @@ type
     QbeamosoQTY_KG: TFloatField;
     QKartuMesinREPRO: TStringField;
     wwCheckBox1: TwwCheckBox;
+    QbeamosoARAH: TStringField;
+    QKBeamMESIN: TStringField;
+    QKBeamKP: TStringField;
+    QKBeamARAH: TStringField;
+    QKBeamRT_LP: TFloatField;
     procedure BtnFindClick(Sender: TObject);
     procedure BtnOk2Click(Sender: TObject);
     procedure QKartuMesinCalcFields(DataSet: TDataSet);
@@ -431,7 +426,7 @@ QKBeam.Open;
    ShowMessage('ok');
   end;
   QKartuMesin.Post;     }
- //..181123 OTOMATIS METER, KG 
+ //..181123 OTOMATIS METER, KG
   if QKartuMesinJML_POTONG.AsFloat > 0 then
   begin
   QKartuMesinJML_KODI.AsFloat:= QKartuMesinJML_POTONG.AsFloat/20;
@@ -444,12 +439,14 @@ QKBeam.Open;
   QKBeam.Close;
   QKBeam.SetVariable('mes', QKartuMesinBEAM.AsString);
   QKBeam.SetVariable('kprod', QbeamosoKP.AsString);
+  QKBeam.SetVariable('arah', QbeamosoARAH.AsString);
   QKBeam.Open;
-  if QKBeamRASIO.AsFloat>0 then
+  //ShowMessage(QKBeam.SQL.Text);
+  //if QKBeamRASIO.AsFloat>0 then
+  if QKBeamRT_LP.AsFloat>0 then
   begin
-    QKartuMesinQTY_KG.AsFloat:= QKartuMesinJML_KODI.AsFloat*QKBeamRASIO.AsFloat;
+      QKartuMesinQTY_KG.AsFloat:= QKartuMesinJML_KODI.AsFloat*QKBeamRT_LP.AsFloat; //*QKBeamRASIO.AsFloat;
   end;
-
 end;
 
 procedure TKartuMesinFrm.LookjnsBeamCloseUp(Sender: TObject; LookupTable,

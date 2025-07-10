@@ -1621,7 +1621,7 @@ procedure TDesainFrm.wwDBGrid2CalcCellColors(Sender: TObject;
 begin
   if not Highlight then
   begin
-      if (Field.FieldName='KGTOTAL') or (Field.FieldName='ARAH') or
+      if (Field.FieldName='PTOTAL') or (Field.FieldName='KGTOTAL') or (Field.FieldName='ARAH') or
          (Field.FieldName='KELOMPOK') or
          (Field.FieldName='NHELAI') or
          (Field.FieldName='KD_WARNA') or

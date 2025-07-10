@@ -343,7 +343,7 @@ object DesainFrm: TDesainFrm
           object Label7: TLabel
             Left = 704
             Top = 15
-            Width = 44
+            Width = 42
             Height = 13
             Caption = 'Per Inc'
           end
@@ -660,7 +660,7 @@ object DesainFrm: TDesainFrm
                 1899.708333333333000000)
               BandType = rbTitle
               object QRTitle: TQRLabel
-                Left = -64
+                Left = 287
                 Top = 2
                 Width = 143
                 Height = 26
@@ -3147,7 +3147,9 @@ object DesainFrm: TDesainFrm
             'DASAR'
             'KEMBANGAN'
             '-'
-            'WARNA DASAR')
+            'WARNA DASAR'
+            'LUSI BAWAH'
+            'LUSI ATAS')
           Sorted = False
           TabOrder = 6
           UnboundDataType = wwDefault

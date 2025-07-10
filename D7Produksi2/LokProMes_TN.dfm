@@ -407,8 +407,7 @@ object LokProMes_TNFrm: TLokProMes_TNFrm
           'KD_KEL;CustomEdit;LookJenis;F'
           'KD_SATUAN;CustomEdit;LookSatuan;F'
           'ISAKTIF;CheckBox;1;0'
-          'HRG_KHUSUS;CheckBox;1;0'
-          'KD_MESIN;CustomEdit;LookMesin;F')
+          'HRG_KHUSUS;CheckBox;1;0')
         Selected.Strings = (
           'KD_MESIN'#9'10'#9'KD_MESIN'#9#9
           'NAMA_MESIN'#9'25'#9'NAMA_MESIN'#9#9
@@ -540,7 +539,7 @@ object LokProMes_TNFrm: TLokProMes_TNFrm
   end
   object QKD_Mesin: TOracleDataSet
     SQL.Strings = (
-      'select a.* from ipisma_db4.JENIS_MESIN a'
+      'select a.*, a.rowid from ipisma_db4.JENIS_MESIN a'
       'where kelompok in('#39'AJL'#39','#39'RAPIER'#39','#39'SHUTTLE'#39','#39'-'#39')'
       ''
       ''
@@ -580,7 +579,7 @@ object LokProMes_TNFrm: TLokProMes_TNFrm
   end
   object QJns_Msn: TOracleDataSet
     SQL.Strings = (
-      'select a.*,b.kode'
+      'select a.*, a.rowid,b.kode'
       
         'from (select a.* from ipisma_db4.JENIS_MESIN a where kelompok in' +
         '('#39'AJL'#39','#39'RAPIER'#39','#39'SHUTTLE'#39','#39'-'#39'))a,'

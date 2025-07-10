@@ -1,8 +1,8 @@
 object WipPertenunanFrm: TWipPertenunanFrm
   Left = 149
   Top = 126
-  Width = 1126
-  Height = 478
+  Width = 1674
+  Height = 595
   Caption = 'MBT Tenun'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -23,8 +23,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 1110
-    Height = 399
+    Width = 1658
+    Height = 516
     ActivePage = TabSheet5
     Align = alClient
     TabOrder = 0
@@ -2223,7 +2223,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 1102
+        Width = 1650
         Height = 52
         Align = alTop
         BevelInner = bvLowered
@@ -2454,8 +2454,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object wwDBGrid2: TwwDBGrid
         Left = 0
         Top = 52
-        Width = 1102
-        Height = 319
+        Width = 1650
+        Height = 436
         DisableThemes = True
         DisableThemesInTitle = True
         ControlType.Strings = (
@@ -2585,7 +2585,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object Panel3: TPanel
         Left = 0
         Top = 0
-        Width = 1102
+        Width = 1650
         Height = 57
         Align = alTop
         BevelInner = bvLowered
@@ -2835,8 +2835,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object wwDBGrid3: TwwDBGrid
         Left = 0
         Top = 57
-        Width = 1102
-        Height = 314
+        Width = 1650
+        Height = 431
         DisableThemes = True
         DisableThemesInTitle = True
         ControlType.Strings = (
@@ -2899,7 +2899,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object Panel2: TPanel
         Left = 0
         Top = 0
-        Width = 1102
+        Width = 1650
         Height = 52
         Align = alTop
         BevelInner = bvLowered
@@ -3174,8 +3174,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object wwDBGrid4: TwwDBGrid
         Left = 0
         Top = 52
-        Width = 1102
-        Height = 319
+        Width = 1650
+        Height = 436
         DisableThemes = True
         DisableThemesInTitle = True
         ControlType.Strings = (
@@ -3248,13 +3248,13 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object WebBrowser1: TWebBrowser
         Left = 0
         Top = 52
-        Width = 1102
-        Height = 127
+        Width = 1650
+        Height = 244
         Align = alClient
         TabOrder = 3
         OnDocumentComplete = WebBrowser1DocumentComplete
         ControlData = {
-          4C000000E5710000200D00000000000000000000000000000000000000000000
+          4C00000088AA0000381900000000000000000000000000000000000000000000
           000000004C000000000000000000000001000000E0D057007335CF11AE690800
           2B2E126208000000000000004C0000000114020000000000C000000000000046
           8000000000000000000000000000000000000000000000000000000000000000
@@ -3263,7 +3263,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object Panel8: TPanel
         Left = 0
         Top = 0
-        Width = 1102
+        Width = 1650
         Height = 52
         Align = alTop
         BevelOuter = bvNone
@@ -3523,8 +3523,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
       end
       object PanelRiwayat: TPanel
         Left = 0
-        Top = 179
-        Width = 1102
+        Top = 296
+        Width = 1650
         Height = 192
         Align = alBottom
         BevelOuter = bvNone
@@ -3534,7 +3534,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
         object wwDBGrid6: TwwDBGrid
           Left = 0
           Top = 25
-          Width = 1102
+          Width = 1650
           Height = 167
           DisableThemes = True
           DisableThemesInTitle = True
@@ -3590,7 +3590,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
         object PanelRTop: TPanel
           Left = 0
           Top = 0
-          Width = 1102
+          Width = 1650
           Height = 25
           Align = alTop
           BevelOuter = bvNone
@@ -3635,8 +3635,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
       object wwDBGrid5: TwwDBGrid
         Left = 0
         Top = 52
-        Width = 1102
-        Height = 127
+        Width = 1650
+        Height = 244
         DisableThemes = True
         DisableThemesInTitle = True
         ControlType.Strings = (
@@ -3657,7 +3657,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
           'QTY_KG_OUT'#9'10'#9'KG'#9'F'#9'PENGELUARAN'
           'QTY_PERUB_KONST_OUT'#9'10'#9'PERUB KONST'#9'F'#9'PENGELUARAN'
           'QTY_RETUR_OUT'#9'10'#9'RETUR'#9'F'#9'PENGELUARAN'
-          'QTY_AVFAL_OUT'#9'10'#9'AFFAL STD'#9'F'#9'PENGELUARAN'
+          'QTY_AVFAL_OUT'#9'10'#9'AFFAL STD~(LUSI)'#9'F'#9'PENGELUARAN'
           'QTY_AFFAL_RIIL_OUT'#9'10'#9'AFFAL RIIL'#9'F'#9'PENGELUARAN'
           'QTY_KOREKSI_OUT'#9'10'#9'KOREKSI'#9'F'#9'PENGELUARAN'
           'QTY_AKHIR'#9'10'#9'STD'#9'F'#9'SISA AKHIR (Kg)'
@@ -3700,8 +3700,8 @@ object WipPertenunanFrm: TWipPertenunanFrm
   end
   object Panel5: TPanel
     Left = 0
-    Top = 399
-    Width = 1110
+    Top = 516
+    Width = 1658
     Height = 41
     Align = alBottom
     TabOrder = 1
@@ -3783,7 +3783,7 @@ object WipPertenunanFrm: TWipPertenunanFrm
       NumGlyphs = 2
     end
     object Panel10: TPanel
-      Left = 840
+      Left = 1388
       Top = 1
       Width = 269
       Height = 39

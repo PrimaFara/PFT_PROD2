@@ -113,11 +113,6 @@ type
     PanelBrowse: TPanel;
     wwDBGrid2: TwwDBGrid;
     PanelFooter2: TPanel;
-    wwDBNavigator1: TwwDBNavigator;
-    wwDBNavigator1PriorPage: TwwNavButton;
-    wwDBNavigator1NextPage: TwwNavButton;
-    wwDBNavigator1SaveBookmark: TwwNavButton;
-    wwDBNavigator1RestoreBookmark: TwwNavButton;
     BtnClose2: TBitBtn;
     BtnDesign2: TBitBtn;
     TabSheet3: TTabSheet;
@@ -194,12 +189,9 @@ type
     QRekap_OP_GrupGRUP: TStringField;
     QRekap_OP_GrupPCS: TFloatField;
     QRekap_OP_GrupKODI: TFloatField;
-    BitBtn19: TBitBtn;
-    BitBtn3: TBitBtn;
     QTotal1: TOracleDataSet;
     QTotal1KODI: TFloatField;
     QTotal1PCS: TFloatField;
-    cbPreview: TCheckBox;
     CheckBox2: TCheckBox;
     QuickRep1: TQuickRep;
     PageHeaderBand1: TQRBand;
@@ -261,7 +253,6 @@ type
     QRLabel31: TQRLabel;
     QRLabel34: TQRLabel;
     QRLabel12: TQRLabel;
-    QRLabel16: TQRLabel;
     QRLabel35: TQRLabel;
     QRDBText7: TQRDBText;
     QRBand3: TQRBand;
@@ -295,6 +286,14 @@ type
     QRBand5: TQRBand;
     QRDBText33: TQRDBText;
     QRDBText38: TQRDBText;
+    Panel2: TPanel;
+    BitBtn5: TBitBtn;
+    BitBtn3: TBitBtn;
+    cbPreview: TCheckBox;
+    BitBtn19: TBitBtn;
+    QRLabel4: TQRLabel;
+    QRLabel13: TQRLabel;
+    QRLabel29: TQRLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure BtnExportClick(Sender: TObject);
@@ -358,6 +357,7 @@ type
     procedure BitBtn4Click(Sender: TObject);
     procedure QRBand4BeforePrint(Sender: TQRCustomBand;
       var PrintBand: Boolean);
+    procedure QRLabel16Print(sender: TObject; var Value: String);
 
 
   private

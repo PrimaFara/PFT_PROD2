@@ -614,14 +614,6 @@ type
     QJns_BeamKELOMPOK: TStringField;
     QMasterBEAM: TStringField;
     QKBeam: TOracleDataSet;
-    QKBeamKODE: TStringField;
-    QKBeamMESIN: TStringField;
-    QKBeamKP: TStringField;
-    QKBeamRASIO: TFloatField;
-    QKBeamAKTIF: TStringField;
-    QKBeamEDIT: TStringField;
-    QKBeamTGL_INSERT: TDateTimeField;
-    QKBeamTGL_EDIT: TDateTimeField;
     RadioGroup1: TRadioGroup;
     LookRABDlg1: TwwLookupDialog;
     LookResep: TwwDBLookupComboDlg;
@@ -656,6 +648,24 @@ type
     QLookResepNLUSI_ORG: TFloatField;
     QBrowseGRUP2: TStringField;
     QBrowseKETERANGAN: TStringField;
+    QKBeamKODE: TStringField;
+    QKBeamMESIN: TStringField;
+    QKBeamKP: TStringField;
+    QKBeamARAH: TStringField;
+    QKBeamBENANG: TStringField;
+    QKBeamHELAI: TFloatField;
+    QKBeamP_LP: TFloatField;
+    QKBeamP_SRG: TFloatField;
+    QKBeamP_KODI: TFloatField;
+    QKBeamRM_LP: TFloatField;
+    QKBeamWASTE: TFloatField;
+    QKBeamRT_LP: TFloatField;
+    QKBeamKONVERSI: TFloatField;
+    QKBeamAKTIF: TStringField;
+    QKBeamTGL_INSERT: TDateTimeField;
+    QKBeamOPR_INSERT: TStringField;
+    QKBeamTGL_EDIT: TDateTimeField;
+    QKBeamOPR_EDIT: TStringField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure TabSheet1Show(Sender: TObject);
@@ -761,10 +771,7 @@ type
     procedure LookResepCloseUp(Sender: TObject; LookupTable,
       FillTable: TDataSet; modified: Boolean);
     
-
-
-
-  
+   
   private
     { Private declarations }
     vorder, vfilter : String;
@@ -1330,9 +1337,11 @@ begin
 //  d:=a*QKBeamRASIO.AsFloat;
   wwdbedit13.Text:=floattostr(b);
 
-  if QKBeamRASIO.AsFloat>0 then
+ // if QKBeamRASIO.AsFloat>0 then
+  if QKBeamRT_LP.AsFloat>0 then  //konversi 2025 270625
   begin
-    d:=b*QKBeamRASIO.AsFloat;
+    //d:=b*QKBeamRASIO.AsFloat;
+    d:=b*QKBeamRT_LP.AsFloat;  //konversi 2025 270625
     wwDBEdit34.Text:=FloatToStr(d);
   end;
   QMaster.Post;

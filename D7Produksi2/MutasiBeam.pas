@@ -766,6 +766,11 @@ type
     QLookBeam1JENIS: TStringField;
     DetailJENIS: TStringField;
     LokkJenis2: TwwDBComboBox;
+    QDetail_cetakKG_REV: TFloatField;
+    QDetail_cetakPOT_REV: TFloatField;
+    QLookBeam1ARAH: TStringField;
+    DetailARAH: TStringField;
+    LookArah: TwwDBComboBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure TabSheet1Show(Sender: TObject);
@@ -812,6 +817,8 @@ type
       FillTable: TDataSet; modified: Boolean);
     procedure LookMitraEnter(Sender: TObject);
     procedure DBText1Click(Sender: TObject);
+    procedure DetailBand1BeforePrint(Sender: TQRCustomBand;
+      var PrintBand: Boolean);
 
 
   private
@@ -1123,6 +1130,7 @@ begin
    DetailPCS.AsFloat:=QLookBeam1QTY_PCS.AsFloat;
    //130325
    DetailJENIS.AsString:=QLookBeam1JENIS.AsString;
+   DetailARAH.AsString:=QLookBeam1ARAH.AsString;
    end;
  1:
    begin
@@ -1500,5 +1508,21 @@ procedure TMutasiBeamFrm.DBText1Click(Sender: TObject);
 begin
   InputBox('Copy Nomer','Klik Kanan --> Copy : ',QMasterNO_nota.AsString);
 end;
+
+procedure TMutasiBeamFrm.DetailBand1BeforePrint(Sender: TQRCustomBand;
+  var PrintBand: Boolean);
+begin
+  if DetailPOT_REV.Text <> '0' then
+  begin
+    QRDBText32.DataField := QDetail_cetakKG_REV.FieldName;
+    QRDBText7.DataField := QDetail_cetakPOT_REV.FieldName;
+  end
+  else
+  begin
+    QRDBText32.DataField := QDetail_cetakQTY_KG.FieldName;
+    QRDBText7.DataField := QDetail_cetakJML_POTONG.FieldName;
+  end;
+end;
+
 
 end.

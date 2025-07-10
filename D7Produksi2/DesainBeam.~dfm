@@ -3,7 +3,7 @@ object DesainBeamFrm: TDesainBeamFrm
   Top = 123
   Width = 1157
   Height = 609
-  ActiveControl = vTglAwal
+  ActiveControl = DBEdit1
   Caption = 'DesainBeamFrm'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -26,7 +26,7 @@ object DesainBeamFrm: TDesainBeamFrm
     Top = 0
     Width = 1141
     Height = 571
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -255,7 +255,7 @@ object DesainBeamFrm: TDesainBeamFrm
             Caption = 'Kril/ Tarikan'
           end
           object Label47: TLabel
-            Left = 376
+            Left = 370
             Top = 16
             Width = 54
             Height = 13
@@ -310,9 +310,16 @@ object DesainBeamFrm: TDesainBeamFrm
           object Label69: TLabel
             Left = 657
             Top = 137
-            Width = 27
+            Width = 68
             Height = 13
-            Caption = 'Beam'
+            Caption = 'Mesin Tenun: '
+          end
+          object Label70: TLabel
+            Left = 137
+            Top = 96
+            Width = 22
+            Height = 13
+            Caption = 'Arah'
           end
           object LookKain: TwwDBLookupComboDlg
             Left = 217
@@ -430,7 +437,7 @@ object DesainBeamFrm: TDesainBeamFrm
           object LookBeam: TwwDBComboDlg
             Left = 16
             Top = 112
-            Width = 137
+            Width = 112
             Height = 19
             OnCustomDlg = LookBeamCustomDlg
             ShowButton = True
@@ -1096,7 +1103,7 @@ object DesainBeamFrm: TDesainBeamFrm
             OnEnter = LookMesinEnter
           end
           object wwDBComboBox4: TwwDBComboBox
-            Left = 376
+            Left = 370
             Top = 32
             Width = 57
             Height = 19
@@ -1215,6 +1222,28 @@ object DesainBeamFrm: TDesainBeamFrm
             TabOrder = 46
             OnClick = BitBtn39Click
             NumGlyphs = 2
+          end
+          object CmbArah: TwwDBComboBox
+            Left = 131
+            Top = 112
+            Width = 71
+            Height = 19
+            ShowButton = True
+            Style = csDropDown
+            MapList = False
+            AllowClearKey = False
+            DataField = 'ARAH'
+            DataSource = dsMaster
+            DropDownCount = 8
+            ItemHeight = 0
+            Items.Strings = (
+              'LUSI'
+              'LUSI BAWAH'
+              'LUSI ATAS')
+            ItemIndex = 0
+            Sorted = False
+            TabOrder = 47
+            UnboundDataType = wwDefault
           end
         end
         object Panel5: TPanel
@@ -2111,6 +2140,7 @@ object DesainBeamFrm: TDesainBeamFrm
           'NO_ORDER'#9'15'#9'No. Resep'#9'F'#9'DESAIN'
           'VERSI'#9'13'#9'No. Desain'#9'F'#9'DESAIN'
           'ID_RAB'#9'8'#9'No. Reg'#9'F'#9'DESAIN'
+          'KET_RESEP'#9'30'#9'KET_RESEP'#9'F'#9'DESAIN'
           'BEAM'#9'18'#9'Beam'#9'F'#9'DESAIN'
           'KONSTRUKSI'#9'20'#9'KONSTRUKSI'
           'CORAK'#9'19'#9'CORAK'
@@ -2122,7 +2152,7 @@ object DesainBeamFrm: TDesainBeamFrm
           'JML_POTONG'#9'10'#9'JML_POTONG'#9'F'
           'QTY_KG'#9'10'#9'QTY_KG'#9'F'
           'NAMA_MESIN'#9'25'#9'NAMA MESIN'#9'F'
-          'KETERANGAN'#9'30'#9'KET. RESEP'#9'F')
+          'KETERANGAN'#9'30'#9#9'F')
         IniAttributes.Delimiter = ';;'
         ExportOptions.ExportType = wwgetHTML
         TitleColor = clBtnFace
@@ -4984,7 +5014,7 @@ object DesainBeamFrm: TDesainBeamFrm
       03000000010000000D0000003A4E4F5F534552495F4245414D050000000F0000
       00525053203136302D3139303130370000000000}
     QBEDefinition.QBEFieldDefs = {
-      040000001F000000070000004E4F5F4245414D0100000000000C0000004E4F5F
+      0400000021000000070000004E4F5F4245414D0100000000000C0000004E4F5F
       534552495F4245414D0100000000000700000054414E4747414C010000000000
       0600000049445F5241420100000000000A0000004B4F4E535452554B53490100
       0000000005000000434F52414B0100000000000A0000004B45544552414E4741
@@ -5001,7 +5031,8 @@ object DesainBeamFrm: TDesainBeamFrm
       470100000000000A0000005154595F4B475F524556010000000000020000004B
       50010000000000080000004B445F4D4553494E0100000000000A0000004E414D
       415F4D4553494E01000000000005000000534849465401000000000005000000
-      4752555032010000000000040000004245414D010000000000}
+      4752555032010000000000040000004245414D010000000000050000004A454E
+      49530100000000000400000041524148010000000000}
     RefreshOptions = [roAfterInsert]
     Session = DMFrm.OS
     BeforeEdit = QMasterBeforeEdit
@@ -5126,6 +5157,10 @@ object DesainBeamFrm: TDesainBeamFrm
       FieldName = 'BEAM'
       Size = 100
     end
+    object QMasterARAH: TStringField
+      FieldName = 'ARAH'
+      Size = 30
+    end
   end
   object dsCDSQDetail: TwwDataSource
     DataSet = CDSQDetail
@@ -5141,7 +5176,7 @@ object DesainBeamFrm: TDesainBeamFrm
       00003A50414B4849520C0000000000000000000000070000003A504F52444552
       010000000000000000000000}
     QBEDefinition.QBEFieldDefs = {
-      04000000190000000C0000004E4F5F534552495F4245414D0100000000000700
+      040000001B0000000C0000004E4F5F534552495F4245414D0100000000000700
       000054414E4747414C0100000000000600000049445F5241420100000000000A
       0000004B4F4E535452554B534901000000000005000000434F52414B01000000
       0000060000004953504F5354010000000000080000004A4D4C5F4B52494C0100
@@ -5155,7 +5190,8 @@ object DesainBeamFrm: TDesainBeamFrm
       00004A4D4C5F4D45545F524556010000000000060000005154595F4B47010000
       0000000A0000004E414D415F4D4553494E010000000000040000004752555001
       0000000000040000004245414D0100000000000A0000004B45544552414E4741
-      4E010000000000}
+      4E010000000000090000004B45545F5245534550010000000000050000004752
+      555032010000000000}
     QueryAllRecords = False
     Session = DMFrm.OS
     AfterScroll = QBrowseAfterScroll
@@ -5236,6 +5272,10 @@ object DesainBeamFrm: TDesainBeamFrm
     object QBrowseBEAM: TStringField
       FieldName = 'BEAM'
       Size = 100
+    end
+    object QBrowseKET_RESEP: TStringField
+      FieldName = 'KET_RESEP'
+      Size = 255
     end
   end
   object dsQBrowse: TwwDataSource
@@ -5884,8 +5924,8 @@ object DesainBeamFrm: TDesainBeamFrm
       5401000000000007000000534C534854474C010000000000}
     QueryAllRecords = False
     Session = DMFrm.OS
-    Left = 176
-    Top = 144
+    Left = 152
+    Top = 160
     object QTGLNO_SERI_BEAM: TStringField
       FieldName = 'NO_SERI_BEAM'
       Required = True
@@ -7529,73 +7569,43 @@ object DesainBeamFrm: TDesainBeamFrm
   end
   object QKBeam: TOracleDataSet
     SQL.Strings = (
-      'select sum(a.rt_lp)as rt_lp from IPISMA_DB4.konversi_beam_25 a'
-      'where mesin=:mes and kp=:kprod and arah like'#39'LUSI%'#39)
+      'select mesin, '
+      'kp, '
+      'arah, '
+      'sum(nvl(rt_lp, 0)) as rt_lp'
+      'from IPISMA_DB4.konversi_beam_25 a'
+      'where mesin=:mes and kp=:kprod and arah=:larah'
+      'group by mesin, kp, arah'
+      '')
     Variables.Data = {
-      0300000002000000040000003A4D45530500000010000000524150494552204A
-      414351554152440000000000060000003A4B50524F440500000006000000542E
-      3135320000000000}
+      0300000003000000040000003A4D45530500000010000000524150494552204A
+      414351554152440000000000060000003A4B50524F4405000000070000004A51
+      2E3330380000000000060000003A4C4152414805000000050000004C55534900
+      00000000}
     QBEDefinition.QBEFieldDefs = {
-      040000000D000000040000004B4F4445010000000000050000004D4553494E01
-      0000000000020000004B5001000000000005000000414B544946010000000000
-      0A00000054474C5F494E534552540100000000000800000054474C5F45444954
-      0100000000000A0000004F50525F494E53455254010000000000080000004F50
-      525F4544495401000000000005000000524153494F0100000000000400000045
-      4449540100000000000B000000524153494F5F50414B414E0100000000000700
-      0000524D5F4C55534901000000000008000000524D5F50414B414E0100000000
-      00}
+      04000000040000000500000052545F4C50010000000000050000004D4553494E
+      010000000000020000004B500100000000000400000041524148010000000000}
     ReadOnly = True
     QueryAllRecords = False
     Session = DMFrm.OS
     Left = 70
     Top = 296
-    object QKBeamKODE: TStringField
-      FieldName = 'KODE'
-      Required = True
-      Size = 30
-    end
     object QKBeamMESIN: TStringField
       FieldName = 'MESIN'
+      Required = True
       Size = 100
     end
     object QKBeamKP: TStringField
       FieldName = 'KP'
       Required = True
-    end
-    object QKBeamRASIO: TFloatField
-      FieldName = 'RASIO'
-      Required = True
-    end
-    object QKBeamAKTIF: TStringField
-      FieldName = 'AKTIF'
-      Size = 1
-    end
-    object QKBeamEDIT: TStringField
-      FieldName = 'EDIT'
-      Size = 1
-    end
-    object QKBeamTGL_INSERT: TDateTimeField
-      FieldName = 'TGL_INSERT'
-    end
-    object QKBeamTGL_EDIT: TDateTimeField
-      FieldName = 'TGL_EDIT'
-    end
-    object QKBeamOPR_INSERT: TStringField
-      FieldName = 'OPR_INSERT'
       Size = 30
     end
-    object QKBeamOPR_EDIT: TStringField
-      FieldName = 'OPR_EDIT'
+    object QKBeamARAH: TStringField
+      FieldName = 'ARAH'
       Size = 30
     end
-    object QKBeamRASIO_PAKAN: TFloatField
-      FieldName = 'RASIO_PAKAN'
-    end
-    object QKBeamRM_LUSI: TFloatField
-      FieldName = 'RM_LUSI'
-    end
-    object QKBeamRM_PAKAN: TFloatField
-      FieldName = 'RM_PAKAN'
+    object QKBeamRT_LP: TFloatField
+      FieldName = 'RT_LP'
     end
   end
   object LookRABDlg1: TwwLookupDialog

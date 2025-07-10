@@ -253,7 +253,6 @@ type
     QRLabel31: TQRLabel;
     QRLabel34: TQRLabel;
     QRLabel12: TQRLabel;
-    QRLabel16: TQRLabel;
     QRLabel35: TQRLabel;
     QRDBText7: TQRDBText;
     QRBand3: TQRBand;
@@ -292,6 +291,9 @@ type
     BitBtn3: TBitBtn;
     cbPreview: TCheckBox;
     BitBtn19: TBitBtn;
+    QRLabel4: TQRLabel;
+    QRLabel13: TQRLabel;
+    QRLabel29: TQRLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure BtnExportClick(Sender: TObject);
@@ -355,7 +357,7 @@ type
     procedure BitBtn4Click(Sender: TObject);
     procedure QRBand4BeforePrint(Sender: TQRCustomBand;
       var PrintBand: Boolean);
-
+   
 
   private
     { Private declarations }

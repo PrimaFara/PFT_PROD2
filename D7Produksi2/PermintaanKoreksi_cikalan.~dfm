@@ -70,7 +70,7 @@ object PermintaanKoreksi_cikalanFrm: TPermintaanKoreksi_cikalanFrm
     Top = 76
     Width = 994
     Height = 453
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Align = alClient
     Style = tsFlatButtons
     TabOrder = 1
@@ -1780,7 +1780,9 @@ object PermintaanKoreksi_cikalanFrm: TPermintaanKoreksi_cikalanFrm
   object OracleQuery1: TOracleQuery
     SQL.Strings = (
       'begin'
-      '  ipisma_db4.proc_mutasi_kor2_v7(:pawal,:pakhir);'
+      
+        '  ipisma_db4.proc_mutasi_kor2_2507/*proc_mutasi_kor2_25*/(:pawal' +
+        ',:pakhir);'
       'end;')
     Session = DMFrm.OS
     Variables.Data = {

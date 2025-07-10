@@ -1,7 +1,7 @@
 object MutasiBenangWFrm: TMutasiBenangWFrm
   Left = 196
   Top = 124
-  Width = 1164
+  Width = 1363
   Height = 613
   Caption = 'Mutasi Benang di Unit Warping'
   Color = clBtnFace
@@ -23,7 +23,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 1148
+    Width = 1347
     Height = 575
     ActivePage = TabSheet2
     Align = alClient
@@ -318,7 +318,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              989.541666666666800000
+              989.541666666666700000
               2.645833333333333000
               140.229166666666700000)
             Alignment = taLeftJustify
@@ -523,7 +523,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
               44.979166666666670000
               2444.750000000000000000
               79.375000000000000000
-              76.729166666666680000)
+              76.729166666666670000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -1009,7 +1009,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              751.416666666666800000
+              751.416666666666700000
               105.833333333333300000
               58.208333333333340000)
             Alignment = taLeftJustify
@@ -1040,7 +1040,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              878.416666666666800000
+              878.416666666666700000
               55.562500000000000000
               97.895833333333340000)
             Alignment = taLeftJustify
@@ -2369,7 +2369,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333330000
+              18.520833333333340000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -3530,12 +3530,12 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
       object Panel2: TPanel
         Left = 0
         Top = 506
-        Width = 1140
+        Width = 1339
         Height = 41
         Align = alBottom
         TabOrder = 0
         DesignSize = (
-          1140
+          1339
           41)
         object LRencord: TLabel
           Left = 16
@@ -3550,7 +3550,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
           ParentFont = False
         end
         object BitBtn1: TBitBtn
-          Left = 884
+          Left = 1083
           Top = 8
           Width = 75
           Height = 25
@@ -3582,7 +3582,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
       object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 1140
+        Width = 1339
         Height = 52
         Align = alTop
         BevelInner = bvLowered
@@ -3688,7 +3688,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
         object Panel7: TPanel
           Left = 388
           Top = 2
-          Width = 568
+          Width = 949
           Height = 48
           Align = alLeft
           BevelOuter = bvNone
@@ -3711,7 +3711,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             OnClick = vOperandClick
           end
           object Label1: TLabel
-            Left = 414
+            Left = 646
             Top = 24
             Width = 115
             Height = 17
@@ -3725,6 +3725,29 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Font.Name = 'MS Sans Serif'
             Font.Style = [fsBold]
             ParentFont = False
+          end
+          object DBText1: TDBText
+            Left = 514
+            Top = 20
+            Width = 79
+            Height = 22
+            Cursor = crHandPoint
+            AutoSize = True
+            DataField = 'KD_PRODUKSI'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clGreen
+            Font.Height = -19
+            Font.Name = 'Arial'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label28: TLabel
+            Left = 514
+            Top = 5
+            Width = 25
+            Height = 13
+            Caption = 'Kode'
+            Visible = False
           end
           object cbTanggal: TCheckBox
             Left = 60
@@ -3774,7 +3797,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             TabOrder = 2
           end
           object cbOtomatis: TCheckBox
-            Left = 535
+            Left = 807
             Top = 5
             Width = 98
             Height = 17
@@ -3784,7 +3807,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             OnClick = cbOtomatisClick
           end
           object dbcField: TwwDBComboBox
-            Left = 536
+            Left = 808
             Top = 23
             Width = 137
             Height = 19
@@ -3837,7 +3860,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             OnClick = cbStokClick
           end
           object SpinEdit1: TSpinEdit
-            Left = 531
+            Left = 763
             Top = 19
             Width = 36
             Height = 26
@@ -3853,12 +3876,118 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
             Value = 4
             OnChange = SpinEdit1Change
           end
+          object CbRwytWrp: TCheckBox
+            Left = 396
+            Top = 4
+            Width = 112
+            Height = 17
+            Caption = 'Riwayat Transaksi'
+            TabOrder = 8
+            OnClick = CbRwytWrpClick
+          end
+          object BtnExpRytWrp: TBitBtn
+            Left = 396
+            Top = 20
+            Width = 97
+            Height = 25
+            Caption = '&Export Riwayat'
+            TabOrder = 9
+            Visible = False
+            Glyph.Data = {
+              76010000424D7601000000000000760000002800000020000000100000000100
+              04000000000000010000120B0000120B00001000000000000000000000000000
+              800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+              333333FFFFFFFFFFFFF33000077777770033377777777777773F000007888888
+              00037F3337F3FF37F37F00000780088800037F3337F77F37F37F000007800888
+              00037F3337F77FF7F37F00000788888800037F3337777777337F000000000000
+              00037F3FFFFFFFFFFF7F00000000000000037F77777777777F7F000FFFFFFFFF
+              00037F7F333333337F7F000FFFFFFFFF00037F7F333333337F7F000FFFFFFFFF
+              00037F7F333333337F7F000FFFFFFFFF00037F7F333333337F7F000FFFFFFFFF
+              00037F7F333333337F7F000FFFFFFFFF07037F7F33333333777F000FFFFFFFFF
+              0003737FFFFFFFFF7F7330099999999900333777777777777733}
+            NumGlyphs = 2
+          end
         end
+      end
+      object wwDBGrid3: TwwDBGrid
+        Left = 0
+        Top = 52
+        Width = 1339
+        Height = 454
+        DisableThemes = True
+        DisableThemesInTitle = True
+        ControlType.Strings = (
+          'ISPOST;CheckBox;1;0')
+        Selected.Strings = (
+          'KP'#9'15'#9'KP'#9'F'
+          'KONSTRUKSI'#9'35'#9'Konstruksi'#9'F'
+          'BEM'#9'30'#9'Beam'#9'F'
+          'QTY_IN1'#9'10'#9'Sisa Awal'#9'F'
+          'QTY_IN3'#9'10'#9'Gudang~Warna'#9'F'#9'Pemasukan'
+          'QTY_IN7'#9'10'#9'Lainnya'#9'F'#9'Pemasukan'
+          'QTY_IN4'#9'10'#9'Kelos'#9'F'#9'Pemasukan'
+          'QTY_IN6'#9'10'#9'Jasa~Cikalan'#9'F'#9'Pemasukan'
+          'QTY_IN2'#9'10'#9'Koreksi'#9'F'#9'Pemasukan'
+          'QTY_OUT1'#9'10'#9'Cucuk~Beam'#9'F'#9'Pengeluaran'
+          'QTY_OUT2'#9'10'#9'Cucuk~Potong'#9'F'#9'Pengeluaran'
+          'QTY_OUT3'#9'10'#9'Cucuk~Kg'#9'F'#9'Pengeluaran'
+          'QTY_OUT4'#9'10'#9'Sizing~Beam'#9'F'#9'Pengeluaran'
+          'QTY_OUT5'#9'10'#9'Sizing~Potong'#9'F'#9'Pengeluaran'
+          'QTY_OUT6'#9'10'#9'Sizing~Kg'#9'F'#9'Pengeluaran'
+          'QTY_OUT19'#9'10'#9'Mitra Proses Dalam~Beam'#9'F'#9'Pengeluaran'
+          'QTY_OUT20'#9'10'#9'Mitra Proses Dalam~Potong'#9'F'#9'Pengeluaran'
+          'QTY_OUT21'#9'10'#9'Mitra Proses Dalam~Kg'#9'F'#9'Pengeluaran'
+          'QTY_OUT16'#9'10'#9'Siap Kirim Mitra~Beam'#9'F'#9'Pengeluaran'
+          'QTY_OUT17'#9'10'#9'Siap Kirim Mitra~Potong'#9'F'#9'Pengeluaran'
+          'QTY_OUT18'#9'10'#9'Siap Kirim Mitra~Kg'#9'F'#9'Pengeluaran'
+          'QTY_OUT12'#9'10'#9'Kemitraan~Beam'#9'F'#9'Pengeluaran'
+          'QTY_OUT13'#9'10'#9'Kemitraan~Potong'#9'F'#9'Pengeluaran'
+          'QTY_OUT14'#9'10'#9'Kemitraan~Kg'#9'F'#9'Pengeluaran'
+          'QTY_OUT7'#9'10'#9'Retur ke GW'#9'F'#9'Pengeluaran'
+          'QTY_OUT11'#9'10'#9'Waste'#9'F'#9'Pengeluaran'
+          'QTY_OUT8'#9'10'#9'Jasa~Cikalan'#9'F'#9'Pengeluaran'
+          'QTY_OUT9'#9'10'#9'Tenun'#9'F'#9'Pengeluaran'
+          'QTY_OUT15'#9'10'#9'Selisih~Konversi'#9'F'#9'Pengeluaran'
+          'QTY_IN5'#9'10'#9'Koreksi'#9'F'#9'Pengeluaran'
+          'QTY_OUT10'#9'10'#9'Sisa Akhir'#9'F')
+        IniAttributes.Enabled = True
+        IniAttributes.SaveToRegistry = True
+        IniAttributes.FileName = 'PRODUKSI2'
+        IniAttributes.Delimiter = ';;'
+        ExportOptions.ExportType = wwgetSYLK
+        ExportOptions.Options = [esoShowHeader, esoShowFooter, esoShowTitle, esoDblQuoteFields, esoBestColFit, esoShowRecordNo, esoShowAlternating]
+        TitleColor = clBtnFace
+        FixedCols = 4
+        ShowHorzScrollBar = True
+        Align = alClient
+        Color = 16773589
+        DataSource = dsQRwytWrp
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgWordWrap, dgShowFooter, dgTrailingEllipsis, dgDblClickColSizing]
+        ParentFont = False
+        RowHeightPercent = 125
+        TabOrder = 4
+        TitleAlignment = taCenter
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clBlue
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+        TitleFont.Style = [fsBold]
+        TitleLines = 3
+        TitleButtons = True
+        UseTFields = False
+        OnTitleButtonClick = wwDBGrid2TitleButtonClick
+        GroupFieldName = 'NO_REG'
       end
       object wwDBGrid2: TwwDBGrid
         Left = 0
         Top = 52
-        Width = 1140
+        Width = 1339
         Height = 454
         DisableThemes = True
         DisableThemesInTitle = True
@@ -3937,7 +4066,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
       object wwDBGrid1: TwwDBGrid
         Left = 0
         Top = 52
-        Width = 1140
+        Width = 1339
         Height = 495
         DisableThemes = True
         DisableThemesInTitle = True
@@ -3985,7 +4114,7 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
       object Panel3: TPanel
         Left = 0
         Top = 0
-        Width = 1140
+        Width = 1339
         Height = 52
         Align = alTop
         BevelInner = bvLowered
@@ -4787,5 +4916,32 @@ object MutasiBenangWFrm: TMutasiBenangWFrm
     BeforeQuery = QUpdate2BeforeQuery
     Left = 524
     Top = 281
+  end
+  object QRwytWrp: TOracleDataSet
+    SQL.Strings = (
+      
+        'select * from ipisma_db4.VRIWAYAT_WRP t where kp=:kp and tanggal' +
+        '>=:pawal and tanggal<=:pakhir'
+      'order by t.tanggal')
+    Variables.Data = {
+      0300000003000000060000003A504157414C0C00000007000000787D04010101
+      0100000000070000003A50414B4849520C00000007000000787D041E01010100
+      000000030000003A4B50050000000000000000000000}
+    QBEDefinition.QBEFieldDefs = {
+      040000000B000000070000004E4F5F4E4F54410100000000000A0000004B4554
+      4552414E47414E010000000000060000005154595F494E010000000000070000
+      005154595F4F55540100000000000A00000054474C5F494E5345525401000000
+      00000A0000004F50525F494E534552540100000000000C0000004B445F545241
+      4E53414B53490100000000000E0000004E414D415F5452414E53414B53490100
+      000000000300000054474C0100000000000B0000004B445F50524F44554B5349
+      010000000000080000004E4F5F4F52444552010000000000}
+    Session = DMFrm.OS
+    Left = 236
+    Top = 401
+  end
+  object dsQRwytWrp: TwwDataSource
+    DataSet = QRwytWrp
+    Left = 308
+    Top = 401
   end
 end

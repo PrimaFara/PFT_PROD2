@@ -286,6 +286,9 @@ object PermintaanKoreksi_kanjiFrm: TPermintaanKoreksi_kanjiFrm
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 2
+        DesignSize = (
+          986
+          203)
         object wwDBGrid1: TwwDBGrid
           Left = 0
           Top = 0
@@ -293,11 +296,15 @@ object PermintaanKoreksi_kanjiFrm: TPermintaanKoreksi_kanjiFrm
           Height = 203
           ControlType.Strings = (
             'KD_SUB_LOKASI2;CustomEdit;LookLokasi2;F'
-            'NO_MESIN;CustomEdit;LookItem;F')
+            'NO_MESIN;CustomEdit;LookItem;F'
+            'NO_BUKTI;CustomEdit;CmbArah;F'
+            'RASIO;CustomEdit;LookKonv25;F')
           Selected.Strings = (
             'NO_MESIN'#9'12'#9'Kp'#9'F'
             'KETERANGAN'#9'30'#9'Konstruksi'#9'T'
             'KD_ITEM2'#9'20'#9'Mesin'#9'T'
+            'NO_BUKTI'#9'10'#9'Arah'#9'F'
+            'RASIO'#9'10'#9'Rasio'#9'F'
             'QTY1'#9'10'#9'Beam'#9'T'#9'AWAL'
             'QTY2'#9'10'#9'Potong'#9'T'#9'AWAL'
             'QTY3'#9'10'#9'Kg'#9'T'#9'AWAL'
@@ -372,6 +379,58 @@ object PermintaanKoreksi_kanjiFrm: TPermintaanKoreksi_kanjiFrm
           AllowClearKey = False
           OnCloseUp = LookItemCloseUp
           OnEnter = LookItemEnter
+        end
+        object CmbArah: TwwDBComboBox
+          Left = 598
+          Top = 62
+          Width = 123
+          Height = 19
+          Anchors = [akLeft, akTop, akBottom]
+          ShowButton = True
+          Style = csDropDown
+          MapList = False
+          AllowClearKey = False
+          Ctl3D = False
+          DataField = 'NO_BUKTI'
+          DataSource = dsQDetail
+          DropDownCount = 8
+          ItemHeight = 0
+          Items.Strings = (
+            'LUSI'
+            'LUSI BAWAH'
+            'LUSI ATAS')
+          ItemIndex = 0
+          ParentCtl3D = False
+          Sorted = False
+          TabOrder = 2
+          UnboundDataType = wwDefault
+        end
+        object LookKonv25: TwwDBLookupComboDlg
+          Left = 600
+          Top = 86
+          Width = 121
+          Height = 21
+          GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
+          GridColor = clWhite
+          GridTitleAlignment = taLeftJustify
+          Caption = 'Lookup'
+          MaxWidth = 0
+          MaxHeight = 209
+          Selected.Strings = (
+            'KP'#9'20'#9'KP'#9'F'
+            'MESIN'#9'25'#9'MESIN'#9'F'
+            'ARAH'#9'15'#9'ARAH'#9'F'
+            'RT_LP'#9'10'#9'RT_LP'#9'F')
+          DataField = 'RASIO'
+          DataSource = dsQDetail
+          LookupTable = QKBeam
+          LookupField = 'RT_LP'
+          TabOrder = 3
+          AutoDropDown = False
+          ShowButton = True
+          AllowClearKey = False
+          OnCloseUp = LookKonv25CloseUp
+          OnEnter = LookKonv25Enter
         end
       end
       object PanelFooter1: TPanel
@@ -1356,6 +1415,7 @@ object PermintaanKoreksi_kanjiFrm: TPermintaanKoreksi_kanjiFrm
     end
     object QDetailQTY5: TFloatField
       FieldName = 'QTY5'
+      OnChange = QDetailQTY5Change
       DisplayFormat = '#,#.##;(#,#.##); '
     end
     object QDetailQTY6: TFloatField
@@ -1836,6 +1896,50 @@ object PermintaanKoreksi_kanjiFrm: TPermintaanKoreksi_kanjiFrm
     end
     object QTotalSELISIH3: TFloatField
       FieldName = 'SELISIH3'
+    end
+  end
+  object QKBeam: TOracleDataSet
+    SQL.Strings = (
+      'select mesin, '
+      'kp, '
+      'arah, '
+      'sum(nvl(rt_lp, 0)) as rt_lp'
+      'from IPISMA_DB4.konversi_beam_25 a'
+      'where mesin=:mes and kp=:kprod and arah=:larah'
+      'group by mesin, kp, arah'
+      '')
+    Variables.Data = {
+      0300000003000000040000003A4D45530500000010000000524150494552204A
+      414351554152440000000000060000003A4B50524F4405000000070000004A51
+      2E3330380000000000060000003A4C41524148050000000000000000000000}
+    QBEDefinition.QBEFieldDefs = {
+      04000000040000000500000052545F4C50010000000000050000004D4553494E
+      010000000000020000004B500100000000000400000041524148010000000000}
+    ReadOnly = True
+    QueryAllRecords = False
+    Session = DMFrm.OS
+    Left = 78
+    Top = 384
+    object QKBeamKP: TStringField
+      DisplayWidth = 20
+      FieldName = 'KP'
+      Required = True
+      Size = 30
+    end
+    object QKBeamMESIN: TStringField
+      DisplayWidth = 25
+      FieldName = 'MESIN'
+      Required = True
+      Size = 100
+    end
+    object QKBeamARAH: TStringField
+      DisplayWidth = 15
+      FieldName = 'ARAH'
+      Size = 30
+    end
+    object QKBeamRT_LP: TFloatField
+      DisplayWidth = 10
+      FieldName = 'RT_LP'
     end
   end
 end

@@ -853,20 +853,15 @@ type
     QCek_Pros_dlm: TOracleDataSet;
     QCek_Pros_dlmPROS_DLM: TFloatField;
     BitBtn39: TBitBtn;
-    QKBeamKODE: TStringField;
+    QCekHKBEAM: TStringField;
+    Label70: TLabel;
+    QBrowseKET_RESEP: TStringField;
+    CmbArah: TwwDBComboBox;
+    QMasterARAH: TStringField;
     QKBeamMESIN: TStringField;
     QKBeamKP: TStringField;
-    QKBeamRASIO: TFloatField;
-    QKBeamAKTIF: TStringField;
-    QKBeamEDIT: TStringField;
-    QKBeamTGL_INSERT: TDateTimeField;
-    QKBeamTGL_EDIT: TDateTimeField;
-    QKBeamOPR_INSERT: TStringField;
-    QKBeamOPR_EDIT: TStringField;
-    QKBeamRASIO_PAKAN: TFloatField;
-    QKBeamRM_LUSI: TFloatField;
-    QKBeamRM_PAKAN: TFloatField;
-    QCekHKBEAM: TStringField;
+    QKBeamARAH: TStringField;
+    QKBeamRT_LP: TFloatField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure TabSheet1Show(Sender: TObject);
@@ -981,6 +976,7 @@ type
       State: TGridDrawState; Highlight: Boolean; AFont: TFont;
       ABrush: TBrush);
     procedure BitBtn39Click(Sender: TObject);
+    procedure CmbArahCloseUp(Sender: TObject);
 
 
   private
@@ -1440,6 +1436,7 @@ begin
   QCekResep1.Close;
   QCekResep.Close;
   //Edit1.Visible:=False;
+  QMasterARAH.AsString:='LUSI';
 end;
 
 procedure TDesainBeamFrm.wwDBGrid1Enter(Sender: TObject);
@@ -2918,6 +2915,7 @@ begin
   QKBeam.Close;
   QKBeam.SetVariable('mes', QMasterBEAM.AsString);
   QKBeam.SetVariable('kprod', QMasterKP.AsString);
+  QKBeam.SetVariable('larah', CmbArah.Text);
   QKBeam.Open;
   //wwDBGrid15.Visible:=True;
   //CDSQDetail34.RefreshRecord;
@@ -3153,6 +3151,12 @@ begin
       Proc_DEL_Proses_DLM.Execute;
     end;
 end;
+
+procedure TDesainBeamFrm.CmbArahCloseUp(Sender: TObject);
+begin
+  QMasterKETERANGAN.AsString:=CmbArah.Text;
+end;
+
 
 end.
 

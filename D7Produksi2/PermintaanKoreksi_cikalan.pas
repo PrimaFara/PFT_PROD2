@@ -214,6 +214,13 @@ type
     QDetailKD_ITEM2: TStringField;
     QBrowseNO_RESEP: TStringField;
     QBrowseISPOST: TStringField;
+    CmbArah: TwwDBComboBox;
+    LookKonv25: TwwDBLookupComboDlg;
+    QKBeam: TOracleDataSet;
+    QKBeamKP: TStringField;
+    QKBeamMESIN: TStringField;
+    QKBeamARAH: TStringField;
+    QKBeamRT_LP: TFloatField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure BtnExportClick(Sender: TObject);
@@ -267,6 +274,9 @@ type
     procedure wwCheckBox1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure wwDBGrid1UpdateFooter(Sender: TObject);
+    procedure LookKonv25Enter(Sender: TObject);
+    procedure LookKonv25CloseUp(Sender: TObject; LookupTable,
+      FillTable: TDataSet; modified: Boolean);
   private
     { Private declarations }
     vorder, SelectedFont, vkode, vjns_brg, vjns_lokasi : String;
@@ -861,6 +871,7 @@ end;
 procedure TPermintaanKoreksi_cikalanFrm.QDetailNewRecord(DataSet: TDataSet);
 begin
   QDetailIBUKTI.AsInteger:=QMasterIBUKTI.AsInteger;
+  QDetailNO_BUKTI.AsString:='LUSI';
 end;
 
 procedure TPermintaanKoreksi_cikalanFrm.QDetailBeforePost(DataSet: TDataSet);
@@ -1019,6 +1030,23 @@ wwDBGrid1.ColumnByName('QTY6').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalAK
 wwDBGrid1.ColumnByName('QTY7').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalSELISIH1.AsFloat);
 wwDBGrid1.ColumnByName('QTY8').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalSELISIH2.AsFloat);
 wwDBGrid1.ColumnByName('QTY9').FooterValue:=FormatFloat('#.#,#;#.#,#; ',QTotalSELISIH3.AsFloat);
+end;
+
+procedure TPermintaanKoreksi_cikalanFrm.LookKonv25Enter(Sender: TObject);
+var
+ mes,kprod,larah: String;
+begin
+  QKBeam.Close;
+  QKBeam.SetVariable('mes', Qitem_koMESIN.AsString);
+  QKBeam.SetVariable('kprod', Qitem_koKP.AsString);
+  QKBeam.SetVariable('larah', CmbArah.Text);
+  QKBeam.Open;
+end;
+
+procedure TPermintaanKoreksi_cikalanFrm.LookKonv25CloseUp(Sender: TObject;
+  LookupTable, FillTable: TDataSet; modified: Boolean);
+begin
+  QDetailRASIO.AsFloat:=QKBeamRT_LP.AsFloat;
 end;
 
 end.

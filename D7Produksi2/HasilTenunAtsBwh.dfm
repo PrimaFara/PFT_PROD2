@@ -1709,7 +1709,7 @@ object HasilTenunAtsBwhFrm: THasilTenunAtsBwhFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333340000
+              18.520833333333330000
               15.875000000000000000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -2190,6 +2190,7 @@ object HasilTenunAtsBwhFrm: THasilTenunAtsBwhFrm
             Height = 25
             Caption = '&Nota'
             TabOrder = 2
+            Visible = False
             OnClick = Button1Click
           end
           object Button2: TButton
@@ -2199,6 +2200,7 @@ object HasilTenunAtsBwhFrm: THasilTenunAtsBwhFrm
             Height = 25
             Caption = '&Ambil Data'
             TabOrder = 3
+            Visible = False
             OnClick = Button2Click
           end
         end

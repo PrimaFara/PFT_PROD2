@@ -2364,7 +2364,7 @@ object PembelianFrm: TPembelianFrm
         OnClick = MesindanAlatPertenunan1Click
       end
       object KonversiBeamLama1: TMenuItem
-        Caption = 'Konversi Beam (Yg Dipakai Sekarang)'
+        Caption = 'Konversi Beam Lama'
         GroupIndex = 1
         OnClick = KonversiBeamLama1Click
       end

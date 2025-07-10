@@ -371,7 +371,7 @@ end;
 
 procedure TLokProMes_TNFrm.SpeedButton2Click(Sender: TObject);
 begin
-  wwDBGrid2.Options:=wwDBGrid1.Options-[dgRowSelect];
+  wwDBGrid2.Options:=wwDBGrid2.Options-[dgRowSelect];
   wwDBGrid2.ReadOnly:=False;
   wwDBGrid2.SetFocus;
 end;
