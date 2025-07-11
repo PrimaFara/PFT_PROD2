@@ -1054,7 +1054,7 @@ end;
 
 procedure TPermintaanKoreksi_kanjiFrm.QDetailQTY5Change(Sender: TField);
 begin
-    QDetailQTY6.AsFloat:=(QDetailQTY5.AsFloat/20)*QDetailRASIO.AsFloat;//QKBeamRT_LP.AsFloat;
+  QDetailQTY6.AsFloat:=(QDetailQTY5.AsFloat/20)*QDetailRASIO.AsFloat;//QKBeamRT_LP.AsFloat;
 end;
 
 end.

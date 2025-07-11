@@ -277,6 +277,7 @@ type
     procedure LookKonv25Enter(Sender: TObject);
     procedure LookKonv25CloseUp(Sender: TObject; LookupTable,
       FillTable: TDataSet; modified: Boolean);
+    procedure QDetailQTY5Change(Sender: TField);
   private
     { Private declarations }
     vorder, SelectedFont, vkode, vjns_brg, vjns_lokasi : String;
@@ -1047,6 +1048,11 @@ procedure TPermintaanKoreksi_cikalanFrm.LookKonv25CloseUp(Sender: TObject;
   LookupTable, FillTable: TDataSet; modified: Boolean);
 begin
   QDetailRASIO.AsFloat:=QKBeamRT_LP.AsFloat;
+end;
+
+procedure TPermintaanKoreksi_cikalanFrm.QDetailQTY5Change(Sender: TField);
+begin
+    QDetailQTY6.AsFloat:=(QDetailQTY5.AsFloat/20)*QDetailRASIO.AsFloat;
 end;
 
 end.

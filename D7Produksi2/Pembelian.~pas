@@ -1368,8 +1368,7 @@ begin
   if WipPertenunanFrm=nil then WipPertenunanFrm:=TWipPertenunanFrm.Create(Application);
   WipPertenunanFrm.Show;
 end;
-
-
+ 
 procedure TPembelianFrm.OperatorMending1Click(Sender: TObject);
 begin
   if Daftar_Op_mendingFrm=nil then Daftar_Op_mendingFrm:=TDaftar_Op_mendingFrm.Create(Application);
@@ -1402,7 +1401,7 @@ end;
 
 procedure TPembelianFrm.HasilHanduk1Click(Sender: TObject);
 begin
-  if HasilTenunAtsBwhFrm=nil then HasilTenunFrm:=THasilTenunFrm.Create(Self);
+  if HasilTenunAtsBwhFrm=nil then HasilTenunAtsBwhFrm:=THasilTenunAtsBwhFrm.Create(Self);
   HasilTenunAtsBwhFrm.vjns_transaksi:='HASIL TENUN';
   HasilTenunAtsBwhFrm.vkd_lokasi:='50';
     mychar:=(Sender as TMenuItem).Caption;

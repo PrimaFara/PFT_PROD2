@@ -70,7 +70,7 @@ object PermintaanKoreksi_kanjiFrm: TPermintaanKoreksi_kanjiFrm
     Top = 76
     Width = 994
     Height = 453
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Align = alClient
     Style = tsFlatButtons
     TabOrder = 1
@@ -1808,8 +1808,8 @@ object PermintaanKoreksi_kanjiFrm: TPermintaanKoreksi_kanjiFrm
       0000000B0000003A4F50525F494E534552540500000005000000415249460000
       000000050000003A4E4F5441050000000F0000003939352D313630362D303034
       36360000000000090000003A415050524F564544050000000000000000000000}
-    Left = 408
-    Top = 376
+    Left = 248
+    Top = 368
   end
   object QApp: TOracleDataSet
     SQL.Strings = (
@@ -1846,8 +1846,8 @@ object PermintaanKoreksi_kanjiFrm: TPermintaanKoreksi_kanjiFrm
     Variables.Data = {
       0300000002000000060000003A504157414C0C00000000000000000000000700
       00003A50414B4849520C0000000000000000000000}
-    Left = 248
-    Top = 368
+    Left = 408
+    Top = 376
   end
   object QTotal: TOracleDataSet
     SQL.Strings = (

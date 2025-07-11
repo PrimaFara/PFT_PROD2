@@ -97,7 +97,7 @@ object DesainFrm: TDesainFrm
     Top = 41
     Width = 1305
     Height = 540
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Align = alClient
     TabOrder = 2
     object TabSheet1: TTabSheet
@@ -341,7 +341,7 @@ object DesainFrm: TDesainFrm
             Caption = 'cm'
           end
           object Label7: TLabel
-            Left = 704
+            Left = 694
             Top = 15
             Width = 42
             Height = 13
@@ -660,7 +660,7 @@ object DesainFrm: TDesainFrm
                 1899.708333333333000000)
               BandType = rbTitle
               object QRTitle: TQRLabel
-                Left = 287
+                Left = -64
                 Top = 2
                 Width = 143
                 Height = 26
@@ -670,8 +670,8 @@ object DesainFrm: TDesainFrm
                 Frame.DrawLeft = False
                 Frame.DrawRight = False
                 Size.Values = (
-                  68.791666666666670000
-                  759.354166666666700000
+                  68.791666666666680000
+                  759.354166666666800000
                   5.291666666666667000
                   378.354166666666700000)
                 Alignment = taCenter
@@ -1294,7 +1294,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 74.083333333333340000
-                949.854166666666700000)
+                949.854166666666800000)
               BandType = rbColumnHeader
               object QRLabel11: TQRLabel
                 Left = 7
@@ -1475,7 +1475,7 @@ object DesainFrm: TDesainFrm
               ParentFont = False
               Size.Values = (
                 39.687500000000000000
-                949.854166666666700000)
+                949.854166666666800000)
               BandType = rbDetail
               object QRDBText18: TQRDBText
                 Left = 183
@@ -1869,7 +1869,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 44.979166666666670000
-                949.854166666666700000)
+                949.854166666666800000)
               BandType = rbGroupFooter
               object QRExpr2: TQRExpr
                 Left = 48
@@ -2019,7 +2019,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 0.000000000000000000
-                949.854166666666700000)
+                949.854166666666800000)
               BandType = rbGroupFooter
             end
             object QRGroup1: TQRGroup
@@ -2039,7 +2039,7 @@ object DesainFrm: TDesainFrm
               LinkBand = QRBand1
               Size.Values = (
                 42.333333333333340000
-                949.854166666666700000)
+                949.854166666666800000)
               Expression = 'CDSQDetail2.ARAH'
               FooterBand = QRBand1
               Master = QuickRep1
@@ -2143,7 +2143,7 @@ object DesainFrm: TDesainFrm
               ForceNewPage = False
               Size.Values = (
                 42.333333333333340000
-                949.854166666666700000)
+                949.854166666666800000)
               Expression = 'CDSQDetail2.KELOMPOK'
               FooterBand = QRBand2
               Master = QuickRep1
@@ -2214,7 +2214,7 @@ object DesainFrm: TDesainFrm
               ForceNewColumn = False
               ForceNewPage = False
               Size.Values = (
-                68.791666666666670000
+                68.791666666666680000
                 1899.708333333333000000)
               BandType = rbSummary
               object QRRichText1: TQRRichText

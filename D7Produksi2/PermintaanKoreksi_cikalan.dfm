@@ -1415,6 +1415,7 @@ object PermintaanKoreksi_cikalanFrm: TPermintaanKoreksi_cikalanFrm
     end
     object QDetailQTY5: TFloatField
       FieldName = 'QTY5'
+      OnChange = QDetailQTY5Change
       DisplayFormat = '#,#.##;(#,#.##); '
     end
     object QDetailQTY6: TFloatField
@@ -1901,13 +1902,12 @@ object PermintaanKoreksi_cikalanFrm: TPermintaanKoreksi_cikalanFrm
   end
   object QKBeam: TOracleDataSet
     SQL.Strings = (
-      'select mesin, '
-      'kp, '
-      'arah, '
+      'select mesin,kp,arah, '
       'sum(nvl(rt_lp, 0)) as rt_lp'
       'from IPISMA_DB4.konversi_beam_25 a'
       'where mesin=:mes and kp=:kprod and arah=:larah'
       'group by mesin, kp, arah'
+      ''
       '')
     Variables.Data = {
       0300000003000000040000003A4D45530500000010000000524150494552204A
@@ -1919,8 +1919,8 @@ object PermintaanKoreksi_cikalanFrm: TPermintaanKoreksi_cikalanFrm
     ReadOnly = True
     QueryAllRecords = False
     Session = DMFrm.OS
-    Left = 758
-    Top = 336
+    Left = 110
+    Top = 344
     object QKBeamKP: TStringField
       DisplayWidth = 20
       FieldName = 'KP'
