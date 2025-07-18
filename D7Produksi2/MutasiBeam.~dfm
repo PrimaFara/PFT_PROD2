@@ -13503,6 +13503,32 @@ object MutasiBeamFrm: TMutasiBeamFrm
           UnboundDataType = wwDefault
           Visible = False
         end
+        object LookArah: TwwDBComboBox
+          Left = 288
+          Top = 248
+          Width = 121
+          Height = 19
+          ShowButton = True
+          Style = csDropDown
+          MapList = False
+          AllowClearKey = False
+          BorderStyle = bsNone
+          DataField = 'ARAH'
+          DataSource = dsDetail
+          DropDownCount = 8
+          Frame.Enabled = True
+          Frame.NonFocusBorders = []
+          Frame.NonFocusStyle = efsFrameSingle
+          Frame.NonFocusFontColor = clBlue
+          ItemHeight = 0
+          Items.Strings = (
+            'LUSI'
+            'LUSI BAWAH'
+            'LUSI ATAS')
+          Sorted = False
+          TabOrder = 8
+          UnboundDataType = wwDefault
+        end
       end
     end
     object TabSheet2: TTabSheet

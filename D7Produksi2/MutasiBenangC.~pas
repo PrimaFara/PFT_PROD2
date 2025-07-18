@@ -738,7 +738,7 @@ QBrowse.Close;
   QAmbil_Data.SetVariable('pawal',VTglAwal.Date);
   QAmbil_Data.SetVariable('pakhir',vTglAkhir.Date);
   QAmbil_Data.Execute;
-QBrowse.SetVariable('myparam', 'order by bem desc');
+QBrowse.SetVariable('myparam', 'order by kp,konstruksi,bem desc');
 QBrowse.Open;
 //QBrowse.Refresh;
 QBrowseTotal.Close;
@@ -901,7 +901,7 @@ end;
 
 procedure TMutasiBenangCFrm.QUpdate2BeforeQuery(Sender: TOracleQuery);
 begin
-{      QUpdate2.SQL.Text := 'update ipisma_db4.item_saldo_CCK set ' +
+{      QUpdate2.SQL.Text := 'update ipisma_db4.item_saldo_cck set ' +
                      ':myparam1 = :pqty1, ' +
                      ':myparam2 = :pqty2, ' +
                      ':myparam3 = :pqty3 ' +
@@ -909,7 +909,7 @@ begin
                      'konstruksi = :pkonstruksi and mesin = :pmesin';   }
 
   QUpdate2.SQL.Text :=
-    'MERGE INTO ipisma_db4.item_saldo_CCK t ' +
+    'MERGE INTO ipisma_db4.item_saldo_cck t ' +
     'USING (SELECT :ptahun AS tahun, :pkp AS KP, ' +
            ':pkonstruksi AS konstruksi, :pmesin AS mesin, ' +
            ':pqty1 AS qty1, :pqty2 AS qty2, :pqty3 AS qty3 FROM dual) s ' +

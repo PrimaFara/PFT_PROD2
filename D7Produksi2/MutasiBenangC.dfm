@@ -6174,7 +6174,9 @@ object MutasiBenangCFrm: TMutasiBenangCFrm
   object QAmbil_Data: TOracleQuery
     SQL.Strings = (
       'begin'
-      '  ipisma_db4.Proc_prod_mutasi_b_cucuk2507(:pawal,:pakhir);'
+      
+        '  ipisma_db4.Proc_prod_mutasi_b_cck_wst(:pawal,:pakhir); /*Proc_' +
+        'prod_mutasi_b_cucuk2507(:pawal,:pakhir);*/'
       ' /*ipisma_db4.Proc_prod_mutasi_b_cucukas(:pawal,:pakhir);*/'
       'end;')
     Session = DMFrm.OS

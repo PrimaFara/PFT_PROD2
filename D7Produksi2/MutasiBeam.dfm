@@ -14118,7 +14118,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
   end
   object QLookBeam1: TOracleDataSet
     SQL.Strings = (
-      'select a.* from ipisma_db4.vlook_beam_sarung_25v3 a'
+      'select a.* from ipisma_db4.vlook_beam_sarung_2506 a'
       'where a.kd_lokasi=:kd_lokasi'
       'order by a.no_beam'
       '-- and tanggal>=trunc(sysdate-200)'

@@ -770,6 +770,7 @@ type
     QDetail_cetakPOT_REV: TFloatField;
     QLookBeam1ARAH: TStringField;
     DetailARAH: TStringField;
+    LookArah: TwwDBComboBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure TabSheet1Show(Sender: TObject);
