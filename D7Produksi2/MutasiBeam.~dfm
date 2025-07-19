@@ -203,7 +203,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              121.708333333333300000
+              121.708333333333400000
               367.770833333333400000
               124.354166666666700000)
             Alignment = taCenter
@@ -1498,9 +1498,9 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              121.708333333333300000
+              121.708333333333400000
               2.645833333333333000
-              121.708333333333300000)
+              121.708333333333400000)
             Alignment = taCenter
             AlignToBand = False
             AutoSize = True
@@ -1647,7 +1647,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333330000
+              18.520833333333340000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -3821,7 +3821,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
               44.979166666666670000
               105.833333333333300000
               2.645833333333333000
-              121.708333333333300000)
+              121.708333333333400000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -3968,7 +3968,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333330000
+              18.520833333333340000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -5998,7 +5998,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
               44.979166666666670000
               105.833333333333300000
               2.645833333333333000
-              121.708333333333300000)
+              121.708333333333400000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -6145,7 +6145,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333330000
+              18.520833333333340000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -8024,7 +8024,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
               44.979166666666670000
               105.833333333333300000
               2.645833333333333000
-              121.708333333333300000)
+              121.708333333333400000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -8188,7 +8188,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333330000
+              18.520833333333340000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -10159,7 +10159,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
               44.979166666666670000
               105.833333333333300000
               2.645833333333333000
-              121.708333333333300000)
+              121.708333333333400000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -10274,7 +10274,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333330000
+              18.520833333333340000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -12291,7 +12291,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
               44.979166666666670000
               105.833333333333300000
               2.645833333333333000
-              121.708333333333300000)
+              121.708333333333400000)
             Alignment = taLeftJustify
             AlignToBand = False
             AutoSize = True
@@ -12438,7 +12438,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Frame.DrawRight = False
             Size.Values = (
               44.979166666666670000
-              18.520833333333330000
+              18.520833333333340000
               5.291666666666667000
               201.083333333333300000)
             Alignment = taLeftJustify
@@ -12987,22 +12987,6 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Height = 13
             Caption = 'KETERANGAN'
           end
-          object Label8: TLabel
-            Left = 448
-            Top = 83
-            Width = 47
-            Height = 13
-            Caption = 'Tgl. Insert'
-            FocusControl = DBEdit8
-          end
-          object Label9: TLabel
-            Left = 448
-            Top = 123
-            Width = 49
-            Height = 13
-            Caption = 'Opr. Insert'
-            FocusControl = DBEdit9
-          end
           object DBText1: TDBText
             Left = 561
             Top = 11
@@ -13035,6 +13019,20 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Height = 13
             Caption = 'No. Pol :'
           end
+          object Label8: TLabel
+            Left = 422
+            Top = 115
+            Width = 47
+            Height = 13
+            Caption = 'Tgl. Insert'
+          end
+          object Label9: TLabel
+            Left = 420
+            Top = 136
+            Width = 49
+            Height = 13
+            Caption = 'Opr. Insert'
+          end
           object DBEdit1: TDBEdit
             Left = 16
             Top = 19
@@ -13045,28 +13043,6 @@ object MutasiBeamFrm: TMutasiBeamFrm
             DataSource = dsMaster
             TabOrder = 0
           end
-          object DBEdit8: TDBEdit
-            Left = 448
-            Top = 99
-            Width = 129
-            Height = 19
-            Color = clMoneyGreen
-            DataField = 'TGL_INSERT'
-            DataSource = dsMaster
-            ReadOnly = True
-            TabOrder = 1
-          end
-          object DBEdit9: TDBEdit
-            Left = 448
-            Top = 139
-            Width = 129
-            Height = 19
-            Color = clMoneyGreen
-            DataField = 'OPR_INSERT'
-            DataSource = dsMaster
-            ReadOnly = True
-            TabOrder = 2
-          end
           object DBMemo1: TDBMemo
             Left = 16
             Top = 107
@@ -13074,7 +13050,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Height = 49
             DataField = 'KETERANGAN'
             DataSource = dsMaster
-            TabOrder = 3
+            TabOrder = 1
           end
           object DTPTanggal: TwwDBDateTimePicker
             Left = 16
@@ -13091,46 +13067,47 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Date = 39407.000000000000000000
             Epoch = 1950
             ShowButton = True
-            TabOrder = 4
+            TabOrder = 2
             DisplayFormat = 'dd/mm/yyyy'
           end
           object RadioGroup1: TRadioGroup
             Left = 216
             Top = 1
-            Width = 105
-            Height = 39
-            Caption = 'Resep'
+            Width = 108
+            Height = 57
+            Caption = 'Serah Terima'
             ItemIndex = 0
             Items.Strings = (
               'Sarung'
-              'Kain')
-            TabOrder = 5
+              'Kain'
+              'Reproses Cucuk')
+            TabOrder = 3
           end
           object RadioGroup2: TRadioGroup
             Left = 216
-            Top = 42
-            Width = 105
-            Height = 42
-            Caption = 'Serah Terima'
+            Top = 60
+            Width = 109
+            Height = 39
+            Caption = 'Tujuan'
             ItemIndex = 0
             Items.Strings = (
               'Lokasi Tenun'
               'Lainnya')
-            TabOrder = 6
+            TabOrder = 4
           end
           object UpdateQTY: TCheckBox
-            Left = 218
-            Top = 88
-            Width = 169
+            Left = 335
+            Top = 81
+            Width = 134
             Height = 17
-            Caption = 'Update QTY RETUR/TS'
+            Caption = 'Update QTY Mitra'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clOlive
             Font.Height = -12
             Font.Name = 'MS Sans Serif'
             Font.Style = [fsBold]
             ParentFont = False
-            TabOrder = 7
+            TabOrder = 5
             Visible = False
           end
           object LookMitra: TwwDBLookupComboDlg
@@ -13150,7 +13127,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
             DataSource = dsMaster
             LookupTable = QMitra
             LookupField = 'PROSES2'
-            TabOrder = 8
+            TabOrder = 6
             AutoDropDown = False
             ShowButton = True
             AllowClearKey = False
@@ -13171,10 +13148,44 @@ object MutasiBeamFrm: TMutasiBeamFrm
             Font.Name = 'MS Sans Serif'
             Font.Style = []
             ParentFont = False
-            TabOrder = 9
+            TabOrder = 7
             UnboundDataType = wwDefault
             WantReturns = False
             WordWrap = False
+          end
+          object DBEdit8: TDBEdit
+            Left = 474
+            Top = 114
+            Width = 100
+            Height = 19
+            Color = clMoneyGreen
+            DataField = 'TGL_INSERT'
+            DataSource = dsMaster
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -8
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 8
+          end
+          object DBEdit9: TDBEdit
+            Left = 474
+            Top = 134
+            Width = 100
+            Height = 19
+            Color = clMoneyGreen
+            DataField = 'OPR_INSERT'
+            DataSource = dsMaster
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -8
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 9
           end
         end
         object Panel5: TPanel
@@ -14116,134 +14127,6 @@ object MutasiBeamFrm: TMutasiBeamFrm
     Left = 992
     Top = 400
   end
-  object QLookBeam1: TOracleDataSet
-    SQL.Strings = (
-      'select a.* from ipisma_db4.vlook_beam_sarung_25v3 a'
-      'where a.kd_lokasi=:kd_lokasi'
-      'order by a.no_beam'
-      '-- and tanggal>=trunc(sysdate-200)'
-      '')
-    Variables.Data = {
-      03000000010000000A0000003A4B445F4C4F4B41534905000000030000003430
-      0000000000}
-    QBEDefinition.QBEFieldDefs = {
-      0400000017000000070000004E4F5F4245414D010000000000060000004C4F4B
-      4153490100000000000600000050524F534553010000000000090000004B445F
-      4C4F4B4153490100000000000C0000004E4F5F534552495F4245414D01000000
-      0000030000004953490100000000000A0000004B4F4E535452554B5349010000
-      00000005000000434F52414B01000000000006000000564F5244455201000000
-      000005000000484153494C010000000000080000004E4F5F5245534550010000
-      000000060000005154595F4B47010000000000020000004B5001000000000007
-      00000054414E4747414C010000000000040000004245414D0100000000000600
-      00004B475F52455601000000000007000000504F545F52455601000000000007
-      00000048534C5F575250010000000000070000005154595F5043530100000000
-      00050000004A454E4953010000000000080000004A4D4C5F4B4F444901000000
-      0000090000004A4D4C5F4D455445520100000000000400000041524148010000
-      000000}
-    RefreshOptions = [roAfterInsert]
-    Session = DMFrm.OS
-    Left = 32
-    Top = 344
-    object QLookBeam1NO_BEAM: TStringField
-      DisplayLabel = 'NO BEAM'
-      DisplayWidth = 12
-      FieldName = 'NO_BEAM'
-      Required = True
-    end
-    object QLookBeam1NO_SERI_BEAM: TStringField
-      DisplayLabel = 'NO SERI'
-      DisplayWidth = 15
-      FieldName = 'NO_SERI_BEAM'
-      Size = 30
-    end
-    object QLookBeam1JENIS: TStringField
-      DisplayWidth = 12
-      FieldName = 'JENIS'
-      Size = 30
-    end
-    object QLookBeam1NO_RESEP: TStringField
-      DisplayWidth = 20
-      FieldName = 'NO_RESEP'
-    end
-    object QLookBeam1LOKASI: TStringField
-      DisplayWidth = 12
-      FieldName = 'LOKASI'
-      Size = 30
-    end
-    object QLookBeam1PROSES: TStringField
-      DisplayWidth = 12
-      FieldName = 'PROSES'
-      Size = 30
-    end
-    object QLookBeam1KONSTRUKSI: TStringField
-      DisplayWidth = 30
-      FieldName = 'KONSTRUKSI'
-      Size = 30
-    end
-    object QLookBeam1CORAK: TStringField
-      DisplayWidth = 20
-      FieldName = 'CORAK'
-      Size = 50
-    end
-    object QLookBeam1ISI: TFloatField
-      DisplayWidth = 5
-      FieldName = 'ISI'
-      DisplayFormat = '#.#,#%'
-    end
-    object QLookBeam1QTY_KG: TFloatField
-      DisplayLabel = 'KG'
-      DisplayWidth = 5
-      FieldName = 'QTY_KG'
-      DisplayFormat = '#.#,#'
-    end
-    object QLookBeam1QTY_PCS: TFloatField
-      DisplayLabel = 'PCS'
-      DisplayWidth = 5
-      FieldName = 'QTY_PCS'
-    end
-    object QLookBeam1KG_REV: TFloatField
-      DisplayWidth = 8
-      FieldName = 'KG_REV'
-    end
-    object QLookBeam1POT_REV: TFloatField
-      DisplayWidth = 8
-      FieldName = 'POT_REV'
-    end
-    object QLookBeam1HSL_WRP: TFloatField
-      DisplayLabel = 'HSL PREP'
-      DisplayWidth = 10
-      FieldName = 'HSL_WRP'
-    end
-    object QLookBeam1VORDER: TFloatField
-      DisplayLabel = 'ORDER'
-      DisplayWidth = 5
-      FieldName = 'VORDER'
-    end
-    object QLookBeam1HASIL: TFloatField
-      DisplayLabel = 'HSL TN'
-      DisplayWidth = 5
-      FieldName = 'HASIL'
-    end
-    object QLookBeam1BEAM: TStringField
-      DisplayWidth = 20
-      FieldName = 'BEAM'
-      Size = 100
-    end
-    object QLookBeam1KD_LOKASI: TStringField
-      DisplayWidth = 6
-      FieldName = 'KD_LOKASI'
-      Visible = False
-      Size = 6
-    end
-    object QLookBeam1KP: TStringField
-      FieldName = 'KP'
-      Visible = False
-    end
-    object QLookBeam1ARAH: TStringField
-      FieldName = 'ARAH'
-      Size = 30
-    end
-  end
   object dsQTGL: TwwDataSource
     DataSet = QTGL
     Left = 728
@@ -14700,7 +14583,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
     CharCase = ecNormal
     UserButton1Caption = '&Refresh'
     OnUserButton1Click = LookSeriBeamDlg1UserButton1Click
-    Left = 832
+    Left = 808
     Top = 336
   end
   object QLookLokasiMesin: TOracleDataSet
@@ -14838,6 +14721,7 @@ object MutasiBeamFrm: TMutasiBeamFrm
     Selected.Strings = (
       'NO_BEAM'#9'12'#9'NO BEAM'#9'F'#9
       'NO_SERI_BEAM'#9'15'#9'NO SERI'#9'F'#9
+      'JENIS'#9'10'#9'JENIS'#9'F'
       'NO_RESEP'#9'20'#9'NO_RESEP'#9'F'#9
       'LOKASI'#9'12'#9'LOKASI'#9'F'#9
       'PROSES'#9'12'#9'PROSES'#9'F'#9
@@ -14845,20 +14729,24 @@ object MutasiBeamFrm: TMutasiBeamFrm
       'CORAK'#9'20'#9'CORAK'#9'F'#9
       'ISI'#9'5'#9'ISI'#9'F'#9
       'QTY_KG'#9'5'#9'QTY KG'#9'F'#9
+      'QTY_PCS'#9'5'#9'PCS'#9'F'
+      'KG_REV'#9'10'#9'KG_REV'#9'F'
+      'POT_REV'#9'10'#9'POT_REV'#9'F'
       'VORDER'#9'5'#9'ORDER'#9'F'#9
-      'HASIL'#9'5'#9'HASIL'#9'F'#9)
+      'HASIL'#9'5'#9'HSL TN'#9'F'
+      'BEAM'#9'25'#9'BEAM'#9'F')
     GridTitleAlignment = taLeftJustify
     GridColor = clWhite
     GridOptions = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgPerfectRowFit]
-    LookupTable = QLookBM_RT_TS
+    LookupTable = QLookBeamCK
     Caption = 'Lookup'
     MaxWidth = 0
     MaxHeight = 209
     CharCase = ecNormal
     UserButton1Caption = '&Refresh'
     OnUserButton1Click = LookSeriBeamDlg2UserButton1Click
-    Left = 784
-    Top = 184
+    Left = 800
+    Top = 384
   end
   object QKBeam: TOracleDataSet
     SQL.Strings = (
@@ -14939,8 +14827,8 @@ object MutasiBeamFrm: TMutasiBeamFrm
     ReadOnly = True
     QueryAllRecords = False
     Session = DMFrm.OS
-    Left = 494
-    Top = 40
+    Left = 686
+    Top = 136
     object QMitraPROSES2: TStringField
       DisplayWidth = 50
       FieldName = 'PROSES2'
@@ -14949,7 +14837,262 @@ object MutasiBeamFrm: TMutasiBeamFrm
   end
   object DataSource2: TDataSource
     DataSet = QDetail_cetak
-    Left = 544
-    Top = 88
+    Left = 984
+    Top = 456
+  end
+  object QLookBeam1: TOracleDataSet
+    SQL.Strings = (
+      'select a.* from ipisma_db4.vlook_beam_sarung_2506 a'
+      'where a.kd_lokasi=:kd_lokasi'
+      'order by a.no_beam'
+      '-- and tanggal>=trunc(sysdate-200)'
+      '')
+    Variables.Data = {
+      03000000010000000A0000003A4B445F4C4F4B41534905000000030000003430
+      0000000000}
+    QBEDefinition.QBEFieldDefs = {
+      0400000017000000070000004E4F5F4245414D010000000000060000004C4F4B
+      4153490100000000000600000050524F534553010000000000090000004B445F
+      4C4F4B4153490100000000000C0000004E4F5F534552495F4245414D01000000
+      0000030000004953490100000000000A0000004B4F4E535452554B5349010000
+      00000005000000434F52414B01000000000006000000564F5244455201000000
+      000005000000484153494C010000000000080000004E4F5F5245534550010000
+      000000060000005154595F4B47010000000000020000004B5001000000000007
+      00000054414E4747414C010000000000040000004245414D0100000000000600
+      00004B475F52455601000000000007000000504F545F52455601000000000007
+      00000048534C5F575250010000000000070000005154595F5043530100000000
+      00050000004A454E4953010000000000080000004A4D4C5F4B4F444901000000
+      0000090000004A4D4C5F4D455445520100000000000400000041524148010000
+      000000}
+    RefreshOptions = [roAfterInsert]
+    Session = DMFrm.OS
+    Left = 32
+    Top = 312
+    object QLookBeam1NO_BEAM: TStringField
+      DisplayLabel = 'NO BEAM'
+      DisplayWidth = 12
+      FieldName = 'NO_BEAM'
+      Required = True
+    end
+    object QLookBeam1NO_SERI_BEAM: TStringField
+      DisplayLabel = 'NO SERI'
+      DisplayWidth = 15
+      FieldName = 'NO_SERI_BEAM'
+      Size = 30
+    end
+    object QLookBeam1JENIS: TStringField
+      DisplayWidth = 12
+      FieldName = 'JENIS'
+      Size = 30
+    end
+    object QLookBeam1NO_RESEP: TStringField
+      DisplayWidth = 20
+      FieldName = 'NO_RESEP'
+    end
+    object QLookBeam1LOKASI: TStringField
+      DisplayWidth = 12
+      FieldName = 'LOKASI'
+      Size = 30
+    end
+    object QLookBeam1PROSES: TStringField
+      DisplayWidth = 12
+      FieldName = 'PROSES'
+      Size = 30
+    end
+    object QLookBeam1KONSTRUKSI: TStringField
+      DisplayWidth = 30
+      FieldName = 'KONSTRUKSI'
+      Size = 30
+    end
+    object QLookBeam1CORAK: TStringField
+      DisplayWidth = 20
+      FieldName = 'CORAK'
+      Size = 50
+    end
+    object QLookBeam1ISI: TFloatField
+      DisplayWidth = 5
+      FieldName = 'ISI'
+      DisplayFormat = '#.#,#%'
+    end
+    object QLookBeam1QTY_KG: TFloatField
+      DisplayLabel = 'KG'
+      DisplayWidth = 5
+      FieldName = 'QTY_KG'
+      DisplayFormat = '#.#,#'
+    end
+    object QLookBeam1QTY_PCS: TFloatField
+      DisplayLabel = 'PCS'
+      DisplayWidth = 5
+      FieldName = 'QTY_PCS'
+    end
+    object QLookBeam1KG_REV: TFloatField
+      DisplayWidth = 8
+      FieldName = 'KG_REV'
+    end
+    object QLookBeam1POT_REV: TFloatField
+      DisplayWidth = 8
+      FieldName = 'POT_REV'
+    end
+    object QLookBeam1HSL_WRP: TFloatField
+      DisplayLabel = 'HSL PREP'
+      DisplayWidth = 10
+      FieldName = 'HSL_WRP'
+    end
+    object QLookBeam1VORDER: TFloatField
+      DisplayLabel = 'ORDER'
+      DisplayWidth = 5
+      FieldName = 'VORDER'
+    end
+    object QLookBeam1HASIL: TFloatField
+      DisplayLabel = 'HSL TN'
+      DisplayWidth = 5
+      FieldName = 'HASIL'
+    end
+    object QLookBeam1BEAM: TStringField
+      DisplayWidth = 20
+      FieldName = 'BEAM'
+      Size = 100
+    end
+    object QLookBeam1KD_LOKASI: TStringField
+      DisplayWidth = 6
+      FieldName = 'KD_LOKASI'
+      Visible = False
+      Size = 6
+    end
+    object QLookBeam1KP: TStringField
+      FieldName = 'KP'
+      Visible = False
+    end
+    object QLookBeam1ARAH: TStringField
+      FieldName = 'ARAH'
+      Size = 30
+    end
+  end
+  object QLookBeamCK: TOracleDataSet
+    SQL.Strings = (
+      'select a.* from ipisma_db4.VLOOK_BEAM_SRG_REPRO_CCK a'
+      'where a.kd_lokasi=:kd_lokasi'
+      'order by a.no_beam'
+      '-- and tanggal>=trunc(sysdate-200)'
+      '')
+    Variables.Data = {
+      03000000010000000A0000003A4B445F4C4F4B41534905000000030000003430
+      0000000000}
+    QBEDefinition.QBEFieldDefs = {
+      0400000015000000070000004E4F5F4245414D010000000000060000004C4F4B
+      4153490100000000000600000050524F534553010000000000090000004B445F
+      4C4F4B4153490100000000000C0000004E4F5F534552495F4245414D01000000
+      0000030000004953490100000000000A0000004B4F4E535452554B5349010000
+      00000005000000434F52414B01000000000006000000564F5244455201000000
+      000005000000484153494C010000000000080000004E4F5F5245534550010000
+      000000060000005154595F4B47010000000000020000004B5001000000000007
+      00000054414E4747414C010000000000040000004245414D0100000000000600
+      00004B475F52455601000000000007000000504F545F52455601000000000007
+      00000048534C5F575250010000000000070000005154595F5043530100000000
+      00050000004A454E49530100000000000400000041524148010000000000}
+    RefreshOptions = [roAfterInsert]
+    Session = DMFrm.OS
+    Left = 32
+    Top = 360
+    object QLookBeamCKNO_BEAM: TStringField
+      DisplayLabel = 'NO BEAM'
+      DisplayWidth = 12
+      FieldName = 'NO_BEAM'
+    end
+    object QLookBeamCKNO_SERI_BEAM: TStringField
+      DisplayLabel = 'NO SERI'
+      DisplayWidth = 15
+      FieldName = 'NO_SERI_BEAM'
+      Required = True
+      Size = 30
+    end
+    object QLookBeamCKJENIS: TStringField
+      DisplayWidth = 10
+      FieldName = 'JENIS'
+      Size = 30
+    end
+    object QLookBeamCKNO_RESEP: TStringField
+      DisplayWidth = 20
+      FieldName = 'NO_RESEP'
+    end
+    object QLookBeamCKLOKASI: TStringField
+      DisplayWidth = 12
+      FieldName = 'LOKASI'
+      Size = 30
+    end
+    object QLookBeamCKPROSES: TStringField
+      DisplayWidth = 12
+      FieldName = 'PROSES'
+      Size = 30
+    end
+    object QLookBeamCKKONSTRUKSI: TStringField
+      DisplayWidth = 30
+      FieldName = 'KONSTRUKSI'
+      Size = 50
+    end
+    object QLookBeamCKCORAK: TStringField
+      DisplayWidth = 20
+      FieldName = 'CORAK'
+      Size = 50
+    end
+    object QLookBeamCKISI: TFloatField
+      DisplayWidth = 5
+      FieldName = 'ISI'
+    end
+    object QLookBeamCKQTY_KG: TFloatField
+      DisplayLabel = 'QTY KG'
+      DisplayWidth = 5
+      FieldName = 'QTY_KG'
+    end
+    object QLookBeamCKQTY_PCS: TFloatField
+      DisplayLabel = 'PCS'
+      DisplayWidth = 5
+      FieldName = 'QTY_PCS'
+    end
+    object QLookBeamCKKG_REV: TFloatField
+      DisplayWidth = 10
+      FieldName = 'KG_REV'
+    end
+    object QLookBeamCKPOT_REV: TFloatField
+      DisplayWidth = 10
+      FieldName = 'POT_REV'
+    end
+    object QLookBeamCKVORDER: TFloatField
+      DisplayLabel = 'ORDER'
+      DisplayWidth = 5
+      FieldName = 'VORDER'
+    end
+    object QLookBeamCKHASIL: TFloatField
+      DisplayLabel = 'HSL TN'
+      DisplayWidth = 5
+      FieldName = 'HASIL'
+    end
+    object QLookBeamCKBEAM: TStringField
+      DisplayWidth = 25
+      FieldName = 'BEAM'
+      Size = 100
+    end
+    object QLookBeamCKTANGGAL: TDateTimeField
+      FieldName = 'TANGGAL'
+      Visible = False
+    end
+    object QLookBeamCKKP: TStringField
+      FieldName = 'KP'
+      Visible = False
+    end
+    object QLookBeamCKKD_LOKASI: TStringField
+      FieldName = 'KD_LOKASI'
+      Visible = False
+      Size = 6
+    end
+    object QLookBeamCKHSL_WRP: TFloatField
+      FieldName = 'HSL_WRP'
+      Visible = False
+    end
+    object QLookBeamCKARAH: TStringField
+      FieldName = 'ARAH'
+      Visible = False
+      Size = 30
+    end
   end
 end

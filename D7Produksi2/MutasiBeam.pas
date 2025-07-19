@@ -35,10 +35,6 @@ type
     DBEdit1: TDBEdit;
     Label3: TLabel;
     Label7: TLabel;
-    Label8: TLabel;
-    DBEdit8: TDBEdit;
-    Label9: TLabel;
-    DBEdit9: TDBEdit;
     DBMemo1: TDBMemo;
     wwDBNavigator1: TwwDBNavigator;
     wwDBNavigator1Prior: TwwNavButton;
@@ -87,23 +83,12 @@ type
     QBrowseKONSTRUKSI: TStringField;
     QBrowseCORAK: TStringField;
     DetailKD_LOKASI: TStringField;
-    QLookBeam1: TOracleDataSet;
-    QLookBeam1NO_BEAM: TStringField;
-    QLookBeam1NO_SERI_BEAM: TStringField;
-    QLookBeam1LOKASI: TStringField;
-    QLookBeam1PROSES: TStringField;
-    QLookBeam1KD_LOKASI: TStringField;
     QLookBeam2: TOracleDataSet;
     QBrowseNO_BEAM: TStringField;
     QBrowseISI: TFloatField;
     DetailKD_LOKASI_ORG: TStringField;
     DetailISI: TFloatField;
     BitBtn3: TBitBtn;
-    QLookBeam1KONSTRUKSI: TStringField;
-    QLookBeam1CORAK: TStringField;
-    QLookBeam1VORDER: TFloatField;
-    QLookBeam1HASIL: TFloatField;
-    QLookBeam1ISI: TFloatField;
     DetailKETERANGAN: TStringField;
     QBrowseNO_ORDER: TStringField;
     QBrowseNPICK: TFloatField;
@@ -136,7 +121,6 @@ type
     QDetail_cetakISI: TFloatField;
     QDetail_cetakJML_POTONG: TFloatField;
     QDetail_cetakJML_KODI: TFloatField;
-    QLookBeam1NO_RESEP: TStringField;
     QuickRep1: TQuickRep;
     TitleBand1: TQRBand;
     ColumnHeaderBand1: TQRBand;
@@ -640,7 +624,6 @@ type
     QRExpr7: TQRExpr;
     QRLabel163: TQRLabel;
     QBrowseQTY_KG: TFloatField;
-    QLookBeam1QTY_KG: TFloatField;
     QDetail_cetakQTY_KG: TFloatField;
     QRDBText32: TQRDBText;
     QRExpr8: TQRExpr;
@@ -712,10 +695,6 @@ type
     QKBeamRASIO_PAKAN: TFloatField;
     QKBeamRM_LUSI: TFloatField;
     QKBeamRM_PAKAN: TFloatField;
-    QLookBeam1KP: TStringField;
-    QLookBeam1BEAM: TStringField;
-    QLookBeam1KG_REV: TFloatField;
-    QLookBeam1POT_REV: TFloatField;
     QRLabel82: TQRLabel;
     QRLabel83: TQRLabel;
     QRLabel164: TQRLabel;
@@ -756,21 +735,64 @@ type
     QMitraPROSES2: TStringField;
     DetailPCS: TFloatField;
     QDetail_cetakMITRA: TStringField;
-    QLookBeam1HSL_WRP: TFloatField;
-    QLookBeam1QTY_PCS: TFloatField;
     QBrowseBEAM: TStringField;
     Label18: TLabel;
     wwDBEdit3: TwwDBEdit;
     QMasterNO_POL: TStringField;
     QRDBText11: TQRDBText;
-    QLookBeam1JENIS: TStringField;
     DetailJENIS: TStringField;
     LokkJenis2: TwwDBComboBox;
     QDetail_cetakKG_REV: TFloatField;
     QDetail_cetakPOT_REV: TFloatField;
-    QLookBeam1ARAH: TStringField;
     DetailARAH: TStringField;
     LookArah: TwwDBComboBox;
+    QLookBeam1: TOracleDataSet;
+    QLookBeam1NO_BEAM: TStringField;
+    QLookBeam1NO_SERI_BEAM: TStringField;
+    QLookBeam1JENIS: TStringField;
+    QLookBeam1NO_RESEP: TStringField;
+    QLookBeam1LOKASI: TStringField;
+    QLookBeam1PROSES: TStringField;
+    QLookBeam1KONSTRUKSI: TStringField;
+    QLookBeam1CORAK: TStringField;
+    QLookBeam1ISI: TFloatField;
+    QLookBeam1QTY_KG: TFloatField;
+    QLookBeam1QTY_PCS: TFloatField;
+    QLookBeam1KG_REV: TFloatField;
+    QLookBeam1POT_REV: TFloatField;
+    QLookBeam1HSL_WRP: TFloatField;
+    QLookBeam1VORDER: TFloatField;
+    QLookBeam1HASIL: TFloatField;
+    QLookBeam1BEAM: TStringField;
+    QLookBeam1KD_LOKASI: TStringField;
+    QLookBeam1KP: TStringField;
+    QLookBeam1ARAH: TStringField;
+    QLookBeamCK: TOracleDataSet;
+    QLookBeamCKTANGGAL: TDateTimeField;
+    QLookBeamCKNO_BEAM: TStringField;
+    QLookBeamCKLOKASI: TStringField;
+    QLookBeamCKPROSES: TStringField;
+    QLookBeamCKNO_SERI_BEAM: TStringField;
+    QLookBeamCKNO_RESEP: TStringField;
+    QLookBeamCKKP: TStringField;
+    QLookBeamCKKONSTRUKSI: TStringField;
+    QLookBeamCKCORAK: TStringField;
+    QLookBeamCKKD_LOKASI: TStringField;
+    QLookBeamCKVORDER: TFloatField;
+    QLookBeamCKHSL_WRP: TFloatField;
+    QLookBeamCKHASIL: TFloatField;
+    QLookBeamCKISI: TFloatField;
+    QLookBeamCKQTY_KG: TFloatField;
+    QLookBeamCKQTY_PCS: TFloatField;
+    QLookBeamCKKG_REV: TFloatField;
+    QLookBeamCKPOT_REV: TFloatField;
+    QLookBeamCKBEAM: TStringField;
+    QLookBeamCKJENIS: TStringField;
+    QLookBeamCKARAH: TStringField;
+    Label8: TLabel;
+    DBEdit8: TDBEdit;
+    DBEdit9: TDBEdit;
+    Label9: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TabSheet2Show(Sender: TObject);
     procedure TabSheet1Show(Sender: TObject);
@@ -1038,6 +1060,13 @@ begin
    QLookBeam2.Open;
    //end;
   end;
+    2:
+  begin
+   //reproses cucuk
+   QLookBeamCK.Close;
+   QLookBeamCK.SetVariable('kd_lokasi',vkd_lokasi);
+   QLookBeamCK.Open;
+  end;
 {    2:
   begin
    //retur beam dari tenun 161023
@@ -1148,7 +1177,29 @@ begin
    DetailRESEP.AsString:=QLookBeam2NO_RESEP.AsString;
    end;
  2:
-   begin
+    begin
+   LookSeriBeamDlg2.Execute;
+   DetailNO_SERI_BEAM.AsString:=QLookBeamCKNO_SERI_BEAM.AsString;
+   DetailNO_BEAM.AsString:=QLookBeamCKNO_BEAM.AsString;
+   DetailLOKASI.AsString:=QLookBeamCKLOKASI.AsString;
+   DetailPROSES.AsString:=QLookBeamCKPROSES.AsString;
+   DetailKD_LOKASI_ORG.AsString:=vkd_lokasi;
+   DetailISI.AsFloat:=QLookBeamCKISI.AsFloat;
+   DetailKETERANGAN.AsString:=QLookBeamCKKONSTRUKSI.AsString+' '+QLookBeam1CORAK.AsString;
+   DetailISPOST.AsInteger:=0;
+   DetailQTY_KG.AsFloat:=QLookBeamCKQTY_KG.AsFloat;
+   DetailRESEP.AsString:=QLookBeamCKNO_RESEP.AsString;
+   //add 300924
+   DetailKG_REV.AsFloat:=QLookBeamCKKG_REV.AsFloat;
+   DetailPOT_REV.AsFloat:=QLookBeamCKPOT_REV.AsFloat;
+   DetailJENIS_MESIN.AsString:=QLookBeam1BEAM.AsString;
+   //250225
+   DetailPCS.AsFloat:=QLookBeamCKQTY_PCS.AsFloat;
+   //130325
+   DetailJENIS.AsString:=QLookBeamCKJENIS.AsString;
+   DetailARAH.AsString:=QLookBeamCKARAH.AsString;
+   end;
+{   begin
    LookSeriBeamDlg2.Execute;
    DetailNO_SERI_BEAM.AsString:=QLookBM_RT_TSNO_SERI_BEAM.AsString;
    DetailNO_BEAM.AsString:=QLookBM_RT_TSNO_BEAM.AsString;
@@ -1161,7 +1212,7 @@ begin
    DetailISPOST.AsInteger:=0;
    DetailQTY_KG.AsFloat:=QLookBM_RT_TSQTY_KG.AsFloat;
    DetailRESEP.AsString:=QLookBM_RT_TSNO_RESEP.AsString;
-   end;
+   end;   }
  end;
 end;
 
@@ -1440,9 +1491,12 @@ end;
 procedure TMutasiBeamFrm.LookSeriBeamDlg2UserButton1Click(Sender: TObject;
   LookupTable: TDataSet);
 begin
-   QLookBM_RT_TS.Close;
+   QLookBeamCK.Close;
+   QLookBeamCK.SetVariable('kd_lokasi',vkd_lokasi);
+   QLookBeamCK.Open;
+{   QLookBM_RT_TS.Close;
    QLookBM_RT_TS.SetVariable('kd_lokasi',vkd_lokasi);
-   QLookBM_RT_TS.Open;
+   QLookBM_RT_TS.Open; }
 end;
 
 

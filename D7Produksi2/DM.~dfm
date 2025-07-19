@@ -1441,8 +1441,9 @@ object DMFrm: TDMFrm
   end
   object os2: TOracleSession
     LogonUsername = 'SYSTEM'
-    LogonPassword = 'pmt421145'
+    LogonPassword = 'pft421145'
     LogonDatabase = 'PRIMA'
+    Connected = True
     Left = 8
     Top = 56
   end
